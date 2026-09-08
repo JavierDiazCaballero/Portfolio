@@ -9,15 +9,21 @@
 
 <body>
 
-  <header class="hero">
+  <header class="hero" id="inicio">
+
+    <div class="hero-top">
+      Director · Guionista · Editor · Fotógrafo
+    </div>
+
     <div class="hero-content">
-      <p class="eyebrow">Director · Guionista · Editor · Fotógrafo</p>
       <h1>Javier Díaz<br>Caballero</h1>
     </div>
 
-    <div class="scroll-indicator">
-      Scroll ↓
+    <div class="hero-bottom">
+      <a href="#audiovisual" class="scroll">Scroll ↓</a>
+      <span>01</span>
     </div>
+
   </header>
 
 
@@ -44,136 +50,83 @@
 
     <!-- AUDIOVISUAL -->
 
-    <section id="audiovisual" class="portfolio-section">
+    <section id="audiovisual">
 
       <div class="section-header">
-        <span>01 — Audiovisual</span>
+        <span class="section-number">01 — Audiovisual</span>
         <h2>Proyectos</h2>
       </div>
 
-      <div class="filters">
-        <button class="filter active" data-filter="all">Todos</button>
-        <button class="filter" data-filter="cortometraje">Cortometrajes</button>
-        <button class="filter" data-filter="largometraje">Largometrajes</button>
-        <button class="filter" data-filter="videoclip">Videoclips</button>
-        <button class="filter" data-filter="spot">Spots</button>
-      </div>
 
+      <div class="projects">
 
-      <div class="projects-grid">
-
-        <a
-          class="project-card"
-          data-type="largometraje"
-          href="#"
-          target="_blank"
-        >
-          <div class="project-image">
-            <div class="image-placeholder">
-              IMAGEN DEL PROYECTO
-            </div>
-          </div>
+        <a href="#" class="project">
+          <span class="project-number">01</span>
 
           <div class="project-info">
-            <div>
-              <span class="project-type">Largometraje</span>
-              <h3>Quién mató al jefe en Navidad</h3>
-            </div>
-
-            <p>Director · Guionista · Editor</p>
+            <span class="project-type">Largometraje</span>
+            <h3>Quién mató al jefe en Navidad</h3>
           </div>
+
+          <span class="project-role">
+            Director · Guionista · Editor
+          </span>
         </a>
 
 
-        <a
-          class="project-card"
-          data-type="cortometraje"
-          href="#"
-          target="_blank"
-        >
-          <div class="project-image">
-            <div class="image-placeholder">
-              IMAGEN DEL PROYECTO
-            </div>
-          </div>
+        <a href="#" class="project">
+          <span class="project-number">02</span>
 
           <div class="project-info">
-            <div>
-              <span class="project-type">Cortometraje</span>
-              <h3>Cada vez que respiras</h3>
-            </div>
-
-            <p>Director · Guionista · Editor</p>
+            <span class="project-type">Cortometraje</span>
+            <h3>Cada vez que respiras</h3>
           </div>
+
+          <span class="project-role">
+            Director · Guionista · Editor
+          </span>
         </a>
 
 
-        <a
-          class="project-card"
-          data-type="cortometraje"
-          href="#"
-          target="_blank"
-        >
-          <div class="project-image">
-            <div class="image-placeholder">
-              IMAGEN DEL PROYECTO
-            </div>
-          </div>
+        <a href="#" class="project">
+          <span class="project-number">03</span>
 
           <div class="project-info">
-            <div>
-              <span class="project-type">Cortometraje</span>
-              <h3>La teoría del caos</h3>
-            </div>
-
-            <p>Director · Guionista · Editor</p>
+            <span class="project-type">Cortometraje</span>
+            <h3>La teoría del caos</h3>
           </div>
+
+          <span class="project-role">
+            Director · Guionista · Editor
+          </span>
         </a>
 
 
-        <a
-          class="project-card"
-          data-type="videoclip"
-          href="#"
-          target="_blank"
-        >
-          <div class="project-image">
-            <div class="image-placeholder">
-              IMAGEN DEL PROYECTO
-            </div>
-          </div>
+        <a href="#" class="project">
+          <span class="project-number">04</span>
 
           <div class="project-info">
-            <div>
-              <span class="project-type">Videoclip</span>
-              <h3>Latidos — PKAS</h3>
-            </div>
-
-            <p>Director</p>
+            <span class="project-type">Videoclip</span>
+            <h3>Latidos — PKAS</h3>
           </div>
+
+          <span class="project-role">
+            Director
+          </span>
         </a>
 
 
-        <a
-          class="project-card"
-          data-type="videoclip"
-          href="#"
-          target="_blank"
-        >
-          <div class="project-image">
-            <div class="image-placeholder">
-              IMAGEN DEL PROYECTO
-            </div>
-          </div>
+        <a href="#" class="project">
+          <span class="project-number">05</span>
 
           <div class="project-info">
-            <div>
-              <span class="project-type">Videoclip</span>
-              <h3>What You Started — Indexes</h3>
-            </div>
-
-            <p>Cámara</p>
+            <span class="project-type">Videoclip</span>
+            <h3>What You Started — Indexes</h3>
           </div>
+
+          <span class="project-role">
+            Cámara
+          </span>
         </a>
 
       </div>
@@ -183,41 +136,22 @@
 
     <!-- FOTOGRAFÍA -->
 
-    <section id="fotografia" class="portfolio-section photography">
+    <section id="fotografia">
 
       <div class="section-header">
-        <span>02 — Fotografía</span>
-        <h2>Fotografía</h2>
+        <span class="section-number">02 — Fotografía</span>
+        <h2>Selección</h2>
       </div>
 
 
       <div class="photo-grid">
 
-        <a href="#" class="photo-category">
-
-          <div class="photo-placeholder">
-            IMAGEN
-          </div>
-
-          <div class="photo-title">
-            <h3>Art</h3>
-            <span>↗</span>
-          </div>
-
+        <a href="#" class="photo-placeholder">
+          <span>Fotografía — Art</span>
         </a>
 
-
-        <a href="#" class="photo-category">
-
-          <div class="photo-placeholder">
-            IMAGEN
-          </div>
-
-          <div class="photo-title">
-            <h3>Eventos</h3>
-            <span>↗</span>
-          </div>
-
+        <a href="#" class="photo-placeholder">
+          <span>Fotografía — Eventos</span>
         </a>
 
       </div>
@@ -227,20 +161,15 @@
 
     <!-- CONTACTO -->
 
-    <section class="contact">
+    <section class="contact" id="contacto">
 
-      <span>03 — Contacto</span>
+      <div class="section-header">
+        <span class="section-number">03 — Contacto</span>
+        <h2>Hablemos</h2>
+      </div>
 
-      <h2>
-        Trabajemos<br>
-        juntos.
-      </h2>
-
-      <a
-        href="mailto:tuemail@email.com"
-        class="contact-link"
-      >
-        tuemail@email.com ↗
+      <a href="mailto:tuemail@email.com" class="contact-link">
+        tuemail@email.com
       </a>
 
     </section>
@@ -252,14 +181,9 @@
 
     <span>Javier Díaz Caballero</span>
 
-    <span>
-      Director · Guionista · Editor · Fotógrafo
-    </span>
+    <a href="#inicio">Volver arriba ↑</a>
 
   </footer>
-
-
-  <script src="script.js"></script>
 
 </body>
 </html>
