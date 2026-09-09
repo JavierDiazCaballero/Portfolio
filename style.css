@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap');
 
 :root {
   --bg: #080808;
@@ -48,11 +48,11 @@ a {
 
 .hero h1 {
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(42px, 7vw, 110px);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
-  letter-spacing: -.045em;
+  letter-spacing: .01em;
   white-space: nowrap;
 }
 
@@ -190,6 +190,7 @@ section h2 {
 
 .project-thumbnail,
 .project-placeholder {
+  position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
@@ -393,7 +394,7 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(28px, 8.5vw, 55px);
+    font-size: clamp(30px, 8.5vw, 58px);
     white-space: nowrap;
   }
 
