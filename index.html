@@ -10,6 +10,7 @@
 <body>
 
   <header class="hero" id="inicio">
+
     <div class="hero-content">
       <h1>JAVIER DÍAZ CABALLERO</h1>
       <div class="hero-subtitle">Director · Guionista · Editor · Fotógrafo</div>
@@ -19,11 +20,13 @@
       <a href="#audiovisual" class="scroll">Scroll ↓</a>
       <span>01</span>
     </div>
+
   </header>
 
   <main>
 
     <section class="selection">
+
       <a href="#audiovisual" class="selection-item">
         <span class="number">01</span>
         <h2>Audiovisual</h2>
@@ -35,7 +38,9 @@
         <h2>Fotografía</h2>
         <span class="arrow">↗</span>
       </a>
+
     </section>
+
 
     <section id="audiovisual">
 
@@ -52,6 +57,7 @@
           data-video="https://www.youtube.com/embed/ZtQ6fxfteO8?autoplay=1&rel=0"
           aria-label="Ver La teoría del caos"
         >
+
           <div class="project-thumbnail">
             <img
               src="https://img.youtube.com/vi/ZtQ6fxfteO8/maxresdefault.jpg"
@@ -64,42 +70,65 @@
             <h3>La teoría del caos</h3>
             <span class="project-role">Director · Guionista · Editor</span>
           </div>
+
         </button>
 
+
         <a href="#" class="project">
-          <div class="project-info">
+
+          <div class="project-placeholder"></div>
+
+          <div class="project-overlay">
             <span class="project-type">Largometraje</span>
             <h3>Quién mató al jefe en Navidad</h3>
+            <span class="project-role">Director · Guionista · Editor</span>
           </div>
-          <span class="project-role">Director · Guionista · Editor</span>
+
         </a>
 
+
         <a href="#" class="project">
-          <div class="project-info">
+
+          <div class="project-placeholder"></div>
+
+          <div class="project-overlay">
             <span class="project-type">Cortometraje</span>
             <h3>Cada vez que respiras</h3>
+            <span class="project-role">Director · Guionista · Editor</span>
           </div>
-          <span class="project-role">Director · Guionista · Editor</span>
+
         </a>
 
+
         <a href="#" class="project">
-          <div class="project-info">
+
+          <div class="project-placeholder"></div>
+
+          <div class="project-overlay">
             <span class="project-type">Videoclip</span>
             <h3>Latidos — PKAS</h3>
+            <span class="project-role">Director</span>
           </div>
-          <span class="project-role">Director</span>
+
         </a>
 
+
         <a href="#" class="project">
-          <div class="project-info">
+
+          <div class="project-placeholder"></div>
+
+          <div class="project-overlay">
             <span class="project-type">Videoclip</span>
             <h3>What You Started — Indexes</h3>
+            <span class="project-role">Cámara</span>
           </div>
-          <span class="project-role">Cámara</span>
+
         </a>
 
       </div>
+
     </section>
+
 
     <section id="fotografia">
 
@@ -109,6 +138,7 @@
       </div>
 
       <div class="photo-grid">
+
         <a href="#" class="photo-placeholder">
           <span>Fotografía — Art</span>
         </a>
@@ -116,9 +146,11 @@
         <a href="#" class="photo-placeholder">
           <span>Fotografía — Eventos</span>
         </a>
+
       </div>
 
     </section>
+
 
     <section class="contact" id="contacto">
 
@@ -134,6 +166,7 @@
     </section>
 
   </main>
+
 
   <div class="video-modal" id="video-modal" aria-hidden="true">
 
@@ -156,6 +189,7 @@
       </button>
 
       <div class="video-frame">
+
         <iframe
           id="video-iframe"
           src=""
@@ -163,17 +197,27 @@
           allow="autoplay; fullscreen; picture-in-picture"
           allowfullscreen
         ></iframe>
+
       </div>
 
     </div>
+
   </div>
 
+
   <footer>
+
     <span>Javier Díaz Caballero</span>
-    <a href="#inicio">Volver arriba ↑</a>
+
+    <a href="#inicio">
+      Volver arriba ↑
+    </a>
+
   </footer>
 
+
   <script>
+
     const modal = document.getElementById('video-modal');
     const iframe = document.getElementById('video-iframe');
     const close = document.getElementById('video-modal-close');
@@ -194,6 +238,7 @@
     }
 
     trigger.addEventListener('click', openVideo);
+
     close.addEventListener('click', closeVideo);
 
     modal.addEventListener('click', (event) => {
@@ -207,6 +252,7 @@
         closeVideo();
       }
     });
+
   </script>
 
 </body>
