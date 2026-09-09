@@ -61,7 +61,7 @@ a {
   font-size: 13px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
 }
 
 .hero-bottom {
@@ -185,9 +185,13 @@ section h2 {
   transform: translateY(-5px);
 }
 
-.project-thumbnail {
+
+/* IMAGEN */
+
+.project-thumbnail,
+.project-placeholder {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #151515;
 }
@@ -197,7 +201,7 @@ section h2 {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform .6s ease;
+  transition: transform .7s ease;
 }
 
 .project:hover .project-thumbnail img {
@@ -205,25 +209,47 @@ section h2 {
 }
 
 
-/* INFORMACIÓN DE LA TARJETA */
+/* DEGRADADO */
 
-.project-info {
-  padding: 20px 20px 8px;
+.project-thumbnail::after,
+.project-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0, 0, 0, .15) 55%,
+    rgba(0, 0, 0, .9) 100%
+  );
+  pointer-events: none;
+}
+
+
+/* TEXTO SOBRE LA IMAGEN */
+
+.project-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px;
+  z-index: 2;
 }
 
 .project-type {
   display: block;
   margin-bottom: 8px;
-  color: var(--muted);
   font-size: 11px;
+  color: #ccc;
   text-transform: uppercase;
   letter-spacing: .1em;
 }
 
-.project-info h3 {
-  margin: 0;
+.project-overlay h3 {
+  margin: 0 0 10px;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(22px, 2vw, 32px);
+  font-size: clamp(24px, 2.5vw, 38px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -.025em;
@@ -231,8 +257,7 @@ section h2 {
 
 .project-role {
   display: block;
-  padding: 0 20px 20px;
-  color: var(--muted);
+  color: #bbb;
   font-size: 11px;
   line-height: 1.5;
 }
@@ -247,6 +272,7 @@ section h2 {
 }
 
 .photo-placeholder {
+  position: relative;
   aspect-ratio: 4 / 3;
   background: #151515;
   display: flex;
@@ -367,7 +393,7 @@ footer {
   }
 
   .hero h1 {
-    font-size: clamp(30px, 9vw, 58px);
+    font-size: clamp(28px, 8.5vw, 55px);
     white-space: nowrap;
   }
 
@@ -411,7 +437,11 @@ footer {
     gap: 22px;
   }
 
-  .project-info h3 {
+  .project-overlay {
+    padding: 22px;
+  }
+
+  .project-overlay h3 {
     font-size: 28px;
   }
 
