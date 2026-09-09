@@ -29,6 +29,7 @@ a {
   text-decoration: none;
 }
 
+
 /* HERO */
 
 .hero {
@@ -36,31 +37,38 @@ a {
   padding: 42px 40px 36px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.hero-top {
-  font-size: 13px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  justify-content: center;
+  position: relative;
 }
 
 .hero-content {
   width: 100%;
-  padding: 12vh 0;
+  text-align: center;
 }
 
 .hero h1 {
   margin: 0;
-  max-width: 1100px;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(64px, 12vw, 180px);
+  font-size: clamp(42px, 7vw, 110px);
   font-weight: 400;
-  line-height: .9;
-  letter-spacing: -.055em;
+  line-height: 1;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+}
+
+.hero-subtitle {
+  margin-top: 18px;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .hero-bottom {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,7 +87,8 @@ footer a:hover {
   opacity: .6;
 }
 
-/* SECCIONES */
+
+/* SELECCIÓN */
 
 section {
   padding: 140px 40px;
@@ -122,6 +131,9 @@ section {
   text-align: right;
 }
 
+
+/* CABECERAS */
+
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -145,37 +157,39 @@ section h2 {
   letter-spacing: -.04em;
 }
 
+
 /* PROYECTOS */
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .project {
   position: relative;
   display: block;
   padding: 0;
-  border: 1px solid var(--line);
-  transition: opacity .25s ease;
-  background: none;
+  border: 0;
+  background: #111;
   color: inherit;
   font: inherit;
   text-align: left;
   width: 100%;
   cursor: pointer;
   overflow: hidden;
+  transition: transform .35s ease, opacity .35s ease;
 }
 
 .project:hover {
-  opacity: .7;
+  transform: translateY(-5px);
 }
 
 .project-thumbnail {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  background: #151515;
 }
 
 .project-thumbnail img {
@@ -183,38 +197,33 @@ section h2 {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform .6s ease;
 }
 
-.project-number {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  color: #fff;
-  font-size: 12px;
-  z-index: 2;
+.project:hover .project-thumbnail img {
+  transform: scale(1.04);
 }
+
+
+/* INFORMACIÓN DE LA TARJETA */
 
 .project-info {
-  padding: 22px 22px 8px;
-}
-
-.project-number,
-.project-type {
-  font-size: 12px;
+  padding: 20px 20px 8px;
 }
 
 .project-type {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   color: var(--muted);
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
 }
 
 .project-info h3 {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: clamp(22px, 2vw, 32px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -.025em;
@@ -222,11 +231,12 @@ section h2 {
 
 .project-role {
   display: block;
-  padding: 0 22px 22px;
+  padding: 0 20px 20px;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 11px;
+  line-height: 1.5;
 }
+
 
 /* FOTOGRAFÍA */
 
@@ -248,6 +258,7 @@ section h2 {
   letter-spacing: .1em;
 }
 
+
 /* CONTACTO */
 
 .contact {
@@ -264,6 +275,7 @@ section h2 {
   overflow-wrap: anywhere;
 }
 
+
 /* FOOTER */
 
 footer {
@@ -278,7 +290,8 @@ footer {
   letter-spacing: .08em;
 }
 
-/* VÍDEO */
+
+/* MODAL */
 
 .video-modal {
   position: fixed;
@@ -344,6 +357,7 @@ footer {
   overflow: hidden;
 }
 
+
 /* MÓVIL */
 
 @media (max-width: 700px) {
@@ -352,12 +366,20 @@ footer {
     padding: 28px 20px 24px;
   }
 
-  .hero-content {
-    padding: 10vh 0;
+  .hero h1 {
+    font-size: clamp(30px, 9vw, 58px);
+    white-space: nowrap;
   }
 
-  .hero h1 {
-    font-size: clamp(58px, 19vw, 115px);
+  .hero-subtitle {
+    font-size: 10px;
+    margin-top: 14px;
+  }
+
+  .hero-bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 24px;
   }
 
   section {
@@ -386,11 +408,11 @@ footer {
 
   .projects {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 22px;
   }
 
   .project-info h3 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .photo-grid {
