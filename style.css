@@ -3,7 +3,7 @@
 :root {
   --bg: #080808;
   --text: #f2f2f0;
-  --muted: #888;
+  --muted: #777;
   --line: #292929;
 }
 
@@ -30,11 +30,13 @@ a {
 }
 
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-  min-height: 100svh;
-  padding: 42px 40px 36px;
+  min-height: 78svh;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,95 +59,137 @@ a {
 }
 
 .hero-subtitle {
-  margin-top: 18px;
-  font-size: 13px;
-  letter-spacing: .08em;
+  margin-top: 28px;
+  font-size: 12px;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--text);
+  color: #858585;
 }
 
 .hero-bottom {
   position: absolute;
   left: 40px;
   right: 40px;
-  bottom: 36px;
+  bottom: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
 }
 
 .scroll {
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .12em;
 }
 
-.scroll:hover,
-.contact-link:hover,
-footer a:hover {
-  opacity: .6;
+.scroll:hover {
+  opacity: .55;
 }
 
 
-/* SELECCIÓN */
+/* =========================
+   NOMBRE FIJO AL HACER SCROLL
+========================= */
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(8, 8, 8, .92);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.sticky-header a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: .02em;
+  transition: opacity .25s ease;
+}
+
+.sticky-header a:hover {
+  opacity: .55;
+}
+
+
+/* =========================
+   SELECCIÓN / NAVEGACIÓN
+========================= */
 
 section {
-  padding: 140px 40px;
+  padding: 120px 40px;
   border-top: 1px solid var(--line);
 }
 
 .selection {
-  padding-top: 0;
+  padding-top: 55px;
+  padding-bottom: 120px;
 }
 
-.selection-item {
+.selection-buttons {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr) 40px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.selection-button {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  padding: 34px 0;
-  border-top: 1px solid var(--line);
-}
-
-.selection-item:last-child {
-  border-bottom: 1px solid var(--line);
-}
-
-.selection-item h2 {
-  margin: 0;
+  padding: 28px 30px;
+  border: 1px solid var(--line);
   font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 7vw, 100px);
-  font-weight: 400;
-  line-height: .95;
-  letter-spacing: -.04em;
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1;
+  transition:
+    background .3s ease,
+    color .3s ease,
+    padding .3s ease;
 }
 
-.number,
-.arrow {
+.selection-button span:last-child {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
   color: var(--muted);
-  font-size: 12px;
 }
 
-.arrow {
-  text-align: right;
+.selection-button:hover {
+  background: #f2f2f0;
+  color: #080808;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.selection-button:hover span:last-child {
+  color: #555;
 }
 
 
-/* CABECERAS */
+/* =========================
+   CABECERAS
+========================= */
 
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .section-number {
   color: var(--muted);
-  font-size: 13px;
-  padding-top: 8px;
+  font-size: 12px;
+  padding-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
 }
 
 section h2 {
@@ -158,12 +202,14 @@ section h2 {
 }
 
 
-/* PROYECTOS */
+/* =========================
+   PROYECTOS
+========================= */
 
 .projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 24px;
 }
 
 .project {
@@ -178,7 +224,9 @@ section h2 {
   width: 100%;
   cursor: pointer;
   overflow: hidden;
-  transition: transform .35s ease, opacity .35s ease;
+  transition:
+    transform .35s ease,
+    opacity .35s ease;
 }
 
 .project:hover {
@@ -186,13 +234,15 @@ section h2 {
 }
 
 
-/* IMAGEN */
+/* =========================
+   MINIATURAS HORIZONTALES
+========================= */
 
 .project-thumbnail,
 .project-placeholder {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #151515;
 }
@@ -210,7 +260,9 @@ section h2 {
 }
 
 
-/* DEGRADADO */
+/* =========================
+   DEGRADADO
+========================= */
 
 .project-thumbnail::after,
 .project-placeholder::after {
@@ -219,38 +271,40 @@ section h2 {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    transparent 40%,
-    rgba(0, 0, 0, .15) 55%,
-    rgba(0, 0, 0, .9) 100%
+    transparent 30%,
+    rgba(0, 0, 0, .12) 50%,
+    rgba(0, 0, 0, .92) 100%
   );
   pointer-events: none;
 }
 
 
-/* TEXTO SOBRE LA IMAGEN */
+/* =========================
+   TEXTO SOBRE IMAGEN
+========================= */
 
 .project-overlay {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 28px;
+  padding: 24px;
   z-index: 2;
 }
 
 .project-type {
   display: block;
-  margin-bottom: 8px;
-  font-size: 11px;
-  color: #ccc;
+  margin-bottom: 7px;
+  font-size: 10px;
+  color: #c5c5c5;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: .12em;
 }
 
 .project-overlay h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(24px, 2.5vw, 38px);
+  font-size: clamp(22px, 2.2vw, 34px);
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -.025em;
@@ -258,13 +312,15 @@ section h2 {
 
 .project-role {
   display: block;
-  color: #bbb;
-  font-size: 11px;
+  color: #aaa;
+  font-size: 10px;
   line-height: 1.5;
 }
 
 
-/* FOTOGRAFÍA */
+/* =========================
+   FOTOGRAFÍA
+========================= */
 
 .photo-grid {
   display: grid;
@@ -280,16 +336,18 @@ section h2 {
   align-items: center;
   justify-content: center;
   color: #555;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: .1em;
 }
 
 
-/* CONTACTO */
+/* =========================
+   CONTACTO
+========================= */
 
 .contact {
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -302,8 +360,14 @@ section h2 {
   overflow-wrap: anywhere;
 }
 
+.contact-link:hover {
+  opacity: .6;
+}
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   padding: 30px 40px;
@@ -317,8 +381,14 @@ footer {
   letter-spacing: .08em;
 }
 
+footer a:hover {
+  opacity: .6;
+}
 
-/* MODAL */
+
+/* =========================
+   MODAL VÍDEO
+========================= */
 
 .video-modal {
   position: fixed;
@@ -331,7 +401,9 @@ footer {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .25s ease, visibility .25s ease;
+  transition:
+    opacity .25s ease,
+    visibility .25s ease;
 }
 
 .video-modal.is-open {
@@ -385,22 +457,26 @@ footer {
 }
 
 
-/* MÓVIL */
+/* =========================
+   MÓVIL
+========================= */
 
 @media (max-width: 700px) {
 
   .hero {
+    min-height: 72svh;
     padding: 28px 20px 24px;
   }
 
   .hero h1 {
-    font-size: clamp(30px, 8.5vw, 58px);
+    font-size: clamp(29px, 8.5vw, 55px);
     white-space: nowrap;
   }
 
   .hero-subtitle {
-    font-size: 10px;
-    margin-top: 14px;
+    margin-top: 20px;
+    font-size: 9px;
+    letter-spacing: .13em;
   }
 
   .hero-bottom {
@@ -409,28 +485,47 @@ footer {
     bottom: 24px;
   }
 
+  .sticky-header {
+    height: 52px;
+    padding: 0 20px;
+  }
+
+  .sticky-header a {
+    font-size: 21px;
+  }
+
   section {
-    padding: 90px 20px;
+    padding: 85px 20px;
   }
 
-  .selection-item {
-    grid-template-columns: 34px minmax(0, 1fr) 20px;
-    gap: 14px;
-    padding: 24px 0;
+  .selection {
+    padding-top: 35px;
+    padding-bottom: 85px;
   }
 
-  .selection-item h2 {
-    font-size: clamp(38px, 11vw, 70px);
+  .selection-buttons {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .selection-button {
+    padding: 24px 22px;
+    font-size: 34px;
+  }
+
+  .selection-button:hover {
+    padding-left: 27px;
+    padding-right: 27px;
   }
 
   .section-header {
     display: block;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
   }
 
   .section-number {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .projects {
@@ -439,11 +534,11 @@ footer {
   }
 
   .project-overlay {
-    padding: 22px;
+    padding: 20px;
   }
 
   .project-overlay h3 {
-    font-size: 28px;
+    font-size: 27px;
   }
 
   .photo-grid {
@@ -463,4 +558,5 @@ footer {
     right: 0;
     top: -38px;
   }
+
 }
