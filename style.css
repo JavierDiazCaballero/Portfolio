@@ -3,7 +3,7 @@
 :root {
   --bg: #080808;
   --text: #f2f2f0;
-  --muted: #777;
+  --muted: #858585;
   --line: #292929;
 }
 
@@ -35,10 +35,11 @@ a {
 ========================= */
 
 .hero {
-  min-height: 78svh;
+  height: 72svh;
+  min-height: 560px;
   padding: 40px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: relative;
 }
@@ -48,20 +49,27 @@ a {
   text-align: center;
 }
 
+/* NOMBRE
+   Mantiene Cormorant Garamond Light */
 .hero h1 {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(42px, 7vw, 110px);
+  font-size: clamp(48px, 7vw, 110px);
   font-weight: 300;
-  line-height: 1;
-  letter-spacing: .01em;
+  line-height: .95;
+  letter-spacing: .015em;
   white-space: nowrap;
 }
 
+/* SUBTÍTULO
+   Más grande + más separado + gris */
 .hero-subtitle {
-  margin-top: 28px;
-  font-size: 12px;
-  letter-spacing: .16em;
+  margin-top: 38px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: .22em;
+  line-height: 1.4;
   text-transform: uppercase;
   color: #858585;
 }
@@ -70,9 +78,9 @@ a {
   position: absolute;
   left: 40px;
   right: 40px;
-  bottom: 30px;
+  bottom: 32px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   font-size: 12px;
   color: var(--muted);
@@ -89,29 +97,32 @@ a {
 
 
 /* =========================
-   NOMBRE FIJO AL HACER SCROLL
+   CABECERA FIJA AL HACER SCROLL
 ========================= */
 
 .sticky-header {
   position: sticky;
   top: 0;
-  z-index: 50;
-  height: 58px;
+  z-index: 100;
+  height: 64px;
+
   display: flex;
   align-items: center;
+
   padding: 0 40px;
-  background: rgba(8, 8, 8, .92);
+
+  background: rgba(8, 8, 8, .94);
   backdrop-filter: blur(12px);
+
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .sticky-header a {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 300;
-  letter-spacing: .02em;
-  transition: opacity .25s ease;
+  letter-spacing: .015em;
 }
 
 .sticky-header a:hover {
@@ -120,7 +131,7 @@ a {
 
 
 /* =========================
-   SELECCIÓN / NAVEGACIÓN
+   NAVEGACIÓN
 ========================= */
 
 section {
@@ -129,25 +140,32 @@ section {
 }
 
 .selection {
-  padding-top: 55px;
+  padding-top: 45px;
   padding-bottom: 120px;
 }
 
+/* DOS BOTONES HORIZONTALES */
+
 .selection-buttons {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2px;
 }
 
 .selection-button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 28px 30px;
+  justify-content: space-between;
+
+  padding: 32px 30px;
+
   border: 1px solid var(--line);
+
   font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 52px);
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 400;
   line-height: 1;
+
   transition:
     background .3s ease,
     color .3s ease,
@@ -156,15 +174,15 @@ section {
 
 .selection-button span:last-child {
   font-family: 'DM Sans', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   color: var(--muted);
 }
 
 .selection-button:hover {
   background: #f2f2f0;
   color: #080808;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 38px;
+  padding-right: 38px;
 }
 
 .selection-button:hover span:last-child {
@@ -173,7 +191,7 @@ section {
 
 
 /* =========================
-   CABECERAS
+   CABECERAS DE SECCIÓN
 ========================= */
 
 .section-header {
@@ -215,18 +233,21 @@ section h2 {
 .project {
   position: relative;
   display: block;
+
+  width: 100%;
   padding: 0;
+
   border: 0;
   background: #111;
   color: inherit;
+
   font: inherit;
   text-align: left;
-  width: 100%;
+
   cursor: pointer;
   overflow: hidden;
-  transition:
-    transform .35s ease,
-    opacity .35s ease;
+
+  transition: transform .35s ease;
 }
 
 .project:hover {
@@ -235,23 +256,31 @@ section h2 {
 
 
 /* =========================
-   MINIATURAS HORIZONTALES
+   IMÁGENES CINEMATOGRÁFICAS
 ========================= */
 
 .project-thumbnail,
 .project-placeholder {
   position: relative;
+
   width: 100%;
+
+  /* FORMATO HORIZONTAL */
   aspect-ratio: 16 / 9;
+
   overflow: hidden;
+
   background: #151515;
 }
 
 .project-thumbnail img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+
   display: block;
+
+  object-fit: cover;
+
   transition: transform .7s ease;
 }
 
@@ -267,52 +296,65 @@ section h2 {
 .project-thumbnail::after,
 .project-placeholder::after {
   content: "";
+
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     to bottom,
-    transparent 30%,
-    rgba(0, 0, 0, .12) 50%,
+    transparent 25%,
+    rgba(0, 0, 0, .1) 48%,
     rgba(0, 0, 0, .92) 100%
   );
+
   pointer-events: none;
 }
 
 
 /* =========================
-   TEXTO SOBRE IMAGEN
+   INFORMACIÓN SOBRE IMAGEN
 ========================= */
 
 .project-overlay {
   position: absolute;
+
   left: 0;
   right: 0;
   bottom: 0;
+
   padding: 24px;
+
   z-index: 2;
 }
 
 .project-type {
   display: block;
+
   margin-bottom: 7px;
+
   font-size: 10px;
   color: #c5c5c5;
+
   text-transform: uppercase;
   letter-spacing: .12em;
 }
 
 .project-overlay h3 {
   margin: 0 0 8px;
+
   font-family: 'Playfair Display', serif;
-  font-size: clamp(22px, 2.2vw, 34px);
+  font-size: clamp(22px, 2vw, 32px);
   font-weight: 400;
+
   line-height: 1.05;
   letter-spacing: -.025em;
 }
 
 .project-role {
   display: block;
+
   color: #aaa;
+
   font-size: 10px;
   line-height: 1.5;
 }
@@ -330,13 +372,19 @@ section h2 {
 
 .photo-placeholder {
   position: relative;
+
   aspect-ratio: 4 / 3;
+
   background: #151515;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #555;
+
   font-size: 11px;
+
   text-transform: uppercase;
   letter-spacing: .1em;
 }
@@ -348,6 +396,7 @@ section h2 {
 
 .contact {
   min-height: 65vh;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -357,6 +406,7 @@ section h2 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(40px, 7vw, 100px);
   line-height: 1;
+
   overflow-wrap: anywhere;
 }
 
@@ -371,12 +421,17 @@ section h2 {
 
 footer {
   padding: 30px 40px;
+
   border-top: 1px solid var(--line);
+
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
   color: var(--muted);
+
   font-size: 11px;
+
   text-transform: uppercase;
   letter-spacing: .08em;
 }
@@ -393,14 +448,19 @@ footer a:hover {
 .video-modal {
   position: fixed;
   inset: 0;
+
   z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 40px;
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+
   transition:
     opacity .25s ease,
     visibility .25s ease;
@@ -415,39 +475,52 @@ footer a:hover {
 .video-modal-backdrop {
   position: absolute;
   inset: 0;
+
   background: rgba(0, 0, 0, .88);
 }
 
 .video-modal-content {
   position: relative;
+
   width: min(1200px, 100%);
+
   z-index: 1;
 }
 
 .video-frame {
   position: relative;
+
   width: 100%;
+
   aspect-ratio: 16 / 9;
+
   background: #000;
+
   overflow: hidden;
 }
 
 .video-frame iframe {
   width: 100%;
   height: 100%;
+
   border: 0;
 }
 
 .video-modal-close {
   position: absolute;
+
   right: -4px;
   top: -46px;
+
   border: 0;
   background: none;
+
   color: #fff;
+
   font-size: 34px;
   font-weight: 300;
   line-height: 1;
+
   cursor: pointer;
   padding: 0;
 }
@@ -464,19 +537,20 @@ footer a:hover {
 @media (max-width: 700px) {
 
   .hero {
-    min-height: 72svh;
-    padding: 28px 20px 24px;
+    height: 68svh;
+    min-height: 480px;
+    padding: 25px 20px 24px;
   }
 
   .hero h1 {
-    font-size: clamp(29px, 8.5vw, 55px);
+    font-size: clamp(30px, 8.5vw, 55px);
     white-space: nowrap;
   }
 
   .hero-subtitle {
-    margin-top: 20px;
-    font-size: 9px;
-    letter-spacing: .13em;
+    margin-top: 25px;
+    font-size: 10px;
+    letter-spacing: .15em;
   }
 
   .hero-bottom {
@@ -484,6 +558,9 @@ footer a:hover {
     right: 20px;
     bottom: 24px;
   }
+
+
+  /* CABECERA MÓVIL */
 
   .sticky-header {
     height: 52px;
@@ -494,12 +571,15 @@ footer a:hover {
     font-size: 21px;
   }
 
+
+  /* NAVEGACIÓN */
+
   section {
     padding: 85px 20px;
   }
 
   .selection {
-    padding-top: 35px;
+    padding-top: 30px;
     padding-bottom: 85px;
   }
 
@@ -509,14 +589,12 @@ footer a:hover {
   }
 
   .selection-button {
-    padding: 24px 22px;
-    font-size: 34px;
+    padding: 25px 22px;
+    font-size: 38px;
   }
 
-  .selection-button:hover {
-    padding-left: 27px;
-    padding-right: 27px;
-  }
+
+  /* CABECERAS */
 
   .section-header {
     display: block;
@@ -527,6 +605,9 @@ footer a:hover {
     display: block;
     margin-bottom: 22px;
   }
+
+
+  /* PROYECTOS */
 
   .projects {
     grid-template-columns: 1fr;
@@ -541,14 +622,23 @@ footer a:hover {
     font-size: 27px;
   }
 
+
+  /* FOTO */
+
   .photo-grid {
     grid-template-columns: 1fr;
   }
+
+
+  /* FOOTER */
 
   footer {
     padding: 25px 20px;
     flex-direction: column;
   }
+
+
+  /* MODAL */
 
   .video-modal {
     padding: 20px;
