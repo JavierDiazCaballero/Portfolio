@@ -36,12 +36,19 @@ a {
 
 .hero {
   height: 72svh;
-  min-height: 560px;
+  min-height: 520px;
   padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+
+  /* IMPORTANTE:
+     permite que el nombre permanezca visualmente
+     en la parte superior durante el scroll */
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .hero-content {
@@ -49,39 +56,79 @@ a {
   text-align: center;
 }
 
-/* NOMBRE
-   Mantiene Cormorant Garamond Light */
+
+/* NAVEGACIÓN SOBRE EL NOMBRE */
+
+.hero-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  margin-bottom: 32px;
+}
+
+.hero-nav a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #858585;
+
+  transition:
+    color .3s ease,
+    opacity .3s ease;
+}
+
+.hero-nav a:hover {
+  color: #f2f2f0;
+}
+
+
+/* NOMBRE */
+
 .hero h1 {
   margin: 0;
+
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(48px, 7vw, 110px);
   font-weight: 300;
+
   line-height: .95;
   letter-spacing: .015em;
+
   white-space: nowrap;
 }
 
-/* SUBTÍTULO
-   Más grande + más separado + gris */
+
+/* SUBTÍTULO */
+
 .hero-subtitle {
   margin-top: 38px;
+
   font-family: 'DM Sans', sans-serif;
   font-size: 17px;
   font-weight: 300;
+
   letter-spacing: .22em;
   line-height: 1.4;
+
   text-transform: uppercase;
+
   color: #858585;
 }
 
+
 .hero-bottom {
   position: absolute;
+
   left: 40px;
   right: 40px;
-  bottom: 32px;
+  bottom: 30px;
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+
   font-size: 12px;
   color: var(--muted);
 }
@@ -97,41 +144,18 @@ a {
 
 
 /* =========================
-   CABECERA FIJA AL HACER SCROLL
+   CONTENIDO
 ========================= */
 
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  height: 64px;
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 40px;
-
-  background: rgba(8, 8, 8, .94);
-  backdrop-filter: blur(12px);
-
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.sticky-header a {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
-  font-weight: 300;
-  letter-spacing: .015em;
-}
-
-.sticky-header a:hover {
-  opacity: .55;
+main {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
 }
 
 
 /* =========================
-   NAVEGACIÓN
+   SECCIONES
 ========================= */
 
 section {
@@ -139,82 +163,37 @@ section {
   border-top: 1px solid var(--line);
 }
 
-.selection {
-  padding-top: 45px;
-  padding-bottom: 120px;
-}
-
-/* DOS BOTONES HORIZONTALES */
-
-.selection-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-}
-
-.selection-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 32px 30px;
-
-  border: 1px solid var(--line);
-
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(38px, 5vw, 68px);
-  font-weight: 400;
-  line-height: 1;
-
-  transition:
-    background .3s ease,
-    color .3s ease,
-    padding .3s ease;
-}
-
-.selection-button span:last-child {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 22px;
-  color: var(--muted);
-}
-
-.selection-button:hover {
-  background: #f2f2f0;
-  color: #080808;
-  padding-left: 38px;
-  padding-right: 38px;
-}
-
-.selection-button:hover span:last-child {
-  color: #555;
-}
-
 
 /* =========================
-   CABECERAS DE SECCIÓN
+   CABECERAS
 ========================= */
 
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
   gap: 30px;
   margin-bottom: 70px;
 }
 
 .section-number {
   color: var(--muted);
+
   font-size: 12px;
   padding-top: 10px;
+
   text-transform: uppercase;
   letter-spacing: .12em;
 }
 
 section h2 {
   margin: 0;
+
   font-family: 'Playfair Display', serif;
   font-size: clamp(48px, 8vw, 110px);
   font-weight: 400;
+
   line-height: .9;
   letter-spacing: -.04em;
 }
@@ -226,12 +205,16 @@ section h2 {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 24px;
 }
 
 .project {
   position: relative;
+
   display: block;
 
   width: 100%;
@@ -239,6 +222,7 @@ section h2 {
 
   border: 0;
   background: #111;
+
   color: inherit;
 
   font: inherit;
@@ -247,7 +231,8 @@ section h2 {
   cursor: pointer;
   overflow: hidden;
 
-  transition: transform .35s ease;
+  transition:
+    transform .35s ease;
 }
 
 .project:hover {
@@ -255,9 +240,7 @@ section h2 {
 }
 
 
-/* =========================
-   IMÁGENES CINEMATOGRÁFICAS
-========================= */
+/* FORMATO CINEMATOGRÁFICO */
 
 .project-thumbnail,
 .project-placeholder {
@@ -265,7 +248,6 @@ section h2 {
 
   width: 100%;
 
-  /* FORMATO HORIZONTAL */
   aspect-ratio: 16 / 9;
 
   overflow: hidden;
@@ -281,7 +263,8 @@ section h2 {
 
   object-fit: cover;
 
-  transition: transform .7s ease;
+  transition:
+    transform .7s ease;
 }
 
 .project:hover .project-thumbnail img {
@@ -289,9 +272,7 @@ section h2 {
 }
 
 
-/* =========================
-   DEGRADADO
-========================= */
+/* DEGRADADO */
 
 .project-thumbnail::after,
 .project-placeholder::after {
@@ -311,9 +292,7 @@ section h2 {
 }
 
 
-/* =========================
-   INFORMACIÓN SOBRE IMAGEN
-========================= */
+/* TEXTO */
 
 .project-overlay {
   position: absolute;
@@ -333,6 +312,7 @@ section h2 {
   margin-bottom: 7px;
 
   font-size: 10px;
+
   color: #c5c5c5;
 
   text-transform: uppercase;
@@ -343,6 +323,7 @@ section h2 {
   margin: 0 0 8px;
 
   font-family: 'Playfair Display', serif;
+
   font-size: clamp(22px, 2vw, 32px);
   font-weight: 400;
 
@@ -366,7 +347,10 @@ section h2 {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 2px;
 }
 
@@ -404,7 +388,9 @@ section h2 {
 
 .contact-link {
   font-family: 'Playfair Display', serif;
+
   font-size: clamp(40px, 7vw, 100px);
+
   line-height: 1;
 
   overflow-wrap: anywhere;
@@ -420,12 +406,16 @@ section h2 {
 ========================= */
 
 footer {
+  position: relative;
+  z-index: 2;
+
   padding: 30px 40px;
 
   border-top: 1px solid var(--line);
 
   display: flex;
   justify-content: space-between;
+
   gap: 20px;
 
   color: var(--muted);
@@ -442,7 +432,7 @@ footer a:hover {
 
 
 /* =========================
-   MODAL VÍDEO
+   MODAL
 ========================= */
 
 .video-modal {
@@ -519,6 +509,7 @@ footer a:hover {
 
   font-size: 34px;
   font-weight: 300;
+
   line-height: 1;
 
   cursor: pointer;
@@ -538,17 +529,30 @@ footer a:hover {
 
   .hero {
     height: 68svh;
-    min-height: 480px;
+    min-height: 460px;
+
     padding: 25px 20px 24px;
+  }
+
+  .hero-nav {
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .hero-nav a {
+    font-size: 9px;
+    letter-spacing: .15em;
   }
 
   .hero h1 {
     font-size: clamp(30px, 8.5vw, 55px);
+
     white-space: nowrap;
   }
 
   .hero-subtitle {
     margin-top: 25px;
+
     font-size: 10px;
     letter-spacing: .15em;
   }
@@ -560,41 +564,10 @@ footer a:hover {
   }
 
 
-  /* CABECERA MÓVIL */
-
-  .sticky-header {
-    height: 52px;
-    padding: 0 20px;
-  }
-
-  .sticky-header a {
-    font-size: 21px;
-  }
-
-
-  /* NAVEGACIÓN */
-
   section {
     padding: 85px 20px;
   }
 
-  .selection {
-    padding-top: 30px;
-    padding-bottom: 85px;
-  }
-
-  .selection-buttons {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .selection-button {
-    padding: 25px 22px;
-    font-size: 38px;
-  }
-
-
-  /* CABECERAS */
 
   .section-header {
     display: block;
@@ -606,8 +579,6 @@ footer a:hover {
     margin-bottom: 22px;
   }
 
-
-  /* PROYECTOS */
 
   .projects {
     grid-template-columns: 1fr;
@@ -623,22 +594,16 @@ footer a:hover {
   }
 
 
-  /* FOTO */
-
   .photo-grid {
     grid-template-columns: 1fr;
   }
 
-
-  /* FOOTER */
 
   footer {
     padding: 25px 20px;
     flex-direction: column;
   }
 
-
-  /* MODAL */
 
   .video-modal {
     padding: 20px;
