@@ -43,37 +43,47 @@ a {
   justify-content: center;
   position: relative;
 
-  /* IMPORTANTE:
-     permite que el nombre permanezca visualmente
-     en la parte superior durante el scroll */
+  /* El hero acompaña al nombre */
   position: sticky;
   top: 0;
   z-index: 1;
+
+  background: var(--bg);
 }
 
 .hero-content {
   width: 100%;
   text-align: center;
+
+  transform: translateY(-10px);
 }
 
 
-/* NAVEGACIÓN SOBRE EL NOMBRE */
+/* =========================
+   NAVEGACIÓN
+========================= */
 
 .hero-nav {
   display: flex;
   justify-content: center;
   align-items: center;
+
   gap: 42px;
+
   margin-bottom: 32px;
 }
 
 .hero-nav a {
   font-family: 'DM Sans', sans-serif;
+
   font-size: 12px;
   font-weight: 300;
-  letter-spacing: .18em;
+
+  letter-spacing: .2em;
+
   text-transform: uppercase;
-  color: #858585;
+
+  color: #777;
 
   transition:
     color .3s ease,
@@ -85,32 +95,43 @@ a {
 }
 
 
-/* NOMBRE */
+/* =========================
+   NOMBRE
+========================= */
 
 .hero h1 {
   margin: 0;
 
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(48px, 7vw, 110px);
+
   font-weight: 300;
 
   line-height: .95;
+
   letter-spacing: .015em;
 
   white-space: nowrap;
+
+  will-change: transform;
 }
 
 
-/* SUBTÍTULO */
+/* =========================
+   SUBTÍTULO
+========================= */
 
 .hero-subtitle {
   margin-top: 38px;
 
   font-family: 'DM Sans', sans-serif;
+
   font-size: 17px;
   font-weight: 300;
 
   letter-spacing: .22em;
+
   line-height: 1.4;
 
   text-transform: uppercase;
@@ -118,6 +139,10 @@ a {
   color: #858585;
 }
 
+
+/* =========================
+   SCROLL
+========================= */
 
 .hero-bottom {
   position: absolute;
@@ -130,6 +155,7 @@ a {
   justify-content: flex-start;
 
   font-size: 12px;
+
   color: var(--muted);
 }
 
@@ -149,7 +175,9 @@ a {
 
 main {
   position: relative;
+
   z-index: 2;
+
   background: var(--bg);
 }
 
@@ -160,6 +188,7 @@ main {
 
 section {
   padding: 120px 40px;
+
   border-top: 1px solid var(--line);
 }
 
@@ -170,10 +199,12 @@ section {
 
 .section-header {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-start;
 
   gap: 30px;
+
   margin-bottom: 70px;
 }
 
@@ -181,9 +212,11 @@ section {
   color: var(--muted);
 
   font-size: 12px;
+
   padding-top: 10px;
 
   text-transform: uppercase;
+
   letter-spacing: .12em;
 }
 
@@ -191,10 +224,13 @@ section h2 {
   margin: 0;
 
   font-family: 'Playfair Display', serif;
+
   font-size: clamp(48px, 8vw, 110px);
+
   font-weight: 400;
 
   line-height: .9;
+
   letter-spacing: -.04em;
 }
 
@@ -218,17 +254,21 @@ section h2 {
   display: block;
 
   width: 100%;
+
   padding: 0;
 
   border: 0;
+
   background: #111;
 
   color: inherit;
 
   font: inherit;
+
   text-align: left;
 
   cursor: pointer;
+
   overflow: hidden;
 
   transition:
@@ -240,7 +280,9 @@ section h2 {
 }
 
 
-/* FORMATO CINEMATOGRÁFICO */
+/* =========================
+   FORMATO CINEMATOGRÁFICO
+========================= */
 
 .project-thumbnail,
 .project-placeholder {
@@ -272,13 +314,16 @@ section h2 {
 }
 
 
-/* DEGRADADO */
+/* =========================
+   DEGRADADO
+========================= */
 
 .project-thumbnail::after,
 .project-placeholder::after {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background: linear-gradient(
@@ -292,7 +337,9 @@ section h2 {
 }
 
 
-/* TEXTO */
+/* =========================
+   TEXTO PROYECTOS
+========================= */
 
 .project-overlay {
   position: absolute;
@@ -316,6 +363,7 @@ section h2 {
   color: #c5c5c5;
 
   text-transform: uppercase;
+
   letter-spacing: .12em;
 }
 
@@ -325,9 +373,11 @@ section h2 {
   font-family: 'Playfair Display', serif;
 
   font-size: clamp(22px, 2vw, 32px);
+
   font-weight: 400;
 
   line-height: 1.05;
+
   letter-spacing: -.025em;
 }
 
@@ -337,6 +387,7 @@ section h2 {
   color: #aaa;
 
   font-size: 10px;
+
   line-height: 1.5;
 }
 
@@ -362,6 +413,7 @@ section h2 {
   background: #151515;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -370,6 +422,7 @@ section h2 {
   font-size: 11px;
 
   text-transform: uppercase;
+
   letter-spacing: .1em;
 }
 
@@ -382,7 +435,9 @@ section h2 {
   min-height: 65vh;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
 }
 
@@ -407,6 +462,7 @@ section h2 {
 
 footer {
   position: relative;
+
   z-index: 2;
 
   padding: 30px 40px;
@@ -414,6 +470,7 @@ footer {
   border-top: 1px solid var(--line);
 
   display: flex;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -423,6 +480,7 @@ footer {
   font-size: 11px;
 
   text-transform: uppercase;
+
   letter-spacing: .08em;
 }
 
@@ -437,18 +495,22 @@ footer a:hover {
 
 .video-modal {
   position: fixed;
+
   inset: 0;
 
   z-index: 1000;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   padding: 40px;
 
   opacity: 0;
+
   visibility: hidden;
+
   pointer-events: none;
 
   transition:
@@ -458,12 +520,15 @@ footer a:hover {
 
 .video-modal.is-open {
   opacity: 1;
+
   visibility: visible;
+
   pointer-events: auto;
 }
 
 .video-modal-backdrop {
   position: absolute;
+
   inset: 0;
 
   background: rgba(0, 0, 0, .88);
@@ -503,16 +568,19 @@ footer a:hover {
   top: -46px;
 
   border: 0;
+
   background: none;
 
   color: #fff;
 
   font-size: 34px;
+
   font-weight: 300;
 
   line-height: 1;
 
   cursor: pointer;
+
   padding: 0;
 }
 
@@ -529,18 +597,25 @@ footer a:hover {
 
   .hero {
     height: 68svh;
+
     min-height: 460px;
 
     padding: 25px 20px 24px;
   }
 
+  .hero-content {
+    transform: translateY(-5px);
+  }
+
   .hero-nav {
     gap: 25px;
+
     margin-bottom: 25px;
   }
 
   .hero-nav a {
     font-size: 9px;
+
     letter-spacing: .15em;
   }
 
@@ -554,12 +629,14 @@ footer a:hover {
     margin-top: 25px;
 
     font-size: 10px;
+
     letter-spacing: .15em;
   }
 
   .hero-bottom {
     left: 20px;
     right: 20px;
+
     bottom: 24px;
   }
 
@@ -571,17 +648,20 @@ footer a:hover {
 
   .section-header {
     display: block;
+
     margin-bottom: 45px;
   }
 
   .section-number {
     display: block;
+
     margin-bottom: 22px;
   }
 
 
   .projects {
     grid-template-columns: 1fr;
+
     gap: 22px;
   }
 
@@ -601,6 +681,7 @@ footer a:hover {
 
   footer {
     padding: 25px 20px;
+
     flex-direction: column;
   }
 
@@ -611,6 +692,7 @@ footer a:hover {
 
   .video-modal-close {
     right: 0;
+
     top: -38px;
   }
 
