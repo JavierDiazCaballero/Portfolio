@@ -22,11 +22,11 @@
     <section id="audiovisual">
       <div class="section-header"><span class="section-number">01 — Audiovisual</span><h2>Proyectos</h2></div>
       <div class="projects">
-        <a href="https://youtu.be/ZtQ6fxfteO8" target="_blank" rel="noopener noreferrer" class="project">
+        <button type="button" class="project project-video" data-video="https://www.youtube.com/embed/ZtQ6fxfteO8?autoplay=1&rel=0" aria-label="Ver La teoría del caos">
           <span class="project-number">01</span>
           <div class="project-info"><span class="project-type">Cortometraje</span><h3>La teoría del caos</h3></div>
           <span class="project-role">Director · Guionista · Editor<br>Ver cortometraje ↗</span>
-        </a>
+        </button>
         <a href="#" class="project"><span class="project-number">02</span><div class="project-info"><span class="project-type">Largometraje</span><h3>Quién mató al jefe en Navidad</h3></div><span class="project-role">Director · Guionista · Editor</span></a>
         <a href="#" class="project"><span class="project-number">03</span><div class="project-info"><span class="project-type">Cortometraje</span><h3>Cada vez que respiras</h3></div><span class="project-role">Director · Guionista · Editor</span></a>
         <a href="#" class="project"><span class="project-number">04</span><div class="project-info"><span class="project-type">Videoclip</span><h3>Latidos — PKAS</h3></div><span class="project-role">Director</span></a>
@@ -45,6 +45,44 @@
     </section>
   </main>
 
+  <div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" data-close="true"></div>
+    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Reproductor de vídeo">
+      <button type="button" class="video-modal-close" id="video-modal-close" aria-label="Cerrar vídeo">×</button>
+      <div class="video-frame"><iframe id="video-iframe" src="" title="La teoría del caos" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+  </div>
+
   <footer><span>Javier Díaz Caballero</span><a href="#inicio">Volver arriba ↑</a></footer>
+
+  <script>
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    const close = document.getElementById('video-modal-close');
+    const trigger = document.querySelector('.project-video');
+
+    function openVideo() {
+      iframe.src = trigger.dataset.video;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+
+    function closeVideo() {
+      iframe.src = '';
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+    }
+
+    trigger.addEventListener('click', openVideo);
+    close.addEventListener('click', closeVideo);
+    modal.addEventListener('click', (event) => {
+      if (event.target.dataset.close === 'true') closeVideo();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeVideo();
+    });
+  </script>
 </body>
 </html>
