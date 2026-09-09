@@ -4,55 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Javier Díaz Caballero — Director</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
+  <!-- BARRA SUPERIOR -->
+  <header class="topbar" id="topbar">
 
-  <!-- =========================
-       BARRA SUPERIOR
-  ========================= -->
-
-  <header class="topbar">
+    <nav class="topbar-left">
+      <a href="#audiovisual">Audiovisual</a>
+      <a href="#fotografia">Fotografía</a>
+    </nav>
 
     <a href="#inicio" class="topbar-name">
       JAVIER DÍAZ CABALLERO
     </a>
 
-    <nav class="topbar-nav">
-
-      <a href="#audiovisual">
-        Audiovisual
-      </a>
-
-      <a href="#fotografia">
-        Fotografía
-      </a>
-
-      <a href="#contacto">
-        Contacto
-      </a>
-
+    <nav class="topbar-right">
+      <a href="#contacto">Contacto</a>
     </nav>
 
   </header>
 
 
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
+  <!-- HERO -->
   <section class="hero" id="inicio">
 
     <div class="hero-content">
 
-      <h1>
+      <h1 id="hero-name">
         JAVIER DÍAZ CABALLERO
       </h1>
 
@@ -62,41 +44,28 @@
 
     </div>
 
-
     <div class="hero-bottom">
-
       <a href="#audiovisual" class="scroll">
         Scroll ↓
       </a>
-
     </div>
 
   </section>
 
 
-
   <main>
 
 
-    <!-- =========================
-         AUDIOVISUAL
-    ========================= -->
-
+    <!-- AUDIOVISUAL -->
     <section id="audiovisual">
 
       <div class="section-header">
 
-        <div class="section-heading">
+        <h2>Proyectos</h2>
 
-          <span class="section-title">
-            Proyectos
-          </span>
-
-          <span class="section-category">
-            Audiovisual
-          </span>
-
-        </div>
+        <span class="section-label">
+          Audiovisual
+        </span>
 
       </div>
 
@@ -105,7 +74,6 @@
 
 
         <!-- LA TEORÍA DEL CAOS -->
-
         <button
           type="button"
           class="project project-video"
@@ -121,7 +89,6 @@
             >
 
           </div>
-
 
           <div class="project-overlay">
 
@@ -142,9 +109,7 @@
         </button>
 
 
-
         <!-- QUIÉN MATÓ AL JEFE -->
-
         <a href="#" class="project">
 
           <div class="project-placeholder"></div>
@@ -168,9 +133,7 @@
         </a>
 
 
-
         <!-- CADA VEZ QUE RESPIRAS -->
-
         <a href="#" class="project">
 
           <div class="project-placeholder"></div>
@@ -194,9 +157,7 @@
         </a>
 
 
-
         <!-- LATIDOS -->
-
         <a href="#" class="project">
 
           <div class="project-placeholder"></div>
@@ -220,9 +181,7 @@
         </a>
 
 
-
         <!-- WHAT YOU STARTED -->
-
         <a href="#" class="project">
 
           <div class="project-placeholder"></div>
@@ -245,32 +204,21 @@
 
         </a>
 
-
       </div>
 
     </section>
 
 
-
-    <!-- =========================
-         FOTOGRAFÍA
-    ========================= -->
-
+    <!-- FOTOGRAFÍA -->
     <section id="fotografia">
 
       <div class="section-header">
 
-        <div class="section-heading">
+        <h2>Selección</h2>
 
-          <span class="section-title">
-            Selección
-          </span>
-
-          <span class="section-category">
-            Fotografía
-          </span>
-
-        </div>
+        <span class="section-label">
+          Fotografía
+        </span>
 
       </div>
 
@@ -278,20 +226,11 @@
       <div class="photo-grid">
 
         <a href="#" class="photo-placeholder">
-
-          <span>
-            Fotografía — Art
-          </span>
-
+          <span>Fotografía — Art</span>
         </a>
 
-
         <a href="#" class="photo-placeholder">
-
-          <span>
-            Fotografía — Eventos
-          </span>
-
+          <span>Fotografía — Eventos</span>
         </a>
 
       </div>
@@ -299,28 +238,14 @@
     </section>
 
 
-
-    <!-- =========================
-         CONTACTO
-    ========================= -->
-
-    <section
-      class="contact"
-      id="contacto"
-    >
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
 
       <div class="section-header">
 
-        <div class="section-heading">
-
-          <span class="section-title">
-            Contacto
-          </span>
-
-        </div>
+        <h2>Contacto</h2>
 
       </div>
-
 
       <a
         href="mailto:tuemail@email.com"
@@ -331,15 +256,10 @@
 
     </section>
 
-
   </main>
 
 
-
-  <!-- =========================
-       MODAL VÍDEO
-  ========================= -->
-
+  <!-- MODAL VÍDEO -->
   <div
     class="video-modal"
     id="video-modal"
@@ -350,7 +270,6 @@
       class="video-modal-backdrop"
       data-close="true"
     ></div>
-
 
     <div
       class="video-modal-content"
@@ -366,7 +285,6 @@
       >
         ×
       </button>
-
 
       <div class="video-frame">
 
@@ -385,11 +303,7 @@
   </div>
 
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
+  <!-- FOOTER -->
   <footer>
 
     <span>
@@ -403,12 +317,30 @@
   </footer>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
+  <!-- JAVASCRIPT -->
   <script>
+
+    const topbar = document.getElementById('topbar');
+    const heroName = document.getElementById('hero-name');
+
+    function updateHeader() {
+
+      if (window.scrollY > 80) {
+        topbar.classList.add('is-visible');
+        heroName.classList.add('is-scrolled');
+      } else {
+        topbar.classList.remove('is-visible');
+        heroName.classList.remove('is-scrolled');
+      }
+
+    }
+
+    window.addEventListener('scroll', updateHeader);
+
+    updateHeader();
+
+
+    /* VIDEO */
 
     const modal =
       document.getElementById('video-modal');
@@ -425,8 +357,7 @@
 
     trigger.addEventListener('click', () => {
 
-      iframe.src =
-        trigger.dataset.video;
+      iframe.src = trigger.dataset.video;
 
       modal.classList.add('is-open');
 
@@ -446,9 +377,7 @@
 
       iframe.src = '';
 
-      modal.classList.remove(
-        'is-open'
-      );
+      modal.classList.remove('is-open');
 
       modal.setAttribute(
         'aria-hidden',
@@ -475,9 +404,7 @@
         if (
           event.target.dataset.close === 'true'
         ) {
-
           closeVideo();
-
         }
 
       }
@@ -489,9 +416,7 @@
       (event) => {
 
         if (event.key === 'Escape') {
-
           closeVideo();
-
         }
 
       }
@@ -499,7 +424,5 @@
 
   </script>
 
-
 </body>
-
 </html>
