@@ -307,7 +307,7 @@ section {
 
 
 /* =========================
-   INFORMACIÓN SIEMPRE VISIBLE
+   INFORMACIÓN PROYECTOS
 ========================= */
 
 .project-info {
@@ -383,7 +383,7 @@ section {
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: clamp(38px, 5vw, 60px);
+  font-size: clamp(48px, 6vw, 76px);
 
   font-weight: 300;
 
@@ -659,14 +659,16 @@ footer a:hover {
   .topbar {
     height: 58px;
 
-    padding: 0 14px;
+    padding: 0 12px;
 
     grid-template-columns:
-      1fr auto 1fr;
+      auto auto auto;
+
+    column-gap: 12px;
   }
 
   .topbar-left {
-    gap: 14px;
+    gap: 12px;
   }
 
   .topbar-right {
@@ -674,15 +676,17 @@ footer a:hover {
   }
 
   .topbar a {
-    font-size: 9px;
+    font-size: 8px;
 
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
   }
 
   .topbar-name {
-    font-size: 14px !important;
+    font-size: 12px !important;
 
-    letter-spacing: 0.01em !important;
+    letter-spacing: 0 !important;
+
+    text-align: center;
   }
 
 
@@ -735,23 +739,29 @@ footer a:hover {
   }
 
   .project-info {
-    padding: 12px;
+    padding: 9px;
   }
 
   .project-type {
-    font-size: 8px;
+    font-size: 6px;
 
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+
+    letter-spacing: 0.1em;
   }
 
   .project h3 {
-    font-size: 19px;
+    font-size: 15px;
+
+    line-height: 1.05;
   }
 
   .project-role {
-    font-size: 8px;
+    font-size: 6px;
 
-    margin-top: 5px;
+    margin-top: 4px;
+
+    letter-spacing: 0.04em;
   }
 
 
