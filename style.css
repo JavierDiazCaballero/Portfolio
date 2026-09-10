@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap');
 
-
-/* =========================
-   BASE
-========================= */
-
 * {
   box-sizing: border-box;
 }
@@ -113,13 +108,10 @@ a {
 
 .hero {
   min-height: 100svh;
-
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 40px;
 }
 
@@ -129,19 +121,12 @@ a {
 
 .hero h1 {
   margin: 0;
-
   font-family: 'Cormorant Garamond', serif;
-
   font-size: clamp(48px, 7vw, 110px);
-
   line-height: 0.95;
-
   font-weight: 300;
-
   letter-spacing: 0.015em;
-
   color: #e5e5e5;
-
   white-space: nowrap;
 
   transition:
@@ -156,32 +141,23 @@ a {
 
 .hero-subtitle {
   margin-top: 34px;
-
   font-size: 17px;
-
   font-weight: 300;
-
   letter-spacing: 0.22em;
-
   color: #858585;
 }
 
 .hero-bottom {
   position: absolute;
-
   bottom: 35px;
-
   left: 0;
   right: 0;
-
   text-align: center;
 }
 
 .scroll {
   font-size: 11px;
-
   letter-spacing: 0.18em;
-
   color: #666;
 }
 
@@ -214,33 +190,21 @@ section {
 
 .section-header h2 {
   margin: 0;
-
   font-family: 'Cormorant Garamond', serif;
-
   font-size: clamp(34px, 4vw, 52px);
-
   line-height: 1;
-
   font-weight: 300;
-
   letter-spacing: 0.02em;
-
   color: #9a9a9a;
 }
 
 .section-label {
   display: block;
-
   margin-top: 9px;
-
   font-size: 10px;
-
   font-weight: 300;
-
   text-transform: uppercase;
-
   letter-spacing: 0.2em;
-
   color: #555;
 }
 
@@ -251,48 +215,33 @@ section {
 
 .projects {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 26px;
 }
 
 .project {
   position: relative;
-
   display: block;
-
   width: 100%;
-
   aspect-ratio: 16 / 9;
-
   padding: 0;
-
   border: 0;
-
   background: #111;
-
   overflow: hidden;
-
   cursor: pointer;
-
   text-align: left;
 }
 
 .project-thumbnail,
 .project-placeholder {
   position: absolute;
-
   inset: 0;
 }
 
 .project-thumbnail img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   display: block;
 
   transition:
@@ -306,22 +255,14 @@ section {
 
 .project:hover .project-thumbnail img {
   transform: scale(1.04);
-
   filter: brightness(0.72);
 }
 
-
-/* =========================
-   INFORMACIÓN PROYECTOS
-========================= */
-
 .project-info {
   position: absolute;
-
   left: 0;
   right: 0;
   bottom: 0;
-
   padding: 25px;
 
   background:
@@ -334,41 +275,27 @@ section {
 
 .project-type {
   display: block;
-
   margin-bottom: 8px;
-
   font-size: 10px;
-
   text-transform: uppercase;
-
   letter-spacing: 0.16em;
-
   color: #999;
 }
 
 .project h3 {
   margin: 0;
-
   font-family: 'Cormorant Garamond', serif;
-
   font-size: 27px;
-
   line-height: 1.05;
-
   font-weight: 300;
-
   color: #eee;
 }
 
 .project-role {
   display: block;
-
   margin-top: 9px;
-
   font-size: 11px;
-
   letter-spacing: 0.08em;
-
   color: #aaa;
 }
 
@@ -379,71 +306,50 @@ section {
 
 .upcoming {
   padding: 150px 0 30px;
-
   text-align: center;
 }
 
 .upcoming h2 {
   margin: 0 0 60px;
-
   font-family: 'Cormorant Garamond', serif;
-
   font-size: clamp(48px, 6vw, 76px);
-
   font-weight: 300;
-
   color: #777;
-
   letter-spacing: 0.02em;
 }
 
 .upcoming-projects {
   display: flex;
-
   justify-content: center;
 }
 
 .upcoming-project {
   max-width: 600px;
-
   text-align: center;
 }
 
 .upcoming-type {
   display: block;
-
   margin-bottom: 10px;
-
   font-size: 10px;
-
   text-transform: uppercase;
-
   letter-spacing: 0.18em;
-
   color: #555;
 }
 
 .upcoming-project h3 {
   margin: 0;
-
   font-family: 'Cormorant Garamond', serif;
-
   font-size: 32px;
-
   font-weight: 300;
-
   color: #aaa;
 }
 
 .upcoming-role {
   display: block;
-
   margin-top: 10px;
-
   font-size: 11px;
-
   letter-spacing: 0.08em;
-
   color: #666;
 }
 
@@ -454,36 +360,24 @@ section {
 
 .photo-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 26px;
 }
 
 .photo-placeholder {
   aspect-ratio: 4 / 3;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   background: #111;
-
   color: #555;
-
   font-size: 11px;
-
   letter-spacing: 0.12em;
-
   text-transform: uppercase;
 }
 
 .photo-placeholder:hover {
   background: #151515;
-
   color: #888;
 }
 
@@ -494,13 +388,10 @@ section {
 
 .contact {
   min-height: 55vh;
-
   padding: 130px 40px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
@@ -508,11 +399,8 @@ section {
   width: fit-content;
 
   font-family: 'Cormorant Garamond', serif;
-
   font-size: clamp(28px, 4vw, 50px);
-
   font-weight: 300;
-
   color: #aaa;
 
   border-bottom: 1px solid #333;
@@ -529,19 +417,14 @@ section {
 
 .video-modal {
   position: fixed;
-
   inset: 0;
-
   z-index: 200;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   opacity: 0;
-
   visibility: hidden;
 
   transition:
@@ -551,57 +434,43 @@ section {
 
 .video-modal.is-open {
   opacity: 1;
-
   visibility: visible;
 }
 
 .video-modal-backdrop {
   position: absolute;
-
   inset: 0;
-
   background: rgba(0, 0, 0, 0.94);
 }
 
 .video-modal-content {
   position: relative;
-
   z-index: 1;
-
   width: min(1100px, 90vw);
 }
 
 .video-frame {
   width: 100%;
-
   aspect-ratio: 16 / 9;
-
   background: #000;
 }
 
 .video-frame iframe {
   width: 100%;
-
   height: 100%;
-
   border: 0;
 }
 
 .video-modal-close {
   position: absolute;
-
   top: -45px;
-
   right: 0;
 
   border: 0;
-
   background: transparent;
 
   color: #aaa;
-
   font-size: 32px;
-
   font-weight: 300;
 
   cursor: pointer;
@@ -613,7 +482,7 @@ section {
 
 
 /* =========================
-   PÁGINA DE LA PELÍCULA
+   PÁGINA PELÍCULA
 ========================= */
 
 .film-page {
@@ -621,29 +490,27 @@ section {
 }
 
 
-/* CABECERA */
+/* HERO PELÍCULA */
 
 .film-hero {
-  min-height: 75vh;
+  min-height: 78vh;
 
-  padding: 120px 40px 100px;
+  padding: 140px 7vw 120px;
 
   display: flex;
   flex-direction: column;
-
+  align-items: center;
   justify-content: center;
 
   text-align: center;
 }
 
 .film-type {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 
   font-size: 10px;
-
   text-transform: uppercase;
-
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
 
   color: #666;
 }
@@ -653,48 +520,55 @@ section {
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: clamp(52px, 8vw, 110px);
+  font-size: clamp(48px, 6vw, 94px);
 
-  line-height: 0.92;
+  line-height: 0.95;
 
   font-weight: 300;
 
-  color: #dedede;
+  letter-spacing: -0.015em;
+
+  color: #e1e1e1;
+
+  white-space: nowrap;
 }
 
 .film-role {
-  margin-top: 30px;
+  margin-top: 35px;
 
-  font-size: 12px;
-
-  letter-spacing: 0.15em;
+  font-size: 11px;
+  letter-spacing: 0.16em;
 
   color: #777;
 }
 
 
-/* SECCIONES DE PELÍCULA */
+/* SECCIONES */
 
 .film-section {
-  padding: 100px 40px;
+  width: min(1200px, 86vw);
 
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 0 auto;
+
+  padding: 120px 0;
 
   display: grid;
 
-  grid-template-columns: 30% 1fr;
+  grid-template-columns: 250px 1fr;
 
-  gap: 60px;
+  gap: 100px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .film-section-title span {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 
-  font-size: 10px;
+  font-size: 9px;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
 
   color: #555;
 }
@@ -704,29 +578,33 @@ section {
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 42px;
+  font-size: 44px;
 
   font-weight: 300;
 
-  color: #999;
+  color: #8e8e8e;
 }
 
 .film-description {
-  max-width: 700px;
+  max-width: 760px;
 }
 
 .film-description p {
-  margin: 0;
+  margin: 0 0 25px;
 
   font-family: 'Cormorant Garamond', serif;
 
   font-size: 30px;
 
-  line-height: 1.25;
+  line-height: 1.3;
 
   font-weight: 300;
 
   color: #b5b5b5;
+}
+
+.film-description p:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -735,26 +613,25 @@ section {
 .cast {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  column-gap: 60px;
+  column-gap: 70px;
 
-  row-gap: 20px;
+  row-gap: 18px;
 }
 
 .cast div {
+  padding-bottom: 13px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 25px;
+  font-size: 26px;
 
   font-weight: 300;
 
   color: #aaa;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-
-  padding-bottom: 12px;
 }
 
 
@@ -765,7 +642,7 @@ section {
 
   flex-direction: column;
 
-  gap: 30px;
+  gap: 35px;
 }
 
 .production-item {
@@ -773,10 +650,126 @@ section {
 
   flex-direction: column;
 
-  gap: 7px;
+  gap: 8px;
 }
 
 .production-item span {
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  color: #555;
+}
+
+.production-item strong {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 27px;
+
+  font-weight: 300;
+
+  color: #aaa;
+}
+
+
+/* =========================
+   NOTICIAS — TARJETAS
+========================= */
+
+.film-news-section {
+  padding-bottom: 130px;
+}
+
+.news-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.news-card {
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 28px;
+
+  background: #111;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.news-card:hover {
+  background: #151515;
+
+  border-color: rgba(255, 255, 255, 0.12);
+
+  transform: translateY(-3px);
+}
+
+.news-card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.news-source {
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  color: #666;
+}
+
+.news-arrow {
+  font-size: 18px;
+
+  color: #666;
+}
+
+.news-card h3 {
+  margin: 35px 0 18px;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 30px;
+
+  line-height: 1.05;
+
+  font-weight: 300;
+
+  color: #ddd;
+}
+
+.news-card p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+
+  color: #777;
+}
+
+.news-read {
+  margin-top: auto;
+
+  padding-top: 35px;
+
   font-size: 9px;
 
   text-transform: uppercase;
@@ -786,66 +779,26 @@ section {
   color: #555;
 }
 
-.production-item strong {
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: 25px;
-
-  font-weight: 300;
-
+.news-card:hover .news-read,
+.news-card:hover .news-arrow {
   color: #aaa;
-}
-
-
-/* NOTICIAS */
-
-.news-list {
-  display: flex;
-
-  flex-direction: column;
-}
-
-.news-item {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  padding: 22px 0;
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: 25px;
-
-  font-weight: 300;
-
-  color: #aaa;
-
-  transition: color 0.3s ease;
-}
-
-.news-item:hover {
-  color: #fff;
 }
 
 
 /* VOLVER */
 
 .film-back {
-  padding: 100px 40px;
+  padding: 110px 40px;
 
   text-align: center;
 }
 
 .film-back a {
-  font-size: 11px;
+  font-size: 10px;
 
   text-transform: uppercase;
 
-  letter-spacing: 0.16em;
+  letter-spacing: 0.17em;
 
   color: #666;
 }
@@ -889,8 +842,17 @@ footer a:hover {
 @media (max-width: 900px) {
 
   .projects {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .film-hero h1 {
+    white-space: normal;
+  }
+
+  .film-section {
+    grid-template-columns: 200px 1fr;
+
+    gap: 60px;
   }
 
 }
@@ -902,15 +864,12 @@ footer a:hover {
 
 @media (max-width: 650px) {
 
-  /* BARRA */
-
   .topbar {
     height: 58px;
 
     padding: 0 12px;
 
-    grid-template-columns:
-      auto auto auto;
+    grid-template-columns: auto auto auto;
 
     column-gap: 12px;
   }
@@ -925,15 +884,12 @@ footer a:hover {
 
   .topbar a {
     font-size: 8px;
-
     letter-spacing: 0.04em;
   }
 
   .topbar-name {
     font-size: 12px !important;
-
     letter-spacing: 0 !important;
-
     text-align: center;
   }
 
@@ -946,7 +902,6 @@ footer a:hover {
 
   .hero h1 {
     font-size: 11vw;
-
     white-space: nowrap;
   }
 
@@ -977,11 +932,10 @@ footer a:hover {
   }
 
 
-  /* PROYECTOS: 2 POR FILA */
+  /* PROYECTOS */
 
   .projects {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 12px;
   }
@@ -1030,17 +984,18 @@ footer a:hover {
   }
 
 
-  /* FOTOS: 2 POR FILA */
+  /* FOTOGRAFÍA */
 
   .photo-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 12px;
   }
 
 
-  /* PÁGINA PELÍCULA */
+  /* =========================
+     PELÍCULA MÓVIL
+  ========================= */
 
   .film-page {
     padding-top: 58px;
@@ -1049,44 +1004,52 @@ footer a:hover {
   .film-hero {
     min-height: 70vh;
 
-    padding: 100px 20px 80px;
+    padding: 100px 24px 80px;
   }
 
   .film-type {
+    margin-bottom: 24px;
+
     font-size: 8px;
 
     letter-spacing: 0.15em;
   }
 
   .film-hero h1 {
-    font-size: 14vw;
+    font-size: 15vw;
 
-    line-height: 0.95;
+    line-height: 0.94;
+
+    white-space: normal;
   }
 
   .film-role {
-    font-size: 9px;
+    margin-top: 28px;
 
-    letter-spacing: 0.12em;
+    font-size: 9px;
   }
 
 
   .film-section {
-    padding: 75px 20px;
+    width: calc(100% - 40px);
+
+    padding: 80px 0;
 
     display: block;
   }
 
   .film-section-title {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
   }
 
   .film-section-title h2 {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .film-description p {
     font-size: 25px;
+
+    line-height: 1.28;
   }
 
 
@@ -1114,10 +1077,26 @@ footer a:hover {
 
   /* NOTICIAS */
 
-  .news-item {
-    font-size: 20px;
+  .news-grid {
+    grid-template-columns: 1fr;
 
-    padding: 18px 0;
+    gap: 12px;
+  }
+
+  .news-card {
+    min-height: 270px;
+
+    padding: 22px;
+  }
+
+  .news-card h3 {
+    margin-top: 28px;
+
+    font-size: 27px;
+  }
+
+  .news-card p {
+    font-size: 11px;
   }
 
 
