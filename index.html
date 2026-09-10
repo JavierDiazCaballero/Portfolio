@@ -28,6 +28,8 @@
   </header>
 
 
+  <!-- HERO -->
+
   <section class="hero" id="inicio">
 
     <div class="hero-content">
@@ -45,7 +47,8 @@
     <div class="hero-bottom">
 
       <a href="#audiovisual" class="scroll">
-        Scroll ↓
+        SCROLL
+        <span>↓</span>
       </a>
 
     </div>
@@ -62,11 +65,15 @@
 
       <div class="section-header">
 
-        <h2>Proyectos</h2>
+        <div>
+          <h2>Proyectos</h2>
 
-        <span class="section-label">
-          Audiovisual
-        </span>
+          <span class="section-label">
+            Audiovisual
+          </span>
+        </div>
+
+        <div class="section-line"></div>
 
       </div>
 
@@ -228,60 +235,68 @@
 
       <div class="upcoming">
 
-        <h2>
-          Próximamente
-        </h2>
+        <div class="upcoming-header">
 
-        <div class="upcoming-projects">
+          <h2>
+            Próximamente
+          </h2>
 
-          <a
-            href="pelicula.html"
-            class="upcoming-project"
-          >
+          <div class="section-line"></div>
 
-            <div class="upcoming-image">
-
-              <img
-                src="pelicula-portada.png"
-                alt="¿Quién mató al jefe en Navidad?"
-              >
-
-              <div class="upcoming-film-info">
-
-                <span class="upcoming-type">
-                  Largometraje
-                </span>
-
-                <h3>
-                  ¿Quién mató<br>
-                  al jefe en Navidad?
-                </h3>
-
-                <span class="upcoming-role">
-                  Director · Editor
-                </span>
-
-              </div>
+        </div>
 
 
-              <div class="upcoming-cta">
+        <a
+          href="pelicula.html"
+          class="upcoming-project"
+        >
 
-                <div class="upcoming-circle">
-                  →
-                </div>
+          <div class="upcoming-image">
 
-                <span>
-                  PULSA PARA<br>
-                  MÁS INFORMACIÓN
-                </span>
+            <img
+              src="pelicula-portada.png"
+              alt="¿Quién mató al jefe en Navidad?"
+            >
 
-              </div>
+
+            <!-- TEXTO SOBRE LA IMAGEN -->
+
+            <div class="upcoming-film-info">
+
+              <span class="upcoming-type">
+                Largometraje
+              </span>
+
+              <h3>
+                ¿Quién mató<br>
+                al jefe en Navidad?
+              </h3>
+
+              <span class="upcoming-role">
+                Director · Editor
+              </span>
 
             </div>
 
-          </a>
 
-        </div>
+            <!-- CTA -->
+
+            <div class="upcoming-cta">
+
+              <div class="upcoming-circle">
+                →
+              </div>
+
+              <span>
+                PULSA PARA<br>
+                MÁS INFORMACIÓN
+              </span>
+
+            </div>
+
+          </div>
+
+        </a>
 
       </div>
 
@@ -294,13 +309,19 @@
 
       <div class="section-header">
 
-        <h2>
-          Selección
-        </h2>
+        <div>
 
-        <span class="section-label">
-          Fotografía
-        </span>
+          <h2>
+            Selección
+          </h2>
+
+          <span class="section-label">
+            Fotografía
+          </span>
+
+        </div>
+
+        <div class="section-line"></div>
 
       </div>
 
@@ -333,9 +354,13 @@
 
       <div class="section-header">
 
-        <h2>
-          Contacto
-        </h2>
+        <div>
+
+          <h2>
+            Contacto
+          </h2>
+
+        </div>
 
       </div>
 
@@ -351,7 +376,7 @@
   </main>
 
 
-  <!-- MODAL -->
+  <!-- MODAL DE VÍDEO -->
 
   <div
     class="video-modal"
@@ -413,12 +438,8 @@
 
   <script>
 
-    const topbar =
-      document.getElementById('topbar');
-
-    const heroName =
-      document.getElementById('hero-name');
-
+    const topbar = document.getElementById('topbar');
+    const heroName = document.getElementById('hero-name');
 
     function updateHeader() {
 
@@ -436,23 +457,14 @@
 
     }
 
-
-    window.addEventListener(
-      'scroll',
-      updateHeader
-    );
+    window.addEventListener('scroll', updateHeader);
 
     updateHeader();
 
 
-    const modal =
-      document.getElementById('video-modal');
-
-    const iframe =
-      document.getElementById('video-iframe');
-
-    const close =
-      document.getElementById('video-modal-close');
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    const close = document.getElementById('video-modal-close');
 
     const triggers =
       document.querySelectorAll('.project-video');
@@ -462,8 +474,7 @@
 
       trigger.addEventListener('click', () => {
 
-        iframe.src =
-          trigger.dataset.video;
+        iframe.src = trigger.dataset.video;
 
         modal.classList.add('is-open');
 
@@ -485,9 +496,7 @@
 
       iframe.src = '';
 
-      modal.classList.remove(
-        'is-open'
-      );
+      modal.classList.remove('is-open');
 
       modal.setAttribute(
         'aria-hidden',
@@ -509,7 +518,7 @@
 
     modal.addEventListener(
       'click',
-      (event) => {
+      event => {
 
         if (
           event.target.dataset.close === 'true'
@@ -525,7 +534,7 @@
 
     document.addEventListener(
       'keydown',
-      (event) => {
+      event => {
 
         if (event.key === 'Escape') {
           closeVideo();
