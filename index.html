@@ -56,7 +56,10 @@
   <main>
 
 
-    <!-- AUDIOVISUAL -->
+    <!-- =========================
+         AUDIOVISUAL
+    ========================== -->
+
     <section id="audiovisual">
 
       <div class="section-header">
@@ -74,6 +77,7 @@
 
 
         <!-- LA TEORÍA DEL CAOS -->
+
         <button
           type="button"
           class="project project-video"
@@ -90,7 +94,7 @@
 
           </div>
 
-          <div class="project-overlay">
+          <div class="project-info">
 
             <span class="project-type">
               Cortometraje
@@ -109,36 +113,25 @@
         </button>
 
 
-        <!-- QUIÉN MATÓ AL JEFE -->
-        <a href="#" class="project">
+        <!-- CADA VEZ QUE RESPIRAS -->
 
-          <div class="project-placeholder"></div>
+        <button
+          type="button"
+          class="project project-video"
+          data-video="https://www.youtube.com/embed/qft0q44p1rc?autoplay=1&rel=0"
+          aria-label="Ver Cada vez que respiras"
+        >
 
-          <div class="project-overlay">
+          <div class="project-thumbnail">
 
-            <span class="project-type">
-              Largometraje
-            </span>
-
-            <h3>
-              Quién mató al jefe en Navidad
-            </h3>
-
-            <span class="project-role">
-              Director · Guionista · Editor
-            </span>
+            <img
+              src="https://img.youtube.com/vi/qft0q44p1rc/maxresdefault.jpg"
+              alt="Cada vez que respiras"
+            >
 
           </div>
 
-        </a>
-
-
-        <!-- CADA VEZ QUE RESPIRAS -->
-        <a href="#" class="project">
-
-          <div class="project-placeholder"></div>
-
-          <div class="project-overlay">
+          <div class="project-info">
 
             <span class="project-type">
               Cortometraje
@@ -154,15 +147,28 @@
 
           </div>
 
-        </a>
+        </button>
 
 
         <!-- LATIDOS -->
-        <a href="#" class="project">
 
-          <div class="project-placeholder"></div>
+        <button
+          type="button"
+          class="project project-video"
+          data-video="https://www.youtube.com/embed/8A5SqmwclHY?autoplay=1&rel=0"
+          aria-label="Ver Latidos"
+        >
 
-          <div class="project-overlay">
+          <div class="project-thumbnail">
+
+            <img
+              src="https://img.youtube.com/vi/8A5SqmwclHY/maxresdefault.jpg"
+              alt="Latidos — PKAS"
+            >
+
+          </div>
+
+          <div class="project-info">
 
             <span class="project-type">
               Videoclip
@@ -178,15 +184,53 @@
 
           </div>
 
-        </a>
+        </button>
+
+
+        <!-- LIVE SESSION KOMODO GARCÍA -->
+
+        <button
+          type="button"
+          class="project project-video"
+          data-video="https://www.youtube.com/embed/F_Lt15a8N4I?autoplay=1&rel=0"
+          aria-label="Ver Live Session Komodo García"
+        >
+
+          <div class="project-thumbnail">
+
+            <img
+              src="https://img.youtube.com/vi/F_Lt15a8N4I/maxresdefault.jpg"
+              alt="Live Session Komodo García — 13/14"
+            >
+
+          </div>
+
+          <div class="project-info">
+
+            <span class="project-type">
+              Live Session
+            </span>
+
+            <h3>
+              Komodo García — 13/14
+            </h3>
+
+            <span class="project-role">
+              Director · Editor
+            </span>
+
+          </div>
+
+        </button>
 
 
         <!-- WHAT YOU STARTED -->
+
         <a href="#" class="project">
 
           <div class="project-placeholder"></div>
 
-          <div class="project-overlay">
+          <div class="project-info">
 
             <span class="project-type">
               Videoclip
@@ -204,12 +248,51 @@
 
         </a>
 
+
+      </div>
+
+
+      <!-- =========================
+           PRÓXIMAMENTE
+      ========================== -->
+
+      <div class="upcoming">
+
+        <h2>Próximamente</h2>
+
+        <div class="upcoming-projects">
+
+
+          <!-- QUIÉN MATÓ AL JEFE -->
+
+          <div class="upcoming-project">
+
+            <span class="upcoming-type">
+              Largometraje
+            </span>
+
+            <h3>
+              ¿Quién mató al jefe en Navidad?
+            </h3>
+
+            <span class="upcoming-role">
+              Director · Editor
+            </span>
+
+          </div>
+
+
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- FOTOGRAFÍA -->
+    <!-- =========================
+         FOTOGRAFÍA
+    ========================== -->
+
     <section id="fotografia">
 
       <div class="section-header">
@@ -226,11 +309,15 @@
       <div class="photo-grid">
 
         <a href="#" class="photo-placeholder">
-          <span>Fotografía — Art</span>
+          <span>
+            Fotografía — Art
+          </span>
         </a>
 
         <a href="#" class="photo-placeholder">
-          <span>Fotografía — Eventos</span>
+          <span>
+            Fotografía — Eventos
+          </span>
         </a>
 
       </div>
@@ -238,8 +325,14 @@
     </section>
 
 
-    <!-- CONTACTO -->
-    <section class="contact" id="contacto">
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+
+    <section
+      class="contact"
+      id="contacto"
+    >
 
       <div class="section-header">
 
@@ -259,7 +352,10 @@
   </main>
 
 
-  <!-- MODAL VÍDEO -->
+  <!-- =========================
+       MODAL VÍDEO
+  ========================== -->
+
   <div
     class="video-modal"
     id="video-modal"
@@ -291,7 +387,7 @@
         <iframe
           id="video-iframe"
           src=""
-          title="La teoría del caos"
+          title="Vídeo"
           allow="autoplay; fullscreen; picture-in-picture"
           allowfullscreen
         ></iframe>
@@ -303,7 +399,10 @@
   </div>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
 
     <span>
@@ -317,30 +416,47 @@
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
 
-    const topbar = document.getElementById('topbar');
-    const heroName = document.getElementById('hero-name');
+    const topbar =
+      document.getElementById('topbar');
+
+    const heroName =
+      document.getElementById('hero-name');
+
 
     function updateHeader() {
 
       if (window.scrollY > 80) {
+
         topbar.classList.add('is-visible');
         heroName.classList.add('is-scrolled');
+
       } else {
+
         topbar.classList.remove('is-visible');
         heroName.classList.remove('is-scrolled');
+
       }
 
     }
 
-    window.addEventListener('scroll', updateHeader);
+
+    window.addEventListener(
+      'scroll',
+      updateHeader
+    );
 
     updateHeader();
 
 
-    /* VIDEO */
+    /* =========================
+       VÍDEOS
+    ========================== */
 
     const modal =
       document.getElementById('video-modal');
@@ -351,24 +467,29 @@
     const close =
       document.getElementById('video-modal-close');
 
-    const trigger =
-      document.querySelector('.project-video');
+    const triggers =
+      document.querySelectorAll('.project-video');
 
 
-    trigger.addEventListener('click', () => {
+    triggers.forEach(trigger => {
 
-      iframe.src = trigger.dataset.video;
+      trigger.addEventListener('click', () => {
 
-      modal.classList.add('is-open');
+        iframe.src =
+          trigger.dataset.video;
 
-      modal.setAttribute(
-        'aria-hidden',
-        'false'
-      );
+        modal.classList.add('is-open');
 
-      document.body.classList.add(
-        'modal-open'
-      );
+        modal.setAttribute(
+          'aria-hidden',
+          'false'
+        );
+
+        document.body.classList.add(
+          'modal-open'
+        );
+
+      });
 
     });
 
@@ -377,7 +498,9 @@
 
       iframe.src = '';
 
-      modal.classList.remove('is-open');
+      modal.classList.remove(
+        'is-open'
+      );
 
       modal.setAttribute(
         'aria-hidden',
@@ -404,7 +527,9 @@
         if (
           event.target.dataset.close === 'true'
         ) {
+
           closeVideo();
+
         }
 
       }
@@ -425,4 +550,5 @@
   </script>
 
 </body>
+
 </html>
