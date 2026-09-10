@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap');
 
+
+/* =========================
+   BASE
+========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -608,6 +613,249 @@ section {
 
 
 /* =========================
+   PÁGINA DE LA PELÍCULA
+========================= */
+
+.film-page {
+  padding-top: 68px;
+}
+
+
+/* CABECERA */
+
+.film-hero {
+  min-height: 75vh;
+
+  padding: 120px 40px 100px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.film-type {
+  margin-bottom: 25px;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2em;
+
+  color: #666;
+}
+
+.film-hero h1 {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(52px, 8vw, 110px);
+
+  line-height: 0.92;
+
+  font-weight: 300;
+
+  color: #dedede;
+}
+
+.film-role {
+  margin-top: 30px;
+
+  font-size: 12px;
+
+  letter-spacing: 0.15em;
+
+  color: #777;
+}
+
+
+/* SECCIONES DE PELÍCULA */
+
+.film-section {
+  padding: 100px 40px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  display: grid;
+
+  grid-template-columns: 30% 1fr;
+
+  gap: 60px;
+}
+
+.film-section-title span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: #555;
+}
+
+.film-section-title h2 {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 42px;
+
+  font-weight: 300;
+
+  color: #999;
+}
+
+.film-description {
+  max-width: 700px;
+}
+
+.film-description p {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 30px;
+
+  line-height: 1.25;
+
+  font-weight: 300;
+
+  color: #b5b5b5;
+}
+
+
+/* REPARTO */
+
+.cast {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 60px;
+
+  row-gap: 20px;
+}
+
+.cast div {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 25px;
+
+  font-weight: 300;
+
+  color: #aaa;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  padding-bottom: 12px;
+}
+
+
+/* PRODUCCIÓN */
+
+.production {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.production-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.production-item span {
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  color: #555;
+}
+
+.production-item strong {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 25px;
+
+  font-weight: 300;
+
+  color: #aaa;
+}
+
+
+/* NOTICIAS */
+
+.news-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.news-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 25px;
+
+  font-weight: 300;
+
+  color: #aaa;
+
+  transition: color 0.3s ease;
+}
+
+.news-item:hover {
+  color: #fff;
+}
+
+
+/* VOLVER */
+
+.film-back {
+  padding: 100px 40px;
+
+  text-align: center;
+}
+
+.film-back a {
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  color: #666;
+}
+
+.film-back a:hover {
+  color: #aaa;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -654,7 +902,7 @@ footer a:hover {
 
 @media (max-width: 650px) {
 
-  /* BARRA SUPERIOR */
+  /* BARRA */
 
   .topbar {
     height: 58px;
@@ -690,7 +938,7 @@ footer a:hover {
   }
 
 
-  /* PORTADA */
+  /* HERO */
 
   .hero {
     padding: 20px;
@@ -729,7 +977,7 @@ footer a:hover {
   }
 
 
-  /* DOS PROYECTOS POR FILA */
+  /* PROYECTOS: 2 POR FILA */
 
   .projects {
     grid-template-columns:
@@ -782,13 +1030,101 @@ footer a:hover {
   }
 
 
-  /* DOS FOTOS POR FILA */
+  /* FOTOS: 2 POR FILA */
 
   .photo-grid {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
     gap: 12px;
+  }
+
+
+  /* PÁGINA PELÍCULA */
+
+  .film-page {
+    padding-top: 58px;
+  }
+
+  .film-hero {
+    min-height: 70vh;
+
+    padding: 100px 20px 80px;
+  }
+
+  .film-type {
+    font-size: 8px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .film-hero h1 {
+    font-size: 14vw;
+
+    line-height: 0.95;
+  }
+
+  .film-role {
+    font-size: 9px;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  .film-section {
+    padding: 75px 20px;
+
+    display: block;
+  }
+
+  .film-section-title {
+    margin-bottom: 35px;
+  }
+
+  .film-section-title h2 {
+    font-size: 36px;
+  }
+
+  .film-description p {
+    font-size: 25px;
+  }
+
+
+  /* REPARTO */
+
+  .cast {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .cast div {
+    font-size: 22px;
+
+    padding-bottom: 9px;
+  }
+
+
+  /* PRODUCCIÓN */
+
+  .production-item strong {
+    font-size: 22px;
+  }
+
+
+  /* NOTICIAS */
+
+  .news-item {
+    font-size: 20px;
+
+    padding: 18px 0;
+  }
+
+
+  /* VOLVER */
+
+  .film-back {
+    padding: 80px 20px;
   }
 
 
