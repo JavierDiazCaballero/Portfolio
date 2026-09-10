@@ -553,35 +553,43 @@ footer a:hover {
 
 @media (max-width: 650px) {
 
-  .topbar {
-    height: 62px;
+  /* BARRA SUPERIOR */
 
-    padding: 0 18px;
+  .topbar {
+    height: 58px;
+    padding: 0 14px;
 
     grid-template-columns: 1fr auto 1fr;
   }
 
   .topbar-left {
-    gap: 18px;
+    gap: 14px;
+  }
+
+  .topbar-right {
+    justify-content: flex-end;
   }
 
   .topbar a {
-    font-size: 10px;
-    letter-spacing: 0.07em;
+    font-size: 9px;
+    letter-spacing: 0.05em;
   }
 
   .topbar-name {
-    font-size: 16px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.01em !important;
   }
+
+
+  /* PORTADA */
 
   .hero {
     padding: 20px;
   }
 
   .hero h1 {
-    font-size: clamp(42px, 11vw, 70px);
-
-    white-space: normal;
+    font-size: 11vw;
+    white-space: nowrap;
   }
 
   .hero-subtitle {
@@ -593,6 +601,9 @@ footer a:hover {
 
     line-height: 1.8;
   }
+
+
+  /* SECCIONES */
 
   #audiovisual,
   #fotografia {
@@ -607,28 +618,54 @@ footer a:hover {
     font-size: 38px;
   }
 
-  .projects {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
 
-  .photo-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  /* DOS PROYECTOS POR FILA */
+
+  .projects {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
   }
 
   .project-overlay {
     opacity: 1;
-    padding: 20px;
+    padding: 12px;
+  }
+
+  .project-type {
+    font-size: 8px;
+    margin-bottom: 5px;
   }
 
   .project h3 {
-    font-size: 24px;
+    font-size: 19px;
   }
+
+  .project-role {
+    font-size: 8px;
+    margin-top: 5px;
+  }
+
+
+  /* DOS FOTOS POR FILA */
+
+  .photo-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+
+  /* CONTACTO */
 
   .contact {
     padding: 100px 20px;
   }
+
+
+  /* FOOTER */
 
   footer {
     padding: 25px 20px;
@@ -636,6 +673,7 @@ footer a:hover {
     gap: 20px;
 
     flex-direction: column;
+
     align-items: flex-start;
   }
 
