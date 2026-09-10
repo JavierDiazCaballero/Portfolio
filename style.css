@@ -35,7 +35,6 @@ a {
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 100;
 
   height: 68px;
@@ -47,6 +46,7 @@ a {
   padding: 0 40px;
 
   background: rgba(8, 8, 8, 0.92);
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
@@ -126,10 +126,13 @@ a {
   margin: 0;
 
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(48px, 7vw, 110px);
+
   line-height: 0.95;
 
   font-weight: 300;
+
   letter-spacing: 0.015em;
 
   color: #e5e5e5;
@@ -150,6 +153,7 @@ a {
   margin-top: 34px;
 
   font-size: 17px;
+
   font-weight: 300;
 
   letter-spacing: 0.22em;
@@ -161,6 +165,7 @@ a {
   position: absolute;
 
   bottom: 35px;
+
   left: 0;
   right: 0;
 
@@ -169,7 +174,9 @@ a {
 
 .scroll {
   font-size: 11px;
+
   letter-spacing: 0.18em;
+
   color: #666;
 }
 
@@ -222,9 +229,11 @@ section {
   margin-top: 9px;
 
   font-size: 10px;
+
   font-weight: 300;
 
   text-transform: uppercase;
+
   letter-spacing: 0.2em;
 
   color: #555;
@@ -269,6 +278,7 @@ section {
 .project-thumbnail,
 .project-placeholder {
   position: absolute;
+
   inset: 0;
 }
 
@@ -291,46 +301,41 @@ section {
 
 .project:hover .project-thumbnail img {
   transform: scale(1.04);
+
   filter: brightness(0.72);
 }
 
 
 /* =========================
-   INFO PROYECTOS
+   INFORMACIÓN SIEMPRE VISIBLE
 ========================= */
 
-.project-overlay {
+.project-info {
   position: absolute;
-  inset: 0;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   padding: 25px;
 
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.85),
-      rgba(0, 0, 0, 0.05) 70%
+      rgba(0, 0, 0, 0.88),
+      rgba(0, 0, 0, 0.05)
     );
-
-  opacity: 0;
-
-  transition: opacity 0.4s ease;
-}
-
-.project:hover .project-overlay {
-  opacity: 1;
 }
 
 .project-type {
+  display: block;
+
   margin-bottom: 8px;
 
   font-size: 10px;
 
   text-transform: uppercase;
+
   letter-spacing: 0.16em;
 
   color: #999;
@@ -342,6 +347,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
 
   font-size: 27px;
+
   line-height: 1.05;
 
   font-weight: 300;
@@ -350,6 +356,8 @@ section {
 }
 
 .project-role {
+  display: block;
+
   margin-top: 9px;
 
   font-size: 11px;
@@ -357,6 +365,81 @@ section {
   letter-spacing: 0.08em;
 
   color: #aaa;
+}
+
+
+/* =========================
+   PRÓXIMAMENTE
+========================= */
+
+.upcoming {
+  padding: 150px 0 30px;
+
+  text-align: center;
+}
+
+.upcoming h2 {
+  margin: 0 0 60px;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(38px, 5vw, 60px);
+
+  font-weight: 300;
+
+  color: #777;
+
+  letter-spacing: 0.02em;
+}
+
+.upcoming-projects {
+  display: flex;
+
+  justify-content: center;
+}
+
+.upcoming-project {
+  max-width: 600px;
+
+  text-align: center;
+}
+
+.upcoming-type {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  color: #555;
+}
+
+.upcoming-project h3 {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 32px;
+
+  font-weight: 300;
+
+  color: #aaa;
+}
+
+.upcoming-role {
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+
+  color: #666;
 }
 
 
@@ -377,7 +460,9 @@ section {
   aspect-ratio: 4 / 3;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #111;
@@ -393,6 +478,7 @@ section {
 
 .photo-placeholder:hover {
   background: #151515;
+
   color: #888;
 }
 
@@ -407,7 +493,9 @@ section {
   padding: 130px 40px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 }
 
@@ -436,15 +524,19 @@ section {
 
 .video-modal {
   position: fixed;
+
   inset: 0;
 
   z-index: 200;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   opacity: 0;
+
   visibility: hidden;
 
   transition:
@@ -454,11 +546,13 @@ section {
 
 .video-modal.is-open {
   opacity: 1;
+
   visibility: visible;
 }
 
 .video-modal-backdrop {
   position: absolute;
+
   inset: 0;
 
   background: rgba(0, 0, 0, 0.94);
@@ -482,6 +576,7 @@ section {
 
 .video-frame iframe {
   width: 100%;
+
   height: 100%;
 
   border: 0;
@@ -491,14 +586,17 @@ section {
   position: absolute;
 
   top: -45px;
+
   right: 0;
 
   border: 0;
+
   background: transparent;
 
   color: #aaa;
 
   font-size: 32px;
+
   font-weight: 300;
 
   cursor: pointer;
@@ -517,12 +615,15 @@ footer {
   padding: 35px 40px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 
   font-size: 11px;
+
   letter-spacing: 0.08em;
 
   color: #555;
@@ -557,9 +658,11 @@ footer a:hover {
 
   .topbar {
     height: 58px;
+
     padding: 0 14px;
 
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns:
+      1fr auto 1fr;
   }
 
   .topbar-left {
@@ -572,11 +675,13 @@ footer a:hover {
 
   .topbar a {
     font-size: 9px;
+
     letter-spacing: 0.05em;
   }
 
   .topbar-name {
     font-size: 14px !important;
+
     letter-spacing: 0.01em !important;
   }
 
@@ -589,6 +694,7 @@ footer a:hover {
 
   .hero h1 {
     font-size: 11vw;
+
     white-space: nowrap;
   }
 
@@ -628,13 +734,13 @@ footer a:hover {
     gap: 12px;
   }
 
-  .project-overlay {
-    opacity: 1;
+  .project-info {
     padding: 12px;
   }
 
   .project-type {
     font-size: 8px;
+
     margin-bottom: 5px;
   }
 
@@ -644,7 +750,25 @@ footer a:hover {
 
   .project-role {
     font-size: 8px;
+
     margin-top: 5px;
+  }
+
+
+  /* PRÓXIMAMENTE */
+
+  .upcoming {
+    padding: 110px 0 20px;
+  }
+
+  .upcoming h2 {
+    margin-bottom: 45px;
+
+    font-size: 42px;
+  }
+
+  .upcoming-project h3 {
+    font-size: 26px;
   }
 
 
