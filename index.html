@@ -10,7 +10,6 @@
 
 <body>
 
-  <!-- BARRA SUPERIOR -->
   <header class="topbar" id="topbar">
 
     <nav class="topbar-left">
@@ -29,7 +28,6 @@
   </header>
 
 
-  <!-- HERO -->
   <section class="hero" id="inicio">
 
     <div class="hero-content">
@@ -45,9 +43,11 @@
     </div>
 
     <div class="hero-bottom">
+
       <a href="#audiovisual" class="scroll">
         Scroll ↓
       </a>
+
     </div>
 
   </section>
@@ -56,9 +56,7 @@
   <main>
 
 
-    <!-- =========================
-         AUDIOVISUAL
-    ========================== -->
+    <!-- AUDIOVISUAL -->
 
     <section id="audiovisual">
 
@@ -187,7 +185,7 @@
         </button>
 
 
-        <!-- LIVE SESSION KOMODO GARCÍA -->
+        <!-- KOMODO GARCÍA -->
 
         <button
           type="button"
@@ -248,24 +246,23 @@
 
         </a>
 
-
       </div>
 
 
-      <!-- =========================
-           PRÓXIMAMENTE
-      ========================== -->
+      <!-- PRÓXIMAMENTE -->
 
       <div class="upcoming">
 
-        <h2>Próximamente</h2>
+        <h2>
+          Próximamente
+        </h2>
 
         <div class="upcoming-projects">
 
-
-          <!-- QUIÉN MATÓ AL JEFE -->
-
-          <div class="upcoming-project">
+          <a
+            href="pelicula.html"
+            class="upcoming-project"
+          >
 
             <span class="upcoming-type">
               Largometraje
@@ -279,8 +276,7 @@
               Director · Editor
             </span>
 
-          </div>
-
+          </a>
 
         </div>
 
@@ -289,15 +285,15 @@
     </section>
 
 
-    <!-- =========================
-         FOTOGRAFÍA
-    ========================== -->
+    <!-- FOTOGRAFÍA -->
 
     <section id="fotografia">
 
       <div class="section-header">
 
-        <h2>Selección</h2>
+        <h2>
+          Selección
+        </h2>
 
         <span class="section-label">
           Fotografía
@@ -325,9 +321,7 @@
     </section>
 
 
-    <!-- =========================
-         CONTACTO
-    ========================== -->
+    <!-- CONTACTO -->
 
     <section
       class="contact"
@@ -336,7 +330,9 @@
 
       <div class="section-header">
 
-        <h2>Contacto</h2>
+        <h2>
+          Contacto
+        </h2>
 
       </div>
 
@@ -352,9 +348,7 @@
   </main>
 
 
-  <!-- =========================
-       MODAL VÍDEO
-  ========================== -->
+  <!-- MODAL -->
 
   <div
     class="video-modal"
@@ -399,9 +393,7 @@
   </div>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
+  <!-- FOOTER -->
 
   <footer>
 
@@ -415,10 +407,6 @@
 
   </footer>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
 
   <script>
 
@@ -453,10 +441,6 @@
 
     updateHeader();
 
-
-    /* =========================
-       VÍDEOS
-    ========================== */
 
     const modal =
       document.getElementById('video-modal');
