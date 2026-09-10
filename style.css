@@ -84,6 +84,7 @@ a {
   font-weight: 300;
   letter-spacing: 0.1em;
   color: #999;
+
   transition: color 0.3s ease;
 }
 
@@ -247,7 +248,7 @@ section {
   display: grid;
 
   grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    repeat(4, minmax(0, 1fr));
 
   gap: 26px;
 }
@@ -259,26 +260,27 @@ section {
 
   width: 100%;
 
-  aspect-ratio: 16 / 9;
-
   padding: 0;
 
   border: 0;
 
-  background: #111;
-
-  overflow: hidden;
+  background: transparent;
 
   cursor: pointer;
 
   text-align: left;
 }
 
-.project-thumbnail,
-.project-placeholder {
-  position: absolute;
+.project-thumbnail {
+  position: relative;
 
-  inset: 0;
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #111;
 }
 
 .project-thumbnail img {
@@ -294,27 +296,19 @@ section {
     filter 0.7s ease;
 }
 
-.project-placeholder {
-  background: #111;
-}
-
 .project:hover .project-thumbnail img {
-  transform: scale(1.04);
+  transform: scale(1.035);
 
-  filter: brightness(0.85);
+  filter: brightness(0.82);
 }
 
 
-/* INFORMACIÓN PROYECTOS */
+/* INFORMACIÓN DEBAJO */
 
 .project-info {
-  position: absolute;
+  position: relative;
 
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  padding: 25px;
+  padding: 16px 0 0;
 
   background: transparent;
 }
@@ -322,15 +316,15 @@ section {
 .project-type {
   display: block;
 
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 
-  font-size: 10px;
+  font-size: 9px;
 
   text-transform: uppercase;
 
   letter-spacing: 0.16em;
 
-  color: #999;
+  color: #666;
 }
 
 .project h3 {
@@ -338,25 +332,25 @@ section {
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 27px;
+  font-size: 25px;
 
   line-height: 1.05;
 
   font-weight: 300;
 
-  color: #eee;
+  color: #ddd;
 }
 
 .project-role {
   display: block;
 
-  margin-top: 9px;
+  margin-top: 8px;
 
-  font-size: 11px;
+  font-size: 10px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
 
-  color: #aaa;
+  color: #777;
 }
 
 
@@ -367,11 +361,11 @@ section {
 .upcoming {
   padding: 150px 0 30px;
 
-  text-align: center;
+  text-align: left;
 }
 
 .upcoming h2 {
-  margin: 0 0 60px;
+  margin: 0 0 50px;
 
   font-family: 'Cormorant Garamond', serif;
 
@@ -385,15 +379,17 @@ section {
 }
 
 .upcoming-projects {
-  display: flex;
+  width: 100vw;
 
-  justify-content: center;
+  margin-left: -40px;
+
+  display: block;
 }
 
 .upcoming-project {
-  width: min(1200px, 92vw);
-
   display: block;
+
+  width: 100%;
 
   text-align: left;
 }
@@ -403,16 +399,18 @@ section {
 
   width: 100%;
 
-  aspect-ratio: 16 / 5.5;
+  aspect-ratio: 16 / 5;
 
   overflow: hidden;
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
 
   background: #111;
 }
 
 .upcoming-image img {
+  position: absolute;
+
+  inset: 0;
+
   width: 100%;
   height: 100%;
 
@@ -421,102 +419,146 @@ section {
   display: block;
 
   transition:
-    transform 0.8s ease,
-    filter 0.6s ease;
+    transform 0.9s ease,
+    filter 0.7s ease;
 }
 
-.upcoming-overlay {
+
+/* INFORMACIÓN DENTRO DE LA IMAGEN */
+
+.upcoming-film-info {
   position: absolute;
 
-  inset: 0;
+  left: 5vw;
 
-  display: flex;
+  top: 50%;
 
-  align-items: center;
+  transform: translateY(-50%);
 
-  justify-content: flex-end;
+  z-index: 2;
 
-  gap: 12px;
-
-  padding: 50px;
-
-  background: rgba(0, 0, 0, 0);
-
-  color: #fff;
-
-  font-size: 13px;
-
-  letter-spacing: 0.08em;
-
-  opacity: 0;
-
-  transition:
-    opacity 0.4s ease,
-    background 0.4s ease;
-}
-
-.upcoming-arrow {
-  font-size: 25px;
-
-  transition: transform 0.4s ease;
-}
-
-.upcoming-project:hover .upcoming-image img {
-  transform: scale(1.03);
-
-  filter: brightness(0.65);
-}
-
-.upcoming-project:hover .upcoming-overlay {
-  opacity: 1;
-
-  background: rgba(0, 0, 0, 0.25);
-}
-
-.upcoming-project:hover .upcoming-arrow {
-  transform: translateX(6px);
-}
-
-.upcoming-info {
-  padding: 22px 2px 0;
+  text-align: left;
 }
 
 .upcoming-type {
   display: block;
 
-  margin-bottom: 9px;
+  margin-bottom: 15px;
 
   font-size: 10px;
 
   text-transform: uppercase;
 
-  letter-spacing: 0.18em;
+  letter-spacing: 0.24em;
 
-  color: #555;
+  color: #ddd;
 }
 
-.upcoming-project h3 {
+.upcoming-film-info h3 {
   margin: 0;
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 32px;
+  font-size: clamp(42px, 4vw, 66px);
+
+  line-height: 0.94;
 
   font-weight: 300;
 
-  color: #aaa;
+  color: #f0f0f0;
 }
 
 .upcoming-role {
   display: block;
 
-  margin-top: 10px;
+  margin-top: 22px;
 
   font-size: 11px;
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
 
-  color: #666;
+  color: #ccc;
+}
+
+
+/* CTA */
+
+.upcoming-cta {
+  position: absolute;
+
+  right: 7vw;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 13px;
+
+  color: #fff;
+
+  text-align: center;
+
+  opacity: 0.95;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.upcoming-circle {
+  width: 58px;
+
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: 50%;
+
+  font-size: 27px;
+
+  font-weight: 300;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+.upcoming-cta span {
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.18em;
+}
+
+.upcoming-project:hover .upcoming-image img {
+  transform: scale(1.035);
+
+  filter: brightness(0.68);
+}
+
+.upcoming-project:hover .upcoming-cta {
+  transform:
+    translateY(-50%)
+    translateX(5px);
+}
+
+.upcoming-project:hover .upcoming-circle {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 
@@ -735,8 +777,6 @@ footer a:hover {
 
 @media (max-width: 650px) {
 
-  /* BARRA */
-
   .topbar {
     height: 58px;
 
@@ -822,50 +862,23 @@ footer a:hover {
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
 
-    gap: 18px 12px;
+    gap: 22px 12px;
   }
 
   .project {
-    aspect-ratio: auto;
-
     overflow: visible;
 
     background: transparent;
   }
 
   .project-thumbnail {
-    position: relative;
-
-    inset: auto;
-
-    width: 100%;
-
     aspect-ratio: 16 / 9;
 
     overflow: hidden;
-
-    background: #111;
-  }
-
-  .project-thumbnail img {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
   }
 
   .project-info {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    bottom: auto;
-
     padding: 10px 2px 0;
-
-    background: transparent;
   }
 
   .project-type {
@@ -874,8 +887,6 @@ footer a:hover {
     margin-bottom: 4px;
 
     letter-spacing: 0.1em;
-
-    color: #666;
   }
 
   .project h3 {
@@ -909,45 +920,68 @@ footer a:hover {
     font-size: 42px;
   }
 
-  .upcoming-project {
-    width: calc(100% - 40px);
+  .upcoming-projects {
+    width: 100vw;
+
+    margin-left: -20px;
   }
 
   .upcoming-image {
     aspect-ratio: 16 / 8;
-
-    border-radius: 0;
   }
 
-  .upcoming-overlay {
-    padding: 20px;
+  .upcoming-film-info {
+    left: 24px;
 
-    font-size: 10px;
+    top: 50%;
 
-    opacity: 1;
-
-    justify-content: flex-end;
-
-    align-items: flex-end;
-
-    background:
-      linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.35),
-        transparent 45%
-      );
+    transform: translateY(-50%);
   }
 
-  .upcoming-arrow {
+  .upcoming-type {
+    margin-bottom: 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .upcoming-film-info h3 {
+    font-size: 10vw;
+
+    line-height: 0.95;
+  }
+
+  .upcoming-role {
+    margin-top: 15px;
+
+    font-size: 8px;
+  }
+
+  .upcoming-cta {
+    right: 20px;
+
+    top: auto;
+
+    bottom: 22px;
+
+    transform: none;
+
+    gap: 8px;
+  }
+
+  .upcoming-circle {
+    width: 42px;
+
+    height: 42px;
+
     font-size: 20px;
   }
 
-  .upcoming-info {
-    padding-top: 14px;
-  }
+  .upcoming-cta span {
+    font-size: 6px;
 
-  .upcoming-project h3 {
-    font-size: 26px;
+    letter-spacing: 0.13em;
   }
 
 
