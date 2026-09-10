@@ -84,7 +84,6 @@ a {
   font-weight: 300;
   letter-spacing: 0.1em;
   color: #999;
-
   transition: color 0.3s ease;
 }
 
@@ -108,10 +107,13 @@ a {
 
 .hero {
   min-height: 100svh;
+
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 40px;
 }
 
@@ -121,12 +123,19 @@ a {
 
 .hero h1 {
   margin: 0;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(48px, 7vw, 110px);
+
   line-height: 0.95;
+
   font-weight: 300;
+
   letter-spacing: 0.015em;
+
   color: #e5e5e5;
+
   white-space: nowrap;
 
   transition:
@@ -141,23 +150,32 @@ a {
 
 .hero-subtitle {
   margin-top: 34px;
+
   font-size: 17px;
+
   font-weight: 300;
+
   letter-spacing: 0.22em;
+
   color: #858585;
 }
 
 .hero-bottom {
   position: absolute;
+
   bottom: 35px;
+
   left: 0;
   right: 0;
+
   text-align: center;
 }
 
 .scroll {
   font-size: 11px;
+
   letter-spacing: 0.18em;
+
   color: #666;
 }
 
@@ -190,21 +208,33 @@ section {
 
 .section-header h2 {
   margin: 0;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(34px, 4vw, 52px);
+
   line-height: 1;
+
   font-weight: 300;
+
   letter-spacing: 0.02em;
+
   color: #9a9a9a;
 }
 
 .section-label {
   display: block;
+
   margin-top: 9px;
+
   font-size: 10px;
+
   font-weight: 300;
+
   text-transform: uppercase;
+
   letter-spacing: 0.2em;
+
   color: #555;
 }
 
@@ -215,33 +245,48 @@ section {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 26px;
 }
 
 .project {
   position: relative;
+
   display: block;
+
   width: 100%;
+
   aspect-ratio: 16 / 9;
+
   padding: 0;
+
   border: 0;
+
   background: #111;
+
   overflow: hidden;
+
   cursor: pointer;
+
   text-align: left;
 }
 
 .project-thumbnail,
 .project-placeholder {
   position: absolute;
+
   inset: 0;
 }
 
 .project-thumbnail img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
 
   transition:
@@ -255,14 +300,17 @@ section {
 
 .project:hover .project-thumbnail img {
   transform: scale(1.04);
+
   filter: brightness(0.72);
 }
 
 .project-info {
   position: absolute;
+
   left: 0;
   right: 0;
   bottom: 0;
+
   padding: 25px;
 
   background:
@@ -275,27 +323,41 @@ section {
 
 .project-type {
   display: block;
+
   margin-bottom: 8px;
+
   font-size: 10px;
+
   text-transform: uppercase;
+
   letter-spacing: 0.16em;
+
   color: #999;
 }
 
 .project h3 {
   margin: 0;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: 27px;
+
   line-height: 1.05;
+
   font-weight: 300;
+
   color: #eee;
 }
 
 .project-role {
   display: block;
+
   margin-top: 9px;
+
   font-size: 11px;
+
   letter-spacing: 0.08em;
+
   color: #aaa;
 }
 
@@ -306,50 +368,71 @@ section {
 
 .upcoming {
   padding: 150px 0 30px;
+
   text-align: center;
 }
 
 .upcoming h2 {
   margin: 0 0 60px;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(48px, 6vw, 76px);
+
   font-weight: 300;
+
   color: #777;
+
   letter-spacing: 0.02em;
 }
 
 .upcoming-projects {
   display: flex;
+
   justify-content: center;
 }
 
 .upcoming-project {
   max-width: 600px;
+
   text-align: center;
 }
 
 .upcoming-type {
   display: block;
+
   margin-bottom: 10px;
+
   font-size: 10px;
+
   text-transform: uppercase;
+
   letter-spacing: 0.18em;
+
   color: #555;
 }
 
 .upcoming-project h3 {
   margin: 0;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: 32px;
+
   font-weight: 300;
+
   color: #aaa;
 }
 
 .upcoming-role {
   display: block;
+
   margin-top: 10px;
+
   font-size: 11px;
+
   letter-spacing: 0.08em;
+
   color: #666;
 }
 
@@ -360,24 +443,36 @@ section {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 26px;
 }
 
 .photo-placeholder {
   aspect-ratio: 4 / 3;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   background: #111;
+
   color: #555;
+
   font-size: 11px;
+
   letter-spacing: 0.12em;
+
   text-transform: uppercase;
 }
 
 .photo-placeholder:hover {
   background: #151515;
+
   color: #888;
 }
 
@@ -388,10 +483,13 @@ section {
 
 .contact {
   min-height: 55vh;
+
   padding: 130px 40px;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
 }
 
@@ -399,8 +497,11 @@ section {
   width: fit-content;
 
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(28px, 4vw, 50px);
+
   font-weight: 300;
+
   color: #aaa;
 
   border-bottom: 1px solid #333;
@@ -417,14 +518,19 @@ section {
 
 .video-modal {
   position: fixed;
+
   inset: 0;
+
   z-index: 200;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   opacity: 0;
+
   visibility: hidden;
 
   transition:
@@ -434,43 +540,57 @@ section {
 
 .video-modal.is-open {
   opacity: 1;
+
   visibility: visible;
 }
 
 .video-modal-backdrop {
   position: absolute;
+
   inset: 0;
+
   background: rgba(0, 0, 0, 0.94);
 }
 
 .video-modal-content {
   position: relative;
+
   z-index: 1;
+
   width: min(1100px, 90vw);
 }
 
 .video-frame {
   width: 100%;
+
   aspect-ratio: 16 / 9;
+
   background: #000;
 }
 
 .video-frame iframe {
   width: 100%;
+
   height: 100%;
+
   border: 0;
 }
 
 .video-modal-close {
   position: absolute;
+
   top: -45px;
+
   right: 0;
 
   border: 0;
+
   background: transparent;
 
   color: #aaa;
+
   font-size: 32px;
+
   font-weight: 300;
 
   cursor: pointer;
@@ -489,9 +609,6 @@ section {
   padding-top: 68px;
 }
 
-
-/* HERO PELÍCULA */
-
 .film-hero {
   min-height: 78vh;
 
@@ -509,7 +626,9 @@ section {
   margin-bottom: 30px;
 
   font-size: 10px;
+
   text-transform: uppercase;
+
   letter-spacing: 0.22em;
 
   color: #666;
@@ -537,13 +656,11 @@ section {
   margin-top: 35px;
 
   font-size: 11px;
+
   letter-spacing: 0.16em;
 
   color: #777;
 }
-
-
-/* SECCIONES */
 
 .film-section {
   width: min(1200px, 86vw);
@@ -613,7 +730,8 @@ section {
 .cast {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   column-gap: 70px;
 
@@ -675,7 +793,7 @@ section {
 
 
 /* =========================
-   NOTICIAS — TARJETAS
+   NOTICIAS
 ========================= */
 
 .film-news-section {
@@ -685,7 +803,8 @@ section {
 .news-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
   gap: 20px;
 }
@@ -842,7 +961,8 @@ footer a:hover {
 @media (max-width: 900px) {
 
   .projects {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .film-hero h1 {
@@ -864,18 +984,21 @@ footer a:hover {
 
 @media (max-width: 650px) {
 
+  /* BARRA */
+
   .topbar {
     height: 58px;
 
     padding: 0 12px;
 
-    grid-template-columns: auto auto auto;
+    grid-template-columns:
+      1fr auto 1fr;
 
-    column-gap: 12px;
+    column-gap: 8px;
   }
 
   .topbar-left {
-    gap: 12px;
+    gap: 10px;
   }
 
   .topbar-right {
@@ -884,12 +1007,21 @@ footer a:hover {
 
   .topbar a {
     font-size: 8px;
-    letter-spacing: 0.04em;
+
+    letter-spacing: 0.03em;
   }
 
   .topbar-name {
-    font-size: 12px !important;
+    width: 90px;
+
+    font-size: 11px !important;
+
+    line-height: 0.95;
+
     letter-spacing: 0 !important;
+
+    white-space: normal;
+
     text-align: center;
   }
 
@@ -902,6 +1034,7 @@ footer a:hover {
 
   .hero h1 {
     font-size: 11vw;
+
     white-space: nowrap;
   }
 
@@ -935,35 +1068,81 @@ footer a:hover {
   /* PROYECTOS */
 
   .projects {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 18px 12px;
+  }
+
+  .project {
+    aspect-ratio: auto;
+
+    overflow: visible;
+
+    background: transparent;
+  }
+
+  .project-thumbnail {
+    position: relative;
+
+    inset: auto;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #111;
+  }
+
+  .project-thumbnail img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
   }
 
   .project-info {
-    padding: 9px;
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    padding: 10px 2px 0;
+
+    background: transparent;
   }
 
   .project-type {
     font-size: 6px;
 
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 
     letter-spacing: 0.1em;
+
+    color: #666;
   }
 
   .project h3 {
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.05;
+
+    color: #ccc;
   }
 
   .project-role {
-    font-size: 6px;
+    font-size: 7px;
 
-    margin-top: 4px;
+    margin-top: 5px;
 
     letter-spacing: 0.04em;
+
+    color: #777;
   }
 
 
@@ -987,7 +1166,8 @@ footer a:hover {
   /* FOTOGRAFÍA */
 
   .photo-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
     gap: 12px;
   }
@@ -1002,13 +1182,13 @@ footer a:hover {
   }
 
   .film-hero {
-    min-height: 70vh;
+    min-height: 48vh;
 
-    padding: 100px 24px 80px;
+    padding: 75px 24px 55px;
   }
 
   .film-type {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 
     font-size: 8px;
 
@@ -1016,7 +1196,7 @@ footer a:hover {
   }
 
   .film-hero h1 {
-    font-size: 15vw;
+    font-size: 13vw;
 
     line-height: 0.94;
 
@@ -1024,7 +1204,7 @@ footer a:hover {
   }
 
   .film-role {
-    margin-top: 28px;
+    margin-top: 24px;
 
     font-size: 9px;
   }
@@ -1033,13 +1213,13 @@ footer a:hover {
   .film-section {
     width: calc(100% - 40px);
 
-    padding: 80px 0;
+    padding: 75px 0;
 
     display: block;
   }
 
   .film-section-title {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   .film-section-title h2 {
