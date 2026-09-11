@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap');
 
+
 * {
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   margin: 0;
@@ -16,9 +19,11 @@ body {
   font-weight: 300;
 }
 
+
 body.modal-open {
   overflow: hidden;
 }
+
 
 a {
   color: inherit;
@@ -36,6 +41,7 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
+
   height: 68px;
 
   display: grid;
@@ -49,7 +55,7 @@ a {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 
   opacity: 0;
   transform: translateY(-100%);
@@ -59,10 +65,12 @@ a {
     transform 0.45s ease;
 }
 
+
 .topbar.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 .topbar-left,
 .topbar-right {
@@ -70,13 +78,16 @@ a {
   align-items: center;
 }
 
+
 .topbar-left {
   gap: 42px;
 }
 
+
 .topbar-right {
   justify-content: flex-end;
 }
+
 
 .topbar a {
   font-size: 12px;
@@ -85,9 +96,11 @@ a {
   transition: color 0.3s ease;
 }
 
+
 .topbar a:hover {
   color: #fff;
 }
+
 
 .topbar-name {
   font-family: 'Cormorant Garamond', serif !important;
@@ -115,9 +128,11 @@ a {
   padding: 40px;
 }
 
+
 .hero-content {
   text-align: center;
 }
+
 
 .hero h1 {
   margin: 0;
@@ -141,10 +156,12 @@ a {
     opacity 0.5s ease;
 }
 
+
 .hero h1.is-scrolled {
   transform: translateY(-45vh);
   opacity: 0;
 }
+
 
 .hero-subtitle {
   margin-top: 28px;
@@ -156,6 +173,7 @@ a {
   color: #858585;
 }
 
+
 .hero-bottom {
   position: absolute;
 
@@ -166,6 +184,7 @@ a {
 
   text-align: center;
 }
+
 
 .scroll {
   display: flex;
@@ -183,6 +202,7 @@ a {
   color: #777;
 }
 
+
 .scroll span {
   font-size: 18px;
 
@@ -198,6 +218,7 @@ a {
 #fotografia {
   padding: 110px 48px;
 }
+
 
 section {
   scroll-margin-top: 90px;
@@ -219,6 +240,7 @@ section {
   margin-bottom: 42px;
 }
 
+
 .section-header h2,
 .upcoming-header h2 {
   margin: 0;
@@ -231,10 +253,11 @@ section {
 
   font-weight: 300;
 
-  color: #d0d0d0;
+  color: #aaa;
 
   letter-spacing: 0.01em;
 }
+
 
 .section-label {
   display: block;
@@ -249,6 +272,7 @@ section {
 
   color: #777;
 }
+
 
 .section-line {
   width: 90px;
@@ -274,6 +298,7 @@ section {
   gap: 18px;
 }
 
+
 .project {
   display: block;
 
@@ -290,6 +315,7 @@ section {
   text-align: left;
 }
 
+
 .project-thumbnail {
   width: 100%;
 
@@ -299,6 +325,7 @@ section {
 
   background: #111;
 }
+
 
 .project-thumbnail img {
   width: 100%;
@@ -313,17 +340,20 @@ section {
     filter 0.7s ease;
 }
 
+
 .project:hover .project-thumbnail img {
   transform: scale(1.035);
 
   filter: brightness(0.84);
 }
 
+
 .project-info {
   padding: 13px 2px 0;
 
   background: transparent;
 }
+
 
 .project-type {
   display: block;
@@ -339,6 +369,7 @@ section {
   color: #777;
 }
 
+
 .project h3 {
   margin: 0;
 
@@ -352,6 +383,7 @@ section {
 
   color: #ddd;
 }
+
 
 .project-role {
   display: block;
@@ -374,13 +406,16 @@ section {
   padding: 125px 0 20px;
 }
 
+
 .upcoming-header {
   margin-bottom: 35px;
 }
 
+
 .upcoming-header h2 {
   color: #aaa;
 }
+
 
 .upcoming-project {
   display: block;
@@ -389,6 +424,7 @@ section {
 
   margin-left: -48px;
 }
+
 
 .upcoming-image {
   position: relative;
@@ -401,6 +437,7 @@ section {
 
   background: #111;
 }
+
 
 .upcoming-image::after {
   content: "";
@@ -422,6 +459,7 @@ section {
   z-index: 1;
 }
 
+
 .upcoming-image img {
   position: absolute;
 
@@ -439,6 +477,7 @@ section {
     filter 0.7s ease;
 }
 
+
 .upcoming-film-info {
   position: absolute;
 
@@ -452,6 +491,7 @@ section {
 
   text-align: left;
 }
+
 
 .upcoming-type {
   display: block;
@@ -467,6 +507,7 @@ section {
   color: #e1e1e1;
 }
 
+
 .upcoming-film-info h3 {
   margin: 0;
 
@@ -481,6 +522,7 @@ section {
   color: #f2f2f2;
 }
 
+
 .upcoming-role {
   display: block;
 
@@ -492,6 +534,7 @@ section {
 
   color: #ddd;
 }
+
 
 .upcoming-cta {
   position: absolute;
@@ -521,15 +564,14 @@ section {
     opacity 0.4s ease;
 }
 
+
 .upcoming-circle {
   width: 56px;
-
   height: 56px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   border: 1px solid rgba(255,255,255,0.9);
@@ -545,6 +587,7 @@ section {
     transform 0.4s ease;
 }
 
+
 .upcoming-cta span {
   font-size: 8px;
 
@@ -553,17 +596,20 @@ section {
   letter-spacing: 0.2em;
 }
 
+
 .upcoming-project:hover .upcoming-image img {
   transform: scale(1.035);
 
   filter: brightness(0.75);
 }
 
+
 .upcoming-project:hover .upcoming-cta {
   transform:
     translateY(-50%)
     translateX(6px);
 }
+
 
 .upcoming-project:hover .upcoming-circle {
   background: rgba(255,255,255,0.12);
@@ -585,6 +631,7 @@ section {
   gap: 18px;
 }
 
+
 .photo-placeholder {
   aspect-ratio: 4 / 3;
 
@@ -605,43 +652,9 @@ section {
   transition: background 0.3s ease;
 }
 
+
 .photo-placeholder:hover {
   background: #151515;
-}
-
-
-/* =========================
-   CONTACTO
-========================= */
-
-.contact {
-  min-height: 55vh;
-
-  padding: 120px 48px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-}
-
-.contact-link {
-  width: fit-content;
-
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: clamp(30px, 4vw, 52px);
-
-  font-weight: 300;
-
-  color: #aaa;
-
-  border-bottom: 1px solid #333;
-}
-
-.contact-link:hover {
-  color: #fff;
 }
 
 
@@ -659,7 +672,6 @@ section {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   opacity: 0;
@@ -671,11 +683,13 @@ section {
     visibility 0.3s ease;
 }
 
+
 .video-modal.is-open {
   opacity: 1;
 
   visibility: visible;
 }
+
 
 .video-modal-backdrop {
   position: absolute;
@@ -685,6 +699,7 @@ section {
   background: rgba(0,0,0,0.94);
 }
 
+
 .video-modal-content {
   position: relative;
 
@@ -692,6 +707,7 @@ section {
 
   width: min(1100px, 90vw);
 }
+
 
 .video-frame {
   width: 100%;
@@ -701,12 +717,14 @@ section {
   background: #000;
 }
 
+
 .video-frame iframe {
   width: 100%;
   height: 100%;
 
   border: 0;
 }
+
 
 .video-modal-close {
   position: absolute;
@@ -727,6 +745,249 @@ section {
 
 
 /* =========================
+   CONTACTO
+========================= */
+
+.contact-page {
+  min-height: calc(100svh - 80px);
+
+  padding: 150px 8vw 100px;
+}
+
+
+.contact-section {
+  max-width: 1050px;
+
+  margin: 0 auto;
+}
+
+
+.contact-intro {
+  margin-bottom: 80px;
+}
+
+
+.contact-label {
+  display: block;
+
+  margin-bottom: 28px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.3em;
+
+  text-transform: uppercase;
+
+  color: #777;
+}
+
+
+.contact-intro h1 {
+  margin: 0;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(55px, 7vw, 105px);
+
+  line-height: 0.9;
+
+  font-weight: 300;
+
+  color: #eee;
+}
+
+
+.contact-intro p {
+  margin: 28px 0 0;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 30px;
+
+  font-weight: 300;
+
+  color: #888;
+}
+
+
+.contact-form {
+  width: 100%;
+
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+
+
+.contact-field {
+  display: grid;
+
+  grid-template-columns: 180px 1fr;
+
+  align-items: center;
+
+  min-height: 75px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.contact-field label {
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2em;
+
+  color: #666;
+}
+
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+
+  padding: 22px 0;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: #ddd;
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 300;
+}
+
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #444;
+}
+
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  color: #fff;
+}
+
+
+.contact-message {
+  align-items: flex-start;
+}
+
+
+.contact-message label {
+  padding-top: 27px;
+}
+
+
+.contact-field textarea {
+  min-height: 150px;
+
+  resize: vertical;
+
+  line-height: 1.7;
+}
+
+
+.contact-submit {
+  margin-top: 35px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #aaa;
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.25em;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+
+.contact-submit span {
+  font-size: 20px;
+
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+
+.contact-submit:hover {
+  color: #fff;
+}
+
+
+.contact-submit:hover span {
+  transform: translateX(5px);
+}
+
+
+.contact-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 35px;
+
+  margin-top: 100px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.contact-socials a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #666;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  transition: color 0.3s ease;
+}
+
+
+.contact-socials a:hover {
+  color: #fff;
+}
+
+
+.contact-socials svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -736,6 +997,8 @@ footer {
   display: flex;
 
   justify-content: space-between;
+
+  align-items: center;
 
   border-top: 1px solid rgba(255,255,255,0.08);
 
@@ -747,6 +1010,39 @@ footer {
 }
 
 
+.footer-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+.footer-socials a {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #555;
+
+  transition: color 0.3s ease;
+}
+
+
+.footer-socials a:hover {
+  color: #fff;
+}
+
+
+.footer-socials svg {
+  width: 17px;
+  height: 17px;
+}
+
+
 /* =========================================================
    PÁGINA DE LA PELÍCULA
 ========================================================= */
@@ -754,6 +1050,7 @@ footer {
 .film-page-body {
   background: #080808;
 }
+
 
 .film-cover {
   position: relative;
@@ -769,6 +1066,7 @@ footer {
   background: #111;
 }
 
+
 .film-cover-image {
   position: absolute;
 
@@ -781,6 +1079,7 @@ footer {
 
   display: block;
 }
+
 
 .film-cover-overlay {
   position: absolute;
@@ -797,6 +1096,7 @@ footer {
 
   z-index: 1;
 }
+
 
 .film-cover-content {
   position: absolute;
@@ -817,6 +1117,7 @@ footer {
     60px;
 }
 
+
 .film-cover-type {
   margin-bottom: 18px;
 
@@ -828,6 +1129,7 @@ footer {
 
   color: #ddd;
 }
+
 
 .film-cover h1 {
   margin: 0;
@@ -846,6 +1148,7 @@ footer {
 
   color: #f0f0f0;
 }
+
 
 .film-cover-bottom {
   position: absolute;
@@ -870,15 +1173,14 @@ footer {
   color: #ccc;
 }
 
+
 .film-cover-scroll {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   width: 42px;
-
   height: 42px;
 
   border: 1px solid rgba(255,255,255,0.5);
@@ -905,6 +1207,7 @@ footer {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+
 .film-intro-label,
 .film-info-heading {
   display: flex;
@@ -922,10 +1225,12 @@ footer {
   letter-spacing: 0.2em;
 }
 
+
 .film-intro-label span:last-child,
 .film-info-heading h2 {
   font-family: 'Cormorant Garamond', serif;
 }
+
 
 .film-intro-label span:last-child {
   font-size: 22px;
@@ -939,9 +1244,11 @@ footer {
   letter-spacing: 0;
 }
 
+
 .film-intro-content {
   max-width: 850px;
 }
+
 
 .film-lead {
   margin: 0 0 42px;
@@ -957,6 +1264,7 @@ footer {
   color: #ddd;
 }
 
+
 .film-description {
   width: 100%;
 
@@ -964,6 +1272,7 @@ footer {
 
   margin: 0;
 }
+
 
 .film-description p {
   margin: 0 0 25px;
@@ -978,6 +1287,7 @@ footer {
 
   text-justify: inter-word;
 }
+
 
 .film-description p:last-child {
   margin-bottom: 0;
@@ -1000,9 +1310,11 @@ footer {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+
 .film-info-heading {
   align-items: flex-start;
 }
+
 
 .film-info-heading > span {
   font-size: 11px;
@@ -1011,6 +1323,7 @@ footer {
 
   line-height: 1;
 }
+
 
 .film-info-heading h2 {
   margin: 0;
@@ -1042,6 +1355,7 @@ footer {
   column-gap: 80px;
 }
 
+
 .film-cast-name {
   padding: 20px 0;
 
@@ -1070,6 +1384,7 @@ footer {
   gap: 50px;
 }
 
+
 .film-production-item {
   display: flex;
 
@@ -1077,6 +1392,7 @@ footer {
 
   gap: 15px;
 }
+
 
 .film-production-item span {
   font-size: 8px;
@@ -1087,6 +1403,7 @@ footer {
 
   color: #666;
 }
+
 
 .film-production-item strong {
   font-family: 'Cormorant Garamond', serif;
@@ -1111,9 +1428,11 @@ footer {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+
 .film-news-section .film-info-heading {
   margin-bottom: 55px;
 }
+
 
 .film-news-grid {
   display: grid;
@@ -1123,6 +1442,7 @@ footer {
 
   gap: 18px;
 }
+
 
 .film-news-card {
   min-height: 260px;
@@ -1143,6 +1463,7 @@ footer {
     transform 0.4s ease;
 }
 
+
 .film-news-card:hover {
   background: #111;
 
@@ -1150,6 +1471,7 @@ footer {
 
   transform: translateY(-5px);
 }
+
 
 .film-news-card-top {
   display: flex;
@@ -1165,18 +1487,20 @@ footer {
   color: #666;
 }
 
+
 .film-news-arrow {
   font-size: 15px;
 
   color: #aaa;
 }
 
+
 .film-news-card h3 {
   margin: auto 0 12px;
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 25px;
+  font-size: 30px;
 
   line-height: 1.05;
 
@@ -1184,6 +1508,7 @@ footer {
 
   color: #ddd;
 }
+
 
 .film-news-card p {
   margin: 0 0 20px;
@@ -1194,6 +1519,7 @@ footer {
 
   color: #777;
 }
+
 
 .film-news-read {
   padding-top: 14px;
@@ -1218,6 +1544,7 @@ footer {
   padding: 65px 8vw;
 }
 
+
 .film-back a {
   display: inline-flex;
 
@@ -1236,9 +1563,11 @@ footer {
   transition: color 0.3s ease;
 }
 
+
 .film-back a:hover {
   color: #fff;
 }
+
 
 .film-back-arrow {
   font-size: 18px;
@@ -1256,6 +1585,7 @@ footer {
       repeat(2, minmax(0, 1fr));
   }
 
+
   .film-intro,
   .film-info-section {
     grid-template-columns: 1fr;
@@ -1263,9 +1593,11 @@ footer {
     gap: 50px;
   }
 
+
   .film-cast-grid {
     column-gap: 35px;
   }
+
 
   .film-news-grid {
     grid-template-columns:
@@ -1292,19 +1624,23 @@ footer {
     column-gap: 8px;
   }
 
+
   .topbar-left {
     gap: 10px;
   }
 
+
   .topbar-right {
     justify-content: flex-end;
   }
+
 
   .topbar a {
     font-size: 8px;
 
     letter-spacing: 0.03em;
   }
+
 
   .topbar-name {
     width: auto;
@@ -1327,6 +1663,7 @@ footer {
     padding: 20px;
   }
 
+
   .hero h1 {
     width: 100%;
 
@@ -1340,6 +1677,7 @@ footer {
 
     white-space: normal;
   }
+
 
   .hero-subtitle {
     margin-top: 28px;
@@ -1359,12 +1697,14 @@ footer {
     padding: 90px 20px;
   }
 
+
   .section-header,
   .upcoming-header {
     gap: 18px;
 
     margin-bottom: 30px;
   }
+
 
   .section-header h2,
   .upcoming-header h2 {
@@ -1381,13 +1721,16 @@ footer {
     gap: 24px 12px;
   }
 
+
   .project-thumbnail {
     aspect-ratio: 16 / 9;
   }
 
+
   .project-info {
     padding: 9px 1px 0;
   }
+
 
   .project-type {
     font-size: 6px;
@@ -1397,9 +1740,11 @@ footer {
     letter-spacing: 0.12em;
   }
 
+
   .project h3 {
     font-size: 16px;
   }
+
 
   .project-role {
     margin-top: 5px;
@@ -1416,25 +1761,30 @@ footer {
     padding: 105px 0 15px;
   }
 
+
   .upcoming-project {
     width: 100vw;
 
     margin-left: -20px;
   }
 
+
   .upcoming-image {
     aspect-ratio: 16 / 8;
   }
 
+
   .upcoming-film-info {
     left: 24px;
   }
+
 
   .upcoming-film-info h3 {
     font-size: 8.5vw;
 
     max-width: 70%;
   }
+
 
   .upcoming-cta {
     right: 18px;
@@ -1446,13 +1796,14 @@ footer {
     transform: none;
   }
 
+
   .upcoming-circle {
     width: 42px;
-
     height: 42px;
 
     font-size: 19px;
   }
+
 
   .upcoming-cta span {
     font-size: 5px;
@@ -1468,20 +1819,104 @@ footer {
 
   /* CONTACTO */
 
-  .contact {
-    padding: 90px 20px;
+  .contact-page {
+    padding: 120px 24px 80px;
   }
 
 
-  /* =========================
-     PELÍCULA — MÓVIL
-  ========================= */
+  .contact-intro {
+    margin-bottom: 55px;
+  }
+
+
+  .contact-label {
+    margin-bottom: 22px;
+
+    font-size: 7px;
+  }
+
+
+  .contact-intro h1 {
+    font-size: 15vw;
+
+    line-height: 0.9;
+  }
+
+
+  .contact-intro p {
+    margin-top: 22px;
+
+    font-size: 24px;
+  }
+
+
+  .contact-field {
+    display: block;
+
+    min-height: auto;
+
+    padding: 18px 0;
+  }
+
+
+  .contact-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 7px;
+  }
+
+
+  .contact-field input,
+  .contact-field textarea {
+    padding: 7px 0;
+
+    font-size: 13px;
+  }
+
+
+  .contact-message label {
+    padding-top: 0;
+  }
+
+
+  .contact-field textarea {
+    min-height: 130px;
+  }
+
+
+  .contact-submit {
+    margin-top: 28px;
+  }
+
+
+  .contact-socials {
+    margin-top: 75px;
+
+    gap: 25px;
+  }
+
+
+  .contact-socials a {
+    font-size: 7px;
+  }
+
+
+  .contact-socials svg {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  /* PELÍCULA */
 
   .film-cover {
     height: 78svh;
 
     min-height: 560px;
   }
+
 
   .film-cover-content {
     padding:
@@ -1490,17 +1925,20 @@ footer {
       40px;
   }
 
+
   .film-cover-type {
     margin-bottom: 16px;
 
     font-size: 7px;
   }
 
+
   .film-cover h1 {
     font-size: 13vw;
 
     line-height: 0.88;
   }
+
 
   .film-cover-bottom {
     left: 24px;
@@ -1518,13 +1956,16 @@ footer {
     padding: 90px 24px;
   }
 
+
   .film-intro-label {
     margin-bottom: 45px;
   }
 
+
   .film-intro-label span:last-child {
     font-size: 22px;
   }
+
 
   .film-lead {
     margin-bottom: 38px;
@@ -1532,9 +1973,11 @@ footer {
     font-size: 32px;
   }
 
+
   .film-description {
     margin: 0;
   }
+
 
   .film-description p {
     font-size: 13px;
@@ -1553,17 +1996,20 @@ footer {
     padding: 80px 24px;
   }
 
+
   .film-info-heading {
     margin-bottom: 45px;
 
     gap: 14px;
   }
 
+
   .film-info-heading > span {
     font-size: 9px;
 
     color: #666;
   }
+
 
   .film-info-heading h2 {
     font-size: 18px;
@@ -1585,6 +2031,7 @@ footer {
 
     column-gap: 0;
   }
+
 
   .film-cast-name {
     padding: 17px 0;
@@ -1608,9 +2055,11 @@ footer {
     padding: 80px 24px 100px;
   }
 
+
   .film-news-section .film-info-heading {
     margin-bottom: 40px;
   }
+
 
   .film-news-grid {
     grid-template-columns: 1fr;
@@ -1618,19 +2067,23 @@ footer {
     gap: 12px;
   }
 
+
   .film-news-card {
     min-height: 230px;
 
     padding: 21px;
   }
 
+
   .film-news-card-top {
     font-size: 6px;
   }
 
+
   .film-news-arrow {
     font-size: 13px;
   }
+
 
   .film-news-card h3 {
     font-size: 22px;
@@ -1640,11 +2093,13 @@ footer {
     margin: auto 0 10px;
   }
 
+
   .film-news-card p {
     font-size: 8px;
 
     margin-bottom: 17px;
   }
+
 
   .film-news-read {
     font-size: 6px;
