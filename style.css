@@ -231,7 +231,7 @@ section {
 
   font-weight: 300;
 
-  color: #d0d0d0;
+  color: #aaa;
 
   letter-spacing: 0.01em;
 }
@@ -257,7 +257,7 @@ section {
 
   background: #888;
 
-  margin-top: 8px;
+  margin-top: 13px;
 }
 
 
@@ -2226,11 +2226,11 @@ footer {
     width: 90px;
     height: 1px;
     background: #888;
-    margin-top: 8px;
+    margin-top: 11px;
   }
 
   .upcoming-header .section-line {
-    margin-top: 8px;
+    margin-top: 11px;
   }
 
 
@@ -2266,58 +2266,5 @@ footer {
     color: #888;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-  }
-}
-
-
-/* =========================================================
-   PROYECTOS / SELECCIÓN / PRÓXIMAMENTE
-   IGUALADOS EXACTAMENTE EN ESCRITORIO Y MÓVIL
-   ========================================================= */
-
-.section-header,
-.upcoming-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: 30px !important;
-}
-
-.section-header h2,
-.upcoming-header h2 {
-  margin: 0 !important;
-  font-family: 'Cormorant Garamond', serif !important;
-  font-size: clamp(38px, 4vw, 50px) !important;
-  line-height: 1 !important;
-  font-weight: 300 !important;
-  color: #aaa !important;
-  letter-spacing: 0.01em !important;
-}
-
-.section-header .section-line,
-.upcoming-header .section-line {
-  width: 90px !important;
-  height: 1px !important;
-  background: #888 !important;
-  margin-top: 13px !important;
-}
-
-@media (max-width: 650px) {
-  .section-header,
-  .upcoming-header {
-    gap: 18px !important;
-    margin-bottom: 30px !important;
-  }
-
-  .section-header h2,
-  .upcoming-header h2 {
-    font-size: 38px !important;
-  }
-
-  .section-header .section-line,
-  .upcoming-header .section-line {
-    width: 90px !important;
-    height: 1px !important;
-    background: #888 !important;
-    margin-top: 11px !important;
   }
 }
