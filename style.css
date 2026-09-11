@@ -2284,3 +2284,24 @@ footer {
     margin-top: 13px !important;
   }
 }
+
+
+/* =========================================================
+   AJUSTE FINAL — LÍNEAS IGUALES A PRÓXIMAMENTE
+   ========================================================= */
+
+.section-header .section-line,
+.upcoming-header .section-line {
+  position: relative !important;
+  top: 0 !important;
+  margin-top: 13px !important;
+}
+
+@media (max-width: 650px) {
+  .section-header .section-line,
+  .upcoming-header .section-line {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 11px !important;
+  }
+}
