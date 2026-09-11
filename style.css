@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -36,6 +36,7 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
+
   height: 68px;
 
   display: grid;
@@ -49,10 +50,10 @@ a {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
 
-  opacity: 0;
-  transform: translateY(-100%);
+  opacity: 1;
+  transform: translateY(0);
 
   transition:
     opacity 0.45s ease,
@@ -105,7 +106,6 @@ a {
 
 .hero {
   min-height: 100svh;
-
   position: relative;
 
   display: flex;
@@ -125,9 +125,7 @@ a {
   font-family: 'Cormorant Garamond', serif;
 
   font-size: clamp(48px, 7vw, 108px);
-
   line-height: 0.95;
-
   font-weight: 300;
 
   letter-spacing: 0.02em;
@@ -150,7 +148,6 @@ a {
   margin-top: 28px;
 
   font-size: 13px;
-
   letter-spacing: 0.36em;
 
   color: #858585;
@@ -201,15 +198,12 @@ a {
 
 .scroll {
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   gap: 12px;
 
   font-size: 9px;
-
   letter-spacing: 0.25em;
 
   color: #777;
@@ -217,7 +211,6 @@ a {
 
 .scroll span {
   font-size: 18px;
-
   line-height: 1;
 }
 
@@ -243,12 +236,16 @@ section {
 .section-header,
 .upcoming-header {
   display: flex;
-
   align-items: center;
 
   gap: 30px;
 
   margin-bottom: 42px;
+}
+
+.section-header > div:first-child,
+.upcoming-header > h2 {
+  flex-shrink: 0;
 }
 
 .section-header h2,
@@ -258,7 +255,6 @@ section {
   font-family: 'Cormorant Garamond', serif;
 
   font-size: clamp(38px, 4vw, 50px);
-
   line-height: 1;
 
   font-weight: 300;
@@ -276,7 +272,6 @@ section {
   font-size: 9px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.27em;
 
   color: #777;
@@ -284,14 +279,13 @@ section {
 
 .section-line {
   width: 90px;
-
   height: 1px;
 
   background: #888;
 
-  margin-top: 0;
+  margin: 0;
 
-  transform: translateY(0);
+  flex-shrink: 0;
 }
 
 
@@ -355,8 +349,6 @@ section {
 
 .project-info {
   padding: 13px 2px 0;
-
-  background: transparent;
 }
 
 .project-type {
@@ -367,7 +359,6 @@ section {
   font-size: 8px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.25em;
 
   color: #777;
@@ -379,7 +370,6 @@ section {
   font-family: 'Cormorant Garamond', serif;
 
   font-size: 23px;
-
   line-height: 1.05;
 
   font-weight: 300;
@@ -393,7 +383,6 @@ section {
   margin-top: 9px;
 
   font-size: 9px;
-
   letter-spacing: 0.11em;
 
   color: #777;
@@ -414,6 +403,10 @@ section {
 
 .upcoming-header h2 {
   color: #aaa;
+}
+
+.upcoming-header .section-line {
+  transform: translateY(3px);
 }
 
 .upcoming-project {
@@ -477,7 +470,6 @@ section {
   position: absolute;
 
   left: 5vw;
-
   top: 50%;
 
   z-index: 2;
@@ -495,7 +487,6 @@ section {
   font-size: 9px;
 
   text-transform: uppercase;
-
   letter-spacing: 0.3em;
 
   color: #e1e1e1;
@@ -521,7 +512,6 @@ section {
   margin-top: 21px;
 
   font-size: 10px;
-
   letter-spacing: 0.15em;
 
   color: #ddd;
@@ -531,7 +521,6 @@ section {
   position: absolute;
 
   right: 7vw;
-
   top: 50%;
 
   z-index: 3;
@@ -539,9 +528,7 @@ section {
   transform: translateY(-50%);
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
 
   gap: 12px;
@@ -557,13 +544,10 @@ section {
 
 .upcoming-circle {
   width: 56px;
-
   height: 56px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   border: 1px solid rgba(255,255,255,0.9);
@@ -571,7 +555,6 @@ section {
   border-radius: 50%;
 
   font-size: 26px;
-
   font-weight: 300;
 
   transition:
@@ -623,7 +606,6 @@ section {
   aspect-ratio: 4 / 3;
 
   display: flex;
-
   align-items: flex-end;
 
   padding: 16px;
@@ -654,9 +636,7 @@ section {
   padding: 120px 48px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
@@ -693,11 +673,9 @@ section {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   opacity: 0;
-
   visibility: hidden;
 
   transition:
@@ -707,7 +685,6 @@ section {
 
 .video-modal.is-open {
   opacity: 1;
-
   visibility: visible;
 }
 
@@ -768,7 +745,7 @@ footer {
   padding: 32px 48px;
 
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
 
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -782,18 +759,16 @@ footer {
 
 .footer-socials {
   display: flex;
-
   align-items: center;
 
-  gap: 22px;
+  gap: 28px;
 }
 
 .footer-socials a {
   display: flex;
-
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
   color: #555;
 
@@ -809,8 +784,8 @@ footer {
 }
 
 .footer-socials svg {
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
 }
 
 
@@ -960,7 +935,7 @@ footer {
 
 
 /* =========================
-   INTRODUCCIÓN
+   FILM INTRO
 ========================= */
 
 .film-intro {
@@ -1035,7 +1010,7 @@ footer {
 
 
 /* =========================
-   INFORMACIÓN
+   FILM INFO
 ========================= */
 
 .film-info-section {
@@ -1086,7 +1061,7 @@ footer {
 
 
 /* =========================
-   REPARTO
+   CAST
 ========================= */
 
 .film-cast-grid {
@@ -1223,7 +1198,7 @@ footer {
 
   font-family: 'Cormorant Garamond', serif;
 
-  font-size: 25px;
+  font-size: 30px;
 
   line-height: 1.05;
 
@@ -1292,456 +1267,8 @@ footer {
 }
 
 
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 900px) {
-
-  .projects {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  .film-intro,
-  .film-info-section {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .film-cast-grid {
-    column-gap: 35px;
-  }
-
-  .film-news-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* =========================
-   MÓVIL
-========================= */
-
-@media (max-width: 650px) {
-
-  .topbar {
-    height: 58px;
-
-    padding: 0 12px;
-
-    grid-template-columns:
-      auto 1fr auto;
-
-    column-gap: 8px;
-  }
-
-  .topbar-left {
-    gap: 10px;
-  }
-
-  .topbar-right {
-    justify-content: flex-end;
-  }
-
-  .topbar a {
-    font-size: 8px;
-
-    letter-spacing: 0.03em;
-  }
-
-  .topbar-name {
-    width: auto;
-
-    font-size: 9px !important;
-
-    line-height: 1;
-
-    letter-spacing: 0.02em !important;
-
-    white-space: nowrap;
-
-    text-align: center;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    padding: 20px;
-  }
-
-  .hero h1 {
-    width: 100%;
-
-    max-width: 300px;
-
-    margin: 0 auto;
-
-    font-size: 13vw;
-
-    line-height: 0.86;
-
-    white-space: normal;
-  }
-
-  .hero-subtitle {
-    margin-top: 28px;
-
-    font-size: 9px;
-
-    line-height: 1.8;
-
-    letter-spacing: 0.19em;
-  }
-
-  .hero-socials {
-    gap: 14px;
-
-    margin-top: 24px;
-  }
-
-  .hero-socials a {
-    width: 15px;
-    height: 15px;
-  }
-
-  .hero-socials svg {
-    width: 13px;
-    height: 13px;
-  }
-
-
-  /* SECCIONES */
-
-  #audiovisual,
-  #fotografia {
-    padding: 90px 20px;
-  }
-
-  .section-header,
-  .upcoming-header {
-    gap: 18px;
-
-    margin-bottom: 30px;
-  }
-
-  .section-header h2,
-  .upcoming-header h2 {
-    font-size: 38px;
-  }
-
-  .section-line {
-    margin-top: 0;
-  }
-
-
-  /* PROYECTOS */
-
-  .projects {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 24px 12px;
-  }
-
-  .project-thumbnail {
-    aspect-ratio: 16 / 9;
-  }
-
-  .project-info {
-    padding: 9px 1px 0;
-  }
-
-  .project-type {
-    font-size: 6px;
-
-    margin-bottom: 5px;
-
-    letter-spacing: 0.12em;
-  }
-
-  .project h3 {
-    font-size: 16px;
-  }
-
-  .project-role {
-    margin-top: 5px;
-
-    font-size: 6px;
-
-    letter-spacing: 0.03em;
-  }
-
-
-  /* PRÓXIMAMENTE */
-
-  .upcoming {
-    padding: 105px 0 15px;
-  }
-
-  .upcoming-project {
-    width: 100vw;
-
-    margin-left: -20px;
-  }
-
-  .upcoming-image {
-    aspect-ratio: 16 / 8;
-  }
-
-  .upcoming-film-info {
-    left: 24px;
-  }
-
-  .upcoming-film-info h3 {
-    font-size: 8.5vw;
-
-    max-width: 70%;
-  }
-
-  .upcoming-cta {
-    right: 18px;
-
-    top: auto;
-
-    bottom: 18px;
-
-    transform: none;
-  }
-
-  .upcoming-circle {
-    width: 42px;
-
-    height: 42px;
-
-    font-size: 19px;
-  }
-
-  .upcoming-cta span {
-    font-size: 5px;
-  }
-
-
-  /* FOTOGRAFÍA */
-
-  .photo-grid {
-    gap: 12px;
-  }
-
-
-  /* CONTACTO */
-
-  .contact {
-    padding: 90px 20px;
-  }
-
-
-  /* =========================
-     PELÍCULA — MÓVIL
-  ========================= */
-
-  .film-cover {
-    height: 78svh;
-
-    min-height: 560px;
-  }
-
-  .film-cover-content {
-    padding:
-      115px
-      24px
-      40px;
-  }
-
-  .film-cover-type {
-    margin-bottom: 16px;
-
-    font-size: 7px;
-  }
-
-  .film-cover h1 {
-    font-size: 13vw;
-
-    line-height: 0.88;
-  }
-
-  .film-cover-bottom {
-    left: 24px;
-    right: 24px;
-
-    bottom: 25px;
-  }
-
-
-  /* INTRO */
-
-  .film-intro {
-    display: block;
-
-    padding: 90px 24px;
-  }
-
-  .film-intro-label {
-    margin-bottom: 45px;
-  }
-
-  .film-intro-label span:last-child {
-    font-size: 22px;
-  }
-
-  .film-lead {
-    margin-bottom: 38px;
-
-    font-size: 32px;
-  }
-
-  .film-description {
-    margin: 0;
-  }
-
-  .film-description p {
-    font-size: 13px;
-
-    line-height: 1.8;
-
-    text-align: justify;
-  }
-
-
-  /* INFO */
-
-  .film-info-section {
-    display: block;
-
-    padding: 80px 24px;
-  }
-
-  .film-info-heading {
-    margin-bottom: 45px;
-
-    gap: 14px;
-  }
-
-  .film-info-heading > span {
-    font-size: 9px;
-
-    color: #666;
-  }
-
-  .film-info-heading h2 {
-    font-size: 18px;
-
-    line-height: 1;
-
-    letter-spacing: 0.04em;
-
-    color: #888;
-
-    text-transform: uppercase;
-  }
-
-
-  /* REPARTO */
-
-  .film-cast-grid {
-    grid-template-columns: 1fr;
-
-    column-gap: 0;
-  }
-
-  .film-cast-name {
-    padding: 17px 0;
-
-    font-size: 25px;
-  }
-
-
-  /* PRODUCCIÓN */
-
-  .film-production-grid {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
-
-  /* NOTICIAS */
-
-  .film-news-section {
-    padding: 80px 24px 100px;
-  }
-
-  .film-news-section .film-info-heading {
-    margin-bottom: 40px;
-  }
-
-  .film-news-grid {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-  }
-
-  .film-news-card {
-    min-height: 230px;
-
-    padding: 21px;
-  }
-
-  .film-news-card-top {
-    font-size: 6px;
-  }
-
-  .film-news-arrow {
-    font-size: 13px;
-  }
-
-  .film-news-card h3 {
-    font-size: 22px;
-
-    line-height: 1.05;
-
-    margin: auto 0 10px;
-  }
-
-  .film-news-card p {
-    font-size: 8px;
-
-    margin-bottom: 17px;
-  }
-
-  .film-news-read {
-    font-size: 6px;
-  }
-
-
-  /* VOLVER */
-
-  .film-back {
-    padding: 55px 24px;
-  }
-
-
-  /* FOOTER */
-
-  footer {
-    padding: 25px 20px;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 18px;
-  }
-
-}
-
-
 /* =========================================================
-   CONTACTO — NUEVA VERSIÓN
+   CONTACTO — FORMULARIO
 ========================================================= */
 
 .contact-page {
@@ -1986,7 +1513,406 @@ footer {
   color: #fff;
 }
 
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .projects {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .film-intro,
+  .film-info-section {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .film-cast-grid {
+    column-gap: 35px;
+  }
+
+  .film-news-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
 @media (max-width: 650px) {
+
+  .topbar {
+    height: 58px;
+
+    padding: 0 12px;
+
+    grid-template-columns:
+      auto 1fr auto;
+
+    column-gap: 8px;
+  }
+
+  .topbar-left {
+    gap: 10px;
+  }
+
+  .topbar-right {
+    justify-content: flex-end;
+  }
+
+  .topbar a {
+    font-size: 8px;
+
+    letter-spacing: 0.03em;
+  }
+
+  .topbar-name {
+    font-size: 9px !important;
+
+    letter-spacing: 0.02em !important;
+
+    white-space: nowrap;
+
+    text-align: center;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    padding: 20px;
+  }
+
+  .hero h1 {
+    width: 100%;
+
+    max-width: 300px;
+
+    margin: 0 auto;
+
+    font-size: 13vw;
+
+    line-height: 0.86;
+
+    white-space: normal;
+  }
+
+  .hero-subtitle {
+    margin-top: 28px;
+
+    font-size: 9px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.15em;
+  }
+
+  .hero-socials {
+    gap: 14px;
+
+    margin-top: 26px;
+  }
+
+  .hero-socials a {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hero-socials svg {
+    width: 12px;
+    height: 12px;
+  }
+
+
+  /* SECCIONES */
+
+  #audiovisual,
+  #fotografia {
+    padding: 90px 20px;
+  }
+
+  .section-header,
+  .upcoming-header {
+    gap: 18px;
+
+    margin-bottom: 30px;
+  }
+
+  .section-header h2,
+  .upcoming-header h2 {
+    font-size: 38px;
+  }
+
+  .section-line {
+    width: 55px;
+
+    margin-top: 0;
+  }
+
+  .upcoming-header .section-line {
+    transform: translateY(5px);
+  }
+
+
+  /* PROYECTOS */
+
+  .projects {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 24px 12px;
+  }
+
+  .project-thumbnail {
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-info {
+    padding: 9px 1px 0;
+  }
+
+  .project-type {
+    font-size: 6px;
+
+    margin-bottom: 5px;
+
+    letter-spacing: 0.12em;
+  }
+
+  .project h3 {
+    font-size: 16px;
+  }
+
+  .project-role {
+    margin-top: 5px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.03em;
+  }
+
+
+  /* PRÓXIMAMENTE */
+
+  .upcoming {
+    padding: 105px 0 15px;
+  }
+
+  .upcoming-project {
+    width: 100vw;
+
+    margin-left: -20px;
+  }
+
+  .upcoming-image {
+    aspect-ratio: 16 / 8;
+  }
+
+  .upcoming-film-info {
+    left: 24px;
+  }
+
+  .upcoming-film-info h3 {
+    font-size: 8.5vw;
+
+    max-width: 70%;
+  }
+
+  .upcoming-cta {
+    right: 18px;
+
+    top: auto;
+
+    bottom: 18px;
+
+    transform: none;
+  }
+
+  .upcoming-circle {
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 19px;
+  }
+
+  .upcoming-cta span {
+    font-size: 5px;
+  }
+
+
+  /* FOTOGRAFÍA */
+
+  .photo-grid {
+    gap: 12px;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    padding: 25px 20px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-align: center;
+  }
+
+  .footer-socials {
+    gap: 20px;
+  }
+
+  .footer-socials a {
+    gap: 6px;
+
+    font-size: 8px;
+  }
+
+  .footer-socials svg {
+    width: 14px;
+    height: 14px;
+  }
+
+
+  /* =========================
+     PELÍCULA
+  ========================= */
+
+  .film-cover {
+    height: 78svh;
+
+    min-height: 560px;
+  }
+
+  .film-cover-content {
+    padding:
+      115px
+      24px
+      40px;
+  }
+
+  .film-cover-type {
+    margin-bottom: 16px;
+
+    font-size: 7px;
+  }
+
+  .film-cover h1 {
+    font-size: 13vw;
+
+    line-height: 0.88;
+  }
+
+  .film-cover-bottom {
+    left: 24px;
+    right: 24px;
+
+    bottom: 25px;
+  }
+
+  .film-intro {
+    display: block;
+
+    padding: 90px 24px;
+  }
+
+  .film-intro-label {
+    margin-bottom: 45px;
+  }
+
+  .film-intro-label span:last-child {
+    font-size: 22px;
+  }
+
+  .film-lead {
+    margin-bottom: 38px;
+
+    font-size: 32px;
+  }
+
+  .film-description p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    text-align: justify;
+  }
+
+  .film-info-section {
+    display: block;
+
+    padding: 80px 24px;
+  }
+
+  .film-info-heading {
+    margin-bottom: 45px;
+
+    gap: 14px;
+  }
+
+  .film-info-heading h2 {
+    font-size: 18px;
+  }
+
+  .film-cast-grid {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+  }
+
+  .film-cast-name {
+    padding: 17px 0;
+
+    font-size: 25px;
+  }
+
+  .film-production-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .film-news-section {
+    padding: 80px 24px 100px;
+  }
+
+  .film-news-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .film-news-card {
+    min-height: 230px;
+
+    padding: 21px;
+  }
+
+  .film-news-card h3 {
+    font-size: 22px;
+  }
+
+  .film-back {
+    padding: 55px 24px;
+  }
+
+
+  /* =========================
+     CONTACTO
+  ========================= */
 
   .contact-page {
     min-height: auto;
