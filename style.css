@@ -1673,38 +1673,536 @@ footer {
 }
 
 
-/* CABECERAS: PROYECTOS Y SELECCIÓN = PRÓXIMAMENTE */
-.section-header,
-.upcoming-header {
+/* =========================================================
+   AJUSTES FINALES
+========================================================= */
+
+/* TOPBAR */
+
+.topbar {
+  opacity: 1;
+  transform: translateY(0);
+  border-bottom: none;
+}
+
+.topbar-name {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.topbar.is-visible .topbar-name {
+  opacity: 1;
+}
+
+
+/* HERO */
+
+.hero h1 {
+  font-size: clamp(44px, 6.4vw, 98px);
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  letter-spacing: 0.32em;
+}
+
+.hero-socials {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 18px;
+  margin-top: 28px;
 }
 
-.section-header h2,
-.upcoming-header h2 {
-  margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
-  line-height: 1;
-  font-weight: 300;
-  color: #aaa;
-  letter-spacing: 0.01em;
+.hero-socials a {
+  display: inline-flex;
+  color: #777;
+  transition: color 0.3s ease;
 }
 
-.section-line {
-  width: 90px;
-  height: 1px;
-  background: #888;
-  margin-top: 8px;
+.hero-socials a:hover {
+  color: #fff;
 }
+
+.hero-socials svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+
+/* FOOTER */
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 8px;
+  letter-spacing: 0.05em;
+}
+
+.footer-socials svg {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+
+/* PRÓXIMAMENTE */
 
 .upcoming-header .section-line {
-  margin-top: 8px;
+  margin-top: 13px;
 }
 
-/* En móvil, exactamente el mismo formato */
+
+/* =========================================================
+   PÁGINA DE LA PELÍCULA — AJUSTES
+========================================================= */
+
+/* Número encima del título */
+
+.film-intro-label,
+.film-info-heading {
+  display: block;
+}
+
+.film-intro-label span:first-child,
+.film-info-heading > span {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  color: #666;
+}
+
+.film-intro-label span:last-child {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 300;
+  color: #888;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.film-info-heading h2 {
+  display: block;
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 300;
+  color: #888;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+/* Frase inicial más pequeña */
+
+.film-lead {
+  font-size: clamp(24px, 2.5vw, 36px);
+  line-height: 1.08;
+}
+
+
+/* REPARTO */
+
+.film-cast-grid {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.film-cast-name {
+  text-align: center;
+  color: #bbb;
+}
+
+
+/* PRODUCCIÓN */
+
+.film-production-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+}
+
+
+/* NOTICIAS */
+
+.film-news-section .film-info-heading {
+  margin-bottom: 78px;
+}
+
+.film-news-card p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PÁGINA DE CONTACTO
+========================================================= */
+
+.contact-page {
+  min-height: calc(100svh - 68px);
+  padding: 130px 8vw 80px;
+}
+
+.contact-section {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  column-gap: 9vw;
+  row-gap: 40px;
+  align-items: start;
+}
+
+.contact-intro {
+  padding-top: 4px;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.27em;
+  color: #777;
+}
+
+.contact-intro h1 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 4.2vw, 62px);
+  line-height: 0.95;
+  font-weight: 300;
+  color: #ddd;
+}
+
+.contact-intro p {
+  margin: 24px 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #777;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-field {
+  margin-bottom: 27px;
+}
+
+.contact-field label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #666;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  padding: 8px 0 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: #ccc;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  transition: border-color 0.3s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #444;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-bottom-color: #777;
+}
+
+.contact-field textarea {
+  min-height: 125px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.contact-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #aaa;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+
+.contact-submit span {
+  font-size: 17px;
+}
+
+.contact-submit:hover {
+  color: #fff;
+}
+
+.contact-socials {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 0;
+}
+
+.contact-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #666;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  transition: color 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: #fff;
+}
+
+.contact-socials svg {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+
+/* =========================================================
+   MÓVIL — AJUSTES FINALES
+========================================================= */
+
 @media (max-width: 650px) {
+
+  .topbar {
+    border-bottom: none;
+  }
+
+  .topbar-name {
+    opacity: 0;
+  }
+
+  .topbar.is-visible .topbar-name {
+    opacity: 1;
+  }
+
+  .hero h1 {
+    font-size: 12.5vw;
+  }
+
+  .hero-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.17em;
+  }
+
+  .hero-socials {
+    gap: 16px;
+    margin-top: 27px;
+  }
+
+  .hero-socials svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .footer-socials {
+    flex-direction: row;
+    gap: 14px;
+  }
+
+  .footer-socials a {
+    font-size: 8px;
+  }
+
+  .footer-socials svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .upcoming-header .section-line {
+    margin-top: 11px;
+  }
+
+  /* PELÍCULA */
+
+  .film-intro-label,
+  .film-info-heading {
+    display: block;
+  }
+
+  .film-intro-label span:first-child,
+  .film-info-heading > span {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .film-intro-label span:last-child,
+  .film-info-heading h2 {
+    font-size: 18px;
+  }
+
+  .film-lead {
+    font-size: 25px;
+    line-height: 1.08;
+  }
+
+  .film-cast-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .film-cast-name {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .film-production-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .film-news-section .film-info-heading {
+    margin-bottom: 55px;
+  }
+
+  .film-news-card p {
+    font-size: 9px;
+  }
+
+  /* CONTACTO */
+
+  .contact-page {
+    min-height: auto;
+    padding: 100px 24px 70px;
+  }
+
+  .contact-section {
+    display: block;
+    max-width: none;
+  }
+
+  .contact-intro {
+    margin-bottom: 65px;
+  }
+
+  .contact-label {
+    margin-bottom: 22px;
+    font-size: 8px;
+  }
+
+  .contact-intro h1 {
+    font-size: 42px;
+  }
+
+  .contact-intro p {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+
+  .contact-field {
+    margin-bottom: 25px;
+  }
+
+  .contact-field input,
+  .contact-field textarea {
+    font-size: 12px;
+  }
+
+  .contact-field textarea {
+    min-height: 110px;
+  }
+
+  .contact-socials {
+    margin-top: 45px;
+    gap: 20px;
+  }
+
+  .contact-socials a {
+    font-size: 8px;
+  }
+
+  .contact-socials svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* =========================================================
+   MÓVIL — CORRECCIÓN FINAL
+   Solo afecta a pantallas de hasta 650px.
+========================================================= */
+
+@media (max-width: 650px) {
+
+  /* TOPBAR
+     Los enlaces permanecen visibles desde el inicio.
+     El nombre central aparece únicamente al hacer scroll.
+     Sin línea inferior.
+  */
+
+  .topbar {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    border-bottom: none !important;
+  }
+
+  .topbar-name {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition:
+      opacity 0.45s ease,
+      visibility 0s linear 0.45s;
+  }
+
+  .topbar.is-visible .topbar-name {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition:
+      opacity 0.45s ease,
+      visibility 0s linear 0s;
+  }
+
+
+  /* PROYECTOS / SELECCIÓN / PRÓXIMAMENTE
+     Los tres encabezados tienen exactamente el mismo tratamiento.
+  */
+
   .section-header,
   .upcoming-header {
     display: flex;
@@ -1724,11 +2222,49 @@ footer {
     letter-spacing: 0.01em;
   }
 
-  .section-line,
-  .upcoming-header .section-line {
+  .section-line {
     width: 90px;
     height: 1px;
     background: #888;
     margin-top: 8px;
+  }
+
+  .upcoming-header .section-line {
+    margin-top: 8px;
+  }
+
+
+  /* PÁGINA DE LA PELÍCULA
+     Número arriba y título debajo.
+  */
+
+  .film-intro-label,
+  .film-info-heading {
+    display: block !important;
+  }
+
+  .film-intro-label span:first-child,
+  .film-info-heading > span {
+    display: block;
+    margin: 0 0 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    color: #666;
+  }
+
+  .film-intro-label span:last-child,
+  .film-info-heading h2 {
+    display: block;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 300;
+    color: #888;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 }
