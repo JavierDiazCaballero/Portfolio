@@ -2305,3 +2305,19 @@ footer {
     margin-top: 11px !important;
   }
 }
+
+
+/* =========================================================
+   CORRECCIÓN DEFINITIVA — PROYECTOS Y SELECCIÓN
+   La línea de PRÓXIMAMENTE es la referencia.
+   ========================================================= */
+
+.section-header .section-line {
+  transform: translateY(-11px) !important;
+}
+
+@media (max-width: 650px) {
+  .section-header .section-line {
+    transform: translateY(-11px) !important;
+  }
+}
