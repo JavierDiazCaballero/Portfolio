@@ -321,9 +321,6 @@ section {
   filter: brightness(0.84);
 }
 
-
-/* INFORMACIÓN SIEMPRE DEBAJO */
-
 .project-info {
   padding: 13px 2px 0;
 
@@ -387,9 +384,6 @@ section {
   color: #aaa;
 }
 
-
-/* BANNER A ANCHO COMPLETO */
-
 .upcoming-project {
   display: block;
 
@@ -447,9 +441,6 @@ section {
     filter 0.7s ease;
 }
 
-
-/* TEXTO SOBRE IMAGEN A LA IZQUIERDA */
-
 .upcoming-film-info {
   position: absolute;
 
@@ -503,9 +494,6 @@ section {
 
   color: #ddd;
 }
-
-
-/* CTA DERECHA */
 
 .upcoming-cta {
   position: absolute;
@@ -772,10 +760,6 @@ footer {
       repeat(2, minmax(0, 1fr));
   }
 
-  .upcoming-project {
-    margin-left: -48px;
-  }
-
 }
 
 
@@ -790,11 +774,17 @@ footer {
 
     padding: 0 12px;
 
+    grid-template-columns: auto 1fr auto;
+
     column-gap: 8px;
   }
 
   .topbar-left {
     gap: 10px;
+  }
+
+  .topbar-right {
+    justify-content: flex-end;
   }
 
   .topbar a {
@@ -803,16 +793,18 @@ footer {
     letter-spacing: 0.03em;
   }
 
+  /* NOMBRE DE LA BARRA: UNA SOLA LÍNEA */
+
   .topbar-name {
-    width: 90px;
+    width: auto;
 
-    font-size: 10px !important;
+    font-size: 9px !important;
 
-    line-height: 0.95;
+    line-height: 1;
 
-    letter-spacing: 0 !important;
+    letter-spacing: 0.02em !important;
 
-    white-space: normal;
+    white-space: nowrap;
 
     text-align: center;
   }
@@ -824,14 +816,22 @@ footer {
     padding: 20px;
   }
 
-  .hero h1 {
-    font-size: 11vw;
+  /* NOMBRE GRANDE: MÁS PEQUEÑO Y EN DOS LÍNEAS */
 
-    white-space: nowrap;
+  .hero h1 {
+    max-width: 310px;
+
+    margin: 0 auto;
+
+    font-size: 15vw;
+
+    line-height: 0.82;
+
+    white-space: normal;
   }
 
   .hero-subtitle {
-    margin-top: 25px;
+    margin-top: 28px;
 
     font-size: 9px;
 
