@@ -36,7 +36,6 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
-
   height: 68px;
 
   display: grid;
@@ -46,7 +45,6 @@ a {
   padding: 0 48px;
 
   background: rgba(8, 8, 8, 0.92);
-
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
@@ -83,7 +81,6 @@ a {
   font-size: 12px;
   letter-spacing: 0.06em;
   color: #aaa;
-
   transition: color 0.3s ease;
 }
 
@@ -892,7 +889,7 @@ footer {
 
 
 /* =========================
-   INTRO
+   INTRODUCCIÓN
 ========================= */
 
 .film-intro {
@@ -917,11 +914,28 @@ footer {
 
   color: #666;
 
-  font-size: 9px;
+  font-size: 11px;
 
-  text-transform: uppercase;
+  text-transform: none;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
+}
+
+.film-intro-label span:last-child,
+.film-info-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.film-intro-label span:last-child {
+  font-size: 23px;
+
+  line-height: 1;
+
+  font-weight: 300;
+
+  color: #aaa;
+
+  letter-spacing: 0;
 }
 
 .film-intro-content {
@@ -929,7 +943,7 @@ footer {
 }
 
 .film-lead {
-  margin: 0 0 45px;
+  margin: 0 0 42px;
 
   font-family: 'Cormorant Garamond', serif;
 
@@ -943,19 +957,25 @@ footer {
 }
 
 .film-description {
-  max-width: 620px;
+  width: 100%;
 
-  margin-left: auto;
+  max-width: none;
+
+  margin: 0;
 }
 
 .film-description p {
   margin: 0 0 25px;
 
-  font-size: 14px;
+  font-size: 16px;
 
-  line-height: 1.9;
+  line-height: 1.8;
 
-  color: #888;
+  color: #999;
+
+  text-align: justify;
+
+  text-justify: inter-word;
 }
 
 .film-description p:last-child {
@@ -964,7 +984,7 @@ footer {
 
 
 /* =========================
-   INFO
+   SECCIONES DE INFORMACIÓN
 ========================= */
 
 .film-info-section {
@@ -979,10 +999,20 @@ footer {
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+.film-info-heading {
+  align-items: flex-start;
+}
+
+.film-info-heading > span {
+  font-size: 11px;
+
+  color: #666;
+
+  line-height: 1;
+}
+
 .film-info-heading h2 {
   margin: 0;
-
-  font-family: 'Cormorant Garamond', serif;
 
   font-size: 42px;
 
@@ -993,6 +1023,8 @@ footer {
   color: #aaa;
 
   letter-spacing: 0;
+
+  text-transform: none;
 }
 
 
@@ -1273,8 +1305,6 @@ footer {
     letter-spacing: 0.03em;
   }
 
-  /* NOMBRE DE LA BARRA EN UNA SOLA LÍNEA */
-
   .topbar-name {
     width: auto;
 
@@ -1290,8 +1320,7 @@ footer {
   }
 
 
-  /* NOMBRE GRANDE DE LA HOME:
-     MÁS PEQUEÑO Y MÁXIMO DOS LÍNEAS */
+  /* HERO */
 
   .hero {
     padding: 20px;
@@ -1490,6 +1519,10 @@ footer {
     margin-bottom: 45px;
   }
 
+  .film-intro-label span:last-child {
+    font-size: 22px;
+  }
+
   .film-lead {
     margin-bottom: 38px;
 
@@ -1501,9 +1534,11 @@ footer {
   }
 
   .film-description p {
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.8;
+
+    text-align: justify;
   }
 
 
