@@ -2226,11 +2226,11 @@ footer {
     width: 90px;
     height: 1px;
     background: #888;
-    margin-top: 11px;
+    margin-top: 13px;
   }
 
   .upcoming-header .section-line {
-    margin-top: 11px;
+    margin-top: 13px;
   }
 
 
@@ -2266,5 +2266,21 @@ footer {
     color: #888;
     letter-spacing: 0.04em;
     text-transform: uppercase;
+  }
+}
+
+
+/* CORRECCIÓN FINAL — LÍNEAS DE CABECERA
+   Proyectos, Selección y Próximamente toman exactamente
+   la línea de Próximamente como referencia. */
+.section-header .section-line,
+.upcoming-header .section-line {
+  margin-top: 13px !important;
+}
+
+@media (max-width: 650px) {
+  .section-header .section-line,
+  .upcoming-header .section-line {
+    margin-top: 13px !important;
   }
 }
