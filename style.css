@@ -2271,14 +2271,14 @@ footer {
 
 
 /* =========================================================
-   MÓVIL — LÍNEAS DE CABECERA IGUALES
+   ESCRITORIO — CABECERAS IGUALES
    ========================================================= */
-@media (max-width: 650px) {
+@media (min-width: 651px) {
   .section-header .section-line,
   .upcoming-header .section-line {
     width: 90px;
     height: 1px;
     background: #888;
-    margin-top: 11px;
+    margin-top: 13px;
   }
 }
