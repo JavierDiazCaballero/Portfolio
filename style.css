@@ -2339,3 +2339,48 @@ footer {
     transform: translateY(-11px) !important;
   }
 }
+
+
+/* =========================
+   COLABORACIONES
+========================= */
+
+#colaboraciones {
+  padding: 110px 48px;
+}
+
+.collaborations-intro {
+  max-width: 560px;
+  margin: -12px 0 34px;
+  color: #888;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.collaborations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .collaborations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  #colaboraciones {
+    padding: 90px 20px;
+  }
+
+  .collaborations-intro {
+    margin-top: -6px;
+    font-size: 12px;
+  }
+
+  .collaborations-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
