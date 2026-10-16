@@ -1912,11 +1912,12 @@ footer {
 
 .contact-field label {
   display: block;
-  margin-bottom: 9px;
-  font-size: 8px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #666;
+  color: #aaa;
 }
 
 .contact-field input,
@@ -1937,7 +1938,8 @@ footer {
 
 .contact-field input::placeholder,
 .contact-field textarea::placeholder {
-  color: #444;
+  color: #777;
+  opacity: 1;
 }
 
 .contact-field input:focus,
@@ -2139,9 +2141,23 @@ footer {
     margin-bottom: 25px;
   }
 
+  .contact-field label {
+    font-size: 10px;
+    font-weight: 400;
+    color: #b5b5b5;
+    letter-spacing: 0.18em;
+  }
+
   .contact-field input,
   .contact-field textarea {
-    font-size: 12px;
+    font-size: 14px;
+    color: #e0e0e0;
+  }
+
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder {
+    color: #858585;
+    opacity: 1;
   }
 
   .contact-field textarea {
