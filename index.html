@@ -152,8 +152,8 @@
     <section id="fotografia">
       <div class="section-header">
         <div>
-          <h2>Selección</h2>
-          <span class="section-label">Fotografía</span>
+          <h2>Fotografía</h2>
+          <span class="section-label">Selección</span>
         </div>
         <div class="section-line"></div>
       </div>
@@ -167,7 +167,6 @@
   <div class="video-modal" id="video-modal" aria-hidden="true">
     <div class="video-modal-backdrop" data-close="true"></div>
     <div class="video-modal-content" role="dialog" aria-modal="true">
-      <button type="button" class="video-modal-fullscreen" id="video-modal-fullscreen" aria-label="Pantalla completa">⛶</button>
       <button type="button" class="video-modal-close" id="video-modal-close" aria-label="Cerrar vídeo">×</button>
       <div class="video-frame">
         <iframe id="video-iframe" src="" title="Vídeo" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
@@ -217,7 +216,6 @@
     const modal = document.getElementById('video-modal');
     const iframe = document.getElementById('video-iframe');
     const close = document.getElementById('video-modal-close');
-    const fullscreen = document.getElementById('video-modal-fullscreen');
     const triggers = document.querySelectorAll('.project-video');
 
     triggers.forEach(trigger => {
@@ -229,16 +227,6 @@
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
       });
-    });
-
-    fullscreen.addEventListener('click', async () => {
-      const target = document.querySelector('.video-modal.is-vertical .video-modal-content') || document.querySelector('.video-modal-content');
-      try {
-        if (!document.fullscreenElement) await target.requestFullscreen();
-        else await document.exitFullscreen();
-      } catch (error) {
-        // El navegador puede bloquear pantalla completa en algunos contextos.
-      }
     });
 
     function closeVideo() {
