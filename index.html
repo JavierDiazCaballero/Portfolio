@@ -220,6 +220,8 @@
 
     triggers.forEach(trigger => {
       trigger.addEventListener('click', () => {
+        const isInstagramReel = trigger.classList.contains('collaboration-project');
+        modal.classList.toggle('is-vertical', isInstagramReel);
         iframe.src = trigger.dataset.video;
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
@@ -229,7 +231,7 @@
 
     function closeVideo() {
       iframe.src = '';
-      modal.classList.remove('is-open');
+      modal.classList.remove('is-open', 'is-vertical');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
     }
