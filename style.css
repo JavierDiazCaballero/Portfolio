@@ -2635,3 +2635,28 @@ footer {
     width: min(94vw, 460px);
   }
 }
+
+
+/* COLABORACIONES — cuadrícula de 4 por fila en escritorio */
+#colaboraciones .collaborations-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: stretch;
+  gap: 28px 18px;
+}
+@media (max-width: 1000px) {
+  #colaboraciones .collaborations-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  #colaboraciones .collaborations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+}
+@media (max-width: 420px) {
+  #colaboraciones .collaborations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 10px;
+  }
+}
