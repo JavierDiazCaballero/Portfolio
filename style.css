@@ -2554,3 +2554,37 @@ footer {
 #colaboraciones .collaboration-external .collaboration-play { font-size:24px; opacity:0; transition:opacity .3s ease; }
 #colaboraciones .collaboration-external:hover .collaboration-play { opacity:1; }
 #colaboraciones .collaboration-external .collaboration-thumbnail img { object-fit:cover; }
+
+
+/* AJUSTES DE CALIDAD — portfolio */
+#colaboraciones .collaborations-grid {
+  grid-template-columns: minmax(0, 560px);
+  justify-content: start;
+}
+.photo-placeholder-pending {
+  cursor: default;
+  min-height: 220px;
+  justify-content: flex-start;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.photo-placeholder-pending span {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.photo-placeholder-pending small {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #666;
+}
+.photo-placeholder-pending:hover { background: #111; }
+@media (max-width: 650px) {
+  #colaboraciones .collaborations-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .photo-placeholder-pending { min-height: 160px; }
+}
