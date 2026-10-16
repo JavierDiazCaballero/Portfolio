@@ -2534,44 +2534,16 @@ footer {
 }
 
 
-/* REEL CECIARMY — controles discretos y modo inmersivo */
-.video-modal-fullscreen {
-  position: absolute;
-  z-index: 6;
-  top: -38px;
-  right: 42px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  color: #eee;
-  background: transparent;
-  border: 0;
-  font-size: 25px;
-  cursor: pointer;
+
+
+/* REEL CECIARMY — reproductor más amplio, sin pantalla completa */
+.video-modal.is-vertical .video-modal-content {
+  width: min(94vw, 480px);
+  max-width: 480px;
 }
-.video-modal.is-vertical:fullscreen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #050505;
+.video-modal.is-vertical .video-frame {
+  max-height: 90vh;
 }
-.video-modal.is-vertical:fullscreen .video-modal-content {
-  width: min(100vw, 56.25vh);
-  max-width: none;
-  max-height: 100vh;
-}
-.video-modal.is-vertical:fullscreen .video-frame {
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  aspect-ratio: 9 / 16;
-}
-.video-modal.is-vertical:fullscreen .video-modal-close,
-.video-modal.is-vertical:fullscreen .video-modal-fullscreen {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-}
-.video-modal.is-vertical:fullscreen .video-modal-fullscreen {
-  right: 56px;
+.video-modal.is-vertical .video-modal-close {
+  top: -34px;
 }
