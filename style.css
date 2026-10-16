@@ -2384,3 +2384,40 @@ footer {
     gap: 20px;
   }
 }
+
+
+.collaboration-item {
+  min-width: 0;
+}
+
+.collaboration-embed {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.collaboration-embed .instagram-media {
+  width: 100% !important;
+  max-width: 540px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+}
+
+.collaboration-credit {
+  margin: 14px 0 0;
+  color: #888;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 650px) {
+  .collaboration-embed {
+    max-width: 100%;
+  }
+
+  .collaboration-credit {
+    font-size: 9px;
+  }
+}
