@@ -246,7 +246,7 @@
 
     triggers.forEach(trigger => {
       trigger.addEventListener('click', () => {
-        const isInstagramReel = trigger.classList.contains('collaboration-project');
+        const isInstagramReel = trigger.dataset.video.includes('instagram.com');
         modal.classList.toggle('is-vertical', isInstagramReel);
         iframe.src = trigger.dataset.video;
         modal.classList.add('is-open');
