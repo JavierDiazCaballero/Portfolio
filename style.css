@@ -2660,3 +2660,25 @@ footer {
     gap: 22px 10px;
   }
 }
+
+
+/* Miniatura provisional propia para Army Awards: no reutilizar portadas ajenas */
+#colaboraciones .collaboration-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #171717, #080808 65%);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+#colaboraciones .collaboration-placeholder::after {
+  content: "ARMY AWARDS 2026";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b7b7b7;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(15px, 1.5vw, 22px);
+  letter-spacing: 0.12em;
+}
