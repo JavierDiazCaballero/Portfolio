@@ -322,11 +322,24 @@
   let swipeStartX = 0;
   let swipeStartY = 0;
   const swipeSurface = card;
+  let swipeAxis = null;
+  swipeSurface.style.touchAction = 'pan-y pinch-zoom';
   swipeSurface.addEventListener('touchstart', event => {
     if (!event.touches || event.touches.length !== 1) return;
     swipeStartX = event.touches[0].clientX;
     swipeStartY = event.touches[0].clientY;
+    swipeAxis = null;
   }, { passive: true });
+  swipeSurface.addEventListener('touchmove', event => {
+    if (!window.matchMedia('(max-width: 650px)').matches || !event.touches || event.touches.length !== 1) return;
+    const dx = event.touches[0].clientX - swipeStartX;
+    const dy = event.touches[0].clientY - swipeStartY;
+    if (!swipeAxis && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+      swipeAxis = Math.abs(dx) > Math.abs(dy) * 1.15 ? 'horizontal' : 'vertical';
+    }
+    // Al detectar un gesto horizontal, evitar que el navegador desplace la página arriba o abajo.
+    if (swipeAxis === 'horizontal') event.preventDefault();
+  }, { passive: false });
   swipeSurface.addEventListener('touchend', event => {
     if (!window.matchMedia('(max-width: 650px)').matches || !event.changedTouches.length) return;
     const dx = event.changedTouches[0].clientX - swipeStartX;
