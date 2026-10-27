@@ -284,6 +284,8 @@
     button.addEventListener('focus', () => select(button.dataset.cast));
     button.addEventListener('click', () => select(button.dataset.cast));
   });
+  // Al salir del selector, vuelve siempre a Marc como ficha predeterminada.
+  root.querySelector('.cast-switcher-nav').addEventListener('pointerleave', () => select('marc'));
   // La ficha inicial de Marc ya está renderizada en el HTML; no se necesita inicializar un sistema de scroll.
 })();
 </script>
