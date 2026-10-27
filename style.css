@@ -5466,13 +5466,13 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Ajuste fino de Reparto en escritorio: menos hueco bajo la biografía y antes de Producción. */
+/* Ajuste fino de Reparto en escritorio: reducir un poco más el hueco antes de Producción. */
 @media(min-width:651px){
   .film-info-section:has(#cast-switcher) .cast-switcher-bio{
-    height:115px!important;
-    min-height:115px!important;
+    height:100px!important;
+    min-height:100px!important;
   }
   .film-info-section:has(#cast-switcher) .cast-switcher-card{
-    min-height:540px!important;
+    min-height:515px!important;
   }
 }
