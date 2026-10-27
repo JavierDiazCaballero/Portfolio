@@ -6339,3 +6339,63 @@ body.external-preview-open{overflow:hidden}
   0%,100%{transform:translateX(1px);opacity:.55}
   50%{transform:translateX(-6px);opacity:1}
 }
+
+
+/* Cabecera móvil persistente: mantiene la navegación visible al desplazarse y evita solapes. */
+@media(max-width:650px){
+  .topbar{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    right:0!important;
+    z-index:1000!important;
+    height:58px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;
+    align-items:center!important;
+    column-gap:6px!important;
+    padding:0 10px!important;
+    opacity:1!important;
+    transform:translateY(0)!important;
+    background:rgba(8,8,8,.94)!important;
+    -webkit-backdrop-filter:blur(12px)!important;
+    backdrop-filter:blur(12px)!important;
+  }
+  .topbar-left{
+    grid-column:1!important;
+    justify-self:start!important;
+    display:flex!important;
+    gap:5px!important;
+    min-width:0!important;
+    white-space:nowrap!important;
+  }
+  .topbar-right{
+    grid-column:3!important;
+    justify-self:end!important;
+    display:flex!important;
+    min-width:0!important;
+    white-space:nowrap!important;
+  }
+  .topbar a{
+    font-size:7.5px!important;
+    letter-spacing:.015em!important;
+  }
+  .topbar-name,
+  .topbar.is-visible .topbar-name{
+    position:static!important;
+    grid-column:2!important;
+    justify-self:center!important;
+    transform:none!important;
+    width:max-content!important;
+    max-width:none!important;
+    margin:0!important;
+    padding:0!important;
+    visibility:visible!important;
+    opacity:1!important;
+    font-size:8.5px!important;
+    letter-spacing:0!important;
+    line-height:1!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+  }
+}
