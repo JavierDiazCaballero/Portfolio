@@ -96,6 +96,7 @@
       <button class="cast-switcher-name" type="button" data-cast="jaime" aria-pressed="false"><span>06</span><b>Jaime Wang</b></button>
       <button class="cast-switcher-name" type="button" data-cast="angel" aria-pressed="false"><span>07</span><b>Ángel Martínez</b></button>
     </nav>
+    <div class="cast-swipe-hint" aria-hidden="true"><span>DESLIZA</span><span class="cast-swipe-arrow">←</span></div>
     <article class="cast-switcher-card" aria-live="polite">
       <div class="cast-switcher-portrait">
         <img class="cast-switcher-photo" src="https://www.aleighthouse.com/wp-content/uploads/2022/06/MARC-BONNIN-FOTO-4-715x1024.jpg" alt="Retrato profesional de Marc Bonnin" onerror="this.hidden=true" />
@@ -283,6 +284,9 @@
       const targetLeft = activeButton.offsetLeft - (nav.clientWidth - activeButton.offsetWidth) / 2;
       nav.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
     }
+    card.classList.remove('cast-card-enter');
+    void card.offsetWidth;
+    card.classList.add('cast-card-enter');
     const portrait = card.querySelector('.cast-switcher-portrait');
     let photo = portrait.querySelector('.cast-switcher-photo');
     if (person.photo) {
