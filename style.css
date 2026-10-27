@@ -5476,3 +5476,15 @@ body.external-preview-open{overflow:hidden}
     min-height:515px!important;
   }
 }
+
+
+/* Nombre del personaje debajo del nombre real en la ficha de reparto. */
+.cast-switcher-character{
+  margin:-8px 0 14px!important;
+  font-size:clamp(12px,1.05vw,15px)!important;
+  line-height:1.4!important;
+  letter-spacing:.04em!important;
+  color:#999!important;
+  font-weight:400!important;
+}
+.cast-switcher-character[hidden]{display:none!important}
