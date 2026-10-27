@@ -5383,3 +5383,14 @@ body.external-preview-open{overflow:hidden}
   .film-page-footer > a:last-child{grid-column:2!important;grid-row:1!important}
   .film-page-footer .film-footer-imdb{grid-column:1 / -1!important;grid-row:2!important;justify-self:center!important}
 }
+
+
+/* Reparto usa ahora el mismo marcado que Película; conservar solo su separación de contenido. */
+.film-info-section:has(#cast-switcher) > .film-intro-label{
+  margin:0 0 34px!important;
+}
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) > .film-intro-label{
+    margin-bottom:26px!important;
+  }
+}
