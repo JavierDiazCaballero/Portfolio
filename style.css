@@ -6173,3 +6173,28 @@ body.external-preview-open{overflow:hidden}
     font-weight:500!important;
   }
 }
+
+
+/* Móvil: reducir la altura y el espacio interior de las tarjetas de noticias. */
+@media(max-width:650px){
+  .film-page-body .film-news-card{
+    min-height:0!important;
+    height:auto!important;
+    padding:16px 18px!important;
+    gap:0!important;
+  }
+  .film-page-body .film-news-card-top{
+    margin-bottom:10px!important;
+  }
+  .film-page-body .film-news-card h3{
+    margin-top:0!important;
+    margin-bottom:8px!important;
+  }
+  .film-page-body .film-news-card p{
+    margin-top:0!important;
+    margin-bottom:12px!important;
+  }
+  .film-page-body .film-news-read{
+    margin-top:auto!important;
+  }
+}
