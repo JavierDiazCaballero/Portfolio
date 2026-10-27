@@ -5591,3 +5591,25 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
   object-position:center 10%!important;
 }
+
+
+/* Móvil: impedir el desplazamiento horizontal sin alterar el diseño de escritorio. */
+@media(max-width:650px){
+  html, body.film-page-body{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:hidden!important;
+  }
+  .film-page-body .film-page,
+  .film-page-body main,
+  .film-page-body section{
+    max-width:100%!important;
+  }
+  .film-page-body .film-cover,
+  .film-page-body .film-intro,
+  .film-page-body .film-info-section,
+  .film-page-body .film-production-grid,
+  .film-page-body .film-news-section{
+    min-width:0!important;
+  }
+}
