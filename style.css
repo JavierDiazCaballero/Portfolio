@@ -5433,3 +5433,14 @@ body.external-preview-open{overflow:hidden}
   align-self:center!important;
   transform:translateY(-3px)!important;
 }
+
+
+/* Reparto en escritorio: quitar el margen añadido a la sección y reservar altura dentro de la ficha. */
+@media(min-width:651px){
+  .film-info-section:has(#cast-switcher){
+    margin-bottom:0!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-card{
+    min-height:620px!important;
+  }
+}
