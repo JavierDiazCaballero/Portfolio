@@ -293,7 +293,7 @@
   function updateActiveFromScroll() {
     scrollTicking = false;
     if (!steps.length) return;
-    const targetY = window.innerHeight * 0.48;
+    const targetY = window.innerHeight * 0.52;
     let nearestIndex = activeIndex;
     let nearestDistance = Infinity;
     steps.forEach((step, index) => {
@@ -304,10 +304,9 @@
         nearestIndex = index;
       }
     });
-    const now = performance.now();
-    if (nearestIndex !== activeIndex && now - lastChangeAt > 420) {
-      activeIndex += Math.sign(nearestIndex - activeIndex);
-      lastChangeAt = now;
+    if (nearestIndex !== activeIndex) {
+      activeIndex = nearestIndex;
+      lastChangeAt = performance.now();
       select(buttons[activeIndex].dataset.cast);
     }
   }
