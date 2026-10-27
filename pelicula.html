@@ -282,6 +282,7 @@
 
   }
   buttons.forEach(button => {
+    button.addEventListener('pointerenter', () => select(button.dataset.cast));
     button.addEventListener('focus', () => select(button.dataset.cast));
     button.addEventListener('click', () => select(button.dataset.cast));
   });
