@@ -5549,3 +5549,18 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-works{
   margin-top:2px!important;
 }
+
+
+/* Ajustes de reparto: separar biografía del personaje y recentrar ligeramente las fotos de Rubén y Antonio. */
+.film-info-section:has(#cast-switcher) .cast-switcher-character{
+  margin-bottom:8px!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-bio{
+  margin-top:4px!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
+  object-position:center 20%!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
+  object-position:center 26%!important;
+}
