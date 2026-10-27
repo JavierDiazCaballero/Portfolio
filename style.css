@@ -5394,3 +5394,24 @@ body.external-preview-open{overflow:hidden}
     margin-bottom:26px!important;
   }
 }
+
+
+/* Alinear «Volver a proyectos» con el nombre del footer y eliminar la franja superior. */
+.film-bottom-nav{
+  margin-left:48px!important;
+  margin-right:48px!important;
+  border-top:0!important;
+  box-shadow:none!important;
+  background-image:none!important;
+}
+.film-bottom-nav::before,
+.film-bottom-nav::after{
+  content:none!important;
+  display:none!important;
+}
+@media(max-width:650px){
+  .film-bottom-nav{
+    margin-left:20px!important;
+    margin-right:20px!important;
+  }
+}
