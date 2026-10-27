@@ -183,10 +183,106 @@
   </main>
 
 
-  <footer>
+  
+  <div class="external-preview-modal" id="external-preview-modal" aria-hidden="true">
+    <div class="external-preview-backdrop" data-preview-close="true"></div>
+    <section class="external-preview-dialog" role="dialog" aria-modal="true" aria-labelledby="external-preview-title">
+      <button class="external-preview-close" type="button" aria-label="Cerrar vista previa" data-preview-close="true">×</button>
+      <div class="external-preview-kicker">VISTA DENTRO DEL PORTFOLIO</div>
+      <h2 id="external-preview-title">Vista previa</h2>
+      <div id="external-preview-content" class="external-preview-content"></div>
+      <a id="external-preview-open" class="external-preview-open" href="#" target="_blank" rel="noopener noreferrer">Abrir fuente externa ↗</a>
+    </section>
+  </div>
+
+<footer>
     <span>Javier Díaz Caballero</span>
     <a href="index.html">Volver al portfolio ↑</a>
   </footer>
+
+
+<script>
+(() => {
+  const modal = document.getElementById('external-preview-modal');
+  if (!modal) return;
+  const title = document.getElementById('external-preview-title');
+  const content = document.getElementById('external-preview-content');
+  const openLink = document.getElementById('external-preview-open');
+  let lastFocus = null;
+  function closePreview() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('external-preview-open');
+    content.replaceChildren();
+    if (lastFocus) lastFocus.focus();
+  }
+  function showPreview(anchor) {
+    lastFocus = anchor;
+    const url = anchor.href;
+    const host = new URL(url).hostname.replace('www.', '');
+    const label = anchor.getAttribute('aria-label') || anchor.innerText.trim().replace(/\s+/g, ' ') || host;
+    const context = anchor.closest('article, .film-news-card, .social-card, section, footer');
+    const contextText = context ? context.innerText.trim().replace(/\s+/g, ' ').slice(0, 340) : '';
+    title.textContent = label;
+    openLink.href = url;
+    content.replaceChildren();
+    if (host.includes('instagram.com')) {
+      const intro = document.createElement('p');
+      intro.className = 'external-preview-description';
+      intro.textContent = 'Perfil de Instagram. Si la cuenta y sus publicaciones permiten la incrustación, podrás ver el contenido aquí sin abandonar esta web.';
+      content.appendChild(intro);
+      const quote = document.createElement('blockquote');
+      quote.className = 'instagram-media';
+      quote.setAttribute('data-instgrm-permalink', url);
+      quote.setAttribute('data-instgrm-version', '14');
+      quote.style.cssText = 'background:#fff;border:0;border-radius:8px;margin:0 auto;max-width:540px;min-width:280px;width:100%;';
+      content.appendChild(quote);
+      if (!document.querySelector('script[data-instagram-embed]')) {
+        const embedScript = document.createElement('script');
+        embedScript.async = true;
+        embedScript.src = 'https://www.instagram.com/embed.js';
+        embedScript.dataset.instagramEmbed = 'true';
+        embedScript.onload = () => { if (window.instgrm) window.instgrm.Embeds.process(); };
+        document.body.appendChild(embedScript);
+      } else if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    } else {
+      const card = document.createElement('div');
+      card.className = 'external-preview-card';
+      const source = document.createElement('span');
+      source.className = 'external-preview-source';
+      source.textContent = host;
+      const description = document.createElement('p');
+      description.className = 'external-preview-description';
+      description.textContent = contextText || ('Has seleccionado contenido de ' + host + '. Puedes consultar la referencia desde aquí sin salir automáticamente del portfolio.');
+      const note = document.createElement('p');
+      note.className = 'external-preview-note';
+      note.textContent = 'La página completa de esta fuente no se puede garantizar dentro de otra web. Permaneces en el portfolio; solo saldrás si eliges abrir la fuente.';
+      card.append(source, description, note);
+      content.appendChild(card);
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('external-preview-open');
+    modal.querySelector('[data-preview-close="true"]').focus();
+  }
+  document.querySelectorAll('a[target="_blank"][href^="https://"]').forEach(anchor => {
+    if (anchor.dataset.video || anchor.closest('#external-preview-modal')) return;
+    anchor.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      showPreview(anchor);
+    });
+  });
+  modal.addEventListener('click', event => {
+    if (event.target.dataset.previewClose === 'true') closePreview();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) closePreview();
+  });
+})();
+</script>
 
 </body>
 </html>
