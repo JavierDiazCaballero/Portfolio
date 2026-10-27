@@ -5570,3 +5570,9 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
   object-position:center 35%!important;
 }
+
+
+/* Rubén Faura: encuadre centrado para que el rostro y la figura se vean con claridad en la nueva foto. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
+  object-position:center 22%!important;
+}
