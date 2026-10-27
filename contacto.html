@@ -101,6 +101,7 @@
 
         <a
           href="https://www.instagram.com/javierdiazcaballero/"
+          data-direct-link="true"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -165,6 +166,7 @@
 
         <a
           href="https://www.imdb.com/name/nm19049196/"
+          data-direct-link="true"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="IMDb"
@@ -306,7 +308,7 @@
     modal.querySelector('[data-preview-close="true"]').focus();
   }
   document.querySelectorAll('a[target="_blank"][href^="https://"]').forEach(anchor => {
-    if (anchor.dataset.video || anchor.closest('#external-preview-modal')) return;
+    if (anchor.dataset.video || anchor.dataset.directLink === 'true' || anchor.closest('#external-preview-modal')) return;
     const targetHost = new URL(anchor.href).hostname;
     if (targetHost.includes('youtube.com') || targetHost.includes('youtu.be') || targetHost.includes('instagram.com') || targetHost.includes('imdb.com')) return;
     anchor.addEventListener('click', event => {
