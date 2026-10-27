@@ -6105,3 +6105,21 @@ body.external-preview-open{overflow:hidden}
     margin:0!important;
   }
 }
+
+
+/* Móvil: separación uniforme entre todos los nombres, también entre Jaime y Ángel. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
+    justify-content:flex-start!important;
+    gap:10px!important;
+    column-gap:10px!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name{
+    margin-left:0!important;
+    margin-right:0!important;
+    letter-spacing:0!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name + .cast-switcher-name{
+    margin-left:0!important;
+  }
+}
