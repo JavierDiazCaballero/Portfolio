@@ -5282,3 +5282,11 @@ body.external-preview-open{overflow:hidden}
   }
   .film-info-section:has(#cast-switcher) .cast-switcher-details{padding:0!important}
 }
+
+
+/* Ajuste puntual solicitado: bajar ligeramente los retratos respecto al bloque de texto. */
+@media(min-width:651px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-portrait{
+    margin-top:clamp(16px,1.8vw,26px)!important;
+  }
+}
