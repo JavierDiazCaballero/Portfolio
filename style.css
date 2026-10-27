@@ -5935,3 +5935,17 @@ body.external-preview-open{overflow:hidden}
     margin:0!important;
   }
 }
+
+
+/* Móvil: bajar ligeramente cargos y nombre, y dar más separación al personaje. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-role{
+    margin-top:8px!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-title{
+    margin-top:30px!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-character{
+    margin-top:calc(30px + 2.35em + 7px)!important;
+  }
+}
