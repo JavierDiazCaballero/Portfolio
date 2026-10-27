@@ -4485,3 +4485,26 @@ body.external-preview-open{overflow:hidden}
   .cast-switcher-portrait{aspect-ratio:3/4!important}
   .film-back{margin-top:48px!important}
 }
+
+
+/* Reparto: selección directa al pasar el ratón por cada nombre, sin scroll guiado. */
+.cast-switcher{
+  min-height:0!important;
+  height:auto!important;
+  align-items:center!important;
+}
+.cast-switcher-scroll-track,
+.cast-switcher-scroll-step{
+  display:none!important;
+  height:0!important;
+  min-height:0!important;
+}
+.cast-switcher-name{
+  cursor:pointer!important;
+}
+.cast-switcher-name:hover{
+  opacity:1!important;
+}
+@media(max-width:600px){
+  .cast-switcher{min-height:0!important}
+}
