@@ -5341,3 +5341,45 @@ body.external-preview-open{overflow:hidden}
   letter-spacing:.14em!important;
   text-transform:uppercase!important;
 }
+
+
+/* Pie de la página de la película: nombre a la izquierda, IMDb centrado y portfolio a la derecha. */
+.film-page-footer{
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  align-items:center!important;
+  gap:18px!important;
+}
+.film-page-footer > span{justify-self:start!important}
+.film-page-footer > a:last-child{justify-self:end!important}
+.film-page-footer .film-footer-imdb{
+  display:inline-flex!important;
+  justify-self:center!important;
+  align-items:center!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  text-decoration:none!important;
+}
+.film-page-footer .film-imdb-logo{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:32px!important;
+  height:18px!important;
+  padding:0 4px!important;
+  border-radius:2px!important;
+  font-size:10px!important;
+}
+.film-bottom-nav{
+  border-top:0!important;
+}
+@media(max-width:650px){
+  .film-page-footer{
+    grid-template-columns:1fr auto!important;
+    row-gap:16px!important;
+  }
+  .film-page-footer > span{grid-column:1!important;grid-row:1!important}
+  .film-page-footer > a:last-child{grid-column:2!important;grid-row:1!important}
+  .film-page-footer .film-footer-imdb{grid-column:1 / -1!important;grid-row:2!important;justify-self:center!important}
+}
