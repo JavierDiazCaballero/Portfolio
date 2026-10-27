@@ -6302,3 +6302,40 @@ body.external-preview-open{overflow:hidden}
     transform:translateX(-50%)!important;
   }
 }
+
+
+/* Pista de deslizado: centrada debajo de toda la ficha, con flecha animada también en móviles reales. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-swipe-hint{
+    position:relative!important;
+    width:max-content!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:10px!important;
+    margin:16px auto 24px!important;
+    padding:4px 0!important;
+    color:rgba(255,255,255,.58)!important;
+    font-family:'DM Sans',sans-serif!important;
+    font-size:9px!important;
+    font-weight:400!important;
+    letter-spacing:2.4px!important;
+    line-height:1!important;
+    opacity:1!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-swipe-arrow{
+    display:inline-block!important;
+    position:relative!important;
+    font-family:Arial,sans-serif!important;
+    font-size:22px!important;
+    font-weight:300!important;
+    line-height:1!important;
+    color:rgba(255,255,255,.9)!important;
+    animation:castArrowNudgeMobile 1.05s ease-in-out infinite!important;
+    will-change:transform,opacity!important;
+  }
+}
+@keyframes castArrowNudgeMobile{
+  0%,100%{transform:translateX(1px);opacity:.55}
+  50%{transform:translateX(-6px);opacity:1}
+}
