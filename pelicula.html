@@ -88,27 +88,26 @@
 
   <div class="cast-switcher" id="cast-switcher">
     <nav class="cast-switcher-nav" aria-label="Seleccionar actor">
-      <button class="cast-switcher-name is-active" type="button" data-cast="gonzalo" aria-pressed="true"><span>01</span><b>Gonzalo Cortés</b></button>
-      <button class="cast-switcher-name" type="button" data-cast="margot" aria-pressed="false"><span>02</span><b>Margot Minn</b></button>
+      <button class="cast-switcher-name is-active" type="button" data-cast="marc" aria-pressed="true"><span>01</span><b>Marc Bonnin</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="gonzalo" aria-pressed="false"><span>02</span><b>Gonzalo Cortés</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="ruben" aria-pressed="false"><span>03</span><b>Rubén Faura</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="eva" aria-pressed="false"><span>04</span><b>Eva Bonald</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="antonio" aria-pressed="false"><span>05</span><b>Antonio Reyes</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="jaime" aria-pressed="false"><span>06</span><b>Jaime Wang</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="angel" aria-pressed="false"><span>07</span><b>Ángel Martínez</b></button>
     </nav>
     <article class="cast-switcher-card" aria-live="polite">
       <div class="cast-switcher-portrait">
-        <img class="cast-switcher-photo" src="https://image.tmdb.org/t/p/w500/4et1xaGG8hIHz8SrSoBdTvI9Yev.jpg" alt="Retrato de Gonzalo Cortés">
         <span class="cast-portrait-index">01 / REPARTO</span>
-        <span class="cast-portrait-caption">GONZALO CORTÉS</span>
+        <span class="cast-portrait-caption">MARC BONNIN</span>
       </div>
       <div class="cast-switcher-details">
-        <div class="cast-switcher-role">ACTOR · GUIONISTA · PRODUCTOR</div>
-        <h3 class="cast-switcher-title">Gonzalo <em>Cortés</em></h3>
-        <p class="cast-switcher-bio">Nacido en Málaga y licenciado en Arte Dramático, trabaja en cine, televisión y teatro. Es actor, escritor y productor, y está vinculado a Mogoma Films y Maroma Teatro.</p>
+        <div class="cast-switcher-role">REPARTO</div>
+        <h3 class="cast-switcher-title">Marc <em>Bonnin</em></h3>
+        <p class="cast-switcher-bio">Ficha pendiente de completar con información biográfica contrastada.</p>
         <div class="cast-switcher-rule"></div>
         <div class="cast-switcher-work-label">TRABAJOS DESTACADOS</div>
-        <ol class="cast-switcher-works">
-          <li><span>2024</span><em>Eva &amp; Nicole</em></li>
-          <li><span>2022</span><em>That Dirty Black Bag</em></li>
-          <li><span>2022</span><em>Der junge Häuptling Winnetou</em></li>
-          <li><span>2020</span><em>Siempre es Otoño</em></li>
-        </ol>
+        <ol class="cast-switcher-works"><li><span>—</span><em>Proyectos pendientes de verificar</em></li></ol>
       </div>
     </article>
   </div>
@@ -224,19 +223,13 @@
   const buttons = [...root.querySelectorAll('.cast-switcher-name')];
   const card = root.querySelector('.cast-switcher-card');
   const people = {
-    gonzalo: {
-      name: 'Gonzalo <em>Cortés</em>', role: 'ACTOR · GUIONISTA · PRODUCTOR',
-      bio: 'Nacido en Málaga y licenciado en Arte Dramático, trabaja en cine, televisión y teatro. Es actor, escritor y productor, y está vinculado a Mogoma Films y Maroma Teatro.',
-      photo: 'https://image.tmdb.org/t/p/w500/4et1xaGG8hIHz8SrSoBdTvI9Yev.jpg', alt: 'Retrato de Gonzalo Cortés',
-      caption: 'GONZALO CORTÉS',
-      works: [['2024','Eva & Nicole'],['2022','That Dirty Black Bag'],['2022','Der junge Häuptling Winnetou'],['2020','Siempre es Otoño']]
-    },
-    margot: {
-      name: 'Margot <em>Minn</em>', role: 'REPARTO',
-      bio: 'Estoy verificando su perfil exacto para resumir su trayectoria y seleccionar sus cuatro proyectos relevantes sin atribuirle créditos de otra persona.',
-      photo: '', alt: 'Retrato pendiente de verificar', caption: 'MARGOT MINN',
-      works: [['—','Proyectos pendientes de verificar']]
-    }
+    marc: { name: 'Marc <em>Bonnin</em>', role: 'REPARTO', bio: 'Ficha pendiente de completar con información biográfica contrastada.', photo: '', alt: '', caption: 'MARC BONNIN', works: [['—','Proyectos pendientes de verificar']] },
+    gonzalo: { name: 'Gonzalo <em>Cortés</em>', role: 'ACTOR · GUIONISTA · PRODUCTOR', bio: 'Nacido en Málaga y licenciado en Arte Dramático, trabaja en cine, televisión y teatro. Es actor, escritor y productor, y está vinculado a Mogoma Films y Maroma Teatro.', photo: 'https://image.tmdb.org/t/p/w500/4et1xaGG8hIHz8SrSoBdTvI9Yev.jpg', alt: 'Retrato de Gonzalo Cortés', caption: 'GONZALO CORTÉS', works: [['2024','Eva & Nicole'],['2022','That Dirty Black Bag'],['2022','Der junge Häuptling Winnetou'],['2020','Siempre es Otoño']] },
+    ruben: { name: 'Rubén <em>Faura</em>', role: 'REPARTO', bio: 'Ficha pendiente de completar con información biográfica contrastada.', photo: '', alt: '', caption: 'RUBÉN FAURA', works: [['—','Proyectos pendientes de verificar']] },
+    eva: { name: 'Eva <em>Bonald</em>', role: 'REPARTO', bio: 'Ficha pendiente de completar con información biográfica contrastada.', photo: '', alt: '', caption: 'EVA BONALD', works: [['—','Proyectos pendientes de verificar']] },
+    antonio: { name: 'Antonio <em>Reyes</em>', role: 'REPARTO', bio: 'Ficha pendiente de completar con información biográfica contrastada.', photo: '', alt: '', caption: 'ANTONIO REYES', works: [['—','Proyectos pendientes de verificar']] },
+    jaime: { name: 'Jaime <em>Wang</em>', role: 'REPARTO', bio: 'Ficha pendiente de completar con información biográfica contrastada.', photo: '', alt: '', caption: 'JAIME WANG', works: [['—','Proyectos pendientes de verificar']] },
+    angel: { name: 'Ángel <em>Martínez</em>', role: 'REPARTO', bio: 'Ficha pendiente de completar con información biográfica contrastada.', photo: '', alt: '', caption: 'ÁNGEL MARTÍNEZ', works: [['—','Proyectos pendientes de verificar']] }
   };
   function select(key) {
     const person = people[key];
