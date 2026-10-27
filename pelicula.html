@@ -261,6 +261,7 @@
   };
   function select(key) {
     if (buttons.some(button => button.dataset.cast === key && button.classList.contains('is-active'))) return;
+    const previousKey = buttons.find(button => button.classList.contains('is-active'))?.dataset.cast;
     const person = people[key];
     if (!person) return;
     buttons.forEach(button => {
@@ -268,9 +269,16 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
-    const activeButton = buttons.find(button => button.dataset.cast === key);
-    if (activeButton && window.matchMedia('(max-width: 650px)').matches) {
-      const nav = root.querySelector('.cast-switcher-nav');
+    const nav = root.querySelector('.cast-switcher-nav');
+    const marcClone = nav?.querySelector('[data-cast-clone="marc"]');
+    if (marcClone) {
+      const cloneActive = key === 'marc' && previousKey === 'angel';
+      marcClone.classList.toggle('is-active', cloneActive);
+      marcClone.setAttribute('aria-pressed', String(cloneActive));
+    }
+    let activeButton = buttons.find(button => button.dataset.cast === key);
+    if (key === 'marc' && previousKey === 'angel' && marcClone) activeButton = marcClone;
+    if (activeButton && window.matchMedia('(max-width: 650px)').matches && nav) {
       const targetLeft = activeButton.offsetLeft - (nav.clientWidth - activeButton.offsetWidth) / 2;
       nav.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
     }
