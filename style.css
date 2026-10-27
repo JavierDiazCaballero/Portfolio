@@ -6026,3 +6026,66 @@ body.external-preview-open{overflow:hidden}
     gap:10px!important;
   }
 }
+
+
+/* Móvil: una sola cinta horizontal de nombres, sin saltos de línea; activo blanco y ligeramente mayor. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
+    display:flex!important;
+    flex-wrap:nowrap!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:16px!important;
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    white-space:nowrap!important;
+    padding:8px 2px 12px!important;
+    margin:0 0 8px!important;
+    scrollbar-width:none!important;
+    -webkit-overflow-scrolling:touch!important;
+    scroll-snap-type:x proximity!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav::-webkit-scrollbar{display:none!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-name{
+    display:inline-flex!important;
+    flex:0 0 auto!important;
+    width:max-content!important;
+    min-width:max-content!important;
+    max-width:none!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:5px 0!important;
+    margin:0!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    border:0!important;
+    background:transparent!important;
+    opacity:.48!important;
+    color:#aaa!important;
+    scroll-snap-align:center!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name span{display:none!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-name b{
+    display:inline-block!important;
+    width:max-content!important;
+    min-width:max-content!important;
+    font-size:10px!important;
+    line-height:1.2!important;
+    font-weight:400!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+    color:inherit!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active{
+    opacity:1!important;
+    color:#fff!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active b{
+    font-size:14px!important;
+    font-weight:500!important;
+  }
+}
