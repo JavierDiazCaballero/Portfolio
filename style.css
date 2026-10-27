@@ -3860,3 +3860,118 @@ body.external-preview-open{overflow:hidden}
  .cast-switcher-scroll-track{top:0;width:100%;height:560vh}
  .cast-switcher-scroll-step{height:80vh}
 }
+
+
+/* REPARTO — propuesta limpia: nombres en rueda vertical y ficha centrada */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex;align-items:baseline;gap:16px;
+  margin-bottom:clamp(28px,4vh,44px);
+  padding-top:clamp(24px,3vh,40px);
+}
+.film-info-section:has(#cast-switcher) > .film-info-heading h2,
+.film-info-section:has(#cast-switcher) > .film-info-heading > span{
+  font:inherit;letter-spacing:inherit;text-transform:inherit;
+}
+.cast-switcher{
+  min-height:560vh;
+  display:grid;
+  grid-template-columns:minmax(170px,.58fr) minmax(0,1.42fr);
+  gap:clamp(28px,5vw,72px);
+  align-items:start;
+  max-width:1240px;
+  margin:0 auto;
+}
+.cast-switcher-nav{
+  position:sticky;top:31vh;z-index:3;
+  display:flex;flex-direction:column;align-items:stretch;
+  width:100%;max-width:100%;margin:0;padding:0;
+  border:0;background:transparent;
+}
+.cast-switcher-name{
+  appearance:none;display:flex;align-items:baseline;justify-content:flex-start;
+  gap:0;width:100%;padding:9px 0;margin:0;border:0;
+  background:transparent;color:#777;text-align:left;cursor:pointer;
+  transform:none!important;transition:color .24s ease,font-size .24s ease;
+  transform-origin:left center;
+}
+.cast-switcher-name span{display:none!important}
+.cast-switcher-name b{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:clamp(19px,1.7vw,25px);font-weight:400;line-height:1.2;
+  letter-spacing:0;text-transform:none;white-space:nowrap;
+  transition:font-size .24s ease,color .24s ease;
+}
+.cast-switcher-name.is-active{color:#fff}
+.cast-switcher-name.is-active b{font-size:clamp(25px,2.25vw,34px);color:#fff}
+.cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+.cast-switcher-name.is-active + .cast-switcher-name b{font-size:clamp(21px,1.9vw,28px);color:#c4c0ba}
+.cast-switcher-card{
+  position:sticky;top:13vh;align-self:start;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:0;align-items:stretch;min-width:0;min-height:clamp(460px,66vh,650px);
+  background:transparent;border:0;
+}
+.cast-switcher-portrait{
+  position:relative;height:100%;min-height:clamp(460px,66vh,650px);
+  overflow:hidden;background:#111;
+}
+.cast-switcher-photo{object-fit:cover;object-position:center 30%}
+.cast-switcher-details{
+  align-self:stretch;display:flex;flex-direction:column;justify-content:center;
+  min-width:0;padding:clamp(26px,3vw,46px);
+}
+.cast-switcher-role{margin-bottom:18px;font-size:9px;letter-spacing:.15em;line-height:1.7}
+.cast-switcher-title{
+  margin:0 0 22px;color:#f0eee9;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(35px,3.7vw,52px);
+  font-weight:400;line-height:1.02;text-transform:uppercase;letter-spacing:.015em;
+}
+.cast-switcher-title em{color:#aaa;font-style:normal;font-weight:400}
+.cast-switcher-bio{font-size:13px;line-height:1.8}
+.cast-switcher-rule{display:none!important}
+.cast-switcher-work-label{margin:24px 0 10px;font-size:8px;letter-spacing:.15em}
+.cast-switcher-works li{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding:10px 0;border:0!important;
+}
+.cast-switcher-works li span{display:none!important}
+.cast-work-info{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0;width:100%}
+.cast-switcher-works li em{font-size:18px;line-height:1.2}
+.cast-switcher-works li small{
+  flex:0 0 auto;color:#9c927f;font:8px/1.4 Arial,sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+}
+.cast-switcher-scroll-track{height:560vh;width:calc((100% - clamp(28px,5vw,72px)) * .71)}
+.cast-switcher-scroll-step{height:80vh}
+@media(max-width:900px){
+ .cast-switcher{grid-template-columns:minmax(145px,.58fr) minmax(0,1.42fr);gap:22px;min-height:560vh}
+ .cast-switcher-nav{top:28vh}
+ .cast-switcher-card{top:15vh;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:0}
+ .cast-switcher-portrait{min-height:0;height:clamp(360px,52vh,520px)}
+ .cast-switcher-details{padding:22px}
+ .cast-switcher-title{font-size:clamp(28px,4vw,40px)}
+ .cast-switcher-bio{font-size:12px}
+ .cast-switcher-works li{align-items:flex-start;flex-direction:column;gap:3px}
+ .cast-work-info{align-items:baseline;flex-wrap:wrap}
+ .cast-switcher-scroll-track{height:560vh;width:calc((100% - 22px) * .71)}
+}
+@media(max-width:650px){
+ .cast-switcher{display:block;min-height:560vh}
+ .cast-switcher-nav{top:7vh;z-index:5;display:flex;flex-direction:row;flex-wrap:wrap;gap:3px 14px;margin-bottom:20px;padding:10px 0;background:#080808}
+ .cast-switcher-name{width:auto;padding:3px 0}
+ .cast-switcher-name b{font-size:14px}
+ .cast-switcher-name.is-active b{font-size:18px}
+ .cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+ .cast-switcher-name.is-active + .cast-switcher-name b{font-size:16px}
+ .cast-switcher-card{top:18vh;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);min-height:0}
+ .cast-switcher-portrait{height:clamp(300px,48vh,440px)}
+ .cast-switcher-details{padding:14px}
+ .cast-switcher-title{font-size:clamp(24px,6.5vw,34px);margin-bottom:14px}
+ .cast-switcher-role{margin-bottom:10px;font-size:7px}
+ .cast-switcher-bio{font-size:10px;line-height:1.6}
+ .cast-switcher-work-label{margin-top:15px}
+ .cast-switcher-works li em{font-size:14px}
+ .cast-switcher-works li small{font-size:7px}
+ .cast-switcher-scroll-track{top:0;width:100%;height:560vh}
+ .cast-switcher-scroll-step{height:80vh}
+}
