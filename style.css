@@ -5290,3 +5290,9 @@ body.external-preview-open{overflow:hidden}
     margin-top:clamp(16px,1.8vw,26px)!important;
   }
 }
+
+
+/* Eliminar únicamente la línea corta situada justo encima de «Volver a proyectos» e IMDb. */
+.film-bottom-nav{
+  border-top:0!important;
+}
