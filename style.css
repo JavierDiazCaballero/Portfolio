@@ -2733,3 +2733,30 @@ footer {
   font-size: clamp(15px, 1.5vw, 22px);
   letter-spacing: 0.12em;
 }
+
+
+/* SINOPSIS — composición editorial más limpia */
+.film-description {
+  max-width: 760px;
+}
+
+.film-description p {
+  margin: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #a0a0a0;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.film-description p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 650px) {
+  .film-description p {
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+}
