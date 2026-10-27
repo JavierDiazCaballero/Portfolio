@@ -5719,3 +5719,56 @@ body.external-preview-open{overflow:hidden}
     margin:0!important;
   }
 }
+
+
+/* Nueva propuesta solo móvil: selector de actores en dos columnas, nombres siempre en una línea. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-flow:row!important;
+    align-items:stretch!important;
+    gap:7px 8px!important;
+    width:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:38px!important;
+    box-sizing:border-box!important;
+    padding:8px 9px!important;
+    text-align:left!important;
+    white-space:nowrap!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name span{
+    flex:0 0 auto!important;
+    font-size:9px!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name b{
+    display:block!important;
+    min-width:0!important;
+    font-size:11px!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+    overflow-wrap:normal!important;
+    word-break:keep-all!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name:nth-child(7){
+    grid-column:1 / -1!important;
+    justify-self:center!important;
+    width:calc(50% - 4px)!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name:nth-child(7) b{
+    white-space:nowrap!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher{
+    gap:14px!important;
+  }
+}
