@@ -4618,3 +4618,171 @@ body.external-preview-open{overflow:hidden}
 .cast-switcher-name{cursor:pointer!important;position:relative!important;z-index:5!important;display:block!important;width:100%!important;padding:14px 12px!important;margin:0!important;text-align:left!important}
 .cast-switcher-name b,.cast-switcher-name span{pointer-events:none!important}
 @media(max-width:600px){.cast-switcher{min-height:0!important}}
+
+
+/* AJUSTES FINALES REPARTO DESKTOP — 27 OCT 2026 */
+/* Los cuatro encabezados comparten el formato sobrio de "01 Película". */
+.film-info-heading,
+.film-intro-label {
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin:0;
+  color:#666;
+  font-size:11px;
+  font-weight:300;
+  line-height:1;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+.film-info-heading > span,
+.film-intro-label > span:first-child {
+  flex:0 0 auto;
+  font-size:11px;
+  line-height:1;
+  color:#666;
+}
+.film-info-heading h2,
+.film-intro-label span:last-child {
+  margin:0;
+  padding:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  line-height:1;
+  font-weight:300;
+  letter-spacing:0;
+  color:#888;
+  text-transform:uppercase;
+}
+.film-info-section:has(#cast-switcher) > .film-info-heading {
+  margin:0;
+  padding:0;
+}
+
+/* Reparto sin scroll largo ni fichas pegadas al borde derecho. */
+.film-info-section:has(#cast-switcher) {
+  grid-template-columns:minmax(190px,.62fr) minmax(0,1.8fr);
+  gap:clamp(32px,5vw,76px);
+  padding:105px 7vw;
+  align-items:start;
+}
+.cast-switcher {
+  width:100%;
+  max-width:none;
+  min-height:0!important;
+  grid-template-columns:minmax(190px,.68fr) minmax(0,1.55fr);
+  gap:clamp(32px,4.5vw,68px);
+  margin:0;
+  align-items:stretch;
+}
+.cast-switcher-nav,
+.cast-switcher-card {
+  position:relative!important;
+  top:auto!important;
+}
+.cast-switcher-scroll-track,
+.cast-switcher-scroll-step {
+  display:none!important;
+}
+.cast-switcher-nav {
+  align-self:start;
+  border-top:1px solid rgba(255,255,255,.16);
+}
+.cast-switcher-name {
+  position:relative;
+  min-height:62px;
+  padding:17px 12px 17px 0!important;
+  margin:0;
+  grid-template-columns:24px minmax(0,1fr);
+  gap:10px;
+  transform:none!important;
+  transition:color .2s ease,background-color .2s ease!important;
+}
+.cast-switcher-name:hover,
+.cast-switcher-name:focus-visible,
+.cast-switcher-name.is-active {
+  padding-left:0!important;
+  background:rgba(255,255,255,.035);
+}
+.cast-switcher-name b {
+  font-size:clamp(18px,1.55vw,23px);
+  line-height:1.2;
+  overflow-wrap:anywhere;
+}
+.cast-switcher-name:focus-visible {
+  outline:1px solid rgba(213,192,165,.7);
+  outline-offset:-2px;
+}
+.cast-switcher-card {
+  min-width:0;
+  grid-template-columns:minmax(250px,.9fr) minmax(0,1.35fr);
+  align-self:start;
+  overflow:hidden;
+}
+.cast-switcher-portrait {
+  min-height:490px;
+  height:100%;
+}
+.cast-switcher-details {
+  min-width:0;
+  padding:clamp(24px,2.8vw,42px);
+}
+.cast-switcher-bio {
+  max-width:none;
+  font-size:12px;
+  line-height:1.75;
+}
+.cast-switcher-title {
+  font-size:clamp(38px,3.5vw,54px);
+  overflow-wrap:anywhere;
+}
+.cast-switcher-rule {
+  margin:19px 0 14px;
+}
+.cast-switcher-works li {
+  padding:9px 0;
+}
+.cast-work-info em {
+  font-size:18px;
+}
+@media(max-width:1100px) {
+  .film-info-section:has(#cast-switcher) {
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .cast-switcher {
+    grid-template-columns:minmax(155px,.6fr) minmax(0,1.4fr);
+    gap:24px;
+  }
+  .cast-switcher-card {
+    grid-template-columns:minmax(190px,.8fr) minmax(0,1.2fr);
+  }
+  .cast-switcher-portrait {min-height:430px}
+  .cast-switcher-details {padding:24px}
+}
+@media(max-width:650px) {
+  .film-info-section:has(#cast-switcher) {
+    padding:76px 20px;
+    gap:30px;
+  }
+  .cast-switcher {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    min-height:0!important;
+  }
+  .cast-switcher-nav {
+    position:relative!important;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:14px;
+    margin:0;
+  }
+  .cast-switcher-name {min-height:54px;padding:13px 4px 13px 0!important}
+  .cast-switcher-name b {font-size:19px}
+  .cast-switcher-card {grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+  .cast-switcher-portrait {min-height:330px}
+  .cast-switcher-details {padding:18px}
+  .cast-switcher-title {font-size:clamp(28px,7vw,40px)}
+  .cast-switcher-bio {font-size:11px;line-height:1.6}
+}
