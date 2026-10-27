@@ -5142,3 +5142,53 @@ body.external-preview-open{overflow:hidden}
   text-transform:uppercase!important;
   color:#888!important;
 }
+
+
+/* Ajuste consolidado de rótulos y reparto: prevalece sobre reglas antiguas. */
+.film-intro-label,.film-info-heading,.film-news-section .film-info-heading{
+ display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:6px!important;
+ margin:0!important;padding:0!important;font-family:inherit!important;font-size:10px!important;font-weight:400!important;
+ line-height:1.2!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#777!important
+}
+.film-intro-label>span:first-child,.film-info-heading>span{
+ display:block!important;margin:0!important;padding:0!important;font-size:9px!important;line-height:1.2!important;
+ letter-spacing:.12em!important;color:#666!important
+}
+.film-intro-label>span:last-child,.film-info-heading>h2{
+ display:block!important;margin:0!important;padding:0!important;font-family:inherit!important;font-size:13px!important;
+ font-weight:400!important;line-height:1.25!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#888!important
+}
+.film-info-section:has(#cast-switcher){display:grid!important;grid-template-columns:minmax(0,1fr)!important;padding-left:9vw!important;padding-right:9vw!important}
+.film-info-section:has(#cast-switcher)>.film-info-heading{margin:0 0 34px!important}
+.film-info-section:has(#cast-switcher) .cast-switcher{
+ width:100%!important;max-width:1120px!important;margin:0 auto!important;
+ grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr)!important;gap:clamp(36px,4vw,64px)!important;align-items:center!important
+}
+.cast-switcher-nav{position:relative!important;top:auto!important;align-self:center!important}
+.cast-switcher-name{transform:none!important;transition:opacity .16s ease,color .16s ease!important;padding-left:0!important;background:transparent!important}
+.cast-switcher-name b{font-size:clamp(15px,1.2vw,18px)!important;font-weight:400!important;transition:font-size .16s ease,color .16s ease!important}
+.cast-switcher-name.is-active b{font-size:clamp(22px,1.8vw,28px)!important;font-weight:500!important;color:#eee!important}
+.cast-switcher-name:not(.is-active) b{color:#999!important}
+.cast-switcher-name:hover:not(.is-active) b{font-size:clamp(16px,1.3vw,20px)!important;color:#ccc!important}
+.cast-switcher-name.is-active,.cast-switcher-name:hover,.cast-switcher-name:focus-visible{padding-left:0!important;transform:none!important;background:transparent!important}
+.cast-switcher-card{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(16px,2vw,26px)!important;align-items:start!important;height:auto!important;min-height:0!important;transform:none!important;transition:none!important;opacity:1!important}
+.cast-switcher-portrait{width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:1/1!important;overflow:hidden!important;align-self:start!important}
+.cast-switcher-photo{display:block!important;width:100%!important;height:100%!important;aspect-ratio:1/1!important;object-fit:cover!important;object-position:center 30%!important}
+.cast-switcher-details{width:100%!important;max-width:none!important;min-width:0!important;height:auto!important;min-height:0!important;padding:clamp(14px,1.5vw,24px)!important;overflow:visible!important}
+.film-news-section .film-info-heading{margin-bottom:36px!important}
+@media(max-width:900px){
+ .film-info-section:has(#cast-switcher){padding-left:6vw!important;padding-right:6vw!important}
+ .film-info-section:has(#cast-switcher) .cast-switcher{grid-template-columns:minmax(160px,.65fr) minmax(0,1.35fr)!important;gap:24px!important}
+ .cast-switcher-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+}
+@media(max-width:650px){
+ .film-info-section:has(#cast-switcher){padding-left:20px!important;padding-right:20px!important}
+ .film-info-section:has(#cast-switcher) .cast-switcher{grid-template-columns:1fr!important;gap:20px!important}
+ .cast-switcher-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 12px!important}
+ .cast-switcher-name b{font-size:14px!important}
+ .cast-switcher-name.is-active b{font-size:18px!important}
+ .cast-switcher-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important}
+ .cast-switcher-details{padding:12px!important}
+ .film-intro-label>span:last-child,.film-info-heading>h2{font-size:12px!important}
+ .film-news-section .film-info-heading{margin-bottom:26px!important}
+}
