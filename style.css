@@ -3975,3 +3975,91 @@ body.external-preview-open{overflow:hidden}
  .cast-switcher-scroll-track{top:0;width:100%;height:560vh}
  .cast-switcher-scroll-step{height:80vh}
 }
+
+
+/* REPARTO — corrección de solapamiento y composición final */
+@media(min-width:901px){
+  .cast-switcher{
+    display:grid!important;
+    grid-template-columns:minmax(185px,.62fr) minmax(0,1.38fr)!important;
+    grid-template-rows:auto;
+    column-gap:clamp(28px,4vw,64px)!important;
+    align-items:start!important;
+    min-height:560vh;
+  }
+  .cast-switcher-nav{
+    grid-column:1!important;
+    grid-row:1!important;
+    position:sticky!important;
+    top:29vh!important;
+    width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    z-index:4!important;
+    background:transparent!important;
+  }
+  .cast-switcher-card{
+    grid-column:2!important;
+    grid-row:1!important;
+    position:sticky!important;
+    top:13vh!important;
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    z-index:1!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  }
+  .cast-switcher-scroll-track{
+    grid-column:2!important;
+    grid-row:1!important;
+    z-index:0!important;
+    pointer-events:none!important;
+  }
+}
+.cast-switcher-nav{border:0!important}
+.cast-switcher-name,
+.cast-switcher-name:hover,
+.cast-switcher-name.is-active{
+  border:0!important;
+  border-bottom:0!important;
+  padding:8px 0!important;
+  margin:0!important;
+  transform:none!important;
+  background:transparent!important;
+  text-transform:none!important;
+}
+.cast-switcher-name span,
+.cast-portrait-index{display:none!important}
+.cast-switcher-name b{font-size:clamp(19px,1.65vw,24px)!important;font-weight:400!important;letter-spacing:0!important}
+.cast-switcher-name.is-active b{font-size:clamp(27px,2.25vw,34px)!important;color:#fff!important}
+.cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+.cast-switcher-name.is-active + .cast-switcher-name b{font-size:clamp(22px,1.85vw,28px)!important;color:#c4c0ba!important}
+.cast-switcher-title{text-transform:uppercase!important}
+.cast-switcher-rule{display:none!important}
+.cast-switcher-works li{border:0!important;padding:8px 0!important}
+.cast-work-info{display:flex!important;align-items:baseline!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:6px 12px!important;width:100%!important}
+.cast-switcher-works li em{font-size:18px!important}
+.cast-switcher-works li small{display:inline!important;white-space:nowrap!important}
+@media(max-width:900px){
+  .cast-switcher{display:grid!important;grid-template-columns:minmax(145px,.58fr) minmax(0,1.42fr)!important;gap:22px!important}
+  .cast-switcher-nav{grid-column:1!important;grid-row:1!important;position:sticky!important;top:25vh!important}
+  .cast-switcher-card{grid-column:2!important;grid-row:1!important;position:sticky!important;top:12vh!important;grid-template-columns:1fr!important}
+  .cast-switcher-portrait{height:clamp(270px,36vh,380px)!important;min-height:0!important}
+  .cast-switcher-details{padding:22px!important}
+  .cast-switcher-scroll-track{grid-column:2!important;grid-row:1!important}
+}
+@media(max-width:650px){
+  .cast-switcher{display:block!important;min-height:560vh}
+  .cast-switcher-nav{position:sticky!important;top:7vh!important;display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;gap:4px 14px!important;margin-bottom:18px!important;padding:10px 0!important;background:#080808!important}
+  .cast-switcher-name{width:auto!important;padding:3px 0!important}
+  .cast-switcher-name b{font-size:14px!important}
+  .cast-switcher-name.is-active b{font-size:18px!important}
+  .cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+  .cast-switcher-name.is-active + .cast-switcher-name b{font-size:16px!important}
+  .cast-switcher-card{position:sticky!important;top:18vh!important;display:grid!important;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)!important}
+  .cast-switcher-portrait{height:clamp(300px,48vh,440px)!important}
+  .cast-switcher-details{padding:14px!important}
+  .cast-switcher-title{font-size:clamp(24px,6.5vw,34px)!important}
+  .cast-switcher-works li em{font-size:14px!important}
+  .cast-switcher-scroll-track{top:0!important;width:100%!important}
+}
