@@ -4224,3 +4224,44 @@ body.external-preview-open{overflow:hidden}
   max-height:calc(100vh - 32px)!important;
   overflow-y:auto!important;
 }
+
+
+/* Reparto: fotografías menos panorámicas y más aire entre elementos */
+@media(min-width:901px){
+  .cast-switcher{
+    grid-template-columns:minmax(245px,.7fr) minmax(0,1.3fr)!important;
+    gap:clamp(46px,6vw,92px)!important;
+    max-width:1400px!important;
+  }
+  .cast-switcher-nav{padding-right:12px!important}
+  .cast-switcher-name{padding:17px 0!important}
+  .cast-switcher-card{
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important;
+    gap:clamp(22px,2.4vw,36px)!important;
+    min-height:clamp(400px,54vh,540px)!important;
+  }
+  .cast-switcher-portrait{
+    aspect-ratio:4/5!important;
+    height:auto!important;
+    min-height:0!important;
+    align-self:center!important;
+  }
+  .cast-switcher-details{
+    padding:clamp(20px,2vw,32px)!important;
+    max-width:430px!important;
+    justify-self:center!important;
+  }
+}
+.cast-switcher-card{align-items:center!important}
+.cast-switcher-portrait{aspect-ratio:4/5!important;overflow:hidden!important}
+.cast-switcher-photo{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 30%!important}
+@media(max-width:900px){
+ .cast-switcher{gap:30px!important}
+ .cast-switcher-card{gap:18px!important;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important}
+ .cast-switcher-portrait{aspect-ratio:4/5!important;height:auto!important;min-height:0!important}
+}
+@media(max-width:650px){
+ .cast-switcher{gap:0!important}
+ .cast-switcher-card{gap:12px!important}
+ .cast-switcher-portrait{aspect-ratio:4/5!important}
+}
