@@ -85,36 +85,32 @@
     <h2>Reparto</h2>
   </div>
 
-  <div class="film-cast-layout film-cast-layout--proposal">
-    <article class="cast-profile cast-profile--gonzalo" id="gonzalo-cortes">
-      <div class="cast-profile-portrait" role="img" aria-label="Retrato de Gonzalo Cortés pendiente de incorporar desde una fuente autorizada">
-        <span class="cast-profile-portrait-index">01 / REPARTO</span>
-        <span class="cast-profile-portrait-initials">GC</span>
-        <span class="cast-profile-portrait-caption">GONZALO CORTÉS</span>
+
+  <div class="cast-switcher" id="cast-switcher">
+    <nav class="cast-switcher-nav" aria-label="Seleccionar actor">
+      <button class="cast-switcher-name is-active" type="button" data-cast="gonzalo" aria-pressed="true"><span>01</span><b>Gonzalo Cortés</b></button>
+      <button class="cast-switcher-name" type="button" data-cast="margot" aria-pressed="false"><span>02</span><b>Margot Minn</b></button>
+    </nav>
+    <article class="cast-switcher-card" aria-live="polite">
+      <div class="cast-switcher-portrait">
+        <img class="cast-switcher-photo" src="https://image.tmdb.org/t/p/w500/4et1xaGG8hIHz8SrSoBdTvI9Yev.jpg" alt="Retrato de Gonzalo Cortés">
+        <span class="cast-portrait-index">01 / REPARTO</span>
+        <span class="cast-portrait-caption">GONZALO CORTÉS</span>
       </div>
-      <div class="cast-profile-info">
-        <div class="cast-profile-eyebrow"><span>ACTOR</span><span>·</span><span>GUIONISTA</span><span>·</span><span>PRODUCTOR</span></div>
-        <h3>Gonzalo<br><em>Cortés</em></h3>
-        <p class="cast-profile-bio">Actor, guionista y productor malagueño, licenciado en Arte Dramático. Ha trabajado en cine, televisión y teatro, y es uno de los fundadores de Mogoma Films y de la compañía Maroma Teatro.</p>
-        <div class="cast-profile-divider"></div>
-        <div class="cast-profile-works-heading"><span>01—04</span><span>TRABAJOS DESTACADOS</span></div>
-        <ol class="cast-profile-works">
-          <li><span>2020</span><em>Siempre es Otoño</em><b>↗</b></li>
-          <li><span>2023</span><em>Folie à Famille</em><b>↗</b></li>
-          <li><span>2017</span><em>Fucking Amanda</em><b>↗</b></li>
-          <li><span>2026</span><em>The Art of Walking</em><b>↗</b></li>
+      <div class="cast-switcher-details">
+        <div class="cast-switcher-role">ACTOR · GUIONISTA · PRODUCTOR</div>
+        <h3 class="cast-switcher-title">Gonzalo <em>Cortés</em></h3>
+        <p class="cast-switcher-bio">Nacido en Málaga y licenciado en Arte Dramático, trabaja en cine, televisión y teatro. Es actor, escritor y productor, y está vinculado a Mogoma Films y Maroma Teatro.</p>
+        <div class="cast-switcher-rule"></div>
+        <div class="cast-switcher-work-label">TRABAJOS DESTACADOS</div>
+        <ol class="cast-switcher-works">
+          <li><span>2024</span><em>Eva &amp; Nicole</em></li>
+          <li><span>2022</span><em>That Dirty Black Bag</em></li>
+          <li><span>2022</span><em>Der junge Häuptling Winnetou</em></li>
+          <li><span>2020</span><em>Siempre es Otoño</em></li>
         </ol>
-        <a class="cast-profile-imdb" href="https://www.imdb.com/es-es/name/nm8719119/" target="_blank" rel="noopener noreferrer">VER FICHA EN IMDb <span>↗</span></a>
       </div>
     </article>
-    <div class="film-cast-grid film-cast-grid--names" aria-label="Resto del reparto">
-      <div class="film-cast-name">Marc Bonnin</div>
-      <div class="film-cast-name">Rubén Faura</div>
-      <div class="film-cast-name">Eva Bonald</div>
-      <div class="film-cast-name">Antonio Reyes</div>
-      <div class="film-cast-name">Jaime Wang</div>
-      <div class="film-cast-name">Angel Martinez</div>
-    </div>
   </div>
 
 </section>
@@ -220,5 +216,69 @@
 </footer>
 
 
+
+<script>
+(() => {
+  const root = document.querySelector('#cast-switcher');
+  if (!root) return;
+  const buttons = [...root.querySelectorAll('.cast-switcher-name')];
+  const card = root.querySelector('.cast-switcher-card');
+  const people = {
+    gonzalo: {
+      name: 'Gonzalo <em>Cortés</em>', role: 'ACTOR · GUIONISTA · PRODUCTOR',
+      bio: 'Nacido en Málaga y licenciado en Arte Dramático, trabaja en cine, televisión y teatro. Es actor, escritor y productor, y está vinculado a Mogoma Films y Maroma Teatro.',
+      photo: 'https://image.tmdb.org/t/p/w500/4et1xaGG8hIHz8SrSoBdTvI9Yev.jpg', alt: 'Retrato de Gonzalo Cortés',
+      caption: 'GONZALO CORTÉS',
+      works: [['2024','Eva & Nicole'],['2022','That Dirty Black Bag'],['2022','Der junge Häuptling Winnetou'],['2020','Siempre es Otoño']]
+    },
+    margot: {
+      name: 'Margot <em>Minn</em>', role: 'REPARTO',
+      bio: 'Estoy verificando su perfil exacto para resumir su trayectoria y seleccionar sus cuatro proyectos relevantes sin atribuirle créditos de otra persona.',
+      photo: '', alt: 'Retrato pendiente de verificar', caption: 'MARGOT MINN',
+      works: [['—','Proyectos pendientes de verificar']]
+    }
+  };
+  function select(key) {
+    const person = people[key];
+    if (!person) return;
+    buttons.forEach(button => {
+      const active = button.dataset.cast === key;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    card.classList.add('is-changing');
+    window.setTimeout(() => {
+      const portrait = card.querySelector('.cast-switcher-portrait');
+      let photo = portrait.querySelector('.cast-switcher-photo');
+      if (person.photo) {
+        if (!photo) {
+          photo = document.createElement('img');
+          photo.className = 'cast-switcher-photo';
+          portrait.prepend(photo);
+        }
+        photo.src = person.photo;
+        photo.alt = person.alt;
+        photo.hidden = false;
+      } else if (photo) {
+        photo.hidden = true;
+        photo.removeAttribute('src');
+      }
+      portrait.querySelector('.cast-portrait-caption').textContent = person.caption;
+      card.querySelector('.cast-switcher-role').textContent = person.role;
+      card.querySelector('.cast-switcher-title').innerHTML = person.name;
+      card.querySelector('.cast-switcher-bio').textContent = person.bio;
+      card.querySelector('.cast-switcher-works').innerHTML = person.works.map(work => '<li><span>'+work[0]+'</span><em>'+work[1]+'</em></li>').join('');
+      card.classList.remove('is-changing');
+    }, 150);
+  }
+  buttons.forEach(button => {
+    button.addEventListener('click', () => select(button.dataset.cast));
+    button.addEventListener('mouseenter', () => {
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) select(button.dataset.cast);
+    });
+    button.addEventListener('focus', () => select(button.dataset.cast));
+  });
+})();
+</script>
 </body>
 </html>
