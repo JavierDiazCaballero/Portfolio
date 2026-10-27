@@ -5613,3 +5613,9 @@ body.external-preview-open{overflow:hidden}
     min-width:0!important;
   }
 }
+
+
+/* Colaboraciones: ocultar los iconos superpuestos de reproducción/enlace en las miniaturas. */
+.collaboration-project .collaboration-play{
+  display:none!important;
+}
