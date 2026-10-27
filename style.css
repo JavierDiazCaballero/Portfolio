@@ -6228,3 +6228,47 @@ body.external-preview-open{overflow:hidden}
     font-weight:500!important;
   }
 }
+
+
+/* Indicación sutil de gesto y transición breve entre fichas, solo en móvil. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-swipe-hint{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:9px!important;
+    margin:10px auto 18px!important;
+    color:rgba(255,255,255,.52)!important;
+    font-size:8px!important;
+    letter-spacing:2px!important;
+    line-height:1!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-swipe-arrow{
+    display:inline-block!important;
+    font-family:Arial,sans-serif!important;
+    font-size:19px!important;
+    line-height:10px!important;
+    color:rgba(255,255,255,.78)!important;
+    animation:castArrowNudge 1.7s ease-in-out infinite!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-portrait,
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-details,
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-bio,
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-works{
+    animation:castCardReveal .28s ease-out both!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-details{animation-delay:.035s!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-bio{animation-delay:.055s!important;}
+}
+@keyframes castArrowNudge{
+  0%,100%{transform:translateX(0);opacity:.65}
+  50%{transform:translateX(-4px);opacity:1}
+}
+@keyframes castCardReveal{
+  from{opacity:.55;transform:translateX(7px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .cast-swipe-arrow{animation:none!important}
+  .cast-card-enter *{animation:none!important}
+}
