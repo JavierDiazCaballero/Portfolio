@@ -250,8 +250,9 @@
     angel: { name: 'Ángel <em>Martínez</em>', role: 'ACTOR', bio: 'Actor representado por Alexandra Leight. Ha trabajado en televisión, cortometrajes y videoclips, con créditos como Los Protegidos: ADN y varios proyectos de ficción independiente.', photo: 'https://www.aleighthouse.com/wp-content/uploads/2019/11/Captura-de-pantalla-2025-07-28-a-las-17.33.05-700x797.png', alt: 'Retrato profesional de Ángel Martínez publicado por su agencia en 2025', caption: 'ÁNGEL MARTÍNEZ', works: [['2025','Los Protegidos: ADN','SERIE'],['—','Nuovo Tentativo','CORTOMETRAJE'],['—','Adiós','CORTOMETRAJE'],['—','Hermanos','CORTOMETRAJE']] }
   };
   function select(key) {
+    if (buttons.some(button => button.dataset.cast === key && button.classList.contains('is-active'))) return;
     const person = people[key];
-    if (!person || buttons.some(button => button.dataset.cast === key && button.classList.contains('is-active'))) return;
+    if (!person) return;
     buttons.forEach(button => {
       const active = button.dataset.cast === key;
       button.classList.toggle('is-active', active);
@@ -260,15 +261,25 @@
     const portrait = card.querySelector('.cast-switcher-portrait');
     let photo = portrait.querySelector('.cast-switcher-photo');
     if (person.photo) {
-      if (!photo) { photo = document.createElement('img'); photo.className = 'cast-switcher-photo'; portrait.prepend(photo); }
+      if (!photo) {
+        photo = document.createElement('img');
+        photo.className = 'cast-switcher-photo';
+        portrait.prepend(photo);
+      }
       photo.onerror = () => { photo.hidden = true; };
-      photo.src = person.photo; photo.alt = person.alt; photo.hidden = false;
-    } else if (photo) { photo.hidden = true; photo.removeAttribute('src'); }
+      photo.src = person.photo;
+      photo.alt = person.alt;
+      photo.hidden = false;
+    } else if (photo) {
+      photo.hidden = true;
+      photo.removeAttribute('src');
+    }
     portrait.querySelector('.cast-portrait-caption').textContent = person.caption;
     card.querySelector('.cast-switcher-role').textContent = person.role;
     card.querySelector('.cast-switcher-title').innerHTML = person.name;
     card.querySelector('.cast-switcher-bio').textContent = person.bio;
     card.querySelector('.cast-switcher-works').innerHTML = person.works.map(work => '<li><span>'+work[0]+'</span><div class="cast-work-info"><em>'+work[1]+'</em><small>'+(work[2] || 'PROYECTO')+'</small></div></li>').join('');
+
   }
   buttons.forEach(button => {
     button.addEventListener('pointerenter', () => select(button.dataset.cast));
