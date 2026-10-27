@@ -6399,3 +6399,14 @@ body.external-preview-open{overflow:hidden}
     white-space:nowrap!important;
   }
 }
+
+
+/* En móvil, evitar destellos de la transición de escritorio al cambiar de actor. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-portrait,
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-details,
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-bio,
+  .film-info-section:has(#cast-switcher) .cast-switcher-card.cast-card-enter .cast-switcher-works{
+    animation: none!important;
+  }
+}
