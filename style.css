@@ -3189,3 +3189,22 @@ footer {
 @media(max-width:900px){.cast-switcher{grid-template-columns:155px minmax(0,1fr);gap:22px}.cast-switcher-card{grid-template-columns:1fr}.cast-switcher-portrait{min-height:270px}.cast-switcher-photo{object-position:center 27%}.cast-switcher-details{padding:23px}}
 @media(max-width:650px){.cast-switcher{grid-template-columns:1fr;gap:22px}.cast-switcher-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}.cast-switcher-name{grid-template-columns:20px minmax(0,1fr);gap:6px;padding:14px 0}.cast-switcher-name b{font-size:21px}.cast-switcher-portrait{min-height:330px}.cast-switcher-details{padding:24px}.cast-switcher-title{font-size:48px}}
 @media(prefers-reduced-motion:reduce){.cast-switcher-card,.cast-switcher-name,.cast-switcher-photo{transition:none!important}}
+
+
+/* REPARTO: los perfiles cambian al hacer scroll vertical */
+.cast-switcher{position:relative;min-height:455vh;align-items:start}
+.cast-switcher-nav{position:sticky;top:14vh;z-index:2}
+.cast-switcher-card{position:sticky;top:12vh;z-index:1;align-self:start}
+.cast-switcher-scroll-track{position:absolute;top:0;right:0;width:calc((100% - clamp(24px,5vw,76px)) * .682);height:455vh;pointer-events:none}
+.cast-switcher-scroll-step{height:65vh}
+@media(max-width:900px){
+  .cast-switcher{min-height:455vh}
+  .cast-switcher-scroll-track{height:455vh;width:calc((100% - 22px) * .61)}
+}
+@media(max-width:650px){
+  .cast-switcher{min-height:455vh;display:block}
+  .cast-switcher-nav{position:relative;top:auto;margin-bottom:22px}
+  .cast-switcher-card{position:sticky;top:7vh}
+  .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
+  .cast-switcher-scroll-step{height:65vh}
+}
