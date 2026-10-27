@@ -5500,3 +5500,12 @@ body.external-preview-open{overflow:hidden}
   margin-top:0!important;
   margin-bottom:12px!important;
 }
+
+
+/* Encuadre individual de las fotos de Rubén y Antonio, sin mover el contenedor. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
+  object-position:center 12%!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
+  object-position:center 18%!important;
+}
