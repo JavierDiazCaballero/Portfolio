@@ -6455,3 +6455,19 @@ body.external-preview-open{overflow:hidden}
   }
 }
 
+
+
+/* PRODUCCIÓN — ajustar jerarquía y proximidad de créditos en móvil. */
+@media (max-width: 650px) {
+  .film-page-body .film-info-section:has(.film-production-grid) .film-info-heading {
+    margin-bottom: 32px;
+  }
+
+  .film-page-body .film-production-grid {
+    row-gap: 24px;
+  }
+
+  .film-page-body .film-production-item {
+    gap: 6px;
+  }
+}
