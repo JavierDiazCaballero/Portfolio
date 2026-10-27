@@ -85,38 +85,35 @@
     <h2>Reparto</h2>
   </div>
 
-  <div class="film-cast-layout">
-    <div class="film-cast-grid">
-      <div class="film-cast-name">Marc Bonnin</div>
-      <div class="film-cast-person film-cast-person--test">
-        <div class="film-cast-name film-cast-name--interactive" tabindex="0" aria-describedby="gonzalo-preview">Gonzalo Cortés</div>
-        <article class="film-cast-preview" id="gonzalo-preview">
-          <div class="film-cast-preview-image" role="img" aria-label="Espacio reservado para el retrato de Gonzalo Cortés">
-            <span>G C</span>
-            <small>RETRATO</small>
-          </div>
-          <div class="film-cast-preview-content">
-            <span class="film-cast-preview-kicker">ACTOR · GUIONISTA</span>
-            <h3>Gonzalo Cortés</h3>
-            <p>Actor español con trayectoria en cine, televisión y teatro.</p>
-            <div class="film-cast-works">
-              <span>TRABAJOS DESTACADOS</span>
-              <p><em>Siempre es Otoño</em> · 2020</p>
-              <p><em>Der junge Häuptling Winnetou</em> · 2022</p>
-              <p><em>That Dirty Black Bag</em> · 2022</p>
-            </div>
-          </div>
-        </article>
+  <div class="film-cast-layout film-cast-layout--proposal">
+    <article class="cast-profile cast-profile--gonzalo" id="gonzalo-cortes">
+      <div class="cast-profile-portrait" role="img" aria-label="Retrato de Gonzalo Cortés pendiente de incorporar desde una fuente autorizada">
+        <span class="cast-profile-portrait-index">01 / REPARTO</span>
+        <span class="cast-profile-portrait-initials">GC</span>
+        <span class="cast-profile-portrait-caption">GONZALO CORTÉS</span>
       </div>
+      <div class="cast-profile-info">
+        <div class="cast-profile-eyebrow"><span>ACTOR</span><span>·</span><span>GUIONISTA</span><span>·</span><span>PRODUCTOR</span></div>
+        <h3>Gonzalo<br><em>Cortés</em></h3>
+        <p class="cast-profile-bio">Nacido en Málaga y licenciado en Arte Dramático, desarrolla su carrera entre el cine, la televisión y el teatro. Además de actuar, escribe y produce proyectos audiovisuales y escénicos, y está vinculado a la productora Mogoma Films.</p>
+        <div class="cast-profile-divider"></div>
+        <div class="cast-profile-works-heading"><span>01—04</span><span>TRABAJOS DESTACADOS</span></div>
+        <ol class="cast-profile-works">
+          <li><span>2024</span><em>Eva &amp; Nicole</em><b>↗</b></li>
+          <li><span>2022</span><em>That Dirty Black Bag</em><b>↗</b></li>
+          <li><span>2022</span><em>Der junge Häuptling Winnetou</em><b>↗</b></li>
+          <li><span>2020</span><em>Siempre es Otoño</em><b>↗</b></li>
+        </ol>
+        <a class="cast-profile-imdb" href="https://www.imdb.com/es-es/name/nm8719119/" target="_blank" rel="noopener noreferrer">VER FICHA EN IMDb <span>↗</span></a>
+      </div>
+    </article>
+    <div class="film-cast-grid film-cast-grid--names" aria-label="Resto del reparto">
+      <div class="film-cast-name">Marc Bonnin</div>
       <div class="film-cast-name">Rubén Faura</div>
       <div class="film-cast-name">Eva Bonald</div>
       <div class="film-cast-name">Antonio Reyes</div>
       <div class="film-cast-name">Jaime Wang</div>
       <div class="film-cast-name">Angel Martinez</div>
-    </div>
-    <div class="film-cast-preview-slot" aria-hidden="true">
-      <span class="film-cast-preview-hint">Pasa el ratón por un nombre</span>
-      <span class="film-cast-preview-mobile-hint">PREVISUALIZACIÓN</span>
     </div>
   </div>
 
@@ -222,19 +219,6 @@
   <a href="index.html">Volver al portfolio ↑</a>
 </footer>
 
-<script>
-(() => {
-  const person = document.querySelector('.film-cast-person--test');
-  if (!person || !('IntersectionObserver' in window)) return;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && window.matchMedia('(max-width: 900px)').matches) {
-        person.classList.add('is-in-view');
-      }
-    });
-  }, { threshold: 0.25 });
-  observer.observe(person);
-})();
-</script>
+
 </body>
 </html>
