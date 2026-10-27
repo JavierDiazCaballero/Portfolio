@@ -239,6 +239,17 @@
   if (!root) return;
   const buttons = [...root.querySelectorAll('.cast-switcher-name')];
   const card = root.querySelector('.cast-switcher-card');
+  // En móvil, mostrar Marc también al final de la cinta para que el reparto se perciba circular.
+  const nav = root.querySelector('.cast-switcher-nav');
+  const marcButton = buttons.find(button => button.dataset.cast === 'marc');
+  if (nav && marcButton && !nav.querySelector('[data-cast-clone="marc"]')) {
+    const marcClone = marcButton.cloneNode(true);
+    marcClone.dataset.castClone = 'marc';
+    marcClone.classList.remove('is-active');
+    marcClone.setAttribute('aria-pressed', 'false');
+    nav.appendChild(marcClone);
+    marcClone.addEventListener('click', () => select('marc'));
+  }
   const people = {
     marc: { name: 'Marc <em>Bonnin</em>', character: 'Sergio Martínez', role: 'ACTOR · PRODUCTOR', bio: 'Actor mallorquín formado en interpretación textual en la RESAD. Se dio a conocer al gran público como Álex en Élite y ha trabajado en cine, televisión y teatro. También ha dado el salto a la producción cinematográfica con ¿Quién mató al jefe en Navidad?', photo: 'https://www.aleighthouse.com/wp-content/uploads/2022/06/MARC-BONNIN-FOTO-4-715x1024.jpg', alt: 'Retrato profesional de Marc Bonnin, fotografía de su perfil de representación', caption: 'MARC BONNIN', works: [['2026','Papi Ricky','PELÍCULA'],['2026','Por cien millones','SERIE'],['2022','Élite','SERIE'],['2022','42 segundos','PELÍCULA']] },
     gonzalo: { name: 'Gonzalo <em>Cortés</em>', role: 'ACTOR · GUIONISTA · PRODUCTOR', bio: 'Nacido en Málaga y licenciado en Arte Dramático, trabaja en cine, televisión y teatro. Es actor, escritor y productor, y está vinculado a Mogoma Films y Maroma Teatro.', photo: 'gonzalo-cortes.jpg', alt: 'Retrato de Gonzalo Cortés', caption: 'GONZALO CORTÉS', character: 'Miguel', works: [['2020','Siempre es Otoño','CORTOMETRAJE'],['2024','Dos Lunas','PELÍCULA'],['2026','The art of walking','PELÍCULA'],['2023','Folie à Famille','PELÍCULA']] },
