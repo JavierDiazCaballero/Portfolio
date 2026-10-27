@@ -258,31 +258,28 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
-    card.classList.add('is-changing');
-    window.setTimeout(() => {
-      const portrait = card.querySelector('.cast-switcher-portrait');
-      let photo = portrait.querySelector('.cast-switcher-photo');
-      if (person.photo) {
-        if (!photo) {
-          photo = document.createElement('img');
-          photo.className = 'cast-switcher-photo';
-          portrait.prepend(photo);
-        }
-        photo.onerror = () => { photo.hidden = true; };
-        photo.src = person.photo;
-        photo.alt = person.alt;
-        photo.hidden = false;
-      } else if (photo) {
-        photo.hidden = true;
-        photo.removeAttribute('src');
+    const portrait = card.querySelector('.cast-switcher-portrait');
+    let photo = portrait.querySelector('.cast-switcher-photo');
+    if (person.photo) {
+      if (!photo) {
+        photo = document.createElement('img');
+        photo.className = 'cast-switcher-photo';
+        portrait.prepend(photo);
       }
-      portrait.querySelector('.cast-portrait-caption').textContent = person.caption;
-      card.querySelector('.cast-switcher-role').textContent = person.role;
-      card.querySelector('.cast-switcher-title').innerHTML = person.name;
-      card.querySelector('.cast-switcher-bio').textContent = person.bio;
-      card.querySelector('.cast-switcher-works').innerHTML = person.works.map(work => '<li><span>'+work[0]+'</span><div class="cast-work-info"><em>'+work[1]+'</em><small>'+(work[2] || 'PROYECTO')+'</small></div></li>').join('');
-      card.classList.remove('is-changing');
-    }, 150);
+      photo.onerror = () => { photo.hidden = true; };
+      photo.src = person.photo;
+      photo.alt = person.alt;
+      photo.hidden = false;
+    } else if (photo) {
+      photo.hidden = true;
+      photo.removeAttribute('src');
+    }
+    portrait.querySelector('.cast-portrait-caption').textContent = person.caption;
+    card.querySelector('.cast-switcher-role').textContent = person.role;
+    card.querySelector('.cast-switcher-title').innerHTML = person.name;
+    card.querySelector('.cast-switcher-bio').textContent = person.bio;
+    card.querySelector('.cast-switcher-works').innerHTML = person.works.map(work => '<li><span>'+work[0]+'</span><div class="cast-work-info"><em>'+work[1]+'</em><small>'+(work[2] || 'PROYECTO')+'</small></div></li>').join('');
+
   }
   buttons.forEach(button => {
     button.addEventListener('focus', () => select(button.dataset.cast));
