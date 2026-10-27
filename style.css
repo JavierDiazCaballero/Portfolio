@@ -5621,12 +5621,13 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Solo móvil: selector de reparto en horizontal, repartido en dos filas, con la ficha debajo. */
+/* Solo móvil: selector de reparto compacto, nombres algo mayores y última fila centrada. */
 @media(max-width:650px){
-  .film-info-section:has(#cast-switcher) .cast-switcher{display:flex!important;flex-direction:column!important;gap:20px!important;}
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav{position:static!important;top:auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-flow:row!important;gap:8px 6px!important;width:100%!important;margin:0!important;padding:0!important;background:transparent!important;}
-  .film-info-section:has(#cast-switcher) .cast-switcher-name{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;min-width:0!important;width:100%!important;padding:9px 3px!important;text-align:center!important;}
-  .film-info-section:has(#cast-switcher) .cast-switcher-name span{font-size:8px!important;}
-  .film-info-section:has(#cast-switcher) .cast-switcher-name b{font-size:11px!important;line-height:1.15!important;white-space:normal!important;overflow-wrap:anywhere!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher{display:flex!important;flex-direction:column!important;gap:12px!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{position:static!important;top:auto!important;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-flow:row!important;gap:3px 6px!important;row-gap:3px!important;width:100%!important;margin:0!important;padding:0!important;background:transparent!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-name{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:4px!important;min-width:0!important;width:100%!important;padding:7px 3px!important;text-align:center!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-name span{font-size:9px!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-name b{font-size:12px!important;line-height:1.15!important;white-space:normal!important;overflow-wrap:anywhere!important;}
+  .film-info-section:has(#cast-switcher) .cast-switcher-name:nth-child(5){grid-column:2!important;}
   .film-info-section:has(#cast-switcher) .cast-switcher-card{position:static!important;top:auto!important;width:100%!important;margin:0!important;}
 }
