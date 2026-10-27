@@ -416,7 +416,8 @@
   }
   document.querySelectorAll('a[target="_blank"][href^="https://"]').forEach(anchor => {
     if (anchor.dataset.video || anchor.closest('#external-preview-modal')) return;
-    if (new URL(anchor.href).hostname.includes('youtube.com') || new URL(anchor.href).hostname.includes('youtu.be')) return;
+    const targetHost = new URL(anchor.href).hostname;
+    if (targetHost.includes('youtube.com') || targetHost.includes('youtu.be') || targetHost.includes('instagram.com') || targetHost.includes('imdb.com')) return;
     anchor.addEventListener('click', event => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
