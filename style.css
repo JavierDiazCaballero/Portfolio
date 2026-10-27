@@ -3628,3 +3628,23 @@ footer {
  .cast-work-info em{font-size:16px}
  .cast-work-info small{font-size:7px;letter-spacing:.08em}
 }
+
+
+/* Vistas previas externas: el visitante permanece en el portfolio */
+.external-preview-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+.external-preview-modal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+.external-preview-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px)}
+.external-preview-dialog{position:relative;z-index:1;width:min(760px,100%);max-height:min(86vh,900px);overflow:auto;padding:clamp(24px,4vw,48px);background:#151515;color:#eee;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 100px rgba(0,0,0,.35)}
+.external-preview-close{position:absolute;top:12px;right:16px;border:0;background:transparent;color:#eee;font-size:32px;font-weight:200;line-height:1;cursor:pointer}
+.external-preview-kicker{margin:0 38px 14px 0;color:#999;font:9px/1.5 Arial,sans-serif;letter-spacing:.18em}
+.external-preview-dialog h2{margin:0 40px 24px 0;color:#f2eee8;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,54px);font-weight:400;line-height:1}
+.external-preview-content{min-height:100px}
+.external-preview-card{padding:22px 0;border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15)}
+.external-preview-source{color:#aaa;font:10px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.external-preview-description{color:#d0ccc5;font-size:14px;line-height:1.75}
+.external-preview-note{color:#8e8a84;font-size:11px;line-height:1.7}
+.external-preview-open{display:inline-flex;margin-top:24px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.45);color:#f2eee8;text-decoration:none;font-size:12px;letter-spacing:.04em}
+.external-preview-open:hover{border-color:#fff;color:#fff}
+body.external-preview-open{overflow:hidden}
+#external-preview-content .instagram-media{margin-left:auto!important;margin-right:auto!important}
+@media(max-width:600px){.external-preview-modal{padding:12px}.external-preview-dialog{padding:24px 18px;max-height:90vh}.external-preview-description{font-size:13px}}
