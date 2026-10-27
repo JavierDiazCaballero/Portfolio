@@ -5489,3 +5489,14 @@ body.external-preview-open{overflow:hidden}
   font-weight:400!important;
 }
 .cast-switcher-character[hidden]{display:none!important}
+
+
+/* Afinar el bloque del reparto: personaje pegado al nombre y biografía un poco más arriba. */
+.cast-switcher-character{
+  margin-top:-19px!important;
+  margin-bottom:6px!important;
+}
+.cast-switcher-bio{
+  margin-top:0!important;
+  margin-bottom:12px!important;
+}
