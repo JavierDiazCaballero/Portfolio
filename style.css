@@ -5585,3 +5585,9 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="jaime"]{
   object-position:center 10%!important;
 }
+
+
+/* Antonio Reyes: centrar el retrato y dar prioridad a que la cabeza quede completa. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
+  object-position:center 10%!important;
+}
