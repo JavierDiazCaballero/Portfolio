@@ -253,6 +253,7 @@
     angel: { name: 'Ángel <em>Martínez</em>', role: 'ACTOR', bio: 'Actor representado por Alexandra Leight. Ha trabajado en televisión, cortometrajes y videoclips, con créditos como Los Protegidos: ADN y varios proyectos de ficción independiente.', photo: 'https://www.aleighthouse.com/wp-content/uploads/2019/11/Captura-de-pantalla-2025-07-28-a-las-17.33.05-700x797.png', alt: 'Retrato profesional de Ángel Martínez publicado por su agencia en 2025', caption: 'ÁNGEL MARTÍNEZ', works: [['2025','Los Protegidos: ADN','SERIE'],['—','Nuovo Tentativo','CORTOMETRAJE'],['—','Adiós','CORTOMETRAJE'],['—','Hermanos','CORTOMETRAJE']] }
   };
   function select(key) {
+    if (buttons.some(button => button.dataset.cast === key && button.classList.contains('is-active'))) return;
     const person = people[key];
     if (!person) return;
     buttons.forEach(button => {
@@ -287,12 +288,11 @@
     }, 150);
   }
   buttons.forEach(button => {
-    button.addEventListener('mouseenter', () => select(button.dataset.cast));
+    button.addEventListener('pointerenter', () => select(button.dataset.cast));
     button.addEventListener('focus', () => select(button.dataset.cast));
     button.addEventListener('click', () => select(button.dataset.cast));
   });
-  select(buttons[0].dataset.cast);
-  requestScrollUpdate();
+  // La ficha inicial de Marc ya está renderizada en el HTML; no se necesita inicializar un sistema de scroll.
 })();
 </script>
 
