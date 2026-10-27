@@ -222,5 +222,19 @@
   <a href="index.html">Volver al portfolio ↑</a>
 </footer>
 
+<script>
+(() => {
+  const person = document.querySelector('.film-cast-person--test');
+  if (!person || !('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && window.matchMedia('(max-width: 900px)').matches) {
+        person.classList.add('is-in-view');
+      }
+    });
+  }, { threshold: 0.25 });
+  observer.observe(person);
+})();
+</script>
 </body>
 </html>
