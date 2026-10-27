@@ -6433,3 +6433,25 @@ body.external-preview-open{overflow:hidden}
     color:#ccc!important;
   }
 }
+
+/* NOTICIAS — tarjetas más compactas en escritorio, con menos espacio vacío. */
+@media (min-width: 651px) {
+  .film-page-body .film-news-card {
+    min-height: 210px;
+    padding: 20px;
+  }
+
+  .film-page-body .film-news-card h3 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+  }
+
+  .film-page-body .film-news-card p {
+    margin-bottom: 14px;
+  }
+
+  .film-page-body .film-news-read {
+    padding-top: 11px;
+  }
+}
+
