@@ -257,6 +257,12 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
+    const activeButton = buttons.find(button => button.dataset.cast === key);
+    if (activeButton && window.matchMedia('(max-width: 650px)').matches) {
+      const nav = root.querySelector('.cast-switcher-nav');
+      const targetLeft = activeButton.offsetLeft - (nav.clientWidth - activeButton.offsetWidth) / 2;
+      nav.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+    }
     const portrait = card.querySelector('.cast-switcher-portrait');
     let photo = portrait.querySelector('.cast-switcher-photo');
     if (person.photo) {
