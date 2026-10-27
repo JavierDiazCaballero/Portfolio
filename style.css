@@ -5949,3 +5949,14 @@ body.external-preview-open{overflow:hidden}
     margin-top:calc(30px + 2.35em + 7px)!important;
   }
 }
+
+
+/* Móvil: separar aún más nombre y personaje del bloque de cargos. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-title{
+    margin-top:42px!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-character{
+    margin-top:calc(42px + 2.35em + 12px)!important;
+  }
+}
