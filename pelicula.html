@@ -81,8 +81,8 @@
 <section class="film-info-section">
 
   <div class="film-info-heading">
-    <span>01</span>
-    <h2>Película</h2>
+    <span>02</span>
+    <h2>Reparto</h2>
   </div>
 
 
@@ -341,6 +341,7 @@
   });
   window.addEventListener('scroll', requestScrollUpdate, { passive: true });
   window.addEventListener('resize', requestScrollUpdate);
+  select(buttons[0].dataset.cast);
   requestScrollUpdate();
 })();
 </script>
