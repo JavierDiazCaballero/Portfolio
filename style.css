@@ -6410,3 +6410,12 @@ body.external-preview-open{overflow:hidden}
     animation: none!important;
   }
 }
+
+
+/* Los elementos auxiliares del carrusel solo existen visualmente en móvil. */
+@media(min-width:651px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone],
+  .film-info-section:has(#cast-switcher) .cast-swipe-hint{
+    display:none!important;
+  }
+}
