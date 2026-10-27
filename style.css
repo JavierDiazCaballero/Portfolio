@@ -5055,3 +5055,44 @@ body.external-preview-open{overflow:hidden}
   .film-bottom-nav{margin:14px 20px 0!important;padding:8px 0!important}
   .film-bottom-nav .film-bottom-projects{font-size:10px!important;letter-spacing:.08em!important}
 }
+
+
+/* Ajuste de retratos: proporción casi cuadrada, menos alargada. */
+.cast-switcher-card{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+}
+.cast-switcher-portrait{
+  aspect-ratio:1 / 1!important;
+  height:auto!important;
+  min-height:0!important;
+  align-self:start!important;
+  overflow:hidden!important;
+}
+.cast-switcher-photo{
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:1 / 1!important;
+  object-fit:cover!important;
+  object-position:center 30%!important;
+}
+@media(min-width:901px){
+  .cast-switcher-card{
+    height:auto!important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    align-items:start!important;
+  }
+  .cast-switcher-portrait{
+    width:100%!important;
+    aspect-ratio:1 / 1!important;
+    min-height:0!important;
+    height:auto!important;
+  }
+}
+@media(max-width:900px){
+  .cast-switcher-card{height:auto!important;align-items:start!important}
+  .cast-switcher-portrait{aspect-ratio:1 / 1!important;height:auto!important;min-height:0!important}
+}
+@media(max-width:650px){
+  .cast-switcher-card{height:auto!important}
+  .cast-switcher-portrait{aspect-ratio:1 / 1!important;height:auto!important;min-height:0!important}
+}
