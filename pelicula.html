@@ -110,6 +110,15 @@
         <ol class="cast-switcher-works"><li><span>—</span><em>Proyectos pendientes de verificar</em></li></ol>
       </div>
     </article>
+    <div class="cast-switcher-scroll-track" aria-hidden="true">
+      <div class="cast-switcher-scroll-step" data-cast-step="marc"></div>
+      <div class="cast-switcher-scroll-step" data-cast-step="gonzalo"></div>
+      <div class="cast-switcher-scroll-step" data-cast-step="ruben"></div>
+      <div class="cast-switcher-scroll-step" data-cast-step="eva"></div>
+      <div class="cast-switcher-scroll-step" data-cast-step="antonio"></div>
+      <div class="cast-switcher-scroll-step" data-cast-step="jaime"></div>
+      <div class="cast-switcher-scroll-step" data-cast-step="angel"></div>
+    </div>
   </div>
 
 </section>
@@ -264,13 +273,22 @@
       card.classList.remove('is-changing');
     }, 150);
   }
+  const steps = [...root.querySelectorAll('[data-cast-step]')];
   buttons.forEach(button => {
-    button.addEventListener('click', () => select(button.dataset.cast));
-    button.addEventListener('mouseenter', () => {
-      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) select(button.dataset.cast);
+    button.addEventListener('click', () => {
+      const step = steps.find(item => item.dataset.castStep === button.dataset.cast);
+      if (step) window.scrollTo({ top: step.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.45, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      select(button.dataset.cast);
     });
     button.addEventListener('focus', () => select(button.dataset.cast));
   });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+      if (visible) select(visible.target.dataset.castStep);
+    }, { root: null, rootMargin: '-42% 0px -42% 0px', threshold: [0, .1, .5, 1] });
+    steps.forEach(step => observer.observe(step));
+  }
 })();
 </script>
 </body>
