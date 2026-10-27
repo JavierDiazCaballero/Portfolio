@@ -6123,3 +6123,22 @@ body.external-preview-open{overflow:hidden}
     margin-left:0!important;
   }
 }
+
+
+/* Móvil: noticias más estrechas y centradas para que no ocupen todo el ancho. */
+@media(max-width:650px){
+  .film-page-body .film-news-grid{
+    width:100%!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    gap:14px!important;
+  }
+  .film-page-body .film-news-card{
+    width:88%!important;
+    max-width:420px!important;
+    box-sizing:border-box!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+}
