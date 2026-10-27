@@ -5539,3 +5539,13 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-works{
   margin-top:12px!important;
 }
+
+
+/* Ajuste corregido: más separación entre biografía y título; proyectos más cerca del título. */
+.film-info-section:has(#cast-switcher) .cast-switcher-work-label{
+  margin-top:14px!important;
+  margin-bottom:0!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-works{
+  margin-top:2px!important;
+}
