@@ -5296,3 +5296,48 @@ body.external-preview-open{overflow:hidden}
 .film-bottom-nav{
   border-top:0!important;
 }
+
+
+/* Encabezados 01 Película y 02 Reparto: mismo tratamiento tipográfico y espaciado. */
+.film-intro-label,
+.film-info-section > .film-info-heading{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#777!important;
+  font-family:inherit!important;
+  font-size:10px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+.film-intro-label > span,
+.film-info-section > .film-info-heading > span{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#666!important;
+  font-family:inherit!important;
+  font-size:9px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.12em!important;
+}
+.film-intro-label > span:last-child,
+.film-info-section > .film-info-heading > h2{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#888!important;
+  font-family:inherit!important;
+  font-size:11px!important;
+  font-weight:400!important;
+  line-height:1.25!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
