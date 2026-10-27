@@ -3208,3 +3208,49 @@ footer {
   .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
   .cast-switcher-scroll-step{height:65vh}
 }
+
+
+/* REPARTO — refinamiento visual */
+.film-info-section:has(#cast-switcher) > .film-info-heading{margin-bottom:clamp(42px,7vh,82px);padding-top:clamp(22px,4vh,48px)}
+.cast-switcher{max-width:1320px;grid-template-columns:minmax(175px,.58fr) minmax(0,1.65fr);gap:clamp(38px,7vw,112px);margin:0 auto}
+.cast-switcher-nav{top:18vh;border-top:1px solid rgba(255,255,255,.2)}
+.cast-switcher-name{grid-template-columns:22px minmax(0,1fr);gap:14px;padding:20px 10px 20px 0;text-transform:uppercase;letter-spacing:.035em}
+.cast-switcher-name span{font-size:9px;color:#666}
+.cast-switcher-name b{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.8vw,25px);font-weight:400;letter-spacing:.045em}
+.cast-switcher-name:hover,.cast-switcher-name.is-active{padding-left:10px;color:#f4eee6}
+.cast-switcher-name.is-active b{color:#d5c0a5}
+.cast-switcher-card{top:14vh;grid-template-columns:minmax(210px,.82fr) minmax(0,1.18fr);gap:0;background:#0c0c0c;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 80px rgba(0,0,0,.18)}
+.cast-switcher-portrait{min-height:500px;background:linear-gradient(145deg,#26221f,#0c0c0c 80%)}
+.cast-portrait-index,.cast-portrait-caption{display:none!important}
+.cast-switcher-photo{object-position:center 25%;filter:grayscale(12%) saturate(.72)}
+.cast-switcher-details{padding:clamp(30px,4.3vw,66px);align-self:center}
+.cast-switcher-role{font-size:8px;letter-spacing:.2em;color:#b19b82;margin-bottom:22px}
+.cast-switcher-title{text-transform:uppercase;letter-spacing:.015em;font-size:clamp(42px,4vw,61px);line-height:.94;margin-bottom:24px}
+.cast-switcher-title em{color:#b9a58f}
+.cast-switcher-bio{max-width:46ch;font-size:12px;line-height:1.95;color:#b8b4af}
+.cast-switcher-rule{margin:30px 0 19px;background:rgba(255,255,255,.18)}
+.cast-switcher-work-label{font-size:8px;letter-spacing:.2em;color:#b19b82;margin-bottom:10px}
+.cast-switcher-works li{grid-template-columns:42px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+.cast-switcher-works li span{font-size:9px;color:#8e877e;padding-top:4px}
+.cast-work-info{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cast-work-info em{font-family:'Cormorant Garamond',serif;font-size:19px;color:#e5e0da;line-height:1.08}
+.cast-work-info small{font-size:7px;line-height:1.3;letter-spacing:.18em;color:#918575;text-transform:uppercase}
+@media(max-width:900px){
+ .cast-switcher{grid-template-columns:145px minmax(0,1fr);gap:24px}
+ .cast-switcher-card{grid-template-columns:1fr}
+ .cast-switcher-portrait{min-height:310px}
+ .cast-switcher-details{padding:28px}
+}
+@media(max-width:650px){
+ .film-info-section:has(#cast-switcher) > .film-info-heading{margin-bottom:34px;padding-top:24px}
+ .cast-switcher{display:block;min-height:455vh}
+ .cast-switcher-nav{position:relative;top:auto;margin-bottom:25px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+ .cast-switcher-name{padding:13px 0;grid-template-columns:17px minmax(0,1fr);gap:7px}
+ .cast-switcher-name b{font-size:18px}
+ .cast-switcher-card{position:sticky;top:7vh;grid-template-columns:1fr}
+ .cast-switcher-portrait{min-height:300px}
+ .cast-switcher-details{padding:25px}
+ .cast-switcher-title{font-size:43px}
+ .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
+}
+@media(prefers-reduced-motion:reduce){.cast-switcher-card,.cast-switcher-name,.cast-switcher-photo{transition:none!important}}
