@@ -983,6 +983,31 @@ footer {
   margin-bottom: 0;
 }
 
+.film-imdb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #555;
+  color: #c8c8c8;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.film-imdb-link span {
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.film-imdb-link:hover {
+  color: #fff;
+  border-color: #aaa;
+}
+
 
 /* =========================
    INFORMACIÓN
