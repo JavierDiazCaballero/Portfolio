@@ -274,41 +274,52 @@
     }, 150);
   }
   const steps = [...root.querySelectorAll('[data-cast-step]')];
+  let activeIndex = 0;
+  let lastChangeAt = 0;
   let scrollTicking = false;
   function updateActiveFromScroll() {
     scrollTicking = false;
     if (!steps.length) return;
-    const targetY = window.innerHeight * 0.5;
-    let closest = steps[0];
-    let closestDistance = Infinity;
-    steps.forEach(step => {
+    const targetY = window.innerHeight * 0.48;
+    let nearestIndex = activeIndex;
+    let nearestDistance = Infinity;
+    steps.forEach((step, index) => {
       const rect = step.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const distance = Math.abs(center - targetY);
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closest = step;
+      const distance = Math.abs((rect.top + rect.height / 2) - targetY);
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
       }
     });
-    select(closest.dataset.castStep);
+    const now = performance.now();
+    if (nearestIndex !== activeIndex && now - lastChangeAt > 420) {
+      activeIndex += Math.sign(nearestIndex - activeIndex);
+      lastChangeAt = now;
+      select(buttons[activeIndex].dataset.cast);
+    }
   }
   function requestScrollUpdate() {
     if (scrollTicking) return;
     scrollTicking = true;
     window.requestAnimationFrame(updateActiveFromScroll);
   }
-  buttons.forEach(button => {
+  buttons.forEach((button, index) => {
     button.addEventListener('click', () => {
-      const step = steps.find(item => item.dataset.castStep === button.dataset.cast);
+      activeIndex = index;
+      lastChangeAt = performance.now();
+      const step = steps[index];
       if (step) {
         window.scrollTo({
-          top: step.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.45,
+          top: step.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.48,
           behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
       }
       select(button.dataset.cast);
     });
-    button.addEventListener('focus', () => select(button.dataset.cast));
+    button.addEventListener('focus', () => {
+      activeIndex = index;
+      select(button.dataset.cast);
+    });
   });
   window.addEventListener('scroll', requestScrollUpdate, { passive: true });
   window.addEventListener('resize', requestScrollUpdate);
