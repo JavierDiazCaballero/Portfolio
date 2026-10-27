@@ -3254,3 +3254,40 @@ footer {
  .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
 }
 @media(prefers-reduced-motion:reduce){.cast-switcher-card,.cast-switcher-name,.cast-switcher-photo{transition:none!important}}
+
+
+/* REPARTO — composición más centrada y natural */
+.film-info-section:has(#cast-switcher) > .film-info-heading{margin-left:clamp(0px,1vw,18px);margin-bottom:clamp(38px,6vh,70px)}
+.cast-switcher{max-width:1440px;width:100%;grid-template-columns:minmax(155px,.43fr) minmax(0,1.57fr);gap:clamp(58px,9vw,150px);padding-right:clamp(24px,6vw,90px);padding-left:0}
+.cast-switcher-nav{margin-left:0;top:17vh}
+.cast-switcher-name{text-transform:none;letter-spacing:0;padding:19px 8px 19px 0}
+.cast-switcher-name b{font-size:clamp(20px,1.9vw,26px);font-weight:300;letter-spacing:0;text-transform:none}
+.cast-switcher-name:hover,.cast-switcher-name.is-active{padding-left:5px}
+.cast-switcher-name.is-active b{color:#e5e5e5}
+.cast-switcher-card{grid-template-columns:minmax(250px,.9fr) minmax(0,1.1fr);max-width:100%;top:13vh;box-shadow:0 24px 80px rgba(0,0,0,.15)}
+.cast-switcher-portrait{height:clamp(420px,58vh,570px);min-height:0;aspect-ratio:4/5;background:#111}
+.cast-switcher-photo{object-fit:cover;object-position:center 24%;filter:grayscale(8%) saturate(.78)}
+.cast-switcher-details{padding:clamp(28px,3.5vw,54px)}
+.cast-switcher-role{color:#929292}
+.cast-switcher-title em{color:#bcbcbc}
+.cast-switcher-work-label{color:#8b8b8b}
+.cast-work-info small{color:#969696}
+.cast-switcher-scroll-track{width:calc((100% - clamp(58px,9vw,150px)) * .79);height:455vh}
+.cast-switcher-scroll-step{height:65vh}
+@media(max-width:900px){
+ .cast-switcher{grid-template-columns:135px minmax(0,1fr);gap:30px;padding-right:0}
+ .cast-switcher-card{grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr)}
+ .cast-switcher-portrait{height:clamp(350px,50vh,480px)}
+ .cast-switcher-details{padding:25px}
+}
+@media(max-width:650px){
+ .cast-switcher{display:block;min-height:455vh;padding:0}
+ .cast-switcher-nav{position:relative;top:auto;margin-bottom:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+ .cast-switcher-name{padding:13px 0;grid-template-columns:17px minmax(0,1fr);gap:7px}
+ .cast-switcher-name b{font-size:18px}
+ .cast-switcher-card{position:sticky;top:7vh;grid-template-columns:1fr}
+ .cast-switcher-portrait{height:clamp(270px,40vh,360px);min-height:0;aspect-ratio:4/3}
+ .cast-switcher-details{padding:25px}
+ .cast-switcher-title{font-size:43px}
+ .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
+}
