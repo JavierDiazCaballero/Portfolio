@@ -4170,3 +4170,57 @@ body.external-preview-open{overflow:hidden}
   .cast-switcher-details{padding:12px!important}
   .cast-switcher-works li .cast-work-info{gap:4px 7px!important}
 }
+
+
+/* Ajustes finales solicitados: cabecera de reparto e Instagram */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex!important;
+  align-items:baseline!important;
+  gap:inherit!important;
+  margin-bottom:clamp(24px,4vh,42px)!important;
+  padding-top:clamp(24px,3vh,40px)!important;
+}
+.film-info-section:has(#cast-switcher) > .film-info-heading > span,
+.film-info-section:has(#cast-switcher) > .film-info-heading h2{
+  font-family:inherit!important;
+  font-size:inherit!important;
+  font-weight:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  text-transform:inherit!important;
+}
+.instagram-follow-cta{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:max-content!important;
+  min-width:104px!important;
+  margin:0 auto 14px!important;
+  padding:10px 22px!important;
+  border:0!important;
+  border-radius:8px!important;
+  background:#0095f6!important;
+  color:#fff!important;
+  font:600 14px/1.2 Arial,sans-serif!important;
+  text-decoration:none!important;
+  letter-spacing:0!important;
+  order:-1!important;
+}
+.instagram-follow-cta:hover{background:#1877f2!important;filter:none!important}
+#external-preview-content:has(.instagram-follow-cta){
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  overflow:visible!important;
+  max-height:none!important;
+}
+#external-preview-content:has(.instagram-follow-cta) .instagram-media{
+  margin:0 auto!important;
+  width:100%!important;
+  max-width:540px!important;
+}
+.external-preview-dialog:has(.instagram-follow-cta){
+  max-height:calc(100vh - 32px)!important;
+  overflow-y:auto!important;
+}
