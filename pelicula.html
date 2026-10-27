@@ -385,6 +385,56 @@
       } else if (window.instgrm) {
         window.instgrm.Embeds.process();
       }
+    } else if (anchor.classList.contains('film-news-card')) {
+      const article = document.createElement('article');
+      article.className = 'article-reading-preview';
+      const sourceLabel = document.createElement('div');
+      sourceLabel.className = 'article-reading-source';
+      sourceLabel.textContent = host.includes('ultimahora') ? 'ÚLTIMA HORA' : 'EL BLOG DE CINE ESPAÑOL';
+      const dateLabel = document.createElement('div');
+      dateLabel.className = 'article-reading-date';
+      const articleData = {
+        'https://www.elblogdecineespanol.com/?p=83919': {
+          date: '2 JULIO 2026',
+          paragraphs: [
+            'El artículo anuncia el final del rodaje de ¿Quién mató al jefe en Navidad?, ópera prima de Javier Díaz, producida por Castilla Nova Productions y con Marc Bonnin en el reparto.',
+            'Presenta la película como una comedia coral que mezcla humor negro, misterio y thriller. La trama arranca cuando, en Nochebuena, los empleados descubren que su jefe ha muerto justo antes de cerrar un acuerdo decisivo para la empresa.'
+          ]
+        },
+        'https://www.ultimahora.es/noticias/cultura/2026/08/18/2690869/javier-diaz-caballero-despedido-anterior-trabajando-rodando-primera-peli-alli.html': {
+          date: '18 AGOSTO 2026',
+          paragraphs: [
+            'La entrevista cuenta cómo Javier Díaz Caballero rodó su primera película en las mismas oficinas donde había trabajado durante años. La película está producida por Marc Bonnín y sitúa su historia en una empresa durante la noche de Navidad.',
+            'También habla del reto de rodar en planos secuencia: el planteamiento inicial se dividió finalmente en 28 bloques de unos siete u ocho minutos para mantener al espectador dentro de la jornada laboral y cuidar el ritmo.'
+          ]
+        },
+        'https://www.ultimahora.es/noticias/cultura/2026/08/06/2683843/marc-bonnin-salto-produccion-estrenara-comedia-navidena.html': {
+          date: '6 AGOSTO 2026',
+          paragraphs: [
+            'La noticia repasa el salto de Marc Bonnín a la producción de largometrajes. El actor mallorquín participa como productor en ¿Quién mató al jefe en Navidad?, una comedia navideña rodada en Mallorca.',
+            'El artículo también sitúa este proyecto dentro de su trayectoria como actor y presenta la película como su nueva apuesta en producción cinematográfica.'
+          ]
+        }
+      };
+      const data = articleData[url];
+      dateLabel.textContent = data ? data.date : '';
+      const heading = document.createElement('h3');
+      heading.className = 'article-reading-title';
+      heading.textContent = anchor.querySelector('h3') ? anchor.querySelector('h3').textContent : label;
+      const rule = document.createElement('div');
+      rule.className = 'article-reading-rule';
+      article.append(sourceLabel, dateLabel, heading, rule);
+      (data ? data.paragraphs : [anchor.querySelector('p')?.textContent || 'Vista previa del artículo.']).forEach(text => {
+        const paragraph = document.createElement('p');
+        paragraph.className = 'article-reading-paragraph';
+        paragraph.textContent = text;
+        article.appendChild(paragraph);
+      });
+      const note = document.createElement('p');
+      note.className = 'article-reading-note';
+      note.textContent = 'Resumen de lectura preparado a partir de la noticia original. Para consultar el artículo completo, puedes abrir la fuente voluntariamente.';
+      article.appendChild(note);
+      content.appendChild(article);
     } else {
       const card = document.createElement('div');
       card.className = 'external-preview-card';
