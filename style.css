@@ -6471,3 +6471,11 @@ body.external-preview-open{overflow:hidden}
     gap: 6px;
   }
 }
+
+
+/* PRODUCCIÓN — separación clara entre el título y el primer crédito en móvil. */
+@media (max-width: 650px) {
+  .film-page-body .film-info-section:has(.film-production-grid) > .film-info-heading {
+    margin-bottom: 60px !important;
+  }
+}
