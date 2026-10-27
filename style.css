@@ -5415,3 +5415,11 @@ body.external-preview-open{overflow:hidden}
     margin-right:20px!important;
   }
 }
+
+
+/* Escritorio: reservar un margen inferior para que Producción no dependa de la ficha activa. */
+@media(min-width:651px){
+  .film-info-section:has(#cast-switcher){
+    margin-bottom:clamp(80px,10vw,140px)!important;
+  }
+}
