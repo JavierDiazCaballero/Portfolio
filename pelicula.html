@@ -317,7 +317,9 @@
     button.addEventListener('pointerenter', () => {
       if (window.matchMedia('(min-width: 651px)').matches) select(button.dataset.cast);
     });
-    button.addEventListener('focus', () => select(button.dataset.cast));
+    button.addEventListener('focus', () => {
+      if (window.matchMedia('(min-width: 651px)').matches) select(button.dataset.cast);
+    });
     button.addEventListener('click', () => select(button.dataset.cast));
   });
 
