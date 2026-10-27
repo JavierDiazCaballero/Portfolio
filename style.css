@@ -986,26 +986,58 @@ footer {
 .film-imdb-link {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
   margin-top: 30px;
-  padding-bottom: 8px;
+  padding-bottom: 9px;
   border-bottom: 1px solid #555;
   color: #c8c8c8;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   text-decoration: none;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.film-imdb-link span {
-  font-size: 15px;
+.film-imdb-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 23px;
+  padding: 0 5px;
+  border: 1px solid #777;
+  border-radius: 2px;
+  color: #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.film-imdb-link-label {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+.film-imdb-arrow {
+  font-size: 14px;
   letter-spacing: 0;
+  transition: transform 0.3s ease;
 }
 
 .film-imdb-link:hover {
   color: #fff;
   border-color: #aaa;
+}
+
+.film-imdb-link:hover .film-imdb-logo {
+  border-color: #aaa;
+}
+
+.film-imdb-link:hover .film-imdb-arrow {
+  transform: translate(2px, -2px);
 }
 
 
