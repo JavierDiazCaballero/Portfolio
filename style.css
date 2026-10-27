@@ -6419,3 +6419,17 @@ body.external-preview-open{overflow:hidden}
     display:none!important;
   }
 }
+
+
+/* En escritorio, solo Gonzalo (inmediatamente después de Marc) conserva el énfasis de consecutivo. */
+@media(min-width:651px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast="angel"] b{
+    font-size:clamp(16px,1.3vw,20px)!important;
+    font-weight:400!important;
+    color:#999!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast="angel"]:hover b{
+    font-size:clamp(16px,1.3vw,20px)!important;
+    color:#ccc!important;
+  }
+}
