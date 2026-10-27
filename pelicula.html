@@ -314,8 +314,8 @@
     if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.25) return;
     const currentIndex = buttons.findIndex(button => button.classList.contains('is-active'));
     const nextIndex = dx < 0
-      ? Math.min(buttons.length - 1, currentIndex + 1)
-      : Math.max(0, currentIndex - 1);
+      ? (currentIndex + 1) % buttons.length
+      : (currentIndex - 1 + buttons.length) % buttons.length;
     if (nextIndex !== currentIndex) select(buttons[nextIndex].dataset.cast);
   }, { passive: true });
   // La ficha inicial de Marc ya está renderizada en el HTML.
