@@ -5529,3 +5529,13 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-works{
   margin-top:8px!important;
 }
+
+
+/* Ajuste fino de trabajos: título más cerca del primer proyecto y bloque ligeramente más abajo. */
+.film-info-section:has(#cast-switcher) .cast-switcher-work-label{
+  margin-top:4px!important;
+  margin-bottom:0!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-works{
+  margin-top:12px!important;
+}
