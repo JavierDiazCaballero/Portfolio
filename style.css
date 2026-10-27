@@ -5444,3 +5444,23 @@ body.external-preview-open{overflow:hidden}
     min-height:620px!important;
   }
 }
+
+
+/* Reparto en escritorio: nombre y cargos en una línea; reservar el mismo hueco para cada biografía. */
+@media(min-width:651px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-title{
+    white-space:nowrap!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-role{
+    white-space:nowrap!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-bio{
+    height:150px!important;
+    min-height:150px!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-work-label{
+    margin-top:0!important;
+  }
+}
