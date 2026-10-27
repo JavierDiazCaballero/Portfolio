@@ -5576,3 +5576,12 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
   object-position:center 22%!important;
 }
+
+
+/* Encuadre de Gonzalo y Jaime: priorizar cabeza completa y centrar el retrato. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="gonzalo"]{
+  object-position:center 10%!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="jaime"]{
+  object-position:center 10%!important;
+}
