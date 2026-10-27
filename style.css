@@ -986,57 +986,53 @@ footer {
 .film-imdb-link {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
-  margin-top: 30px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid #555;
-  color: #c8c8c8;
-  font-size: 10px;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  gap: 9px;
+  margin-top: 28px;
+  padding: 4px 0;
+  color: inherit;
   text-decoration: none;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  vertical-align: middle;
+  transition: opacity 0.3s ease;
 }
 
 .film-imdb-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 42px;
+  min-width: 43px;
   height: 23px;
   padding: 0 5px;
-  border: 1px solid #777;
-  border-radius: 2px;
-  color: #ddd;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.07em;
+  border: 1px solid #b6a06b;
+  border-radius: 3px;
+  background: #b6a06b;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.055em;
   line-height: 1;
   text-transform: none;
-}
-
-.film-imdb-link-label {
-  font-size: 10px;
-  letter-spacing: 0.13em;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .film-imdb-arrow {
-  font-size: 14px;
-  letter-spacing: 0;
-  transition: transform 0.3s ease;
+  color: #b6a06b;
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .film-imdb-link:hover {
-  color: #fff;
-  border-color: #aaa;
+  opacity: 0.8;
 }
 
 .film-imdb-link:hover .film-imdb-logo {
-  border-color: #aaa;
+  background: #c4ae7a;
+  border-color: #c4ae7a;
 }
 
 .film-imdb-link:hover .film-imdb-arrow {
+  color: #c4ae7a;
   transform: translate(2px, -2px);
 }
 
