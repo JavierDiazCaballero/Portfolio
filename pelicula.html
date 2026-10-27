@@ -291,13 +291,34 @@
 
   }
   buttons.forEach(button => {
-    button.addEventListener('pointerenter', () => select(button.dataset.cast));
+    button.addEventListener('pointerenter', () => {
+      if (window.matchMedia('(min-width: 651px)').matches) select(button.dataset.cast);
+    });
     button.addEventListener('focus', () => select(button.dataset.cast));
     button.addEventListener('click', () => select(button.dataset.cast));
   });
-  // Al salir del selector, vuelve siempre a Marc como ficha predeterminada.
-  root.querySelector('.cast-switcher-nav').addEventListener('pointerleave', () => select('marc'));
-  // La ficha inicial de Marc ya está renderizada en el HTML; no se necesita inicializar un sistema de scroll.
+
+  // En móvil, deslizar la propia ficha cambia de actor y desplaza la fila de nombres con ella.
+  let swipeStartX = 0;
+  let swipeStartY = 0;
+  const swipeSurface = card;
+  swipeSurface.addEventListener('touchstart', event => {
+    if (!event.touches || event.touches.length !== 1) return;
+    swipeStartX = event.touches[0].clientX;
+    swipeStartY = event.touches[0].clientY;
+  }, { passive: true });
+  swipeSurface.addEventListener('touchend', event => {
+    if (!window.matchMedia('(max-width: 650px)').matches || !event.changedTouches.length) return;
+    const dx = event.changedTouches[0].clientX - swipeStartX;
+    const dy = event.changedTouches[0].clientY - swipeStartY;
+    if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy) * 1.25) return;
+    const currentIndex = buttons.findIndex(button => button.classList.contains('is-active'));
+    const nextIndex = dx < 0
+      ? Math.min(buttons.length - 1, currentIndex + 1)
+      : Math.max(0, currentIndex - 1);
+    if (nextIndex !== currentIndex) select(buttons[nextIndex].dataset.cast);
+  }, { passive: true });
+  // La ficha inicial de Marc ya está renderizada en el HTML.
 })();
 </script>
 
