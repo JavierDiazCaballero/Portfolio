@@ -375,6 +375,13 @@
       quote.setAttribute('data-instgrm-version', '14');
       quote.style.cssText = 'background:#fff;border:0;border-radius:8px;margin:0 auto;max-width:540px;min-width:280px;width:100%;';
       content.appendChild(quote);
+      const follow = document.createElement('a');
+      follow.className = 'instagram-follow-cta';
+      follow.href = 'https://www.instagram.com/javierdiazcaballero/';
+      follow.target = '_blank';
+      follow.rel = 'noopener noreferrer';
+      follow.textContent = 'Seguir en Instagram ↗';
+      content.appendChild(follow);
       if (!document.querySelector('script[data-instagram-embed]')) {
         const embedScript = document.createElement('script');
         embedScript.async = true;
@@ -435,6 +442,37 @@
       note.textContent = 'Resumen de lectura preparado a partir de la noticia original. Para consultar el artículo completo, puedes abrir la fuente voluntariamente.';
       article.appendChild(note);
       content.appendChild(article);
+    } else if (host.includes('imdb.com')) {
+      const profile = document.createElement('article');
+      profile.className = 'imdb-profile-preview';
+      const head = document.createElement('div');
+      head.className = 'imdb-profile-head';
+      const monogram = document.createElement('div');
+      monogram.className = 'imdb-profile-monogram';
+      monogram.textContent = 'JD';
+      const identity = document.createElement('div');
+      const name = document.createElement('h3');
+      name.className = 'imdb-profile-name';
+      name.textContent = 'Javier Díaz Caballero';
+      const roles = document.createElement('p');
+      roles.className = 'imdb-profile-roles';
+      roles.textContent = 'Director · Editor';
+      identity.append(name, roles);
+      head.append(monogram, identity);
+      const line = document.createElement('div');
+      line.className = 'imdb-profile-divider';
+      const caption = document.createElement('p');
+      caption.className = 'imdb-profile-caption';
+      caption.textContent = 'Perfil profesional en IMDb';
+      const credits = document.createElement('div');
+      credits.className = 'imdb-profile-credit';
+      const creditName = document.createElement('strong');
+      creditName.textContent = '¿Quién mató al jefe en Navidad?';
+      const creditRole = document.createElement('span');
+      creditRole.textContent = 'Largometraje';
+      credits.append(creditName, creditRole);
+      profile.append(head, line, caption, credits);
+      content.appendChild(profile);
     } else {
       const card = document.createElement('div');
       card.className = 'external-preview-card';
@@ -457,6 +495,7 @@
   }
   document.querySelectorAll('a[target="_blank"][href^="https://"]').forEach(anchor => {
     if (anchor.dataset.video || anchor.closest('#external-preview-modal')) return;
+    if (new URL(anchor.href).hostname.includes('youtube.com') || new URL(anchor.href).hostname.includes('youtu.be')) return;
     anchor.addEventListener('click', event => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
