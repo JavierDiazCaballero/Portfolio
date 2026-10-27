@@ -4063,3 +4063,23 @@ body.external-preview-open{overflow:hidden}
   .cast-switcher-works li em{font-size:14px!important}
   .cast-switcher-scroll-track{top:0!important;width:100%!important}
 }
+
+
+/* REPARTO — más pausa al inicio y al cierre, transiciones tipográficas más fluidas */
+.cast-switcher-scroll-track{height:620vh!important}
+.cast-switcher-scroll-step{height:80vh!important}
+.cast-switcher-scroll-step:first-child,
+.cast-switcher-scroll-step:last-child{height:110vh!important}
+.cast-switcher-name b{
+  transition:font-size .42s cubic-bezier(.22,.8,.25,1),color .42s ease,opacity .42s ease,letter-spacing .42s ease!important;
+}
+.cast-switcher-name{transition:color .42s ease,opacity .42s ease!important}
+.cast-switcher-name:not(.is-active){opacity:.78}
+.cast-switcher-name.is-active{opacity:1}
+.cast-switcher-name.is-active b{letter-spacing:.012em!important}
+@media(max-width:900px){
+ .cast-switcher-scroll-track{height:620vh!important}
+ .cast-switcher-scroll-step{height:80vh!important}
+ .cast-switcher-scroll-step:first-child,
+ .cast-switcher-scroll-step:last-child{height:110vh!important}
+}
