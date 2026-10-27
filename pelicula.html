@@ -73,7 +73,7 @@
       </p>
     </div>
 
-    <a href="https://www.imdb.com/es-es/title/tt43640209/" target="_blank" rel="noopener noreferrer" class="film-imdb-link" aria-label="Ver la ficha de la película en IMDb"><span class="film-imdb-logo" aria-label="IMDb">IMDb</span><span class="film-imdb-arrow" aria-hidden="true">↗</span></a>
+    
 
   </div>
 </section>
@@ -213,6 +213,12 @@
   <a href="index.html#audiovisual">
     <span class="film-back-arrow">←</span>
     Volver a proyectos
+  </a>
+</section>
+
+<section class="film-external-links" aria-label="Enlaces externos">
+  <a href="https://www.imdb.com/es-es/title/tt43640209/" target="_blank" rel="noopener noreferrer" class="film-imdb-link">
+    <span class="film-imdb-logo">IMDb</span>
   </a>
 </section>
 
@@ -491,7 +497,8 @@
   }
   document.querySelectorAll('a[target="_blank"][href^="https://"]').forEach(anchor => {
     if (anchor.dataset.video || anchor.closest('#external-preview-modal')) return;
-    if (new URL(anchor.href).hostname.includes('youtube.com') || new URL(anchor.href).hostname.includes('youtu.be')) return;
+    const targetHost = new URL(anchor.href).hostname;
+    if (targetHost.includes('youtube.com') || targetHost.includes('youtu.be') || targetHost.includes('instagram.com') || targetHost.includes('imdb.com')) return;
     anchor.addEventListener('click', event => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
