@@ -4265,3 +4265,24 @@ body.external-preview-open{overflow:hidden}
  .cast-switcher-card{gap:12px!important}
  .cast-switcher-portrait{aspect-ratio:4/5!important}
 }
+
+
+/* Instagram: la ventana no debe tener scroll interno */
+.external-preview-dialog:has(.instagram-follow-cta){
+  max-height:none!important;
+  height:auto!important;
+  overflow:hidden!important;
+  padding-bottom:18px!important;
+}
+#external-preview-content:has(.instagram-follow-cta){
+  overflow:hidden!important;
+  max-height:none!important;
+  height:auto!important;
+}
+#external-preview-content:has(.instagram-follow-cta) .instagram-media{
+  overflow:hidden!important;
+  max-height:none!important;
+}
+#external-preview-content:has(.instagram-follow-cta) iframe{
+  max-height:none!important;
+}
