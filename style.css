@@ -4610,3 +4610,11 @@ body.external-preview-open{overflow:hidden}
   .cast-switcher-nav{top:7vh!important}
   .cast-switcher-name{min-height:32px!important;padding:5px 5px 5px 0!important}
 }
+
+
+/* REPARTO — interacción por hover, sin scroll. Zona de nombre ampliada. */
+.cast-switcher{min-height:0!important;height:auto!important}
+.cast-switcher-scroll-track,.cast-switcher-scroll-step{display:none!important;height:0!important;min-height:0!important}
+.cast-switcher-name{cursor:pointer!important;position:relative!important;z-index:5!important;display:block!important;width:100%!important;padding:14px 12px!important;margin:0!important;text-align:left!important}
+.cast-switcher-name b,.cast-switcher-name span{pointer-events:none!important}
+@media(max-width:600px){.cast-switcher{min-height:0!important}}
