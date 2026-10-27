@@ -313,6 +313,12 @@
     card.querySelector('.cast-switcher-works').innerHTML = person.works.map(work => '<li><span>'+work[0]+'</span><div class="cast-work-info"><em>'+work[1]+'</em><small>'+(work[2] || 'PROYECTO')+'</small></div></li>').join('');
 
   }
+  const castNav = root.querySelector('.cast-switcher-nav');
+  if (castNav) {
+    castNav.addEventListener('pointerleave', () => {
+      if (window.matchMedia('(min-width: 651px)').matches) select('marc');
+    });
+  }
   buttons.forEach(button => {
     button.addEventListener('pointerenter', () => {
       if (window.matchMedia('(min-width: 651px)').matches) select(button.dataset.cast);
