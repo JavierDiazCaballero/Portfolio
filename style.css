@@ -4888,3 +4888,170 @@ body.external-preview-open{overflow:hidden}
   .film-bottom-nav{margin:22px 20px 0!important;padding:12px 0!important}
   .film-bottom-nav .film-bottom-projects{font-size:7px!important;letter-spacing:.04em!important}
 }
+
+/* RESTAURACIÓN ESTÉTICA: encabezados, reparto uniforme y pie compacto */
+/* Encabezados de sección: pequeños, grises y con el título debajo del número. */
+.film-intro-label,
+.film-info-heading{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#777!important;
+  font-size:10px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+.film-intro-label > span,
+.film-intro-label > span:first-child,
+.film-info-heading > span{
+  display:block!important;
+  flex:none!important;
+  color:#666!important;
+  font-family:inherit!important;
+  font-size:9px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.12em!important;
+}
+.film-intro-label > span:last-child,
+.film-info-heading h2{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#888!important;
+  font-family:inherit!important;
+  font-size:11px!important;
+  font-weight:400!important;
+  line-height:1.25!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+
+/* Reparto: misma anchura para foto y texto, misma altura en todas las fichas. */
+.cast-switcher{
+  align-items:stretch!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:clamp(20px,2.5vw,36px)!important;
+}
+.cast-switcher-nav{
+  align-self:center!important;
+  min-width:0!important;
+}
+.cast-switcher-name{
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-height:48px!important;
+  padding:12px 10px 12px 0!important;
+  transform:none!important;
+  transition:color .15s ease,background-color .15s ease!important;
+}
+.cast-switcher-name:hover,
+.cast-switcher-name:focus-visible,
+.cast-switcher-name.is-active{
+  padding-left:0!important;
+  transform:none!important;
+}
+.cast-switcher-name b{
+  font-size:clamp(15px,1.2vw,18px)!important;
+  font-weight:400!important;
+}
+.cast-switcher-name.is-active b{
+  font-size:clamp(15px,1.2vw,18px)!important;
+}
+.cast-switcher-card{
+  box-sizing:border-box!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  align-items:stretch!important;
+  gap:clamp(14px,1.7vw,24px)!important;
+  width:100%!important;
+  min-width:0!important;
+  height:clamp(410px,42vw,520px)!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  transform:none!important;
+}
+.cast-switcher-portrait{
+  position:relative!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  overflow:hidden!important;
+}
+.cast-switcher-photo{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center 30%!important;
+}
+.cast-switcher-details{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:100%!important;
+  min-height:0!important;
+  padding:clamp(14px,1.5vw,24px)!important;
+  overflow-y:auto!important;
+}
+.cast-switcher-title{
+  font-size:clamp(26px,2.5vw,38px)!important;
+  line-height:1.05!important;
+}
+.cast-switcher-bio{
+  font-size:12px!important;
+  line-height:1.55!important;
+}
+.cast-switcher-card.is-changing{
+  opacity:.92!important;
+}
+.cast-switcher-card{
+  transition:opacity .08s linear!important;
+}
+
+/* «Volver a proyectos»: texto en su tamaño original; se reduce solo el espacio de la fila. */
+.film-bottom-nav{
+  grid-template-columns:1fr auto 1fr!important;
+  margin-top:14px!important;
+  padding:8px 0!important;
+  border-top:1px solid rgba(255,255,255,.08)!important;
+}
+.film-bottom-nav .film-bottom-projects{
+  font-size:10px!important;
+  letter-spacing:.12em!important;
+  line-height:1.4!important;
+}
+.film-bottom-nav .film-bottom-imdb{grid-column:2!important;justify-self:center!important}
+@media(max-width:900px){
+  .cast-switcher-card{height:clamp(400px,58vw,500px)!important}
+}
+@media(max-width:650px){
+  .film-intro-label,
+  .film-info-heading{gap:6px!important}
+  .cast-switcher{grid-template-columns:1fr!important;gap:18px!important}
+  .cast-switcher-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 12px!important}
+  .cast-switcher-name{min-height:42px!important;padding:8px 4px 8px 0!important}
+  .cast-switcher-name b,.cast-switcher-name.is-active b{font-size:14px!important}
+  .cast-switcher-card{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    height:390px!important;
+    gap:10px!important;
+  }
+  .cast-switcher-details{padding:12px!important}
+  .cast-switcher-title{font-size:clamp(22px,6vw,30px)!important}
+  .cast-switcher-bio{font-size:10px!important;line-height:1.45!important}
+  .cast-switcher-works li{padding:5px 0!important}
+  .cast-work-info em{font-size:14px!important}
+  .film-bottom-nav{margin:14px 20px 0!important;padding:8px 0!important}
+  .film-bottom-nav .film-bottom-projects{font-size:10px!important;letter-spacing:.08em!important}
+}
