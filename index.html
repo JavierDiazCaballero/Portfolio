@@ -340,23 +340,19 @@
     openLink.href = url;
     content.replaceChildren();
     if (host.includes('instagram.com')) {
-      const intro = document.createElement('p');
-      intro.className = 'external-preview-description';
-      intro.textContent = 'Perfil de Instagram. Si la cuenta y sus publicaciones permiten la incrustación, podrás ver el contenido aquí sin abandonar esta web.';
-      content.appendChild(intro);
+      const follow = document.createElement('a');
+      follow.className = 'instagram-follow-cta';
+      follow.href = 'https://www.instagram.com/javierdiazcaballero/';
+      follow.target = '_blank';
+      follow.rel = 'noopener noreferrer';
+      follow.textContent = 'Seguir';
+      content.appendChild(follow);
       const quote = document.createElement('blockquote');
       quote.className = 'instagram-media';
       quote.setAttribute('data-instgrm-permalink', url);
       quote.setAttribute('data-instgrm-version', '14');
       quote.style.cssText = 'background:#fff;border:0;border-radius:8px;margin:0 auto;max-width:540px;min-width:280px;width:100%;';
       content.appendChild(quote);
-      const follow = document.createElement('a');
-      follow.className = 'instagram-follow-cta';
-      follow.href = 'https://www.instagram.com/javierdiazcaballero/';
-      follow.target = '_blank';
-      follow.rel = 'noopener noreferrer';
-      follow.textContent = 'Seguir en Instagram ↗';
-      content.appendChild(follow);
       if (!document.querySelector('script[data-instagram-embed]')) {
         const embedScript = document.createElement('script');
         embedScript.async = true;
