@@ -4351,3 +4351,26 @@ body.external-preview-open{overflow:hidden}
   .cast-switcher-card{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important}
   .cast-switcher-portrait{aspect-ratio:3/4!important;height:auto!important;min-height:0!important}
 }
+
+
+/* Reparto: ficha compacta, retrato amplio y nombres sin exagerar efectos al pasar el ratón. */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex!important;align-items:baseline!important;
+  gap:18px!important;margin-bottom:clamp(28px,3.4vw,44px)!important;
+}
+.cast-switcher-name b{font-size:clamp(16px,1.3vw,20px)!important}
+.cast-switcher-name.is-active b{font-size:clamp(20px,1.65vw,25px)!important}
+.cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+.cast-switcher-name.is-active + .cast-switcher-name b{font-size:clamp(18px,1.45vw,22px)!important}
+.cast-switcher-name{padding:14px 0!important;transition:color .2s ease,opacity .2s ease!important}
+.cast-switcher-name:hover{transform:none!important;letter-spacing:inherit!important}
+.cast-switcher-card{gap:clamp(24px,2.5vw,38px)!important;min-height:0!important}
+.cast-switcher-details{padding:clamp(12px,1.2vw,18px)!important}
+.cast-switcher-bio{margin-bottom:14px!important;line-height:1.55!important}
+.cast-switcher-rule{margin:16px 0!important}
+.cast-switcher-works li{padding:8px 0!important}
+.cast-switcher-portrait{aspect-ratio:3/4!important;height:auto!important;min-height:0!important}
+.cast-switcher-photo{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 30%!important}
+.film-external-links{display:flex;justify-content:center;margin:clamp(50px,8vw,100px) auto 28px;padding:0 24px}
+.film-external-links .film-imdb-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.film-external-links .film-imdb-arrow{display:none!important}
