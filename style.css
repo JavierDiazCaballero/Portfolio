@@ -870,6 +870,21 @@ footer {
   color: #ccc;
 }
 
+.film-cover-scroll-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e5e5e5;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.film-cover-scroll-link:hover {
+  opacity: 0.7;
+}
+
 .film-cover-scroll {
   display: flex;
 
