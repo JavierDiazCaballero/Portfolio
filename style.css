@@ -5509,3 +5509,14 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
   object-position:center 18%!important;
 }
+
+
+/* Ajuste adicional: acercar el nombre del personaje y elevar la biografía, manteniendo aire antes de trabajos destacados. */
+.film-info-section:has(#cast-switcher) .cast-switcher-character{
+  margin-top:-25px!important;
+  margin-bottom:2px!important;
+}
+.film-info-section:has(#cast-switcher) .cast-switcher-bio{
+  margin-top:0!important;
+  margin-bottom:18px!important;
+}
