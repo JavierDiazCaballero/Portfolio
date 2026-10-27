@@ -6089,3 +6089,19 @@ body.external-preview-open{overflow:hidden}
     font-weight:500!important;
   }
 }
+
+
+/* Móvil: la fila acompaña al actor seleccionado; el gesto principal se hace sobre la ficha. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
+    gap:10px!important;
+    overflow-x:hidden!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:none!important;
+    touch-action:pan-y!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name{
+    flex-shrink:0!important;
+    margin:0!important;
+  }
+}
