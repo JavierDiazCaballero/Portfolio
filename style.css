@@ -5478,13 +5478,14 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Nombre del personaje debajo del nombre real en la ficha de reparto. */
+/* Nombre del personaje: más cercano al nombre real y con el dorado de las etiquetas de trabajos. */
 .cast-switcher-character{
-  margin:-8px 0 14px!important;
-  font-size:clamp(12px,1.05vw,15px)!important;
-  line-height:1.4!important;
-  letter-spacing:.04em!important;
-  color:#999!important;
+  margin:-13px 0 12px!important;
+  font-size:clamp(11px,.9vw,13px)!important;
+  line-height:1.3!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  color:#b99a5f!important;
   font-weight:400!important;
 }
 .cast-switcher-character[hidden]{display:none!important}
