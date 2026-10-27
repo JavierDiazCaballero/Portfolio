@@ -5423,3 +5423,13 @@ body.external-preview-open{overflow:hidden}
     margin-bottom:clamp(80px,10vw,140px)!important;
   }
 }
+
+
+/* Centrar verticalmente «Volver a proyectos» entre las líneas de la navegación inferior. */
+.film-bottom-nav{
+  align-items:center!important;
+}
+.film-bottom-nav .film-bottom-projects{
+  align-self:center!important;
+  transform:translateY(-3px)!important;
+}
