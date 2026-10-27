@@ -111,15 +111,7 @@
         <ol class="cast-switcher-works"><li><span>2026</span><div class="cast-work-info"><em>Oasis</em><small>PELÍCULA</small></div></li><li><span>2026</span><div class="cast-work-info"><em>Por cien millones</em><small>SERIE</small></div></li><li><span>2022</span><div class="cast-work-info"><em>Élite</em><small>SERIE</small></div></li><li><span>2022</span><div class="cast-work-info"><em>42 segundos</em><small>PELÍCULA</small></div></li></ol>
       </div>
     </article>
-    <div class="cast-switcher-scroll-track" aria-hidden="true">
-      <div class="cast-switcher-scroll-step" data-cast-step="marc"></div>
-      <div class="cast-switcher-scroll-step" data-cast-step="gonzalo"></div>
-      <div class="cast-switcher-scroll-step" data-cast-step="ruben"></div>
-      <div class="cast-switcher-scroll-step" data-cast-step="eva"></div>
-      <div class="cast-switcher-scroll-step" data-cast-step="antonio"></div>
-      <div class="cast-switcher-scroll-step" data-cast-step="jaime"></div>
-      <div class="cast-switcher-scroll-step" data-cast-step="angel"></div>
-    </div>
+
   </div>
 
 </section>
@@ -293,55 +285,11 @@
       card.classList.remove('is-changing');
     }, 150);
   }
-  const steps = [...root.querySelectorAll('[data-cast-step]')];
-  let activeIndex = 0;
-  let lastChangeAt = 0;
-  let scrollTicking = false;
-  function updateActiveFromScroll() {
-    scrollTicking = false;
-    if (!steps.length) return;
-    const targetY = window.innerHeight * 0.52;
-    let nearestIndex = activeIndex;
-    let nearestDistance = Infinity;
-    steps.forEach((step, index) => {
-      const rect = step.getBoundingClientRect();
-      const distance = Math.abs((rect.top + rect.height / 2) - targetY);
-      if (distance < nearestDistance) {
-        nearestDistance = distance;
-        nearestIndex = index;
-      }
-    });
-    if (nearestIndex !== activeIndex) {
-      activeIndex = nearestIndex;
-      lastChangeAt = performance.now();
-      select(buttons[activeIndex].dataset.cast);
-    }
-  }
-  function requestScrollUpdate() {
-    if (scrollTicking) return;
-    scrollTicking = true;
-    window.requestAnimationFrame(updateActiveFromScroll);
-  }
-  buttons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-      activeIndex = index;
-      lastChangeAt = performance.now();
-      const step = steps[index];
-      if (step) {
-        window.scrollTo({
-          top: step.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.48,
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-        });
-      }
-      select(button.dataset.cast);
-    });
-    button.addEventListener('focus', () => {
-      activeIndex = index;
-      select(button.dataset.cast);
-    });
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => select(button.dataset.cast));
+    button.addEventListener('focus', () => select(button.dataset.cast));
+    button.addEventListener('click', () => select(button.dataset.cast));
   });
-  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
-  window.addEventListener('resize', requestScrollUpdate);
   select(buttons[0].dataset.cast);
   requestScrollUpdate();
 })();
