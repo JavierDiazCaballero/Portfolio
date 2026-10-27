@@ -274,21 +274,45 @@
     }, 150);
   }
   const steps = [...root.querySelectorAll('[data-cast-step]')];
+  let scrollTicking = false;
+  function updateActiveFromScroll() {
+    scrollTicking = false;
+    if (!steps.length) return;
+    const targetY = window.innerHeight * 0.5;
+    let closest = steps[0];
+    let closestDistance = Infinity;
+    steps.forEach(step => {
+      const rect = step.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const distance = Math.abs(center - targetY);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = step;
+      }
+    });
+    select(closest.dataset.castStep);
+  }
+  function requestScrollUpdate() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(updateActiveFromScroll);
+  }
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       const step = steps.find(item => item.dataset.castStep === button.dataset.cast);
-      if (step) window.scrollTo({ top: step.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.45, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      if (step) {
+        window.scrollTo({
+          top: step.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.45,
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        });
+      }
       select(button.dataset.cast);
     });
     button.addEventListener('focus', () => select(button.dataset.cast));
   });
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
-      if (visible) select(visible.target.dataset.castStep);
-    }, { root: null, rootMargin: '-42% 0px -42% 0px', threshold: [0, .1, .5, 1] });
-    steps.forEach(step => observer.observe(step));
-  }
+  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+  window.addEventListener('resize', requestScrollUpdate);
+  requestScrollUpdate();
 })();
 </script>
 </body>
