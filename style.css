@@ -5564,3 +5564,9 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
   object-position:center 26%!important;
 }
+
+
+/* Rubén: bajar más el encuadre para ocultar el nombre escrito en la claqueta. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
+  object-position:center 35%!important;
+}
