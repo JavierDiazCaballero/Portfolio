@@ -6481,11 +6481,11 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Gonzalo Cortés: mostrar más del retrato y evitar el efecto de cabeza demasiado grande. */
+/* Gonzalo Cortés: llenar el marco sin márgenes laterales y mantener un encuadre equilibrado. */
 .film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="gonzalo"]{
-  object-fit:contain!important;
-  object-position:center center!important;
-  background:#d8d0c5;
+  object-fit:cover!important;
+  object-position:center 18%!important;
+  background:transparent;
   transform:none!important;
 }
 .film-info-section:has(#cast-switcher) .cast-switcher-card:hover .cast-switcher-photo[data-cast-photo="gonzalo"]{
