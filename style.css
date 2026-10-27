@@ -3648,3 +3648,92 @@ footer {
 body.external-preview-open{overflow:hidden}
 #external-preview-content .instagram-media{margin-left:auto!important;margin-right:auto!important}
 @media(max-width:600px){.external-preview-modal{padding:12px}.external-preview-dialog{padding:24px 18px;max-height:90vh}.external-preview-description{font-size:13px}}
+
+
+/* REPARTO — tipografía y alineación coherentes con el resto de la web */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  margin:0 0 clamp(24px,4vh,42px);
+  padding-top:clamp(24px,3vh,40px);
+}
+.film-info-section:has(#cast-switcher) > .film-info-heading h2{
+  margin:0;
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+  line-height:inherit;
+  letter-spacing:inherit;
+  text-transform:none;
+}
+.film-info-section:has(#cast-switcher) > .film-info-heading > span{
+  font-size:inherit;
+  letter-spacing:inherit;
+}
+.cast-switcher{padding-top:clamp(18px,3vh,38px)}
+.cast-switcher-nav{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+  width:max-content;
+  max-width:100%;
+  margin:0 0 0 clamp(0px,1vw,12px);
+  padding:0;
+  border:0;
+}
+.cast-switcher-name{
+  display:flex;
+  align-items:baseline;
+  justify-content:flex-start;
+  gap:12px;
+  width:max-content;
+  max-width:100%;
+  padding:8px 0;
+  margin:0;
+  color:#898989;
+  background:transparent;
+  transition:color .22s ease,transform .22s ease;
+  transform-origin:left center;
+}
+.cast-switcher-name span{color:#777;transition:color .22s ease}
+.cast-switcher-name b{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,1.65vw,23px);
+  font-weight:400;
+  line-height:1.2;
+  letter-spacing:0;
+  white-space:nowrap;
+  text-transform:none;
+  transition:color .22s ease;
+}
+.cast-switcher-name:hover{
+  padding-left:0;
+  color:#c8c8c8;
+  transform:scale(1.025);
+}
+.cast-switcher-name.is-active{
+  padding-left:0;
+  color:#fff;
+  transform:scale(1.09);
+}
+.cast-switcher-name.is-active span{color:#bdbdbd}
+.cast-switcher-name.is-active b{color:#fff}
+.cast-switcher-card{top:clamp(17vh,22vh,25vh)}
+.cast-switcher-details{padding-top:clamp(12px,3vh,36px)}
+@media(max-width:900px){
+ .cast-switcher-nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;margin:0 0 8vh}
+ .cast-switcher-name{width:max-content;max-width:100%}
+ .cast-switcher-name b{font-size:19px}
+ .cast-switcher-card{top:18vh}
+}
+@media(max-width:650px){
+ .film-info-section:has(#cast-switcher) > .film-info-heading{padding-top:20px;margin-bottom:22px}
+ .cast-switcher{padding-top:14px}
+ .cast-switcher-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px;margin-bottom:7vh}
+ .cast-switcher-name{gap:7px;padding:7px 0}
+ .cast-switcher-name b{font-size:16px}
+ .cast-switcher-name.is-active{transform:scale(1.04)}
+ .cast-switcher-card{top:15vh}
+}
