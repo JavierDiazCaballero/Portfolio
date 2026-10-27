@@ -6198,3 +6198,33 @@ body.external-preview-open{overflow:hidden}
     margin-top:auto!important;
   }
 }
+
+
+/* Selector móvil: separación uniforme entre todos los nombres, incluidos los duplicados del bucle. */
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
+    gap:7px!important;
+    column-gap:7px!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav .cast-switcher-name{
+    margin:0!important;
+    padding-left:0!important;
+    padding-right:0!important;
+    letter-spacing:0!important;
+    flex:0 0 auto!important;
+    width:max-content!important;
+    min-width:max-content!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone]{
+    display:inline-flex!important;
+    opacity:.48!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone].is-active{
+    opacity:1!important;
+    color:#fff!important;
+  }
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone].is-active b{
+    font-size:14px!important;
+    font-weight:500!important;
+  }
+}
