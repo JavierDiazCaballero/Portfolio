@@ -6491,3 +6491,30 @@ body.external-preview-open{overflow:hidden}
 .film-info-section:has(#cast-switcher) .cast-switcher-card:hover .cast-switcher-photo[data-cast-photo="gonzalo"]{
   transform:none!important;
 }
+
+
+/* GALERÍA FOTOGRÁFICA — mosaico sin pies de foto. */
+#fotografia .photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:16px}
+#fotografia .photo-item{display:block;width:100%;min-width:0;padding:0;margin:0;border:0;border-radius:0;overflow:hidden;background:transparent;cursor:zoom-in;line-height:0}
+#fotografia .photo-item img{display:block;width:100%;height:auto;object-fit:contain;transition:opacity .25s ease,transform .45s ease}
+#fotografia .photo-item:hover img{opacity:.82;transform:scale(1.015)}
+#fotografia .photo-item:focus-visible{outline:1px solid rgba(255,255,255,.8);outline-offset:4px}
+.photo-lightbox{position:fixed;inset:0;z-index:1200;display:flex;align-items:center;justify-content:center;padding:56px 76px;background:rgba(0,0,0,.96);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+.photo-lightbox.is-open{opacity:1;visibility:visible}
+.photo-lightbox-image{display:block;max-width:min(100%,1500px);max-height:84vh;width:auto;height:auto;object-fit:contain}
+.photo-lightbox-close,.photo-lightbox-arrow{position:absolute;display:flex;align-items:center;justify-content:center;border:0;background:transparent;color:#fff;cursor:pointer;font-family:Arial,sans-serif;font-weight:300}
+.photo-lightbox-close{top:18px;right:28px;width:44px;height:44px;font-size:38px}
+.photo-lightbox-arrow{top:50%;width:52px;height:70px;margin-top:-35px;font-size:54px;opacity:.78}
+.photo-lightbox-arrow:hover,.photo-lightbox-close:hover{opacity:1}
+.photo-lightbox-prev{left:14px}.photo-lightbox-next{right:14px}
+.photo-lightbox-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.65);font:10px 'DM Sans',sans-serif;letter-spacing:.18em}
+body.photo-lightbox-open{overflow:hidden}
+@media(max-width:850px){#fotografia .photo-grid{gap:12px}}
+@media(max-width:650px){
+ #fotografia .photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .photo-lightbox{padding:52px 42px}
+ .photo-lightbox-image{max-width:100%;max-height:78vh}
+ .photo-lightbox-prev{left:0}.photo-lightbox-next{right:0}
+ .photo-lightbox-arrow{width:38px;font-size:42px}
+ .photo-lightbox-close{top:8px;right:8px}
+}
