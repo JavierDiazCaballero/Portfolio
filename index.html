@@ -194,15 +194,16 @@
 
     <section id="fotografia">
       <div class="section-header">
-        <div>
-          <h2>Fotografía</h2>
-          <span class="section-label">Selección</span>
-        </div>
+        <div><h2>Fotografía</h2><span class="section-label">Selección</span></div>
         <div class="section-line"></div>
       </div>
-      <div class="photo-grid">
-        <div class="photo-placeholder photo-placeholder-pending"><span>Fotografía — Art<small>Selección en preparación</small></span></div>
-        <div class="photo-placeholder photo-placeholder-pending"><span>Fotografía — Eventos<small>Selección en preparación</small></span></div>
+      <div class="photo-grid" id="photo-gallery" aria-label="Galería fotográfica">
+        <button class="photo-item" type="button" data-photo-index="0" aria-label="Ampliar fotografía 1"><img src="fotografias/JDG00147-2.jpg" alt="Fotografía 1" loading="lazy"></button>
+        <button class="photo-item" type="button" data-photo-index="1" aria-label="Ampliar fotografía 2"><img src="fotografias/JDG00202.jpg" alt="Fotografía 2" loading="lazy"></button>
+        <button class="photo-item" type="button" data-photo-index="2" aria-label="Ampliar fotografía 3"><img src="fotografias/JDG00305-2.jpg" alt="Fotografía 3" loading="lazy"></button>
+        <button class="photo-item" type="button" data-photo-index="3" aria-label="Ampliar fotografía 4"><img src="fotografias/JDG01382-2.jpg" alt="Fotografía 4" loading="lazy"></button>
+        <button class="photo-item" type="button" data-photo-index="4" aria-label="Ampliar fotografía 5"><img src="fotografias/P1000303-2.jpg" alt="Fotografía 5" loading="lazy"></button>
+        <button class="photo-item" type="button" data-photo-index="5" aria-label="Ampliar fotografía 6"><img src="fotografias/P1000355.jpg" alt="Fotografía 6" loading="lazy"></button>
       </div>
     </section>
   </main>
@@ -227,6 +228,14 @@
       <div id="external-preview-content" class="external-preview-content"></div>
       <a id="external-preview-open" class="external-preview-open" href="#" target="_blank" rel="noopener noreferrer">Abrir fuente externa ↗</a>
     </section>
+  </div>
+
+<div class="photo-lightbox" id="photo-lightbox" aria-hidden="true">
+    <button class="photo-lightbox-close" type="button" aria-label="Cerrar fotografía">×</button>
+    <button class="photo-lightbox-arrow photo-lightbox-prev" type="button" aria-label="Fotografía anterior">‹</button>
+    <img class="photo-lightbox-image" id="photo-lightbox-image" src="" alt="">
+    <button class="photo-lightbox-arrow photo-lightbox-next" type="button" aria-label="Fotografía siguiente">›</button>
+    <span class="photo-lightbox-counter" id="photo-lightbox-counter" aria-live="polite"></span>
   </div>
 
 <footer>
@@ -430,6 +439,60 @@
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && modal.classList.contains('is-open')) closePreview();
   });
+})();
+</script>
+
+<script>
+(() => {
+  const gallery = document.getElementById('photo-gallery');
+  const lightbox = document.getElementById('photo-lightbox');
+  if (!gallery || !lightbox) return;
+  const photos = Array.from(gallery.querySelectorAll('img'));
+  const image = document.getElementById('photo-lightbox-image');
+  const counter = document.getElementById('photo-lightbox-counter');
+  const closeButton = lightbox.querySelector('.photo-lightbox-close');
+  const previousButton = lightbox.querySelector('.photo-lightbox-prev');
+  const nextButton = lightbox.querySelector('.photo-lightbox-next');
+  let current = 0, previousFocus = null;
+  function showPhoto(index) {
+    current = (index + photos.length) % photos.length;
+    image.src = photos[current].src;
+    image.alt = photos[current].alt;
+    counter.textContent = (current + 1) + ' / ' + photos.length;
+  }
+  function openPhoto(index, trigger) {
+    previousFocus = trigger; showPhoto(index);
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('photo-lightbox-open');
+    closeButton.focus();
+  }
+  function closePhoto() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('photo-lightbox-open');
+    image.src = '';
+    if (previousFocus) previousFocus.focus();
+  }
+  gallery.querySelectorAll('.photo-item').forEach(button => {
+    button.addEventListener('click', () => openPhoto(Number(button.dataset.photoIndex), button));
+  });
+  previousButton.addEventListener('click', () => showPhoto(current - 1));
+  nextButton.addEventListener('click', () => showPhoto(current + 1));
+  closeButton.addEventListener('click', closePhoto);
+  lightbox.addEventListener('click', event => { if (event.target === lightbox) closePhoto(); });
+  document.addEventListener('keydown', event => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (event.key === 'Escape') closePhoto();
+    if (event.key === 'ArrowLeft') showPhoto(current - 1);
+    if (event.key === 'ArrowRight') showPhoto(current + 1);
+  });
+  let touchStartX = 0;
+  lightbox.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].screenX; }, {passive:true});
+  lightbox.addEventListener('touchend', event => {
+    const delta = event.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(delta) > 45) showPhoto(current + (delta < 0 ? 1 : -1));
+  }, {passive:true});
 })();
 </script>
 
