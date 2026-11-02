@@ -6598,3 +6598,12 @@ body.photo-lightbox-open{overflow:hidden}
     letter-spacing: 0.01em !important;
   }
 }
+
+
+/* Categorías de proyectos y colaboraciones: más contraste, solo en móvil. */
+@media (max-width: 650px) {
+  #audiovisual .project-type,
+  #colaboraciones .project-type {
+    color: #bdbdbd !important;
+  }
+}
