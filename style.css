@@ -6574,3 +6574,27 @@ body.photo-lightbox-open{overflow:hidden}
   height:100%;
   object-fit:cover;
 }
+
+
+/* CABECERA — mayor legibilidad en móvil, sin alterar escritorio ni la distribución. */
+@media (max-width: 650px) {
+  .topbar {
+    height: 68px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .topbar a:not(.topbar-name) {
+    font-size: 9px !important;
+  }
+
+  .topbar-left {
+    gap: 7px !important;
+  }
+
+  .topbar-name,
+  .topbar.is-visible .topbar-name {
+    font-size: 11px !important;
+    letter-spacing: 0.01em !important;
+  }
+}
