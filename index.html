@@ -309,23 +309,28 @@
     const iframe = document.getElementById('video-iframe');
     const close = document.getElementById('video-modal-close');
     const triggers = document.querySelectorAll('.project-video');
+    let lastVideoTrigger = null;
 
     triggers.forEach(trigger => {
       trigger.addEventListener('click', () => {
+        lastVideoTrigger = trigger;
         const isInstagramReel = trigger.dataset.video.includes('instagram.com');
         modal.classList.toggle('is-vertical', isInstagramReel);
         iframe.src = trigger.dataset.video;
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('modal-open');
+        close.focus();
       });
     });
 
     function closeVideo() {
+      if (!modal.classList.contains('is-open')) return;
       iframe.src = '';
       modal.classList.remove('is-open', 'is-vertical');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
+      if (lastVideoTrigger) lastVideoTrigger.focus();
     }
 
     close.addEventListener('click', closeVideo);
@@ -337,7 +342,7 @@
     });
 
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
         closeVideo();
       }
     });
