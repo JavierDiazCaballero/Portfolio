@@ -292,7 +292,17 @@
       }
     }
 
-    window.addEventListener('scroll', updateHeader);
+    let headerUpdateScheduled = false;
+    function scheduleHeaderUpdate() {
+      if (headerUpdateScheduled) return;
+      headerUpdateScheduled = true;
+      window.requestAnimationFrame(() => {
+        headerUpdateScheduled = false;
+        updateHeader();
+      });
+    }
+
+    window.addEventListener('scroll', scheduleHeaderUpdate, { passive: true });
     updateHeader();
 
     const modal = document.getElementById('video-modal');
