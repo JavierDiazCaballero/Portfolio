@@ -5960,73 +5960,7 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Móvil: selector horizontal de actores en una sola línea, con el actor activo destacado. */
-@media(max-width:650px){
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
-    display:flex!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:flex-start!important;
-    gap:18px!important;
-    width:100%!important;
-    max-width:100%!important;
-    overflow-x:auto!important;
-    overflow-y:hidden!important;
-    white-space:nowrap!important;
-    padding:8px 2px 12px!important;
-    margin:0 0 8px!important;
-    scrollbar-width:none!important;
-    -webkit-overflow-scrolling:touch!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav::-webkit-scrollbar{
-    display:none!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name{
-    display:inline-flex!important;
-    flex:0 0 auto!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:center!important;
-    gap:5px!important;
-    width:auto!important;
-    min-width:0!important;
-    min-height:0!important;
-    padding:5px 0!important;
-    margin:0!important;
-    border:0!important;
-    background:transparent!important;
-    opacity:.62!important;
-    white-space:nowrap!important;
-    transition:font-size .18s ease,opacity .18s ease,color .18s ease!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name span{
-    display:none!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name b{
-    display:inline!important;
-    font-size:11px!important;
-    font-weight:400!important;
-    line-height:1.2!important;
-    white-space:nowrap!important;
-    overflow:visible!important;
-    color:inherit!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active{
-    opacity:1!important;
-    color:#fff!important;
-    transform:none!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active b{
-    font-size:14px!important;
-    font-weight:500!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher{
-    gap:10px!important;
-  }
-}
-
-
-/* Móvil: una sola cinta horizontal de nombres, sin saltos de línea; activo blanco y ligeramente mayor. */
+/* REPARTO MÓVIL — cinta de actores consolidada. */
 @media(max-width:650px){
   .film-info-section:has(#cast-switcher) .cast-switcher-nav{
     display:flex!important;
@@ -6034,28 +5968,32 @@ body.external-preview-open{overflow:hidden}
     flex-direction:row!important;
     align-items:center!important;
     justify-content:flex-start!important;
-    gap:16px!important;
+    gap:7px!important;
+    column-gap:7px!important;
     width:100%!important;
     max-width:100%!important;
-    overflow-x:auto!important;
+    overflow-x:hidden!important;
     overflow-y:hidden!important;
     white-space:nowrap!important;
     padding:8px 2px 12px!important;
     margin:0 0 8px!important;
     scrollbar-width:none!important;
     -webkit-overflow-scrolling:touch!important;
-    scroll-snap-type:x proximity!important;
+    scroll-snap-type:none!important;
+    touch-action:pan-y!important;
   }
   .film-info-section:has(#cast-switcher) .cast-switcher-nav::-webkit-scrollbar{display:none!important;}
-  .film-info-section:has(#cast-switcher) .cast-switcher-name{
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav .cast-switcher-name{
     display:inline-flex!important;
     flex:0 0 auto!important;
+    flex-shrink:0!important;
     width:max-content!important;
     min-width:max-content!important;
     max-width:none!important;
     flex-direction:row!important;
     align-items:center!important;
     justify-content:center!important;
+    gap:5px!important;
     padding:5px 0!important;
     margin:0!important;
     white-space:nowrap!important;
@@ -6064,7 +6002,9 @@ body.external-preview-open{overflow:hidden}
     background:transparent!important;
     opacity:.48!important;
     color:#aaa!important;
+    letter-spacing:0!important;
     scroll-snap-align:center!important;
+    transition:font-size .18s ease,opacity .18s ease,color .18s ease!important;
   }
   .film-info-section:has(#cast-switcher) .cast-switcher-name span{display:none!important;}
   .film-info-section:has(#cast-switcher) .cast-switcher-name b{
@@ -6081,46 +6021,23 @@ body.external-preview-open{overflow:hidden}
   .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active{
     opacity:1!important;
     color:#fff!important;
+    transform:none!important;
   }
   .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active b{
     font-size:14px!important;
     font-weight:500!important;
   }
-}
-
-
-/* Móvil: la fila acompaña al actor seleccionado; el gesto principal se hace sobre la ficha. */
-@media(max-width:650px){
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
-    gap:10px!important;
-    overflow-x:hidden!important;
-    overflow-y:hidden!important;
-    scroll-snap-type:none!important;
-    touch-action:pan-y!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name{
-    flex-shrink:0!important;
-    margin:0!important;
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone]{
+    display:inline-flex!important;
+    opacity:.48!important;
   }
 }
 
 
-/* Móvil: separación uniforme entre todos los nombres, también entre Jaime y Ángel. */
-@media(max-width:650px){
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
-    justify-content:flex-start!important;
-    gap:10px!important;
-    column-gap:10px!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name{
-    margin-left:0!important;
-    margin-right:0!important;
-    letter-spacing:0!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name + .cast-switcher-name{
-    margin-left:0!important;
-  }
-}
+
+
+
+
 
 
 /* Móvil: noticias más estrechas y centradas para que no ocupen todo el ancho. */
@@ -6142,35 +6059,6 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Móvil: cinta de reparto más compacta y con Marc repetido al final como enlace circular. */
-@media(max-width:650px){
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
-    gap:7px!important;
-    column-gap:7px!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name{
-    margin:0!important;
-    padding-left:0!important;
-    padding-right:0!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone="marc"]{
-    display:inline-flex!important;
-    flex:0 0 auto!important;
-    width:max-content!important;
-    min-width:max-content!important;
-    margin-left:0!important;
-    padding-left:0!important;
-    opacity:.48!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone="marc"].is-active{
-    opacity:1!important;
-    color:#fff!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone="marc"].is-active b{
-    font-size:14px!important;
-    font-weight:500!important;
-  }
-}
 
 
 /* Móvil: reducir la altura y el espacio interior de las tarjetas de noticias. */
@@ -6198,34 +6086,6 @@ body.external-preview-open{overflow:hidden}
 }
 
 
-/* Selector móvil: separación uniforme entre todos los nombres, incluidos los duplicados del bucle. */
-@media(max-width:650px){
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
-    gap:7px!important;
-    column-gap:7px!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-nav .cast-switcher-name{
-    margin:0!important;
-    padding-left:0!important;
-    padding-right:0!important;
-    letter-spacing:0!important;
-    flex:0 0 auto!important;
-    width:max-content!important;
-    min-width:max-content!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone]{
-    display:inline-flex!important;
-    opacity:.48!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone].is-active{
-    opacity:1!important;
-    color:#fff!important;
-  }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone].is-active b{
-    font-size:14px!important;
-    font-weight:500!important;
-  }
-}
 
 
 /* Indicación sutil de gesto y transición breve entre fichas, solo en móvil. */
