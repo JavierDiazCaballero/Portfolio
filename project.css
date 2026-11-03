@@ -1,0 +1,2380 @@
+/* Estilos de proyecto: componentes y estructura. */
+
+
+
+/* =========================================================
+   PÁGINA DE LA PELÍCULA
+========================================================= */
+
+.film-page-body {
+  background: #080808;
+}
+
+
+
+.film-cover-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.64) 0%,
+      rgba(0,0,0,0.27) 48%,
+      rgba(0,0,0,0.06) 100%
+    );
+
+  z-index: 1;
+}
+
+
+
+.film-cover-type {
+  margin-bottom: 18px;
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.27em;
+
+  color: #ddd;
+}
+
+
+
+.film-cover-bottom {
+  position: absolute;
+
+  left: 7vw;
+  right: 7vw;
+
+  bottom: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-size: 9px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: #ccc;
+}
+
+
+
+.film-cover-scroll-link:hover {
+  opacity: 0.7;
+}
+
+
+
+.film-cover-scroll {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 42px;
+
+  height: 42px;
+
+  border: 1px solid rgba(255,255,255,0.5);
+
+  border-radius: 50%;
+
+  font-size: 17px;
+}
+
+
+
+.film-intro-label,
+.film-info-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  color: #666;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.2em;
+}
+
+
+
+.film-intro-content {
+  max-width: 850px;
+}
+
+
+
+.film-lead {
+  margin: 0 0 42px;
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(32px, 3.5vw, 50px);
+
+  line-height: 1.02;
+
+  font-weight: 300;
+
+  color: #ddd;
+}
+
+
+
+.film-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+.film-imdb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  padding: 4px 0;
+  color: inherit;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.film-imdb-arrow {
+  color: #b6a06b;
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+
+.film-imdb-link:hover {
+  opacity: 0.8;
+}
+
+
+
+.film-imdb-link:hover .film-imdb-logo {
+  background: #c4ae7a;
+  border-color: #c4ae7a;
+}
+
+
+
+.film-imdb-link:hover .film-imdb-arrow {
+  color: #c4ae7a;
+  transform: translate(2px, -2px);
+}
+
+
+
+.film-info-heading {
+  align-items: flex-start;
+}
+
+
+
+.film-info-heading > span {
+  font-size: 11px;
+
+  color: #666;
+
+  line-height: 1;
+}
+
+
+
+.film-info-heading h2 {
+  margin: 0;
+
+  font-size: 22px;
+
+  line-height: 1;
+
+  font-weight: 300;
+
+  color: #888;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+
+
+.film-cast-name {
+  padding: 20px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 27px;
+
+  font-weight: 300;
+
+  color: #ccc;
+}
+
+
+
+.film-production-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+
+.film-production-item strong {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 24px;
+
+  line-height: 1.1;
+
+  font-weight: 300;
+
+  color: #ccc;
+}
+
+
+
+.film-news-section .film-info-heading {
+  margin-bottom: 55px;
+}
+
+
+
+.film-news-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+
+.film-news-card:hover {
+  background: #111;
+
+  border-color: rgba(255,255,255,0.25);
+
+  transform: translateY(-5px);
+}
+
+
+
+.film-news-card-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 7px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  color: #666;
+}
+
+
+
+.film-news-card p {
+  margin: 0 0 20px;
+
+  font-size: 9px;
+
+  line-height: 1.7;
+
+  color: #777;
+}
+
+
+
+.film-news-read {
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  font-size: 7px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.18em;
+
+  color: #999;
+}
+
+
+
+.film-back a:hover {
+  color: #fff;
+}
+
+
+
+.film-back-arrow {
+  font-size: 18px;
+}
+
+
+
+
+/* =========================================================
+   PÁGINA DE LA PELÍCULA — AJUSTES
+========================================================= */
+
+/* Número encima del título */
+
+.film-intro-label,
+.film-info-heading {
+  display: block;
+}
+
+
+
+.film-intro-label span:last-child {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 300;
+  color: #888;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+
+
+/* Frase inicial más pequeña */
+
+.film-lead {
+  font-size: clamp(24px, 2.5vw, 36px);
+  line-height: 1.08;
+}
+
+
+
+.film-cast-name {
+  text-align: center;
+  color: #bbb;
+}
+
+
+
+
+/* NOTICIAS */
+
+.film-news-section .film-info-heading {
+  margin-bottom: 78px;
+}
+
+
+
+.film-news-card p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+
+.film-description p {
+  margin: 0 0 22px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #a0a0a0;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+
+
+
+/* =========================
+   FICHA INTERACTIVA DE REPARTO
+   Prueba inicial: Gonzalo Cortés
+========================= */
+.film-cast-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.72fr) minmax(300px, 1fr);
+  gap: clamp(35px, 6vw, 90px);
+  align-items: start;
+}
+
+
+.film-cast-person {
+  position: relative;
+}
+
+
+.film-cast-name--interactive {
+  cursor: default;
+  outline: none;
+}
+
+
+.film-cast-person--test:hover .film-cast-name--interactive,
+.film-cast-name--interactive:focus-visible {
+  color: #fff;
+  padding-left: 8px;
+}
+
+
+.film-cast-preview-hint,
+.film-cast-preview-mobile-hint {
+  font-size: 8px;
+  letter-spacing: 0.24em;
+  color: #555;
+  text-transform: uppercase;
+}
+
+
+.film-cast-preview-mobile-hint {
+  display: none;
+}
+
+
+.film-cast-person--test:hover .film-cast-preview,
+.film-cast-person--test:focus-within .film-cast-preview,
+.film-cast-person--test.is-in-view .film-cast-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.film-cast-preview-image {
+  position: relative;
+  min-height: 280px;
+  height: 100%;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: radial-gradient(ellipse at 50% 35%, #292929 0, #141414 44%, #0b0b0b 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #777;
+}
+
+
+.film-cast-preview-content {
+  align-self: center;
+}
+
+
+.film-cast-preview-kicker,
+.film-cast-works > span {
+  font-size: 7px;
+  line-height: 1.7;
+  letter-spacing: 0.18em;
+  color: #777;
+  text-transform: uppercase;
+}
+
+
+.film-cast-preview-content > p {
+  margin: 0 0 24px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #929292;
+}
+
+
+.film-cast-works em {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: normal;
+  color: #d0d0d0;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .film-cast-preview,
+  .film-cast-name {
+    transition: none;
+  }
+
+  .film-cast-person--test.is-in-view .film-cast-preview {
+    animation: none;
+  }
+}
+
+
+
+
+/* =========================
+   REPARTO — PERFIL DESTACADO
+   Propuesta visual para Gonzalo Cortés
+========================= */
+.film-cast-layout--proposal {
+  display: block;
+}
+
+
+.cast-profile {
+  display: grid;
+  grid-template-columns: minmax(260px, .88fr) minmax(0, 1.12fr);
+  max-width: 1120px;
+  margin: 0 auto 76px;
+  background: #0b0b0b;
+  border: 1px solid rgba(255,255,255,.12);
+  overflow: hidden;
+}
+
+
+.cast-profile-portrait {
+  min-height: 590px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 32%, rgba(150,125,101,.32), transparent 42%),
+    linear-gradient(155deg, #292521 0%, #151413 48%, #090909 100%);
+  color: rgba(255,255,255,.82);
+}
+
+
+.cast-profile-portrait::after {
+  inset: 13%;
+  border-color: rgba(255,255,255,.045);
+}
+
+
+.cast-profile-portrait-index { top: 26px; }
+
+
+.cast-profile-portrait-caption { bottom: 27px; }
+
+
+.cast-profile-portrait-initials {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(100px, 14vw, 190px);
+  font-weight: 300;
+  line-height: .8;
+  letter-spacing: -.08em;
+  color: rgba(255,255,255,.15);
+}
+
+
+.cast-profile-info h3 {
+  margin: 0 0 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: .82;
+  font-weight: 300;
+  letter-spacing: -.035em;
+  color: #eee;
+}
+
+
+.cast-profile-divider {
+  height: 1px;
+  margin: 30px 0 20px;
+  background: rgba(255,255,255,.13);
+}
+
+
+.cast-profile-works {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.cast-profile-works li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 14px;
+  align-items: baseline;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,.075);
+  transition: padding .25s ease, color .25s ease;
+}
+
+
+.cast-profile-works li b {
+  color: #666;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+
+.cast-profile-imdb:hover { color: #fff; }
+
+
+.cast-profile-imdb span { font-size: 14px; }
+
+
+.film-cast-grid--names {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 42px;
+}
+
+
+.film-cast-preview-slot { display: none !important; }
+
+
+
+@media (max-width: 900px) {
+  .cast-profile { grid-template-columns: minmax(220px, .78fr) minmax(0, 1.22fr); }
+
+  .cast-profile-portrait { min-height: 540px; }
+
+  .cast-profile-info { padding: 30px; }
+
+  .film-cast-grid--names { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+
+/* REPARTO — SELECTOR DINÁMICO DE ACTORES */
+.cast-switcher{display:grid;grid-template-columns:minmax(190px,.72fr) minmax(0,1.55fr);gap:clamp(24px,5vw,76px);align-items:stretch;max-width:1180px;margin:0 auto}
+
+
+.cast-switcher-nav{display:flex;flex-direction:column;align-self:start;border-top:1px solid rgba(255,255,255,.14)}
+
+
+.cast-switcher-name{appearance:none;display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:baseline;width:100%;padding:19px 8px 19px 0;border:0;border-bottom:1px solid rgba(255,255,255,.11);background:transparent;color:#777;text-align:left;cursor:pointer;transition:color .25s ease,padding .25s ease}
+
+
+.cast-switcher-card{display:grid;grid-template-columns:minmax(170px,.78fr) minmax(0,1.22fr);min-width:0;background:#0b0b0b;border:1px solid rgba(255,255,255,.12);transition:opacity .15s ease,transform .15s ease}
+
+
+.cast-switcher-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:saturate(.78);transition:filter .35s ease,transform .6s ease}
+
+
+.cast-portrait-index{top:18px}
+
+.cast-portrait-caption{bottom:18px}
+
+
+.cast-switcher-details{align-self:center;min-width:0;padding:clamp(22px,3vw,42px)}
+
+
+.cast-switcher-title{margin:0 0 19px;color:#eee;font-family:'Cormorant Garamond',serif;font-size:clamp(38px,4.4vw,57px);font-weight:300;line-height:.9}
+
+
+.cast-switcher-rule{height:1px;margin:23px 0 16px;background:rgba(255,255,255,.13)}
+
+
+.cast-switcher-works{list-style:none;margin:0;padding:0}
+
+
+.cast-switcher-works li span{color:#666;font-size:8px;padding-top:3px}
+
+
+.cast-switcher-works li em{color:#d0d0d0;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.15;font-style:normal}
+
+
+@media(max-width:650px){.cast-switcher{grid-template-columns:1fr;gap:22px}
+.cast-switcher-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+.cast-switcher-name{grid-template-columns:20px minmax(0,1fr);gap:6px;padding:14px 0}
+.cast-switcher-name b{font-size:21px}
+.cast-switcher-portrait{min-height:330px}
+.cast-switcher-details{padding:24px}
+.cast-switcher-title{font-size:48px}
+}
+
+
+.cast-switcher-nav{position:sticky;top:14vh;z-index:2}
+
+
+.cast-switcher-scroll-track{position:absolute;top:0;right:0;width:calc((100% - clamp(24px,5vw,76px)) * .682);height:455vh;pointer-events:none}
+
+
+@media(max-width:650px){
+  .cast-switcher{min-height:455vh;display:block}
+
+  .cast-switcher-nav{position:relative;top:auto;margin-bottom:22px}
+
+  .cast-switcher-card{position:sticky;top:7vh}
+
+  .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
+
+  .cast-switcher-scroll-step{height:65vh}
+}
+
+
+.cast-switcher-nav{top:18vh;border-top:1px solid rgba(255,255,255,.2)}
+
+
+.cast-switcher-name{grid-template-columns:22px minmax(0,1fr);gap:14px;padding:20px 10px 20px 0;text-transform:uppercase;letter-spacing:.035em}
+
+
+.cast-switcher-name:hover,.cast-switcher-name.is-active{padding-left:10px;color:#f4eee6}
+
+
+.cast-switcher-card{top:14vh;grid-template-columns:minmax(210px,.82fr) minmax(0,1.18fr);gap:0;background:#0c0c0c;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 80px rgba(0,0,0,.18)}
+
+
+.cast-switcher-photo{object-position:center 25%;filter:grayscale(12%) saturate(.72)}
+
+
+.cast-switcher-title{text-transform:uppercase;letter-spacing:.015em;font-size:clamp(42px,4vw,61px);line-height:.94;margin-bottom:24px}
+
+
+.cast-switcher-rule{margin:30px 0 19px;background:rgba(255,255,255,.18)}
+
+
+.cast-switcher-works li{grid-template-columns:42px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+
+
+.cast-work-info{display:flex;flex-direction:column;gap:4px;min-width:0}
+
+
+.cast-work-info small{font-size:7px;line-height:1.3;letter-spacing:.18em;color:#918575;text-transform:uppercase}
+
+
+@media(max-width:650px){
+ .film-info-section:has(#cast-switcher) > .film-info-heading{margin-bottom:34px;padding-top:24px}
+
+ .cast-switcher{display:block;min-height:455vh}
+
+ .cast-switcher-nav{position:relative;top:auto;margin-bottom:25px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+
+ .cast-switcher-name{padding:13px 0;grid-template-columns:17px minmax(0,1fr);gap:7px}
+
+ .cast-switcher-name b{font-size:18px}
+
+ .cast-switcher-card{position:sticky;top:7vh;grid-template-columns:1fr}
+
+ .cast-switcher-portrait{min-height:300px}
+
+ .cast-switcher-details{padding:25px}
+
+ .cast-switcher-title{font-size:43px}
+
+ .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
+}
+
+
+.cast-switcher-name{text-transform:none;letter-spacing:0;padding:19px 8px 19px 0}
+
+
+.cast-switcher-name:hover,.cast-switcher-name.is-active{padding-left:5px}
+
+
+.cast-switcher-card{grid-template-columns:minmax(250px,.9fr) minmax(0,1.1fr);max-width:100%;top:13vh;box-shadow:0 24px 80px rgba(0,0,0,.15)}
+
+
+.cast-switcher-details{padding:clamp(28px,3.5vw,54px)}
+
+
+.cast-switcher-role{color:#929292}
+
+
+.cast-switcher-work-label{color:#8b8b8b}
+
+
+.cast-switcher-scroll-track{width:calc((100% - clamp(58px,9vw,150px)) * .79);height:455vh}
+
+
+@media(max-width:650px){
+ .cast-switcher{display:block;min-height:455vh;padding:0}
+
+ .cast-switcher-nav{position:relative;top:auto;margin-bottom:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+
+ .cast-switcher-name{padding:13px 0;grid-template-columns:17px minmax(0,1fr);gap:7px}
+
+ .cast-switcher-name b{font-size:18px}
+
+ .cast-switcher-card{position:sticky;top:7vh;grid-template-columns:1fr}
+
+ .cast-switcher-portrait{height:clamp(270px,40vh,360px);min-height:0;aspect-ratio:4/3}
+
+ .cast-switcher-details{padding:25px}
+
+ .cast-switcher-title{font-size:43px}
+
+ .cast-switcher-scroll-track{top:300px;width:100%;height:455vh}
+}
+
+
+.cast-switcher-nav{
+  position:sticky;
+  top:22vh;
+  min-width:0;
+  overflow:visible;
+}
+
+
+.cast-switcher-name{
+  display:grid;
+  grid-template-columns:22px minmax(0,1fr);
+  align-items:center;
+  white-space:nowrap;
+  gap:10px;
+  padding:17px 0;
+  transition:color .28s ease,opacity .28s ease;
+}
+
+
+.cast-switcher-name:not(.is-active){opacity:1}
+
+
+.cast-switcher-card{
+  position:sticky;
+  top:15vh;
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  align-items:start;
+  gap:clamp(24px,3.4vw,48px);
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  overflow:visible;
+}
+
+
+.cast-switcher-details{
+  min-width:0;
+  padding:clamp(8px,1vw,16px) 0 24px;
+  align-self:start;
+  background:transparent;
+  overflow:visible;
+}
+
+
+@media(max-width:1000px){
+ .cast-switcher{grid-template-columns:minmax(165px,.55fr) minmax(0,1.45fr);gap:30px}
+
+ .cast-switcher-card{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:22px}
+
+ .cast-switcher-name{gap:7px}
+
+ .cast-switcher-name b{font-size:16px}
+}
+
+
+
+
+/* REPARTO — nueva jerarquía de lectura y scroll */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex;
+  align-items:flex-start;
+  gap:22px;
+  margin:0 0 clamp(28px,4vh,44px);
+  padding-top:clamp(28px,5vh,56px);
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading > span{
+  padding-top:.25em;
+  font-size:10px;
+  letter-spacing:.16em;
+  color:#8e8e8e;
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading h2{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:400;
+  font-size:clamp(42px,5vw,68px);
+  line-height:.95;
+  letter-spacing:-.025em;
+}
+
+
+.cast-switcher-nav{
+  position:relative;
+  top:auto;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0 clamp(20px,3vw,46px);
+  width:100%;
+  margin:0 0 clamp(54px,10vh,110px);
+  padding:0;
+  border-top:1px solid rgba(255,255,255,.18);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+
+.cast-switcher-name span{
+  flex:0 0 auto;
+  font-size:9px;
+  letter-spacing:.1em;
+  color:#777;
+}
+
+
+.cast-switcher-name:hover,.cast-switcher-name.is-active{
+  padding-left:0;
+  color:#fff;
+  background:transparent;
+}
+
+
+.cast-switcher-name.is-active b{color:#fff}
+
+
+.cast-switcher-card{
+  position:sticky;
+  top:10vh;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);
+  gap:clamp(28px,5vw,72px);
+  align-items:start;
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  border-radius:0;
+  overflow:visible;
+}
+
+
+.cast-switcher-card:hover .cast-switcher-photo{
+  filter:none;
+  transform:none;
+}
+
+
+.cast-switcher-role{
+  margin:0 0 18px;
+  color:#8f8f8f;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  line-height:1.5;
+  letter-spacing:.16em;
+}
+
+
+.cast-switcher-title em{color:#bcb8b1;font-weight:400}
+
+
+.cast-switcher-bio{
+  max-width:50ch;
+  margin:0;
+  color:#c2bfba;
+  font-size:14px;
+  line-height:1.8;
+  font-weight:400;
+}
+
+
+.cast-switcher-work-label{
+  margin:0 0 8px;
+  color:#8f8f8f;
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:.15em;
+}
+
+
+.cast-switcher-works li span{
+  padding-top:4px;
+  color:#888;
+  font-family:Arial,sans-serif;
+  font-size:10px;
+}
+
+
+.cast-work-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+
+
+.cast-work-info small{
+  color:#96928b;
+  font-family:Arial,sans-serif;
+  font-size:8px;
+  letter-spacing:.14em;
+  line-height:1.4;
+  text-transform:uppercase;
+}
+
+
+.cast-switcher-scroll-step{height:65vh}
+
+
+@media(max-width:900px){
+ .cast-switcher{min-height:510vh}
+
+ .cast-switcher-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin-bottom:8vh}
+
+ .cast-switcher-name b{font-size:20px}
+
+ .cast-switcher-card{grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);gap:26px}
+
+ .cast-switcher-bio{font-size:13px}
+}
+
+
+
+
+/* Vistas previas externas: el visitante permanece en el portfolio */
+.external-preview-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+
+
+.external-preview-modal.is-open{opacity:1;visibility:visible;pointer-events:auto}
+
+
+.external-preview-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px)}
+
+
+.external-preview-dialog{position:relative;z-index:1;width:min(760px,100%);max-height:min(86vh,900px);overflow:auto;padding:clamp(24px,4vw,48px);background:#151515;color:#eee;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 100px rgba(0,0,0,.35)}
+
+
+.external-preview-kicker{margin:0 38px 14px 0;color:#999;font:9px/1.5 Arial,sans-serif;letter-spacing:.18em}
+
+
+.external-preview-dialog h2{margin:0 40px 24px 0;color:#f2eee8;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,54px);font-weight:400;line-height:1}
+
+
+.external-preview-source{color:#aaa;font:10px/1.5 Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+
+
+.external-preview-open{display:inline-flex;margin-top:24px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.45);color:#f2eee8;text-decoration:none;font-size:12px;letter-spacing:.04em}
+
+
+
+
+/* REPARTO — tipografía y alineación coherentes con el resto de la web */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  margin:0 0 clamp(24px,4vh,42px);
+  padding-top:clamp(24px,3vh,40px);
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading > span{
+  font-size:inherit;
+  letter-spacing:inherit;
+}
+
+
+.cast-switcher-nav{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+  width:max-content;
+  max-width:100%;
+  margin:0 0 0 clamp(0px,1vw,12px);
+  padding:0;
+  border:0;
+}
+
+
+.cast-switcher-name span{color:#777;transition:color .22s ease}
+
+
+.cast-switcher-name b{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,1.65vw,23px);
+  font-weight:400;
+  line-height:1.2;
+  letter-spacing:0;
+  white-space:nowrap;
+  text-transform:none;
+  transition:color .22s ease;
+}
+
+
+.cast-switcher-name.is-active b{color:#fff}
+
+
+.cast-switcher-card{top:clamp(17vh,22vh,25vh)}
+
+
+@media(max-width:900px){
+ .cast-switcher-nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;margin:0 0 8vh}
+
+ .cast-switcher-name{width:max-content;max-width:100%}
+
+ .cast-switcher-name b{font-size:19px}
+
+ .cast-switcher-card{top:18vh}
+}
+
+
+
+
+/* Previsualización editorial: lectura cómoda de noticias dentro del portfolio */
+.external-preview-dialog:has(.article-reading-preview){width:min(720px,100%);padding:clamp(28px,5vw,58px);background:#f0eee9;color:#222;border:0;box-shadow:0 28px 90px rgba(0,0,0,.32)}
+
+
+.external-preview-dialog:has(.article-reading-preview) h2{display:none}
+
+
+.external-preview-dialog:has(.article-reading-preview) .external-preview-open{color:#222;border-color:rgba(0,0,0,.4)}
+
+
+.article-reading-date{margin-top:8px;color:#777;font:9px/1.5 Arial,sans-serif;letter-spacing:.12em}
+
+
+.article-reading-rule{width:42px;height:1px;margin:0 0 24px;background:#777}
+
+
+.article-reading-paragraph{margin:0 0 18px;color:#333;font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.85;font-weight:400}
+
+
+@media(max-width:600px){.external-preview-dialog:has(.article-reading-preview){padding:30px 22px}
+.article-reading-paragraph{font-size:15px;line-height:1.75}
+.article-reading-title{font-size:32px}
+}
+
+
+.instagram-follow-cta:hover{filter:brightness(1.08)}
+
+
+.imdb-profile-preview{max-width:560px;margin:0 auto;padding:4px 0 8px}
+
+
+.imdb-profile-head{display:flex;align-items:center;gap:20px}
+
+
+.imdb-profile-monogram{display:grid;place-items:center;flex:0 0 82px;width:82px;height:82px;border-radius:50%;background:linear-gradient(145deg,#e5c56b,#9e762b);color:#17130a;font:400 24px/1 'Cormorant Garamond',serif;letter-spacing:.04em}
+
+
+.imdb-profile-divider{height:1px;margin:26px 0 18px;background:rgba(255,255,255,.16)}
+
+
+.imdb-profile-credit{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12)}
+
+
+.imdb-profile-credit span{flex:0 0 auto;color:#a99b7b;font:9px/1.4 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+
+
+
+
+/* REPARTO — ajustes de composición y lectura */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex;
+  align-items:baseline;
+  gap:inherit;
+  margin-bottom:clamp(24px,4vh,42px);
+  padding-top:clamp(24px,3vh,40px);
+}
+
+
+.cast-switcher{
+  min-height:560vh;
+  grid-template-columns:minmax(185px,.62fr) minmax(0,1.5fr);
+  gap:clamp(26px,4vw,58px);
+  align-items:start;
+  max-width:1280px;
+}
+
+
+.cast-switcher-name{
+  display:grid;
+  grid-template-columns:22px minmax(0,1fr);
+  width:100%;
+  padding:15px 4px 15px 0;
+  gap:10px;
+  border-bottom:1px solid rgba(255,255,255,.11);
+  transform:none;
+  text-transform:none;
+  letter-spacing:0;
+}
+
+
+.cast-switcher-name.is-active b{color:#fff}
+
+
+.cast-switcher-portrait{height:100%;min-height:clamp(470px,66vh,660px)}
+
+
+.cast-switcher-details{
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  padding:clamp(24px,3vw,44px);
+}
+
+
+.cast-switcher-scroll-track{height:560vh;width:calc((100% - clamp(26px,4vw,58px)) * .708)}
+
+
+@media(max-width:900px){
+ .cast-switcher{min-height:560vh;grid-template-columns:minmax(150px,.62fr) minmax(0,1.38fr);gap:22px}
+
+ .cast-switcher-nav{top:13vh}
+
+ .cast-switcher-card{top:12vh;grid-template-columns:1fr;min-height:0}
+
+ .cast-switcher-portrait{height:clamp(270px,36vh,380px);min-height:0}
+
+ .cast-switcher-details{padding:24px;align-self:stretch}
+
+ .cast-switcher-scroll-track{height:560vh;width:calc((100% - 22px) * .69)}
+
+ .cast-switcher-scroll-step{height:80vh}
+}
+
+
+
+
+/* REPARTO — propuesta limpia: nombres en rueda vertical y ficha centrada */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex;align-items:baseline;gap:16px;
+  margin-bottom:clamp(28px,4vh,44px);
+  padding-top:clamp(24px,3vh,40px);
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading h2,
+.film-info-section:has(#cast-switcher) > .film-info-heading > span{
+  font:inherit;letter-spacing:inherit;text-transform:inherit;
+}
+
+
+.cast-switcher{
+  min-height:560vh;
+  display:grid;
+  grid-template-columns:minmax(170px,.58fr) minmax(0,1.42fr);
+  gap:clamp(28px,5vw,72px);
+  align-items:start;
+  max-width:1240px;
+  margin:0 auto;
+}
+
+
+.cast-switcher-name{
+  appearance:none;display:flex;align-items:baseline;justify-content:flex-start;
+  gap:0;width:100%;padding:9px 0;margin:0;border:0;
+  background:transparent;color:#777;text-align:left;cursor:pointer;
+  transform:none!important;transition:color .24s ease,font-size .24s ease;
+  transform-origin:left center;
+}
+
+
+.cast-switcher-name.is-active{color:#fff}
+
+
+.cast-switcher-name.is-active b{font-size:clamp(25px,2.25vw,34px);color:#fff}
+
+
+.cast-switcher-card{
+  position:sticky;top:13vh;align-self:start;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:0;align-items:stretch;min-width:0;min-height:clamp(460px,66vh,650px);
+  background:transparent;border:0;
+}
+
+
+.cast-switcher-details{
+  align-self:stretch;display:flex;flex-direction:column;justify-content:center;
+  min-width:0;padding:clamp(26px,3vw,46px);
+}
+
+
+.cast-switcher-title em{color:#aaa;font-style:normal;font-weight:400}
+
+
+.cast-switcher-bio{font-size:13px;line-height:1.8}
+
+
+.cast-switcher-rule{display:none!important}
+
+
+.cast-switcher-work-label{margin:24px 0 10px;font-size:8px;letter-spacing:.15em}
+
+
+.cast-switcher-works li span{display:none!important}
+
+
+.cast-work-info{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-width:0;width:100%}
+
+
+.cast-switcher-scroll-track{height:560vh;width:calc((100% - clamp(28px,5vw,72px)) * .71)}
+
+
+.cast-switcher-scroll-step{height:80vh}
+
+
+@media(max-width:900px){
+ .cast-switcher{grid-template-columns:minmax(145px,.58fr) minmax(0,1.42fr);gap:22px;min-height:560vh}
+
+ .cast-switcher-nav{top:28vh}
+
+ .cast-switcher-card{top:15vh;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:0}
+
+ .cast-switcher-portrait{min-height:0;height:clamp(360px,52vh,520px)}
+
+ .cast-switcher-details{padding:22px}
+
+ .cast-switcher-title{font-size:clamp(28px,4vw,40px)}
+
+ .cast-switcher-bio{font-size:12px}
+
+ .cast-switcher-works li{align-items:flex-start;flex-direction:column;gap:3px}
+
+ .cast-work-info{align-items:baseline;flex-wrap:wrap}
+
+ .cast-switcher-scroll-track{height:560vh;width:calc((100% - 22px) * .71)}
+}
+
+
+.cast-switcher-nav{border:0!important}
+
+
+.cast-switcher-name,
+.cast-switcher-name:hover,
+.cast-switcher-name.is-active{
+  border:0!important;
+  border-bottom:0!important;
+  padding:8px 0!important;
+  margin:0!important;
+  transform:none!important;
+  background:transparent!important;
+  text-transform:none!important;
+}
+
+
+.cast-switcher-name span,
+.cast-portrait-index{display:none!important}
+
+
+.cast-switcher-name b{font-size:clamp(19px,1.65vw,24px)!important;font-weight:400!important;letter-spacing:0!important}
+
+
+.cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+.cast-switcher-name.is-active + .cast-switcher-name b{font-size:clamp(22px,1.85vw,28px)!important;color:#c4c0ba!important}
+
+
+.cast-work-info{display:flex!important;align-items:baseline!important;justify-content:flex-start!important;flex-wrap:wrap!important;gap:6px 12px!important;width:100%!important}
+
+
+@media(max-width:900px){
+  .cast-switcher{display:grid!important;grid-template-columns:minmax(145px,.58fr) minmax(0,1.42fr)!important;gap:22px!important}
+
+  .cast-switcher-nav{grid-column:1!important;grid-row:1!important;position:sticky!important;top:25vh!important}
+
+  .cast-switcher-card{grid-column:2!important;grid-row:1!important;position:sticky!important;top:12vh!important;grid-template-columns:1fr!important}
+
+  .cast-switcher-portrait{height:clamp(270px,36vh,380px)!important;min-height:0!important}
+
+  .cast-switcher-details{padding:22px!important}
+
+  .cast-switcher-scroll-track{grid-column:2!important;grid-row:1!important}
+}
+
+
+
+
+/* REPARTO — más pausa al inicio y al cierre, transiciones tipográficas más fluidas */
+.cast-switcher-scroll-track{height:620vh!important}
+
+
+.cast-switcher-scroll-step{height:80vh!important}
+
+
+.cast-switcher-scroll-step:first-child,
+.cast-switcher-scroll-step:last-child{height:110vh!important}
+
+
+.cast-switcher-name b{
+  transition:font-size .42s cubic-bezier(.22,.8,.25,1),color .42s ease,opacity .42s ease,letter-spacing .42s ease!important;
+}
+
+
+.cast-switcher-name{transition:color .42s ease,opacity .42s ease!important}
+
+
+.cast-switcher-name.is-active{opacity:1}
+
+
+@media(max-width:900px){
+ .cast-switcher-scroll-track{height:620vh!important}
+
+ .cast-switcher-scroll-step{height:80vh!important}
+
+ .cast-switcher-scroll-step:first-child,
+ .cast-switcher-scroll-step:last-child{height:110vh!important}
+}
+
+
+.cast-switcher-works li > span{display:none!important}
+
+
+.cast-switcher-works li .cast-work-info em{
+  display:inline!important;
+  flex:0 1 auto!important;
+  width:auto!important;
+  margin:0!important;
+}
+
+
+.cast-switcher-works li .cast-work-info small{
+  display:inline-block!important;
+  position:static!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+  line-height:1.4!important;
+  white-space:nowrap!important;
+  vertical-align:baseline!important;
+}
+
+
+@media(max-width:650px){
+  .cast-switcher-card{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)!important}
+
+  .cast-switcher-portrait{height:clamp(270px,40vh,360px)!important}
+
+  .cast-switcher-details{padding:12px!important}
+
+  .cast-switcher-works li .cast-work-info{gap:4px 7px!important}
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading > span,
+.film-info-section:has(#cast-switcher) > .film-info-heading h2{
+  font-family:inherit!important;
+  font-size:inherit!important;
+  font-weight:inherit!important;
+  line-height:inherit!important;
+  letter-spacing:inherit!important;
+  text-transform:inherit!important;
+}
+
+
+.instagram-follow-cta:hover{background:#1877f2!important;filter:none!important}
+
+
+#external-preview-content:has(.instagram-follow-cta){
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  overflow:visible!important;
+  max-height:none!important;
+}
+
+
+#external-preview-content:has(.instagram-follow-cta) .instagram-media{
+  margin:0 auto!important;
+  width:100%!important;
+  max-width:540px!important;
+}
+
+
+.cast-switcher-card{align-items:center!important}
+
+
+.cast-switcher-photo{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 30%!important}
+
+
+@media(max-width:650px){
+ .cast-switcher{gap:0!important}
+
+ .cast-switcher-card{gap:12px!important}
+
+ .cast-switcher-portrait{aspect-ratio:4/5!important}
+}
+
+
+
+
+/* Instagram: la ventana no debe tener scroll interno */
+.external-preview-dialog:has(.instagram-follow-cta){
+  max-height:none!important;
+  height:auto!important;
+  overflow:hidden!important;
+  padding-bottom:18px!important;
+}
+
+
+#external-preview-content:has(.instagram-follow-cta) iframe{
+  max-height:none!important;
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading > span{
+  display:block!important;
+  font-family:Arial,sans-serif!important;
+  font-size:11px!important;
+  font-weight:400!important;
+  letter-spacing:.14em!important;
+  line-height:1!important;
+  color:#aaa!important;
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading h2{
+  display:block!important;
+  margin:0!important;
+  font-family:'Cormorant Garamond',serif!important;
+  font-size:clamp(42px,6vw,76px)!important;
+  font-weight:400!important;
+  line-height:.95!important;
+  letter-spacing:-.035em!important;
+  color:#f2eee8!important;
+}
+
+
+@media(max-width:900px){
+  .cast-switcher-name{padding:8px 0!important}
+
+  .cast-switcher-name b{font-size:14px!important}
+
+  .cast-switcher-name.is-active b{font-size:17px!important}
+
+  .cast-switcher-card{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)!important}
+
+  .cast-switcher-portrait{aspect-ratio:3/4!important;height:auto!important;min-height:0!important}
+}
+
+
+
+
+/* Reparto: ficha compacta, retrato amplio y nombres sin exagerar efectos al pasar el ratón. */
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  display:flex!important;align-items:baseline!important;
+  gap:18px!important;margin-bottom:clamp(28px,3.4vw,44px)!important;
+}
+
+
+.cast-switcher-name b{font-size:clamp(16px,1.3vw,20px)!important}
+
+
+.cast-switcher-name.is-active b{font-size:clamp(20px,1.65vw,25px)!important}
+
+
+.cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+.cast-switcher-name.is-active + .cast-switcher-name b{font-size:clamp(18px,1.45vw,22px)!important}
+
+
+.cast-switcher-card{gap:clamp(24px,2.5vw,38px)!important;min-height:0!important}
+
+
+.cast-switcher-bio{margin-bottom:14px!important;line-height:1.55!important}
+
+
+.cast-switcher-portrait{aspect-ratio:3/4!important;height:auto!important;min-height:0!important}
+
+
+.film-external-links{display:flex;justify-content:center;margin:clamp(50px,8vw,100px) auto 28px;padding:0 24px}
+
+
+.film-external-links .film-imdb-arrow{display:none!important}
+
+
+
+
+/* Ajuste final del pie y rediseño del reparto: contenido centrado y sin panel pegado a la derecha. */
+.film-back{
+  display:flex!important;
+  justify-content:flex-start!important;
+  width:fit-content!important;
+  max-width:calc(100% - 48px)!important;
+  margin:70px auto 0!important;
+}
+
+
+.film-info-section:has(#cast-switcher) > .film-info-heading{
+  margin-bottom:36px!important;
+}
+
+
+.cast-switcher-nav{
+  position:relative!important;
+  top:auto!important;
+  align-self:center!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:0!important;
+  padding:0!important;
+  margin:0!important;
+  background:transparent!important;
+}
+
+
+.cast-switcher-name b{font-size:clamp(15px,1.25vw,19px)!important;font-weight:400!important}
+
+
+.cast-switcher-name.is-active{opacity:1!important}
+
+
+.cast-switcher-name.is-active b{font-size:clamp(20px,1.65vw,25px)!important}
+
+
+.cast-switcher-name:hover{padding-left:5px!important;transform:none!important}
+
+
+.cast-switcher-card{
+  position:relative!important;
+  top:auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)!important;
+  gap:clamp(28px,3vw,46px)!important;
+  align-items:center!important;
+  width:100%!important;
+  min-height:0!important;
+  margin:0!important;
+}
+
+
+.cast-switcher-details{
+  min-width:0!important;
+  max-width:none!important;
+  padding:0!important;
+  justify-self:stretch!important;
+}
+
+
+.cast-switcher-rule{margin:14px 0!important}
+
+
+.cast-switcher-scroll-track{height:490vh!important}
+
+
+@media(max-width:900px){
+  .cast-switcher{grid-template-columns:minmax(130px,.65fr) minmax(0,1.35fr)!important;gap:22px!important}
+
+  .cast-switcher-card{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+
+  .cast-switcher-portrait{max-height:none!important;aspect-ratio:3/4!important}
+
+  .cast-switcher-name{padding:10px 0!important}
+
+  .cast-switcher-name b{font-size:14px!important}
+
+  .cast-switcher-name.is-active b{font-size:18px!important}
+
+  .cast-switcher-name:has(+ .cast-switcher-name.is-active) b,
+  .cast-switcher-name.is-active + .cast-switcher-name b{font-size:16px!important}
+}
+
+
+.cast-switcher-scroll-track,
+.cast-switcher-scroll-step{
+  display:none!important;
+  height:0!important;
+  min-height:0!important;
+}
+
+
+.cast-switcher-name:hover{
+  opacity:1!important;
+}
+
+
+
+
+/* Corrección de jerarquía: los encabezados 01–04 comparten el mismo formato. */
+.film-intro-label,
+.film-info-heading{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:baseline!important;
+  gap:clamp(18px,2.2vw,32px)!important;
+  margin:0 0 clamp(34px,4vw,54px)!important;
+  padding:0!important;
+}
+
+
+.film-intro-label span:last-child,
+.film-info-heading h2{
+  display:inline-block!important;
+  margin:0!important;
+  font-family:'Cormorant Garamond',serif!important;
+  font-size:clamp(42px,6vw,76px)!important;
+  font-weight:400!important;
+  line-height:.95!important;
+  letter-spacing:-.035em!important;
+  text-transform:uppercase!important;
+  color:#f2eee8!important;
+}
+
+
+.cast-switcher-scroll-step{
+  display:block!important;
+  pointer-events:none!important;
+  height:70vh!important;
+}
+
+
+.cast-switcher-nav{
+  position:sticky!important;
+  top:27vh!important;
+  z-index:5!important;
+}
+
+
+.cast-switcher-name b{
+  display:inline-block!important;
+  padding:3px 8px 3px 0!important;
+  pointer-events:none!important;
+}
+
+
+@media(min-width:901px){
+  .cast-switcher{
+    grid-template-columns:minmax(190px,.72fr) minmax(0,1.28fr)!important;
+    gap:clamp(26px,3vw,44px)!important;
+  }
+
+  .cast-switcher-card{
+    grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)!important;
+    gap:clamp(20px,2vw,30px)!important;
+    transform:translateX(-10px)!important;
+  }
+
+  .cast-switcher-details{
+    max-width:500px!important;
+    width:100%!important;
+  }
+}
+
+
+
+
+/* REPARTO — interacción por hover, sin scroll. Zona de nombre ampliada. */
+.cast-switcher{min-height:0!important;height:auto!important}
+
+
+.cast-switcher-name{cursor:pointer!important;position:relative!important;z-index:5!important;display:block!important;width:100%!important;padding:14px 12px!important;margin:0!important;text-align:left!important}
+
+
+.film-info-heading > span,
+.film-intro-label > span:first-child {
+  flex:0 0 auto;
+  font-size:11px;
+  line-height:1;
+  color:#666;
+}
+
+
+.film-info-heading h2,
+.film-intro-label span:last-child {
+  margin:0;
+  padding:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  line-height:1;
+  font-weight:300;
+  letter-spacing:0;
+  color:#888;
+  text-transform:uppercase;
+}
+
+
+
+/* Reparto sin scroll largo ni fichas pegadas al borde derecho. */
+.film-info-section:has(#cast-switcher) {
+  grid-template-columns:minmax(190px,.62fr) minmax(0,1.8fr);
+  gap:clamp(32px,5vw,76px);
+  padding:105px 7vw;
+  align-items:start;
+}
+
+
+.cast-switcher-scroll-track,
+.cast-switcher-scroll-step {
+  display:none!important;
+}
+
+
+.cast-switcher-nav {
+  align-self:start;
+  border-top:1px solid rgba(255,255,255,.16);
+}
+
+
+.cast-switcher-name:hover,
+.cast-switcher-name:focus-visible,
+.cast-switcher-name.is-active {
+  padding-left:0!important;
+  background:rgba(255,255,255,.035);
+}
+
+
+.cast-switcher-name b {
+  font-size:clamp(18px,1.55vw,23px);
+  line-height:1.2;
+  overflow-wrap:anywhere;
+}
+
+
+.cast-switcher-card {
+  min-width:0;
+  grid-template-columns:minmax(250px,.9fr) minmax(0,1.35fr);
+  align-self:start;
+  overflow:hidden;
+}
+
+
+.cast-switcher-bio {
+  max-width:none;
+  font-size:12px;
+  line-height:1.75;
+}
+
+
+.cast-switcher-rule {
+  margin:19px 0 14px;
+}
+
+
+.cast-work-info em {
+  font-size:18px;
+}
+
+
+@media(max-width:650px) {
+  .film-info-section:has(#cast-switcher) {
+    padding:76px 20px;
+    gap:30px;
+  }
+
+  .cast-switcher {
+    display:grid;
+    grid-template-columns:1fr;
+    gap:24px;
+    min-height:0!important;
+  }
+
+  .cast-switcher-nav {
+    position:relative!important;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    column-gap:14px;
+    margin:0;
+  }
+
+  .cast-switcher-name {min-height:54px;padding:13px 4px 13px 0!important}
+
+  .cast-switcher-name b {font-size:19px}
+
+  .cast-switcher-card {grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+
+  .cast-switcher-portrait {min-height:330px}
+
+  .cast-switcher-details {padding:18px}
+
+  .cast-switcher-title {font-size:clamp(28px,7vw,40px)}
+
+  .cast-switcher-bio {font-size:11px;line-height:1.6}
+}
+
+
+.film-back-arrow{font-size:14px!important;line-height:1!important}
+
+
+.film-external-links{
+  display:flex!important;
+  justify-content:flex-start!important;
+  width:auto!important;
+  max-width:none!important;
+  margin:0 8vw 34px!important;
+  padding:0!important;
+}
+
+
+.film-external-links .film-imdb-logo{
+  min-width:35px!important;
+  height:19px!important;
+  padding:0 4px!important;
+  border-radius:2px!important;
+  font-size:11px!important;
+  line-height:1!important;
+}
+
+
+
+/* NAVEGACIÓN INFERIOR COMPACTA: proyectos a la izquierda e IMDb centrado */
+.film-bottom-nav{
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  align-items:center!important;
+  width:auto!important;
+  max-width:none!important;
+  margin:24px 8vw 0!important;
+  padding:14px 0!important;
+  border-top:1px solid rgba(255,255,255,.08);
+  gap:12px!important;
+}
+
+
+.film-bottom-nav .film-bottom-imdb{
+  grid-column:2;
+  justify-self:center;
+  display:inline-flex!important;
+  width:auto!important;
+  min-width:0!important;
+  padding:0!important;
+  margin:0!important;
+  line-height:1!important;
+  opacity:.75;
+}
+
+
+
+/* RESTAURACIÓN ESTÉTICA: encabezados, reparto uniforme y pie compacto */
+/* Encabezados de sección: pequeños, grises y con el título debajo del número. */
+.film-intro-label,
+.film-info-heading{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  gap:7px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#777!important;
+  font-size:10px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+
+
+
+/* Reparto: misma anchura para foto y texto, misma altura en todas las fichas. */
+.cast-switcher{
+  align-items:stretch!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  gap:clamp(20px,2.5vw,36px)!important;
+}
+
+
+.cast-switcher-name{
+  box-sizing:border-box!important;
+  width:100%!important;
+  min-height:48px!important;
+  padding:12px 10px 12px 0!important;
+  transform:none!important;
+  transition:color .15s ease,background-color .15s ease!important;
+}
+
+
+.cast-switcher-name.is-active b{
+  font-size:clamp(15px,1.2vw,18px)!important;
+}
+
+
+.cast-switcher-card{
+  box-sizing:border-box!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  align-items:stretch!important;
+  gap:clamp(14px,1.7vw,24px)!important;
+  width:100%!important;
+  min-width:0!important;
+  height:clamp(410px,42vw,520px)!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  transform:none!important;
+}
+
+
+.cast-switcher-details{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:100%!important;
+  min-height:0!important;
+  padding:clamp(14px,1.5vw,24px)!important;
+  overflow-y:auto!important;
+}
+
+
+.cast-switcher-card{
+  transition:opacity .08s linear!important;
+}
+
+
+.film-bottom-nav .film-bottom-projects{
+  font-size:10px!important;
+  letter-spacing:.12em!important;
+  line-height:1.4!important;
+}
+
+
+.film-bottom-nav .film-bottom-imdb{grid-column:2!important;justify-self:center!important}
+
+
+@media(max-width:650px){
+  .film-intro-label,
+  .film-info-heading{gap:6px!important}
+
+  .cast-switcher{grid-template-columns:1fr!important;gap:18px!important}
+
+  .cast-switcher-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0 12px!important}
+
+  .cast-switcher-name{min-height:42px!important;padding:8px 4px 8px 0!important}
+
+  .cast-switcher-name b,.cast-switcher-name.is-active b{font-size:14px!important}
+
+  .cast-switcher-card{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    height:390px!important;
+    gap:10px!important;
+  }
+
+  .cast-switcher-details{padding:12px!important}
+
+  .cast-switcher-title{font-size:clamp(22px,6vw,30px)!important}
+
+  .cast-switcher-bio{font-size:10px!important;line-height:1.45!important}
+
+  .cast-switcher-works li{padding:5px 0!important}
+
+  .cast-work-info em{font-size:14px!important}
+
+  .film-bottom-nav{margin:14px 20px 0!important;padding:8px 0!important}
+
+  .film-bottom-nav .film-bottom-projects{font-size:10px!important;letter-spacing:.08em!important}
+}
+
+
+@media(max-width:650px){
+  .cast-switcher-card{height:auto!important}
+
+  .cast-switcher-portrait{aspect-ratio:1 / 1!important;height:auto!important;min-height:0!important}
+}
+
+
+.film-intro-label > span:first-child,
+.film-info-heading > span{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  font-family:inherit!important;
+  font-size:9px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.12em!important;
+  color:#666!important;
+}
+
+
+.film-intro-label > span:last-child,
+.film-info-heading > h2{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  font-family:inherit!important;
+  font-size:11px!important;
+  font-weight:400!important;
+  line-height:1.25!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+  color:#888!important;
+}
+
+
+.film-intro-label>span:first-child,.film-info-heading>span{
+ display:block!important;margin:0!important;padding:0!important;font-size:9px!important;line-height:1.2!important;
+ letter-spacing:.12em!important;color:#666!important
+}
+
+
+.film-intro-label>span:last-child,.film-info-heading>h2{
+ display:block!important;margin:0!important;padding:0!important;font-family:inherit!important;font-size:13px!important;
+ font-weight:400!important;line-height:1.25!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#888!important
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher{
+ width:100%!important;max-width:1120px!important;margin:0 auto!important;
+ grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr)!important;gap:clamp(36px,4vw,64px)!important;align-items:center!important
+}
+
+
+.cast-switcher-name b{font-size:clamp(15px,1.2vw,18px)!important;font-weight:400!important;transition:font-size .16s ease,color .16s ease!important}
+
+
+.cast-switcher-name:hover:not(.is-active) b{font-size:clamp(16px,1.3vw,20px)!important;color:#ccc!important}
+
+
+.cast-switcher-card{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:clamp(16px,2vw,26px)!important;align-items:start!important;height:auto!important;min-height:0!important;transform:none!important;transition:none!important;opacity:1!important}
+
+
+.cast-switcher-details{width:100%!important;max-width:none!important;min-width:0!important;height:auto!important;min-height:0!important;padding:clamp(14px,1.5vw,24px)!important;overflow:visible!important}
+
+
+@media(max-width:900px){
+ .film-info-section:has(#cast-switcher){padding-left:6vw!important;padding-right:6vw!important}
+
+ .film-info-section:has(#cast-switcher) .cast-switcher{grid-template-columns:minmax(160px,.65fr) minmax(0,1.35fr)!important;gap:24px!important}
+
+ .cast-switcher-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important}
+}
+
+
+
+
+/* Corrección final de alineación del reparto: una sola regla de referencia. */
+.film-info-section:has(#cast-switcher) .cast-switcher{
+  display:grid!important;
+  grid-template-columns:minmax(190px,.72fr) minmax(0,1.28fr)!important;
+  align-items:start!important;
+  gap:clamp(28px,4vw,56px)!important;
+  width:100%!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+  min-height:0!important;
+  height:auto!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-nav{
+  position:relative!important;
+  top:auto!important;
+  align-self:start!important;
+  margin:0!important;
+  padding:0!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-portrait{
+  display:block!important;
+  position:relative!important;
+  align-self:start!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:1/1!important;
+  overflow:hidden!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-photo{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:1/1!important;
+  object-fit:cover!important;
+  object-position:center 30%!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-title{
+  margin-top:0!important;
+  line-height:1.05!important;
+}
+
+
+@media(max-width:650px){
+  .film-info-section:has(#cast-switcher) .cast-switcher{
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+  }
+
+  .film-info-section:has(#cast-switcher) .cast-switcher-nav{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:0 12px!important;
+  }
+
+  .film-info-section:has(#cast-switcher) .cast-switcher-card{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+    gap:10px!important;
+  }
+
+  .film-info-section:has(#cast-switcher) .cast-switcher-details{padding:0!important}
+}
+
+
+.film-intro-label > span,
+.film-info-section > .film-info-heading > span{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#666!important;
+  font-family:inherit!important;
+  font-size:9px!important;
+  font-weight:400!important;
+  line-height:1.2!important;
+  letter-spacing:.12em!important;
+}
+
+
+
+
+/* Pie de la página de la película: nombre a la izquierda, IMDb centrado y portfolio a la derecha. */
+.film-page-footer{
+  display:grid!important;
+  grid-template-columns:1fr auto 1fr!important;
+  align-items:center!important;
+  gap:18px!important;
+}
+
+
+.film-page-footer > span{justify-self:start!important}
+
+
+.film-page-footer .film-footer-imdb{
+  display:inline-flex!important;
+  justify-self:center!important;
+  align-items:center!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  text-decoration:none!important;
+}
+
+
+.film-bottom-nav{
+  border-top:0!important;
+}
+
+
+@media(max-width:650px){
+  .film-page-footer{
+    grid-template-columns:1fr auto!important;
+    row-gap:16px!important;
+  }
+
+  .film-page-footer > span{grid-column:1!important;grid-row:1!important}
+
+  .film-page-footer > a:last-child{grid-column:2!important;grid-row:1!important}
+
+  .film-page-footer .film-footer-imdb{grid-column:1 / -1!important;grid-row:2!important;justify-self:center!important}
+}
+
+
+.film-bottom-nav::before,
+.film-bottom-nav::after{
+  content:none!important;
+  display:none!important;
+}
+
+
+@media(max-width:650px){
+  .film-bottom-nav{
+    margin-left:20px!important;
+    margin-right:20px!important;
+  }
+}
+
+
+.film-bottom-nav .film-bottom-projects{
+  align-self:center!important;
+  transform:translateY(-3px)!important;
+}
+
+
+
+
+/* Nombre del personaje: más cercano al nombre real y con el dorado de las etiquetas de trabajos. */
+.cast-switcher-character{
+  margin:-13px 0 12px!important;
+  font-size:clamp(11px,.9vw,13px)!important;
+  line-height:1.3!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  color:#b99a5f!important;
+  font-weight:400!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
+  object-position:center 18%!important;
+}
+
+
+
+
+/* Ajuste adicional: acercar el nombre del personaje y elevar la biografía, manteniendo aire antes de trabajos destacados. */
+.film-info-section:has(#cast-switcher) .cast-switcher-character{
+  margin-top:-25px!important;
+  margin-bottom:2px!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-works{
+  margin-top:8px!important;
+}
+
+
+
+
+/* Ajuste fino de trabajos: título más cerca del primer proyecto y bloque ligeramente más abajo. */
+.film-info-section:has(#cast-switcher) .cast-switcher-work-label{
+  margin-top:4px!important;
+  margin-bottom:0!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-works{
+  margin-top:2px!important;
+}
+
+
+
+
+/* Ajustes de reparto: separar biografía del personaje y recentrar ligeramente las fotos de Rubén y Antonio. */
+.film-info-section:has(#cast-switcher) .cast-switcher-character{
+  margin-bottom:8px!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="antonio"]{
+  object-position:center 26%!important;
+}
+
+
+
+
+/* Rubén Faura: encuadre centrado para que el rostro y la figura se vean con claridad en la nueva foto. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="ruben"]{
+  object-position:center 22%!important;
+}
+
+
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="jaime"]{
+  object-position:center 10%!important;
+}
+
+
+@media(prefers-reduced-motion:reduce){
+  .cast-swipe-arrow{animation:none!important}
+
+  .cast-card-enter *{animation:none!important}
+}
+
+
+
+
+/* Gonzalo Cortés: llenar el marco sin márgenes laterales y mantener un encuadre equilibrado. */
+.film-info-section:has(#cast-switcher) .cast-switcher-photo[data-cast-photo="gonzalo"]{
+  object-fit:cover!important;
+  object-position:center 18%!important;
+  background:transparent;
+  transform:none!important;
+}
