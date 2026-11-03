@@ -6018,18 +6018,19 @@ body.external-preview-open{overflow:hidden}
     overflow:visible!important;
     color:inherit!important;
   }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active{
+  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active,
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone].is-active{
     opacity:1!important;
     color:#fff!important;
     transform:none!important;
   }
-  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active b{
+  .film-info-section:has(#cast-switcher) .cast-switcher-name.is-active b,
+  .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone].is-active b{
     font-size:14px!important;
     font-weight:500!important;
   }
   .film-info-section:has(#cast-switcher) .cast-switcher-name[data-cast-clone]{
     display:inline-flex!important;
-    opacity:.48!important;
   }
 }
 
