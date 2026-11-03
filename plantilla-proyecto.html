@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[DESCRIPCIÓN BREVE DEL PROYECTO]">
+  <title>[TÍTULO DEL PROYECTO] — Javier Díaz Caballero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!--
+  PLANTILLA MAESTRA PARA PROYECTOS GRANDES
+  1. Duplica este archivo y asígnale un nombre (por ejemplo: proyecto-nombre.html).
+  2. Sustituye los textos entre corchetes.
+  3. Añade o elimina los módulos opcionales según el proyecto.
+  4. Conserva las clases film-* para reutilizar el diseño de la página de película.
+  5. No subas imágenes originales pesadas directamente: cuando toque, prepararemos versiones web.
+-->
+
+<body class="film-page-body">
+
+<header class="topbar film-topbar is-visible">
+  <nav class="topbar-left">
+    <a href="index.html#audiovisual">Audiovisual</a>
+    <a href="index.html#fotografia">Fotografía</a>
+  </nav>
+
+  <a href="index.html" class="topbar-name">JAVIER DÍAZ CABALLERO</a>
+
+  <nav class="topbar-right">
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main class="film-page">
+
+  <!-- MÓDULO 1 · PORTADA -->
+  <section class="film-cover">
+    <!-- Añadir aquí la imagen de portada optimizada del proyecto. -->
+    <div class="film-cover-overlay"></div>
+    <div class="film-cover-content">
+      <span class="film-cover-type">[TIPO DE PROYECTO] · [ESTADO / AÑO]</span>
+      <h1>[TÍTULO DEL PROYECTO]</h1>
+      <div class="film-cover-bottom">
+        <span>[TU FUNCIÓN EN EL PROYECTO]</span>
+        <a href="#project-intro" class="film-cover-scroll-link" aria-label="Desplazarse hacia abajo para continuar">
+          <span>SCROLL</span>
+          <span class="film-cover-scroll" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 2 · PRESENTACIÓN / SINOPSIS -->
+  <section class="film-intro" id="project-intro">
+    <div class="film-intro-label">
+      <span>01</span>
+      <span>[CATEGORÍA]</span>
+    </div>
+    <div class="film-intro-content">
+      <p class="film-lead">[FRASE PRINCIPAL DEL PROYECTO]</p>
+      <div class="film-description">
+        <p>[SINOPSIS O DESCRIPCIÓN DEL PROYECTO]</p>
+        <p>[CONTEXTO, PROPUESTA CREATIVA O INFORMACIÓN ADICIONAL — OPCIONAL]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 3 · REPARTO / EQUIPO / PARTICIPANTES (OPCIONAL)
+       Si no es relevante, elimina esta sección. Se puede adaptar a artistas,
+       equipo técnico, colaboradores, protagonistas o participantes. -->
+  <section class="film-info-section">
+    <div class="film-intro-label">
+      <span>02</span>
+      <span>[REPARTO / EQUIPO / PARTICIPANTES]</span>
+    </div>
+    <div class="project-module-placeholder">
+      [AÑADIR AQUÍ LAS FICHAS O CRÉDITOS DE LAS PERSONAS PARTICIPANTES]
+    </div>
+  </section>
+
+  <!-- MÓDULO 4 · PRODUCCIÓN Y CRÉDITOS -->
+  <section class="film-info-section">
+    <div class="film-info-heading">
+      <span>03</span>
+      <h2>Producción</h2>
+    </div>
+    <div class="film-production-grid">
+      <div class="film-production-item">
+        <span>[CRÉDITO 1]</span>
+        <strong>[NOMBRE / EMPRESA]</strong>
+      </div>
+      <div class="film-production-item">
+        <span>[CRÉDITO 2]</span>
+        <strong>[NOMBRE]</strong>
+      </div>
+      <div class="film-production-item">
+        <span>[CRÉDITO 3]</span>
+        <strong>[NOMBRE]</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 5 · GALERÍA / VÍDEO (OPCIONAL)
+       Insertar solo material seleccionado y preparado para web. -->
+  <section class="film-info-section">
+    <div class="film-info-heading">
+      <span>04</span>
+      <h2>[GALERÍA / TRAILER / MATERIAL AUDIOVISUAL]</h2>
+    </div>
+    <div class="project-module-placeholder">
+      [AÑADIR AQUÍ FOTOGRAFÍAS, VÍDEOS O MATERIAL DEL PROYECTO]
+    </div>
+  </section>
+
+  <!-- MÓDULO 6 · PRENSA Y NOTICIAS (OPCIONAL) -->
+  <section class="film-news-section">
+    <div class="film-info-heading">
+      <span>05</span>
+      <h2>Noticias</h2>
+    </div>
+    <div class="film-news-grid">
+      <!-- Duplicar este enlace por cada noticia o publicación. -->
+      <a class="film-news-card" href="[URL DE LA NOTICIA]" target="_blank" rel="noopener noreferrer">
+        <span>[MEDIO / FECHA]</span>
+        <h3>[TÍTULO DE LA NOTICIA]</h3>
+        <p>[BREVE DESCRIPCIÓN]</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- MÓDULO 7 · ENLACES EXTERNOS (OPCIONAL) -->
+  <section class="film-back film-bottom-nav" aria-label="Enlaces del proyecto">
+    <div class="project-module-placeholder">
+      [AÑADIR ENLACES: IMDb, WEB OFICIAL, REDES, DISTRIBUCIÓN, FESTIVALES, ETC.]
+    </div>
+  </section>
+
+</main>
+
+<footer class="film-page-footer">
+  <span>Javier Díaz Caballero</span>
+  <a href="index.html">Volver al portfolio ↑</a>
+</footer>
+
+</body>
+</html>
