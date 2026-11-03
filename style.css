@@ -3186,7 +3186,6 @@ footer {
 .cast-switcher-works li em{color:#d0d0d0;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.15;font-style:normal}
 @media(max-width:900px){.cast-switcher{grid-template-columns:155px minmax(0,1fr);gap:22px}.cast-switcher-card{grid-template-columns:1fr}.cast-switcher-portrait{min-height:270px}.cast-switcher-photo{object-position:center 27%}.cast-switcher-details{padding:23px}}
 @media(max-width:650px){.cast-switcher{grid-template-columns:1fr;gap:22px}.cast-switcher-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}.cast-switcher-name{grid-template-columns:20px minmax(0,1fr);gap:6px;padding:14px 0}.cast-switcher-name b{font-size:21px}.cast-switcher-portrait{min-height:330px}.cast-switcher-details{padding:24px}.cast-switcher-title{font-size:48px}}
-@media(prefers-reduced-motion:reduce){.cast-switcher-card,.cast-switcher-name,.cast-switcher-photo{transition:none!important}}
 
 
 /* REPARTO: los perfiles cambian al hacer scroll vertical */
