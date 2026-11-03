@@ -308,12 +308,35 @@
     }
     portrait.querySelector('.cast-portrait-caption').textContent = person.caption;
     card.querySelector('.cast-switcher-role').textContent = person.role;
-    card.querySelector('.cast-switcher-title').innerHTML = person.name;
+    const nameHeading = card.querySelector('.cast-switcher-title');
+    nameHeading.replaceChildren();
+    const nameParts = person.name.split(/<em>|<\/em>/);
+    nameHeading.append(document.createTextNode(nameParts[0] || ''));
+    if (nameParts[1]) {
+      const emphasis = document.createElement('em');
+      emphasis.textContent = nameParts[1];
+      nameHeading.appendChild(emphasis);
+    }
     const character = card.querySelector('.cast-switcher-character');
     character.textContent = person.character || '';
     character.hidden = !person.character;
     card.querySelector('.cast-switcher-bio').textContent = person.bio;
-    card.querySelector('.cast-switcher-works').innerHTML = person.works.map(work => '<li><span>'+work[0]+'</span><div class="cast-work-info"><em>'+work[1]+'</em><small>'+(work[2] || 'PROYECTO')+'</small></div></li>').join('');
+    const worksList = card.querySelector('.cast-switcher-works');
+    worksList.replaceChildren();
+    person.works.forEach(work => {
+      const item = document.createElement('li');
+      const year = document.createElement('span');
+      year.textContent = work[0];
+      const info = document.createElement('div');
+      info.className = 'cast-work-info';
+      const title = document.createElement('em');
+      title.textContent = work[1];
+      const type = document.createElement('small');
+      type.textContent = work[2] || 'PROYECTO';
+      info.append(title, type);
+      item.append(year, info);
+      worksList.appendChild(item);
+    });
 
   }
   const castNav = root.querySelector('.cast-switcher-nav');
