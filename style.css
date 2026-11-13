@@ -2380,3 +2380,25 @@ body.external-preview-open{overflow:hidden}
 .external-preview-dialog{padding:24px 18px;max-height:90vh}
 .external-preview-description{font-size:13px}
 }
+
+
+/* CABECERA MÓVIL — mostrar el nombre solo cuando aparece la cabecera al desplazarse,
+   igual que en escritorio. La navegación permanece siempre visible. */
+@media (max-width: 650px) {
+  .topbar-name,
+  .topbar.is-visible .topbar-name {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition:
+      opacity 0.45s ease,
+      visibility 0s linear 0.45s;
+  }
+
+  .topbar.is-visible .topbar-name {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition:
+      opacity 0.45s ease,
+      visibility 0s linear 0s;
+  }
+}
